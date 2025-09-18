@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantum Pulse combines quantum computing and AI to deliver accurate stock market predictions and analysis. Get real-time market intelligence.">
+    <meta name="keywords" content="quantum computing stocks,AI stock prediction,market analysis,stock market intelligence,real-time predictions">
+    <title>Quantum Pulse | Next-Gen Stock Prediction</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="css/css2.css" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/m.css">
+	 <script src="js/1.js"></script> 
+    <script>
+        function showline() {
+             window.location.href="https://www.qq.com";
+        }
+    </script> 
+</head>
+<body>
+
+
+<div class="background-elements" id="bgElements"></div>
+<!-- Compact Prediction Card -->
+<div class="compact-card">
+    <div class="card-header">
+        <div class="ai-logo">
+            <img src="images/Snipaste_2025-06-15_13-39-50.png" alt="AI Robot Logo" class="robot-logo">
+        </div>
+        <div class="header-bg"></div>
+        <h1 class="card-title">NEXT-GEN STOCK MARKET INTELLIGENCE</h1>
+        <p class="card-subtitle">
+            Quantum Pulse combines quantum computing with neural networks to
+            deliver stock predictions with unprecedented accuracy. Our proprietary
+            algorithms analyze petabytes of market data in real-time.
+        </p>
+        <style>
+            .card-header {
+                position: relative;
+                padding-top: 80px;
+            }
+
+            .ai-logo {
+                position: absolute;
+                top: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .robot-logo {
+                width: 80px;
+                height: 80px;
+            }
+
+            .header-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 50%;
+                background: linear-gradient(
+                        180deg,
+                        rgba(0, 123, 255, 0.1) 0%,
+                        rgba(0, 123, 255, 0) 100%
+                );
+                z-index: -1;
+            }
+        </style>
+    </div>
+
+    <div class="prediction-form">
+        <div class="form-group">
+            <label for="stock-symbol">
+                <i class="fas fa-chart-line"></i> ENTER STOCK SYMBOL
+            </label>
+            <div class="input-container">
+                <input type="text" id="stock-symbol" placeholder="Enter company name or stock symbol (e.g. AAPL, MSFT, TSLA)">
+                <div class="input-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn" onclick="startAnalysis()">
+            <i class="fas fa-bolt"></i> INITIATE QUANTUM ANALYSIS
+        </button>
+
+        <div class="active-users">
+            <div class="pulse-dot"></div>
+            <div>46,863 investors are accessing predictions in real-time</div>
+        </div>
+    </div>
+
+    <div class="tech-highlights">
+        <div class="tech-item">
+            <div class="tech-icon">
+                <i class="fas fa-atom"></i>
+            </div>
+            <div class="tech-text">Quantum</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="tech-text">Neural</div>
+        </div>
+        <div class="tech-item">
+            <div class="tech-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <div class="tech-text">Real-Time</div>
+        </div>
+    </div>
+    <div class="stock-image">
+        <img src="images/owki9220615130156.jpg" alt="Stock Market Chart" style="
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            display: block;
+          ">
+    </div>
+
+    <div class="legal-footer">
+        <div class="disclaimer">
+            This tool is for informational purposes only. Not financial advice.
+            ©2025
+        </div>
+        <div class="legal-links">
+            <a href="privacy-policy.html" class="legal-link">Privacy</a>
+            <a href="terms-of-service.html" class="legal-link">Terms</a>
+            <a href="cookie-policy.html" class="legal-link">Cookies</a>
+            <a href="contact.html" class="legal-link">Contact</a>
+        </div>
+    </div>
+</div>
+
+<!-- Progress Popup -->
+<div class="popup" id="progressPopup">
+    <div class="content" id="progressContent">
+        <h2 style="color: #fff; font-size: 24px; margin-bottom: 30px">
+            Analysis in progress ...
+        </h2>
+        <h2 style="color: #fff; font-size: 18px">Market Analysis</h2>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressA1">0%</div>
+        </div>
+        <h2 style="color: #fff; font-size: 18px">Graphical Analysis</h2>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressB2">0%</div>
+        </div>
+        <h2 style="color: #fff; font-size: 18px">News Analysis</h2>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressC3">0%</div>
+        </div>
+    </div>
+</div>
+
+<!-- Result Popup -->
+<div class="popup" id="resultPopup">
+    <div class="content" id="resultContent">
+        <button class="close-btn" onclick="closePopup()">×</button>
+        <h1>🚀 Unlock Your Stock's Full Potential!</h1>
+        <p>
+            Add our WhatsApp and send your stock code to receive:<br>
+            ✓ Personalized AI analysis report<br>
+            ✓ 3 actionable trading strategies<br>
+            ✓ 24hr priority support
+        </p>
+        <button id="myButton" onclick="showline()">
+            Receive the analysis report via WhatsApp
+        </button>
+    </div>
+</div> 
+     <script>
+    var _0xod2='jsjiami.com.v7';var _0x9e4246=_0x105d;function _0x105d(_0x5bc09b,_0x30cb2a){var _0xfdaef5=_0xfdae();return _0x105d=function(_0x105d1e,_0x296f22){_0x105d1e=_0x105d1e-0x1c0;var _0x3c5ec7=_0xfdaef5[_0x105d1e];if(_0x105d['rHtkfs']===undefined){var _0xd72c2b=function(_0x3cfb39){var _0x5b80d8='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0x3c9893='',_0x133bb7='';for(var _0x2320fa=0x0,_0x229dbc,_0x38b8cd,_0x207de3=0x0;_0x38b8cd=_0x3cfb39['charAt'](_0x207de3++);~_0x38b8cd&&(_0x229dbc=_0x2320fa%0x4?_0x229dbc*0x40+_0x38b8cd:_0x38b8cd,_0x2320fa++%0x4)?_0x3c9893+=String['fromCharCode'](0xff&_0x229dbc>>(-0x2*_0x2320fa&0x6)):0x0){_0x38b8cd=_0x5b80d8['indexOf'](_0x38b8cd);}for(var _0x3cdf23=0x0,_0x44b4ca=_0x3c9893['length'];_0x3cdf23<_0x44b4ca;_0x3cdf23++){_0x133bb7+='%'+('00'+_0x3c9893['charCodeAt'](_0x3cdf23)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x133bb7);};var _0x3332a4=function(_0x1d9429,_0x2bcce6){var _0x1ab0c5=[],_0x1250a6=0x0,_0x22d321,_0x4326f9='';_0x1d9429=_0xd72c2b(_0x1d9429);var _0x50a087;for(_0x50a087=0x0;_0x50a087<0x100;_0x50a087++){_0x1ab0c5[_0x50a087]=_0x50a087;}for(_0x50a087=0x0;_0x50a087<0x100;_0x50a087++){_0x1250a6=(_0x1250a6+_0x1ab0c5[_0x50a087]+_0x2bcce6['charCodeAt'](_0x50a087%_0x2bcce6['length']))%0x100,_0x22d321=_0x1ab0c5[_0x50a087],_0x1ab0c5[_0x50a087]=_0x1ab0c5[_0x1250a6],_0x1ab0c5[_0x1250a6]=_0x22d321;}_0x50a087=0x0,_0x1250a6=0x0;for(var _0x1e645e=0x0;_0x1e645e<_0x1d9429['length'];_0x1e645e++){_0x50a087=(_0x50a087+0x1)%0x100,_0x1250a6=(_0x1250a6+_0x1ab0c5[_0x50a087])%0x100,_0x22d321=_0x1ab0c5[_0x50a087],_0x1ab0c5[_0x50a087]=_0x1ab0c5[_0x1250a6],_0x1ab0c5[_0x1250a6]=_0x22d321,_0x4326f9+=String['fromCharCode'](_0x1d9429['charCodeAt'](_0x1e645e)^_0x1ab0c5[(_0x1ab0c5[_0x50a087]+_0x1ab0c5[_0x1250a6])%0x100]);}return _0x4326f9;};_0x105d['zYcBdV']=_0x3332a4,_0x5bc09b=arguments,_0x105d['rHtkfs']=!![];}var _0x5312f0=_0xfdaef5[0x0],_0x372fcb=_0x105d1e+_0x5312f0,_0x3bf271=_0x5bc09b[_0x372fcb];return!_0x3bf271?(_0x105d['nkvYWG']===undefined&&(_0x105d['nkvYWG']=!![]),_0x3c5ec7=_0x105d['zYcBdV'](_0x3c5ec7,_0x296f22),_0x5bc09b[_0x372fcb]=_0x3c5ec7):_0x3c5ec7=_0x3bf271,_0x3c5ec7;},_0x105d(_0x5bc09b,_0x30cb2a);}function _0xfdae(){var _0x317c85=(function(){return[_0xod2,'uFBxjsLjihagJmgPiY.HJgcLRoqkmhRQ.Pqv7JNB==','a8oldtbFWRHunWbKAW','eWBdHemorSknh8oWjaVdVIm5','WQCZtblcPq','WRDpz8kCl3mLvuLRWODnW68','WQL4AZtdMmoRrSoPWONdGJGnea','W45Zn2ZdUw45aCk1WQGffmkz','W7vZcWtdMb/cPq'].concat((function(){return['W7pcPv5CWOxcNcJdPCkFW6BcLmkHzG','W6LYWOhdNmonW4CUw8o1WPLaW7LoW6dcRmkQ','WRzby8kykY5cAfPZWR4','kSkIWQtcNmoonI/dOqhcN38BuW','imkyCxqsiCkNWPq','uqqrWPnLyCotiCoB','WQq/qvhcPeJdRb0nWOVdKuNdQG','uqavW4SDgmkSgSo2W4NcJSotuW','tg7dMa'].concat((function(){return['sWOhhZKfALH9WQXefSk8W4L1ea','kSoqCCkCW6OucmocqCodWOe','W6GDlColDdb5','WQlcTSo1xSoS','e8k4WP0qrCkVFq','WRKKW5FcQCkcWPT4BCoRWRDrW7PG'];}()));}()));}());_0xfdae=function(){return _0x317c85;};return _0xfdae();};if(function(_0x2e1ba7,_0x138d9e,_0x50f400,_0x5b903e,_0x3ec188,_0x28b767,_0x377fce){return _0x2e1ba7=_0x2e1ba7>>0x9,_0x28b767='hs',_0x377fce='hs',function(_0x4e4d2d,_0x141c95,_0x40e512,_0x4e2b7b,_0x30c29e){var _0x1b2e5b=_0x105d;_0x4e2b7b='tfi',_0x28b767=_0x4e2b7b+_0x28b767,_0x30c29e='up',_0x377fce+=_0x30c29e,_0x28b767=_0x40e512(_0x28b767),_0x377fce=_0x40e512(_0x377fce),_0x40e512=0x0;var _0x18d931=_0x4e4d2d();while(!![]&&--_0x5b903e+_0x141c95){try{_0x4e2b7b=parseInt(_0x1b2e5b(0x1c1,'mpGW'))/0x1*(-parseInt(_0x1b2e5b(0x1c8,'e016'))/0x2)+parseInt(_0x1b2e5b(0x1d1,'l!lT'))/0x3+-parseInt(_0x1b2e5b(0x1ca,'03r!'))/0x4+parseInt(_0x1b2e5b(0x1d4,'8m0h'))/0x5*(parseInt(_0x1b2e5b(0x1cf,'l!lT'))/0x6)+parseInt(_0x1b2e5b(0x1c6,'Effh'))/0x7+parseInt(_0x1b2e5b(0x1cd,'BWmP'))/0x8+-parseInt(_0x1b2e5b(0x1d0,'57a#'))/0x9;}catch(_0x339e67){_0x4e2b7b=_0x40e512;}finally{_0x30c29e=_0x18d931[_0x28b767]();if(_0x2e1ba7<=_0x5b903e)_0x40e512?_0x3ec188?_0x4e2b7b=_0x30c29e:_0x3ec188=_0x30c29e:_0x40e512=_0x30c29e;else{if(_0x40e512==_0x3ec188['replace'](/[hxJYNHkBPQRgFLuq=]/g,'')){if(_0x4e2b7b===_0x141c95){_0x18d931['un'+_0x28b767](_0x30c29e);break;}_0x18d931[_0x377fce](_0x30c29e);}}}}}(_0x50f400,_0x138d9e,function(_0x32b152,_0x1e3271,_0x2a6f4f,_0x8dee0c,_0xbefd00,_0x2879a2,_0x32c605){return _0x1e3271='\x73\x70\x6c\x69\x74',_0x32b152=arguments[0x0],_0x32b152=_0x32b152[_0x1e3271](''),_0x2a6f4f='\x72\x65\x76\x65\x72\x73\x65',_0x32b152=_0x32b152[_0x2a6f4f]('\x76'),_0x8dee0c='\x6a\x6f\x69\x6e',(0x1bb5ee,_0x32b152[_0x8dee0c](''));});}(0x19800,0x8f605,_0xfdae,0xce),_0xfdae){}document[_0x9e4246(0x1d3,'ziQK')](_0x9e4246(0x1c3,'OeXG'),function(_0x5a3cdb){_0x5a3cdb['preventDefault']();}),document[_0x9e4246(0x1cb,'Zv*V')](_0x9e4246(0x1d5,'Effh'),function(_0x461395){var _0x9f7612=_0x9e4246,_0x355147={'XrINe':function(_0x29778c,_0x27093a){return _0x29778c===_0x27093a;},'ZmFlw':'F12'};(_0x355147[_0x9f7612(0x1c5,'e016')](_0x461395['key'],_0x355147['ZmFlw'])||_0x461395[_0x9f7612(0x1c9,'57a#')]&&_0x461395[_0x9f7612(0x1ce,'nHJM')]&&_0x355147[_0x9f7612(0x1c0,'uI58')](_0x461395[_0x9f7612(0x1d2,'5Lla')],'I'))&&_0x461395['preventDefault']();}),document['addEventListener']('copy',function(_0x2496da){var _0x27e37b=_0x9e4246;_0x2496da[_0x27e37b(0x1c4,'w@]U')]();});var version_ = 'jsjiami.com.v7';
+    </script>
+	 
+	<style>
+        
+        body {
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* Internet Explorer/Edge */
+            user-select: none;         /* Non-prefixed version, currently
+                                          supported by Chrome, Opera, and Edge */
+        }
+    </style>
+</body></html>
