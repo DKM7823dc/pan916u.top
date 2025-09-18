@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Professional Stock Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-blue': '#3B82F6',
+                        'dark-blue': '#1E40AF'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-inter">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <h1 class="text-2xl md:text-3xl font-bold text-accent-blue">Professional Stock Analysis</h1>
+            <p class="text-gray-600 dark:text-gray-400 mt-2">Educational Investment Platform</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8 md:py-12">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 md:p-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-2">Terms of Service</h1>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-8">Last updated: January 2025</p>
+            
+            <div class="prose prose-gray dark:prose-invert max-w-none">
+                <!-- Introduction -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">1. Agreement to Terms</h2>
+                    <p class="mb-4 leading-relaxed">
+                        These Terms of Service ("Terms") constitute a legally binding agreement between you and Professional Stock Analysis ("Company," "we," "our," or "us") regarding your use of our educational investment platform and related services (collectively, the "Service").
+                    </p>
+                    <p class="mb-4 leading-relaxed">
+                        By accessing or using our Service, you agree to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, please do not use our Service.
+                    </p>
+                </section>
+
+                <!-- Educational Nature -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">2. Educational Purpose and Nature of Service</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">2.1 Educational Content Only</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Our Service provides educational content, learning materials, and community discussions related to investment and market analysis. All content is for educational purposes only and does not constitute financial, investment, legal, or professional advice.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">2.2 Not Financial Advice</h3>
+                    <p class="mb-4 leading-relaxed">
+                        We are not a registered investment advisor, broker-dealer, or financial institution. Nothing on our platform should be construed as personalized investment advice, recommendations to buy or sell securities, or guarantees of investment performance.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">2.3 Independent Decision Making</h3>
+                    <p class="mb-4 leading-relaxed">
+                        You acknowledge that all investment decisions are your own responsibility and should be made only after consulting with qualified financial professionals who understand your individual circumstances.
+                    </p>
+                </section>
+
+                <!-- Risk Disclosure -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">3. Risk Disclosure and Warnings</h2>
+                    
+                    <div class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-6 mb-6">
+                        <h3 class="text-xl font-medium mb-3 text-red-700 dark:text-red-300">⚠️ IMPORTANT RISK WARNING</h3>
+                        <ul class="list-disc pl-6 space-y-2 text-red-700 dark:text-red-300">
+                            <li>Trading and investing in securities involves substantial risk of loss</li>
+                            <li>You may lose your entire investment or more than your initial investment</li>
+                            <li>Past performance does not guarantee future results</li>
+                            <li>Market volatility can result in rapid and substantial losses</li>
+                            <li>Leveraged trading significantly increases risk exposure</li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-xl font-medium mb-3">3.1 Acknowledgment of Risks</h3>
+                    <p class="mb-4 leading-relaxed">
+                        By using our Service, you acknowledge that you understand and accept the substantial risks associated with trading and investing, including but not limited to market risk, liquidity risk, credit risk, and operational risk.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">3.2 Suitability Assessment</h3>
+                    <p class="mb-4 leading-relaxed">
+                        You represent that you have sufficient knowledge, experience, and financial resources to evaluate the risks of any investment decisions and that you can afford potential losses without affecting your financial well-being.
+                    </p>
+                </section>
+
+                <!-- Eligibility and Registration -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">4. Eligibility and User Accounts</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">4.1 Age Requirements</h3>
+                    <p class="mb-4 leading-relaxed">
+                        You must be at least 18 years old to use our Service. By using our Service, you represent and warrant that you meet this age requirement.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">4.2 Account Registration</h3>
+                    <p class="mb-4 leading-relaxed">
+                        To access certain features, you may need to create an account. You agree to provide accurate, current, and complete information and to update your information as necessary to maintain its accuracy.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">4.3 Account Security</h3>
+                    <p class="mb-4 leading-relaxed">
+                        You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account.
+                    </p>
+                </section>
+
+                <!-- Acceptable Use -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">5. Acceptable Use Policy</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">5.1 Permitted Uses</h3>
+                    <p class="mb-4 leading-relaxed">You may use our Service solely for:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Educational purposes related to investment and market analysis</li>
+                        <li>Personal learning and skill development</li>
+                        <li>Participating in community discussions and forums</li>
+                        <li>Accessing educational content and materials</li>
+                    </ul>
+
+                    <h3 class="text-xl font-medium mb-3">5.2 Prohibited Activities</h3>
+                    <p class="mb-4 leading-relaxed">You agree not to:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Use the Service for any unlawful purpose or in violation of any applicable laws</li>
+                        <li>Provide investment advice or recommendations to other users</li>
+                        <li>Share, distribute, or republish our content without permission</li>
+                        <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
+                        <li>Post spam, offensive, or inappropriate content</li>
+                        <li>Interfere with or disrupt the operation of our Service</li>
+                        <li>Use automated systems or bots to access our Service</li>
+                    </ul>
+                </section>
+
+                <!-- Intellectual Property -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">6. Intellectual Property Rights</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">6.1 Our Content</h3>
+                    <p class="mb-4 leading-relaxed">
+                        All content, materials, and intellectual property on our Service, including but not limited to text, graphics, logos, images, videos, software, and compilation thereof, are owned by us or our licensors and are protected by copyright, trademark, and other intellectual property laws.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">6.2 Limited License</h3>
+                    <p class="mb-4 leading-relaxed">
+                        We grant you a limited, non-exclusive, non-transferable license to access and use our Service for personal educational purposes only. This license does not include any rights to modify, distribute, or create derivative works.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">6.3 User Content</h3>
+                    <p class="mb-4 leading-relaxed">
+                        By posting content on our Service, you grant us a non-exclusive, royalty-free license to use, modify, and display such content in connection with operating our Service. You represent that you own or have the necessary rights to such content.
+                    </p>
+                </section>
+
+                <!-- Payment Terms -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">7. Payment and Subscription Terms</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">7.1 Subscription Services</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Certain features of our Service may require payment of subscription fees. By subscribing, you agree to pay all applicable fees and charges associated with your subscription.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">7.2 Billing and Renewal</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Subscription fees are billed in advance and will automatically renew unless you cancel your subscription before the renewal date. All fees are non-refundable except as required by applicable law.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">7.3 Fee Changes</h3>
+                    <p class="mb-4 leading-relaxed">
+                        We reserve the right to change our fees at any time. We will provide reasonable notice of fee changes, and continued use of the Service after such changes constitutes acceptance of the new fees.
+                    </p>
+                </section>
+
+                <!-- Disclaimers -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">8. Disclaimers and Warranties</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">8.1 No Warranties</h3>
+                    <p class="mb-4 leading-relaxed">
+                        OUR SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">8.2 No Performance Guarantees</h3>
+                    <p class="mb-4 leading-relaxed">
+                        We make no representations or warranties regarding the accuracy, completeness, or timeliness of any content or information provided through our Service. We do not guarantee any specific outcomes or investment performance.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">8.3 Third-Party Content</h3>
+                    <p class="mb-4 leading-relaxed">
+                        We may include links to third-party websites or resources. We are not responsible for the availability, accuracy, or content of such external sites or resources.
+                    </p>
+                </section>
+
+                <!-- Limitation of Liability -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">9. Limitation of Liability</h2>
+                    
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-6 mb-6">
+                        <p class="text-yellow-800 dark:text-yellow-200 font-medium">
+                            TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL WE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOST PROFITS, LOST DATA, OR INVESTMENT LOSSES, ARISING OUT OF OR RELATING TO YOUR USE OF OUR SERVICE.
+                        </p>
+                    </div>
+
+                    <p class="mb-4 leading-relaxed">
+                        Our total liability to you for all claims arising out of or relating to these Terms or your use of our Service shall not exceed the amount you paid to us for the Service during the twelve (12) months preceding the claim.
+                    </p>
+                </section>
+
+                <!-- Indemnification -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">10. Indemnification</h2>
+                    <p class="mb-4 leading-relaxed">
+                        You agree to indemnify, defend, and hold harmless the Company and its officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, or expenses arising out of or relating to:
+                    </p>
+                    <ul class="list-disc pl-6 mb-4 space-y-2">
+                        <li>Your use of our Service</li>
+                        <li>Your violation of these Terms</li>
+                        <li>Your violation of any applicable laws or regulations</li>
+                        <li>Any investment decisions you make based on educational content from our Service</li>
+                        <li>Your infringement of any intellectual property or other rights of any third party</li>
+                    </ul>
+                </section>
+
+                <!-- Termination -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">11. Termination</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">11.1 Termination by You</h3>
+                    <p class="mb-4 leading-relaxed">
+                        You may terminate your account at any time by following the account closure procedures in your user dashboard or by ceasing to use our Service.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">11.2 Termination by Us</h3>
+                    <p class="mb-4 leading-relaxed">
+                        We may terminate or suspend your access to our Service at any time, with or without cause, with or without notice, including for violation of these Terms.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">11.3 Effect of Termination</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Upon termination, your right to use our Service will cease immediately. Provisions that by their nature should survive termination shall survive, including indemnification, disclaimers, and limitations of liability.
+                    </p>
+                </section>
+
+                <!-- Governing Law -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">12. Governing Law and Dispute Resolution</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">12.1 Governing Law</h3>
+                    <p class="mb-4 leading-relaxed">
+                        These Terms shall be governed by and construed in accordance with the laws of the jurisdiction where our company is incorporated, without regard to conflict of law principles.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">12.2 Dispute Resolution</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Any disputes arising out of or relating to these Terms or your use of our Service shall be resolved through binding arbitration in accordance with the applicable arbitration rules, except that either party may seek injunctive relief in court.
+                    </p>
+                </section>
+
+                <!-- General Provisions -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">13. General Provisions</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">13.1 Entire Agreement</h3>
+                    <p class="mb-4 leading-relaxed">
+                        These Terms, together with our Privacy Policy, constitute the entire agreement between you and us regarding your use of our Service.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">13.2 Amendments</h3>
+                    <p class="mb-4 leading-relaxed">
+                        We may modify these Terms at any time by posting the updated Terms on our Service. Your continued use of the Service after such posting constitutes acceptance of the updated Terms.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">13.3 Severability</h3>
+                    <p class="mb-4 leading-relaxed">
+                        If any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">13.4 Waiver</h3>
+                    <p class="mb-4 leading-relaxed">
+                        No waiver of any term or condition of these Terms shall be deemed a further or continuing waiver of such term or any other term.
+                    </p>
+                </section>
+
+                <!-- Regulatory Compliance -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4 text-accent-blue">14. Regulatory Compliance and Disclaimers</h2>
+                    
+                    <h3 class="text-xl font-medium mb-3">14.1 No Regulated Activity</h3>
+                    <p class="mb-4 leading-relaxed">
+                        We are not engaged in providing regulated financial services. We do not provide investment advice, portfolio management, or any services that require regulatory licensing.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">14.2 Educational Purpose</h3>
+                    <p class="mb-4 leading-relaxed">
+                        All content provided through our Service is for educational and informational purposes only. It should not be relied upon for making investment decisions.
+                    </p>
+
+                    <h3 class="text-xl font-medium mb-3">14.3 Seek Professional Advice</h3>
+                    <p class="mb-4 leading-relaxed">
+                        Before making any investment decisions, you should consult with qualified financial advisors, tax professionals, and legal counsel who can provide advice tailored to your specific circumstances.
+                    </p>
+                </section>
+
+                <!-- Final Warning -->
+                <section class="mb-8">
+                    <div class="bg-red-50 dark:bg-red-900/20 border-2 border-red-500 rounded-lg p-6">
+                        <h2 class="text-2xl font-semibold mb-4 text-red-700 dark:text-red-300">15. Final Risk Acknowledgment</h2>
+                        <p class="mb-4 leading-relaxed text-red-700 dark:text-red-300 font-medium">
+                            BY USING OUR SERVICE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREED TO THESE TERMS, INCLUDING ALL RISK DISCLOSURES AND DISCLAIMERS. YOU UNDERSTAND THAT TRADING AND INVESTING INVOLVE SUBSTANTIAL RISK OF LOSS AND THAT YOU SHOULD ONLY INVEST MONEY YOU CAN AFFORD TO LOSE.
+                        </p>
+                        <p class="leading-relaxed text-red-700 dark:text-red-300 font-medium">
+                            YOU FURTHER ACKNOWLEDGE THAT OUR SERVICE PROVIDES EDUCATIONAL CONTENT ONLY AND DOES NOT CONSTITUTE FINANCIAL ADVICE OR INVESTMENT RECOMMENDATIONS.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12">
+        <div class="max-w-4xl mx-auto px-4 py-6">
+            <div class="text-center text-gray-600 dark:text-gray-400 text-sm">
+                <p>&copy; 2025 Professional Stock Analysis. All rights reserved.</p>
+                <p class="mt-2">Educational content only. Not financial advice. Investing involves risk of loss.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
