@@ -1,18 +1,7 @@
-<!DOCTYPE html><html lang="zh-CN"><head>
-  <meta charset="utf-8">
-  <title>Ulrich Müller Investment Course</title>
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link rel="icon" type="image/png" href="favicon.png">
-    
-
-
-    <meta charset="UTF-8">
-    <title>ok</title> 
-    <style>
-        /* 样式代码 */
-    </style>
-</head>
- <!-- Google tag (gtag.js) -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-867531508"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -39,58 +28,390 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professionelle Aktienanalyse | Bildungsplattform für Investitionen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#0A0E1A',
+                        'dark-blue': '#1A1F2E',
+                        'accent-blue': '#3B82F6',
+                        'light-blue': '#E3F2FD',
+                        'gray-text': '#B8BCC5',
+                        'electric-blue': '#00D4FF',
+                        'success-green': '#10B981',
+                        'warning-orange': '#F59E0B'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
 
-<script>
- function k2() 
- {
-     gtag_report_conversion('https://lihi.cc/oUWpJ'); 
- }
-</script>
-<body oncontextmenu="return false">
-    <div style="display: none;">
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        function h2() {
+            gtag_report_conversion('https://lihi.cc/oUWpJ'); 
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('joinNowBtn').addEventListener('click', h2);
+            document.getElementById('joinSignalBtn').addEventListener('click', h2);
+            document.getElementById('floatingBtn').addEventListener('click', h2);
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            color: #1e293b;
+        }
+        
+        .dark .gradient-bg {
+            background: radial-gradient(ellipse at top, #1a1f2e 0%, #0a0e1a 50%, #000000 100%);
+            color: #ffffff;
+        }
+        
+        .professional-gradient {
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 50%, #1E40AF 100%);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .card-professional {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .dark .card-professional {
+            background: rgba(26, 31, 46, 0.95);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .risk-highlight {
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            animation: subtle-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .professional-text {
+            background: linear-gradient(135deg, #1e293b 0%, #3B82F6 50%, #1e293b 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .dark .professional-text {
+            background: linear-gradient(135deg, #ffffff 0%, #3B82F6 50%, #ffffff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .avatar-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3B82F6;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .testimonial-section {
+            background: linear-gradient(135deg, #1a1f2e 0%, #0a0e1a 50%, #000000 100%);
+            color: #ffffff;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            animation: float-btn 3s ease-in-out infinite;
+        }
+
+        @keyframes float-btn {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="gradient-bg font-inter">
+    <!-- Risk Warning Banner -->
+    <div class="risk-highlight text-white p-3 text-center text-sm font-semibold">
+        ⚠️ WARNUNG VOR HOHEM INVESTITIONSRISIKO: Trading birgt erhebliche Verlustrisiken. Investieren Sie nur, was Sie sich leisten können zu verlieren.
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-12 md:py-20">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="mb-6 md:mb-12">
+                <h1 class="professional-text text-4xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-8 leading-tight">
+                    Professionelle <span class="text-blue-600">Aktienanalyse</span> Community
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4 md:mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Lernen Sie Marktanalyse durch Bildungsinhalte und Community-Diskussionen
+                </p>
+
+                <!-- Updated Stats with more realistic numbers -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 md:mb-8 max-w-4xl mx-auto">
+                    <div class="card-professional p-4 md:p-6 rounded-2xl">
+                        <div class="text-2xl md:text-3xl font-bold text-blue-600 mb-2">500+</div>
+                        <div class="text-gray-600 dark:text-gray-300 text-sm md:text-base">Lernende Mitglieder</div>
+                    </div>
+                    <div class="card-professional p-4 md:p-6 rounded-2xl">
+                        <div class="text-2xl md:text-3xl font-bold text-green-600 mb-2">2+ Jahre</div>
+                        <div class="text-gray-600 dark:text-gray-300 text-sm md:text-base">Bildungserfahrung</div>
+                    </div>
+                    <div class="card-professional p-4 md:p-6 rounded-2xl">
+                        <div class="text-2xl md:text-3xl font-bold text-purple-600 mb-2">24/7</div>
+                        <div class="text-gray-600 dark:text-gray-300 text-sm md:text-base">Community-Support</div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="relative mb-4 md:mb-8">
+                    <img src="img/1.jpg" 
+                         alt="Professionelles Trading-Analyse-Dashboard" 
+                         class="w-full max-w-4xl mx-auto rounded-2xl shadow-xl hover-lift">
+                </div>
+                
+                <p class="text-base md:text-xl text-gray-500 dark:text-gray-400 mb-6 md:mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Treten Sie unserer Bildungs-Community bei, um Marktanalyse, Risikomanagement und Investitionsstrategien durch strukturierte Lernmaterialien und Peer-Diskussionen zu erlernen.
+                </p>
+                
+                <button id="joinNowBtn" class="professional-gradient text-white px-8 md:px-16 py-4 md:py-6 rounded-full text-xl md:text-2xl font-semibold hover-lift">
+                    Mehr Erfahren
+                </button>
             </div>
- 
+        </div>
+    </section>
 
+    <!-- Educational Features Section -->
+    <section class="py-12 md:py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+                <div class="space-y-4 md:space-y-8">
+                    <h2 class="text-3xl md:text-5xl font-black mb-4 md:mb-8 leading-tight">
+                        Lernen Sie <span class="text-blue-600">Professionelle Analyse</span> Methoden
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-4 md:mb-8 leading-relaxed">
+                        Entwickeln Sie Ihr Verständnis für Marktdynamiken durch Bildungsressourcen und Community-Lernen.
+                    </p>
+                    
+                    <div class="space-y-4 md:space-y-6">
+                        <div class="card-professional p-4 md:p-6 rounded-2xl hover-lift">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2 text-blue-600">Bildungsinhalte</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-base md:text-lg">Zugang zu strukturierten Lernmaterialien über Marktanalyse und Risikomanagement.</p>
+                        </div>
+                        
+                        <div class="card-professional p-4 md:p-6 rounded-2xl hover-lift">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2 text-green-600">Community-Diskussion</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-base md:text-lg">Teilnahme an Bildungsdiskussionen mit anderen lernenden Mitgliedern.</p>
+                        </div>
+                        
+                        <div class="card-professional p-4 md:p-6 rounded-2xl hover-lift">
+                            <h3 class="text-xl md:text-2xl font-bold mb-2 text-purple-600">Risikobewusstsein</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-base md:text-lg">Lernen Sie die Bedeutung von Risikomanagement und verantwortlichem Investieren.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4 md:space-y-8">
+                    <img src="img/11.jpg" 
+                         alt="Bildungs-Trading-Interface" 
+                         class="w-full rounded-2xl shadow-xl hover-lift">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      margin: 0;
-      padding: 0;
-      user-select: none;
-    }
-    .image-block {
-      margin: 0 auto;
-      max-width: 768px;
-    }
-    .image-block img {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0;
-    }
-    .link-wrapper {
-      text-decoration: none;
-      display: block;
-      cursor: pointer;
-    }
-  </style>
+    <!-- Member Testimonials -->
+    <section class="py-12 md:py-20 px-4 testimonial-section">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-black text-center mb-8 md:mb-16 leading-tight text-white">
+                Was unsere <span class="text-blue-400">Lernenden Mitglieder</span> sagen
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                <div class="bg-gray-800 bg-opacity-90 p-4 md:p-6 rounded-2xl hover-lift border border-gray-700">
+                    <img src="img/a1.jpg" 
+                         alt="Michael K." 
+                         class="avatar-image mb-4">
+                    <h4 class="font-bold text-center mb-2 text-lg text-blue-400">Michael K.</h4>
+                    <p class="text-gray-300 text-center text-sm">
+                        "Großartige Bildungsressourcen, die mir geholfen haben, die Marktgrundlagen besser zu verstehen."
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 bg-opacity-90 p-4 md:p-6 rounded-2xl hover-lift border border-gray-700">
+                    <img src="img/a2.jpg" 
+                         alt="Sarah M." 
+                         class="avatar-image mb-4">
+                    <h4 class="font-bold text-center mb-2 text-lg text-green-400">Sarah M.</h4>
+                    <p class="text-gray-300 text-center text-sm">
+                        "Die Community-Diskussionen boten wertvolle Lernperspektiven."
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 bg-opacity-90 p-4 md:p-6 rounded-2xl hover-lift border border-gray-700">
+                    <img src="img/a3.jpg" 
+                         alt="Thomas B." 
+                         class="avatar-image mb-4">
+                    <h4 class="font-bold text-center mb-2 text-lg text-purple-400">Thomas B.</h4>
+                    <p class="text-gray-300 text-center text-sm">
+                        "Gut strukturierter Bildungsansatz zum Lernen über Investitionen."
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 bg-opacity-90 p-4 md:p-6 rounded-2xl hover-lift border border-gray-700">
+                    <img src="img/a4.jpg" 
+                         alt="Anna W." 
+                         class="avatar-image mb-4">
+                    <h4 class="font-bold text-center mb-2 text-lg text-orange-400">Anna W.</h4>
+                    <p class="text-gray-300 text-center text-sm">
+                        "Exzellenter Fokus auf Risikobewusstsein und verantwortliche Investitionsprinzipien."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Comprehensive Risk Warning Section -->
+    <section class="py-8 md:py-12 px-4 bg-red-600 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8">
+                <h3 class="text-3xl md:text-4xl font-black mb-4">⚠️ OBLIGATORISCHE RISIKOAUFKLÄRUNG</h3>
+                <p class="text-xl mb-6">Bitte lesen und verstehen Sie diese Risiken, bevor Sie fortfahren</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 text-sm md:text-base">
+                <div class="bg-red-700 p-6 rounded-lg">
+                    <h4 class="font-bold text-lg mb-4">Investitionsrisiken</h4>
+                    <ul class="space-y-2">
+                        <li>• Alle Investitionen bergen das Risiko erheblicher Verluste</li>
+                        <li>• Vergangene Leistungen sagen keine zukünftigen Ergebnisse voraus</li>
+                        <li>• Marktvolatilität kann zu schnellen Verlusten führen</li>
+                        <li>• Sie können Ihre gesamte Investition verlieren</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-red-700 p-6 rounded-lg">
+                    <h4 class="font-bold text-lg mb-4">Wichtige Hinweise</h4>
+                    <ul class="space-y-2">
+                        <li>• Dies sind Bildungsinhalte, keine Finanzberatung</li>
+                        <li>• Konsultieren Sie qualifizierte Finanzberater</li>
+                        <li>• Investieren Sie nur, was Sie sich leisten können zu verlieren</li>
+                        <li>• Berücksichtigen Sie Ihre finanzielle Situation sorgfältig</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <a class="link-wrapper image-block" onclick="k2()">
-    <img src="images/img1.png" alt="Course Promo">
-  </a>
-  <a class="link-wrapper image-block" onclick="k2()">
-    <img src="images/img2.png" alt="Learn to Invest">
-  </a>
-  <a class="link-wrapper image-block" onclick="k2()">
-    <img src="images/img3.png" alt="Learn to Invest">
-  </a>
-  <a class="link-wrapper image-block" onclick="k2()">
-    <img src="images/img4.png" alt="Learn to Invest">
-  </a>
-   
+    <!-- Final CTA Section -->
+    <section class="py-12 md:py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-black mb-4 md:mb-8 leading-tight">
+                Bereit <span class="text-blue-600">Mehr zu Lernen</span>?
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-6 md:mb-12">
+                Treten Sie unserer Bildungs-Community bei, um Ihr Marktwissen zu erweitern
+            </p>
+            
+            <div class="card-professional p-6 md:p-8 rounded-3xl mb-6 md:mb-12">
+                <div class="text-blue-600 text-xl md:text-2xl font-bold mb-3">📚 Bildungsfokus</div>
+                <div class="text-2xl md:text-3xl font-bold mb-3">Lernen Sie in Ihrem eigenen Tempo</div>
+                <div class="text-gray-600 dark:text-gray-300 text-lg">Zugang zu strukturierten Lernmaterialien und Community-Diskussionen</div>
+            </div>
+            
+            <button id="joinSignalBtn" class="professional-gradient text-white px-12 md:px-16 py-6 md:py-8 rounded-full text-xl md:text-2xl font-semibold hover-lift mb-4 md:mb-8">
+                Der Lern-Community Beitreten
+            </button>
+            
+            <p class="text-gray-500 dark:text-gray-400 text-sm md:text-base">
+                Durch den Beitritt bestätigen Sie, dass Sie die Investitionsrisiken verstehen und dass dies nur Bildungsinhalt ist.
+            </p>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 md:py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-6 md:gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">Professionelle Aktienanalyse</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Bildungsplattform mit Fokus auf verantwortliches Investitionslernen und Risikobewusstsein.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 text-lg">Rechtliches</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li><a href="Privacy.html" class="hover:text-blue-400 transition-colors">Datenschutzrichtlinie</a></li>
+                        <li><a href="terms.html" class="hover:text-blue-400 transition-colors">Nutzungsbedingungen</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Risikoaufklärung</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Bildungsausschluss</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4 text-lg">Kontakt</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li>E-Mail: education@example.com</li>
+                        <li>Support: help@example.com</li>
+                        <li>Zeiten: Mo-Fr 9-17 Uhr</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Professionelle Aktienanalyse. Alle Rechte vorbehalten.</p>
+                <p class="mt-2">
+                    Nur Bildungsinhalt. Keine Finanzberatung. Investieren birgt Verlustrisiken.
+                </p>
+            </div>
+        </div>
+    </footer>
 
-</body></html>
+    <!-- Floating Button -->
+    <button id="floatingBtn" class="floating-btn professional-gradient text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+        Jetzt Beitreten
+    </button>
+</body>
+</html>
