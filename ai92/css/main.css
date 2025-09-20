@@ -1,0 +1,209 @@
+.container {
+	width: 80%;
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+/* your other styles go here */
+body {
+	font-family: Arial, sans-serif;
+	color: #eee;
+	text-align: center;
+	margin: 0;
+	padding: 1px;
+}
+
+.container {
+	max-width: 680px;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.profile-img {
+	width: 35%;
+	height: auto;
+	object-fit: cover;
+}
+
+h1 {
+	font-size: 18px;
+	color: #FFD700;
+	margin: 10px 0;
+}
+
+.video-container {
+	margin: 15px 0;
+}
+
+iframe {
+	width: 100%;
+	aspect-ratio: 16/9;
+	border-radius: 10px;
+	border: none;
+}
+
+.cta-box {
+	background: url(../images/wenan-kuang.png);
+    padding: 25px;
+    margin: 0;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+    margin-top: 147px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.cta-box strong {
+	color: #ffb800;
+}
+
+.cta-box .highlight {
+	color: #2dbf5d;
+	font-weight: bold;
+}
+
+.cta-input {
+    display: block;
+    padding: 20px;
+    width: 82%;
+    max-width: 660px;
+    margin: 30px auto 0;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    background: linear-gradient(145deg, rgba(185, 168, 127, 0.7), rgba(145, 128, 87, 0.5));
+    color: #eee;
+    font-size: 28px;
+    text-align: center;
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.4), inset -3px -3px 6px rgba(0, 0, 0, 0.4), 4px 4px 12px rgba(0, 0, 0, 0.6);
+    transition: all 0.2s ease;
+}
+
+.cta-input:focus {
+    outline: none;
+    box-shadow: 
+        inset 2px 2px 6px rgba(255,255,255,0.5),
+        inset -4px -4px 8px rgba(0,0,0,0.5),
+        6px 6px 15px rgba(0,0,0,0.7);
+    background: linear-gradient(145deg, rgba(195,178,137,0.95), rgba(125,108,67,0.75));
+}
+
+.cta-input::placeholder{
+	color: white;
+}
+
+.cta-btn {
+	margin-top: 30px;
+	transition: transform 0.3s ease, background 0.3s ease;
+	animation: floatPulse 2s ease-in-out infinite;
+}
+
+
+.footer-text {
+	font-size: 13px;
+	color: #aaa;
+	margin-top: 60px;
+	margin-bottom: 12px;
+	line-height: 1.6;
+}
+
+.links {
+	margin-top: 20px;
+	font-size: 12px;
+}
+
+.links a {
+	color: #0d6efd;
+	margin: 0 8px;
+	text-decoration: none;
+}
+
+.links a:hover {
+	text-decoration: underline;
+}
+
+#progress-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 1000;
+	justify-content: center;
+	align-items: center;
+}
+
+.progress-content {
+	background: #001f2f;
+	color: #fff;
+	padding: 30px;
+	border-radius: 12px;
+	width: 90%;
+	max-width: 580px;
+	text-align: left;
+	font-size: 30px;
+}
+
+.progress-content h2 {
+	color: #ff9900;
+	margin-bottom: 20px;
+}
+
+.progress-bar-group {
+	margin-bottom: 12px;
+}
+
+.progress-label {
+	margin-bottom: 5px;
+	font-size: 25px;
+}
+
+.progress-bar {
+	width: 100%;
+	background: #333;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.progress-fill {
+	height: 10px;
+	width: 0%;
+	background: #FFD700;
+	border-radius: 20px;
+	transition: width 0.4s ease;
+}
+
+#popup-modal .modal-btn {
+	animation: floatPulse 2s ease-in-out infinite;
+	background-color: #28a745;
+	color: #fff;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 30px;
+	font-size: 25px;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+
+#popup-modal .modal-btn:hover {
+	background-color: #1e7e34;
+}
+
+@keyframes floatPulse {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-3px);
+	}
+}
+.bg-img{
+	position: absolute;
+	left: 0%;
+	right: 0%;
+	margin: 0 auto;
+	z-index: -1;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=720,user-scalable=no">
+    <title>Smart Stock Insights</title>
+	
+    <link rel="stylesheet" href="css/main.css">
+	 
+    
+</head>
+<body>
+	<div id="popup-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:1001; justify-content:center; align-items:center;">
+		<div class="progress-content" style="text-align:center;">
+			<p style="color: #fdff22;">Stock Analysis Report is Ready</p>
+			<p>To get a detailed stock report, please add the AI assistant. You will also receive today's 3 recommended
+				quality stocks.</p>
+			<button class="modal-btn" onclick="gtag_report_conversion('https://www.qq.com')">Receive Report via WhatsApp</button>
+		</div>
+	</div>
+	<img class="bg-img" src="images/bg.jpg">
+	<div class="container">
+		
+		<img src="images/head.png" class="profile-img">
+		<div class="cta-box">
+			<p style="color: red;text-align: center;font-size: 32px;"><strong style="color: white;">Prediction Accuracy Reaches <span class="highlight" style="color: #fdff22;font-size: 800;font-size: 40px;"><br>99.8%</span></strong></p>
+			<p style="font-size: 28px;text-align: center;font-family: math;padding: 0 40px;">Enter your stock code or interested stock code below, and the Al system will complete the analysis within 1.5 seconds.</p>
+			<p style="font-size: 28px;text-align: center;font-family: math;padding: 0 40px;">Currently, <span id="people_num" class="highlight">- -</span> people are viewing the complete report for<span style="color: #01a000;"> free</span> !</p>
+		</div>
+		
+		<input type="text" id="stockcode" class="cta-input" placeholder="Enter stock code or name">
+		<img class="cta-btn" onclick="startProgress()" src="images/btn.png">
+	</div>
+	<div id="progress-modal">
+		<div class="progress-content">
+			<h2>Analysis in progress...</h2>
+			<div class="progress-bar-group">
+				<div class="progress-label">Market Analysis</div>
+				<div class="progress-bar">
+					<div class="progress-fill" id="bar1"></div>
+				</div>
+			</div>
+			<div class="progress-bar-group">
+				<div class="progress-label">Chart Review</div>
+				<div class="progress-bar">
+					<div class="progress-fill" id="bar2"></div>
+				</div>
+			</div>
+			<div class="progress-bar-group">
+				<div class="progress-label">News Insight</div>
+				<div class="progress-bar">
+					<div class="progress-fill" id="bar3"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-358343902"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-358343902');
+</script>
+ 
+ <!-- Event snippet for 购买 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-358343902/2YkECOqmrZ4bEN7J76oB',
+      'transaction_id': '',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+	<script src="js/main.js"></script>
+
+</body></html>
