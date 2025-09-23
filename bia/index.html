@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Transform Your Life - Join Our Community</title>
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 50px;
+            border-radius: 25px;
+            width: 90%;
+            max-width: 700px;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.4s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #e74c3c;
+        }
+
+        .form-step {
+            display: none;
+            text-align: center;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeInStep 0.4s ease;
+        }
+
+        @keyframes fadeInStep {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .form-step h3 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .form-step p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            color: #34495e;
+        }
+
+        .form-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .radio-option:hover {
+            border-color: #3498db;
+            background: #ecf0f1;
+            transform: translateX(5px);
+        }
+
+        .radio-option input[type="radio"] {
+            margin-right: 15px;
+            transform: scale(1.5);
+            accent-color: #3498db;
+        }
+
+        .radio-option label {
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .radio-option.selected {
+            border-color: #27ae60;
+            background: #d5f4e6;
+        }
+
+        .next-btn {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .next-btn.enabled {
+            opacity: 1;
+            pointer-events: all;
+            box-shadow: 0 8px 25px rgba(46, 204, 113, 0.3);
+        }
+
+        .next-btn.enabled:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(46, 204, 113, 0.4);
+        }
+
+        .whatsapp-section {
+            margin-top: 40px;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 25px 50px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-icon {
+            font-size: 1.8rem;
+        }
+
+        .whatsapp-note {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        .form-btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .modal.show {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .modal-content {
+                margin: 0;
+                padding: 20px 15px;
+                width: 85%;
+                max-width: 350px;
+                max-height: 85vh;
+                font-size: 14px;
+            }
+
+            .form-step h3 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+            }
+
+            .form-step p {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+                line-height: 1.5;
+            }
+
+            .form-options {
+                gap: 12px;
+                margin: 20px 0;
+            }
+
+            .radio-option {
+                padding: 12px;
+            }
+
+            .radio-option input[type="radio"] {
+                transform: scale(1.2);
+                margin-right: 10px;
+            }
+
+            .radio-option label {
+                font-size: 0.9rem;
+            }
+
+            .next-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin-top: 20px;
+            }
+
+            .whatsapp-btn {
+                padding: 15px 25px;
+                font-size: 1rem;
+            }
+
+            .whatsapp-icon {
+                font-size: 1.2rem;
+            }
+
+            .form-btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+
+            .close {
+                font-size: 24px;
+                right: 15px;
+                top: 10px;
+            }
+        }
+    </style>
+	  <link rel="stylesheet" href="css/q.css">
+</head>
+<body>
+    <!-- Message Icon with Blinking Badge -->
+  
+
+    <!-- Hero Section with Image -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-text">
+                    <h1>Rediscover Your Passion for Life, Begin Your Transformation Journey!</h1>
+                    <p>In this era of information overload and rapid change, have you lost your direction in fierce market competition? If you want to stand out, join our great team!</p>
+                    <button class="btn" onclick="opee()">Join Us Now</button>
+                </div>
+                <div class="hero-image">
+                    <img src="img/2.jpg" alt="Transform Your Life">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Module - Automated Trading Features -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content fade-in">
+                <div class="section-text">
+                    <h2 class="section-title">Experience Advanced Automated Trading</h2>
+                    <ul class="feature-list">
+                        <li>Automated quantitative trading, runs 24/7 with static returns up to 60%+</li>
+                        <li>Three-tier referral commission system: 15% - 5% - 2%</li>
+                        <li>No professional knowledge required, low entry threshold of just 12 USDT</li>
+                    </ul>
+                    <button class="btn" onclick="opee()">Start Trading Now</button>
+                </div>
+                <div class="section-image">
+                    <img src="img/v5.jpg" alt="Automated Trading">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 1 -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content fade-in">
+                <div class="section-text">
+                    <h2 class="section-title">Why Go Solo When You Can Go Together?</h2>
+                    <p>If you want to change, start here. Are you tired of wasting time in boring places? Join us and paint with like-minded people to create the future you want.</p>
+                    <p>Instead of acting alone, why not act together? Our community provides the support and guidance you need to achieve your goals.</p>
+                    <button class="btn" onclick="opee()">Join Us Immediately</button>
+                </div>
+                <div class="section-image">
+                    <img src="img/4.jpg" alt="Community Success">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 3 - Project Advantages -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Real-time Insights, Real-time Decisions</h2>
+            <div class="advantages fade-in">
+                <div class="advantage-card">
+                    <h3>📊 Data Dashboard</h3>
+                    <p>Monitor key indicators in real-time through our comprehensive data dashboard</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>⚡ Instant Strategy Adjustment</h3>
+                    <p>Support immediate strategy adjustments to seize market opportunities</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>🎯 Market Advantage</h3>
+                    <p>Stay ahead of the competition with cutting-edge market insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 4 -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content fade-in">
+                <div class="section-image">
+                    <img src="img/1.jpg" alt="Break Free">
+                </div>
+                <div class="section-text">
+                    <h2 class="section-title">Say Goodbye to Mediocre Life!</h2>
+                    <p>Join our team and master the secrets to changing your destiny! Do you often wake up feeling exhausted every morning? Don't worry, change is just one step away!</p>
+                    <p>Everyone is pursuing success, but why do we always stagnate? It's time to break this spell!</p>
+                    <button class="btn" onclick="opee()">Join Us Immediately</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 5 - Testimonials -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Users Say</h2>
+            <p class="fade-in" style="text-align: center; margin-bottom: 2rem; color: #ff6600; font-size: 1.2rem;">No professional knowledge required, low threshold of just 12 USDT</p>
+            <div class="testimonials fade-in">
+                <div class="testimonial">
+                    <p>"This platform has completely transformed my approach to financial planning. The community support is incredible!"</p>
+                    <div class="testimonial-author">- Sarah M.</div>
+                </div>
+                <div class="testimonial">
+                    <p>"I started with minimal experience and now I feel confident in my investment decisions. The educational resources are top-notch."</p>
+                    <div class="testimonial-author">- John D.</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The real-time insights have helped me make better financial choices. Highly recommend to anyone looking to improve their financial situation."</p>
+                    <div class="testimonial-author">- Maria L.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 6 - Final CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content fade-in">
+                <div class="section-text">
+                    <h2 class="section-title">The Opportunity is Right in Front of You - Are You Ready?</h2>
+                    <p>Don't let this moment pass by. Join thousands of others who have already taken the first step towards financial freedom and personal growth.</p>
+                    <button class="btn" onclick="opee()">Join Us Immediately</button>
+                </div>
+                 
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html" target="_blank">Privacy Policy</a>
+                <a href="terms.html" target="_blank">User Agreement</a>
+            </div>
+            <div class="disclaimer">
+                <h4>⚠️ Risk Disclosure Statement</h4>
+                <p>Individual outcomes depend on participants' level of commitment, market conditions, and individual differences. We do not guarantee specific income levels or career development outcomes. The "success stories" or "data insights" mentioned in this article are illustrative examples only and do not constitute a commitment to future performance.</p>
+                 <p>We reserve the right to adjust the terms of service based on market conditions without prior notice.
+By participating, you confirm that you have read and understood this disclosure statement and voluntarily assume all risks associated with personal development.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Button -->
+    <a href="#" class="floating-btn" onclick="tty()">Transform Your Life Today</a>
+
+    <!-- Modal for Form -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            
+            <!-- Step 1 -->
+            <div id="step1" class="form-step active">
+                <h3>Question 1</h3>
+                <p>Are you ready to learn how to use intelligent market strategies to achieve consistent profits while protecting up to 93% of your capital?</p>
+                <div class="form-options">
+                    <div class="radio-option" onclick="selectOption(1, 'yes', this)">
+                        <input type="radio" name="q1" value="yes" id="q1_yes">
+                        <label for="q1_yes">Yes, I'm ready.</label>
+                    </div>
+                    <div class="radio-option" onclick="selectOption(1, 'no', this)">
+                        <input type="radio" name="q1" value="no" id="q1_no">
+                        <label for="q1_no">No, I'm not ready yet.</label>
+                    </div>
+                </div>
+                <button class="next-btn" id="next1" onclick="nextStep(1)">Next</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="step2" class="form-step">
+                <h3>Question 2</h3>
+                <p>Would you like to learn a step-by-step approach to precisely master when to enter and exit for maximum efficiency?</p>
+                <div class="form-options">
+                    <div class="radio-option" onclick="selectOption(2, 'yes', this)">
+                        <input type="radio" name="q2" value="yes" id="q2_yes">
+                        <label for="q2_yes">Yes, I want to learn.</label>
+                    </div>
+                    <div class="radio-option" onclick="selectOption(2, 'no', this)">
+                        <input type="radio" name="q2" value="no" id="q2_no">
+                        <label for="q2_no">No, I'm not ready yet.</label>
+                    </div>
+                </div>
+                <button class="next-btn" id="next2" onclick="nextStep(2)">Next</button>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="step3" class="form-step">
+                <h3>Question 3</h3>
+                <p>Are you interested in learning how to manage risk so that even unexpected market fluctuations won't wipe out your gains?</p>
+                <div class="form-options">
+                    <div class="radio-option" onclick="selectOption(3, 'yes', this)">
+                        <input type="radio" name="q3" value="yes" id="q3_yes">
+                        <label for="q3_yes">Yes, risk management is important to me.</label>
+                    </div>
+                    <div class="radio-option" onclick="selectOption(3, 'no', this)">
+                        <input type="radio" name="q3" value="no" id="q3_no">
+                        <label for="q3_no">No, I prefer to take risks on my own for now.</label>
+                    </div>
+                </div>
+                <button class="next-btn" id="next3" onclick="nextStep(3)">Complete</button>
+            </div>
+
+            <!-- Success Page -->
+            <div id="successPage" class="form-step">
+                <h3>🎉 Congratulations!</h3>
+                <p>You're ready to transform your financial future! Join our exclusive WhatsApp community to get started.</p>
+                <div class="whatsapp-section">
+                    <button class="whatsapp-btn" onclick="joinWhatsApp()">
+                        <span class="whatsapp-icon">📱</span>
+                        Join WhatsApp Group
+                    </button>
+                    <p class="whatsapp-note">Click the button above to request access to our exclusive community.</p>
+                </div>
+            </div>
+
+            <!-- Exit Page -->
+            <div id="exitPage" class="form-step">
+                <h3>Thank You for Your Time</h3>
+                <p>We understand that timing is important. When you're ready to take the next step in your financial journey, we'll be here.</p>
+                <button class="form-btn" onclick="k2()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        let answers = {};
+
+        // Main function for button clicks
+        function opee() {
+            openModal();
+        }
+		
+		function tty() {
+            openModal();
+        }
+
+        function openModal() {
+            document.getElementById('formModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            resetForm();
+        }
+
+        function closeModal() {
+            document.getElementById('formModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            resetForm();
+        }
+
+        function resetForm() {
+            currentStep = 1;
+            answers = {};
+            
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            document.getElementById('step1').classList.add('active');
+            
+            document.querySelectorAll('.radio-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.checked = false;
+            });
+            
+            document.querySelectorAll('.next-btn').forEach(btn => {
+                btn.classList.remove('enabled');
+            });
+        }
+
+        function selectOption(step, answer, element) {
+            answers[step] = answer;
+            
+            const stepDiv = document.getElementById('step' + step);
+            stepDiv.querySelectorAll('.radio-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            element.classList.add('selected');
+            element.querySelector('input').checked = true;
+            
+            const nextBtn = document.getElementById('next' + step);
+            nextBtn.classList.add('enabled');
+        }
+
+        function nextStep(step) {
+            const nextBtn = document.getElementById('next' + step);
+            if (!nextBtn.classList.contains('enabled')) return;
+            
+            const answer = answers[step];
+            
+            if (step === 1 && answer === 'no') {
+                showStep('exitPage');
+                return;
+            }
+            
+            if (answer === 'no') {
+                showStep('exitPage');
+                return;
+            }
+            
+            if (step < 3) {
+                currentStep = step + 1;
+                showStep('step' + currentStep);
+            } else {
+                showStep('successPage');
+            }
+        }
+
+        function showStep(stepId) {
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            document.getElementById(stepId).classList.add('active');
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('formModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+       
+
+        function joinWhatsApp() {
+            window.open('https://wa.me/+1234567890', '_blank');
+        }
+
+        // Fade in animation on scroll
+        function fadeInOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', () => {
+            fadeInOnScroll();
+            
+            // Initial fade in for hero
+            setTimeout(() => {
+                document.querySelector('.hero .fade-in').classList.add('visible');
+            }, 500);
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add click animation to buttons
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                let ripple = document.createElement('span');
+                let rect = this.getBoundingClientRect();
+                let size = Math.max(rect.width, rect.height);
+                let x = e.clientX - rect.left - size / 2;
+                let y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.pointerEvents = 'none';
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+            .btn {
+                position: relative;
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
