@@ -182,6 +182,8 @@
             gap: 15px;
             transition: all 0.3s ease;
             box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+            border: none;
+            cursor: pointer;
         }
 
         .whatsapp-btn:hover {
@@ -298,7 +300,7 @@
     <!-- Hero Section with Image -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content fade-in">
+            <div class="hero-content">
                 <div class="hero-text">
                     <h1>Rediscover Your Passion for Life, Begin Your Transformation Journey!</h1>
                     <p>In this era of information overload and rapid change, have you lost your direction in fierce market competition? If you want to stand out, join our great team!</p>
@@ -314,7 +316,7 @@
     <!-- New Module - Automated Trading Features -->
     <section class="section">
         <div class="container">
-            <div class="section-content fade-in">
+            <div class="section-content">
                 <div class="section-text">
                     <h2 class="section-title">Experience Advanced Automated Trading</h2>
                     <ul class="feature-list">
@@ -334,7 +336,7 @@
     <!-- Module 1 -->
     <section class="section">
         <div class="container">
-            <div class="section-content fade-in">
+            <div class="section-content">
                 <div class="section-text">
                     <h2 class="section-title">Why Go Solo When You Can Go Together?</h2>
                     <p>If you want to change, start here. Are you tired of wasting time in boring places? Join us and paint with like-minded people to create the future you want.</p>
@@ -351,8 +353,8 @@
     <!-- Module 3 - Project Advantages -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Real-time Insights, Real-time Decisions</h2>
-            <div class="advantages fade-in">
+            <h2 class="section-title">Real-time Insights, Real-time Decisions</h2>
+            <div class="advantages">
                 <div class="advantage-card">
                     <h3>📊 Data Dashboard</h3>
                     <p>Monitor key indicators in real-time through our comprehensive data dashboard</p>
@@ -372,7 +374,7 @@
     <!-- Module 4 -->
     <section class="section">
         <div class="container">
-            <div class="section-content fade-in">
+            <div class="section-content">
                 <div class="section-image">
                     <img src="img/1.jpg" alt="Break Free">
                 </div>
@@ -389,9 +391,9 @@
     <!-- Module 5 - Testimonials -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title fade-in">What Our Users Say</h2>
-            <p class="fade-in" style="text-align: center; margin-bottom: 2rem; color: #ff6600; font-size: 1.2rem;">No professional knowledge required, low threshold of just 12 USDT</p>
-            <div class="testimonials fade-in">
+            <h2 class="section-title">What Our Users Say</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #ff6600; font-size: 1.2rem;">No professional knowledge required, low threshold of just 12 USDT</p>
+            <div class="testimonials">
                 <div class="testimonial">
                     <p>"This platform has completely transformed my approach to financial planning. The community support is incredible!"</p>
                     <div class="testimonial-author">- Sarah M.</div>
@@ -411,7 +413,7 @@
     <!-- Module 6 - Final CTA -->
     <section class="section">
         <div class="container">
-            <div class="section-content fade-in">
+            <div class="section-content">
                 <div class="section-text">
                     <h2 class="section-title">The Opportunity is Right in Front of You - Are You Ready?</h2>
                     <p>Don't let this moment pass by. Join thousands of others who have already taken the first step towards financial freedom and personal growth.</p>
@@ -514,7 +516,7 @@ By participating, you confirm that you have read and understood this disclosure 
             <div id="exitPage" class="form-step">
                 <h3>Thank You for Your Time</h3>
                 <p>We understand that timing is important. When you're ready to take the next step in your financial journey, we'll be here.</p>
-                <button class="form-btn" onclick="k2()">Close</button>
+                <button class="form-btn" onclick="closeModal()">Close</button>
             </div>
         </div>
     </div>
@@ -622,35 +624,9 @@ By participating, you confirm that you have read and understood this disclosure 
             }
         });
 
-       
-
         function joinWhatsApp() {
             window.open('https://wa.me/+1234567890', '_blank');
         }
-
-        // Fade in animation on scroll
-        function fadeInOnScroll() {
-            const elements = document.querySelectorAll('.fade-in');
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-
-        // Initialize animations
-        window.addEventListener('scroll', fadeInOnScroll);
-        window.addEventListener('load', () => {
-            fadeInOnScroll();
-            
-            // Initial fade in for hero
-            setTimeout(() => {
-                document.querySelector('.hero .fade-in').classList.add('visible');
-            }, 500);
-        });
 
         // Smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
