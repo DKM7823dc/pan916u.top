@@ -1,0 +1,506 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2c2c2c 50%, #000000 75%, #1a1a1a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.8) 0%, transparent 30%),
+                radial-gradient(circle at 80% 30%, rgba(26, 26, 26, 0.9) 0%, transparent 30%),
+                radial-gradient(circle at 40% 70%, rgba(44, 44, 44, 0.7) 0%, transparent 30%),
+                radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.8) 0%, transparent 30%);
+            animation: pulse-bg 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-bg {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFEF00, #00FF80, #0080FF, #FF0040);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: title-glow 3s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(255, 239, 0, 0.5);
+        }
+
+        @keyframes title-glow {
+            0%, 100% { filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 239, 0, 0.8)); }
+            50% { filter: brightness(1.8) drop-shadow(0 0 20px rgba(255, 239, 0, 1)); }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #FFEF00;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 239, 0, 0.8);
+        }
+
+        .quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #ffffff;
+            border-left: 4px solid #00FF80;
+            padding-left: 20px;
+            background: rgba(0, 255, 128, 0.1);
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .author {
+            font-size: 0.9rem;
+            color: #00FF80;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(0, 255, 128, 0.8);
+        }
+
+        .description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Buttons */
+        .cta-button {
+            background: linear-gradient(45deg, #FFEF00, #00FF80);
+            color: #000000;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 239, 0, 0.6), 0 0 20px rgba(0, 255, 128, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 239, 0, 0.8), 0 0 30px rgba(0, 255, 128, 0.6);
+        }
+
+        .secondary-button {
+            background: linear-gradient(45deg, #0080FF, #FF0040);
+            color: #ffffff;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 128, 255, 0.6), 0 0 15px rgba(255, 0, 64, 0.4);
+            margin-left: 15px;
+        }
+
+        .secondary-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 128, 255, 0.8), 0 0 25px rgba(255, 0, 64, 0.6);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .section-bg-1 {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+        }
+
+        .section-bg-2 {
+            background: linear-gradient(135deg, #1a1a1a, #333333);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(45deg, #FFEF00, #FF0040);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .section-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .content-text {
+            flex: 1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .content-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(255, 239, 0, 0.3);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 239, 0, 0.1), rgba(255, 0, 64, 0.1));
+            border: 2px solid #FFEF00;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 239, 0, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 239, 0, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #FFEF00;
+        }
+
+        .feature-icon {
+            color: #FFEF00;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .feature-text h3 {
+            color: #FFEF00;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .remaining-spots {
+            background: linear-gradient(45deg, #FFEF00, #00FF80);
+            color: #000000;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 20px 0;
+            animation: spots-pulse 2s infinite;
+            box-shadow: 0 10px 30px rgba(255, 239, 0, 0.6), 0 0 20px rgba(0, 255, 128, 0.4);
+        }
+
+        @keyframes spots-pulse {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 10px 30px rgba(255, 239, 0, 0.6), 0 0 20px rgba(0, 255, 128, 0.4);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 15px 40px rgba(255, 239, 0, 0.8), 0 0 30px rgba(0, 255, 128, 0.6);
+            }
+        }
+
+        /* WhatsApp Fixed Icon */
+        .whatsapp-fixed {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        .whatsapp-icon {
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-icon::before {
+            content: '📱';
+            font-size: 30px;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 22px;
+            height: 22px;
+            background: #FF0040;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        /* Floating Bottom Button */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            animation: intense-breathing 1.5s ease-in-out infinite;
+        }
+
+        @keyframes intense-breathing {
+            0%, 100% { 
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 10px 30px rgba(255, 239, 0, 0.6), 0 0 20px rgba(0, 255, 128, 0.4);
+            }
+            50% { 
+                transform: translateX(-50%) scale(1.1);
+                box-shadow: 0 15px 40px rgba(255, 239, 0, 0.8), 0 0 30px rgba(0, 255, 128, 0.6);
+            }
+        }
+
+        .floating-button button {
+            background: linear-gradient(45deg, #FFEF00, #00FF80);
+            color: #000000;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            white-space: nowrap;
+            box-shadow: 0 10px 30px rgba(255, 239, 0, 0.6), 0 0 20px rgba(0, 255, 128, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0a0a;
+            padding: 40px 0;
+            border-top: 2px solid #FFEF00;
+        }
+
+        .footer-content {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #FFEF00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: #FF0040;
+        }
+
+        .disclaimer {
+            background: rgba(255, 239, 0, 0.1);
+            border: 1px solid #FFEF00;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .disclaimer h4 {
+            color: #FFEF00;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Additional styling for better contrast and readability */
+        .dark-section {
+            background: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .light-section {
+            background: #f5f5f5;
+            color: #1a1a1a;
+        }
+
+        .accent-text {
+            color: #FFEF00;
+            font-weight: 600;
+        }
+
+        .warning-text {
+            color: #FF0040;
+            font-weight: 600;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content,
+            .section-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-text,
+            .content-text,
+            .content-image {
+                flex: none;
+                width: 100%;
+            }
+
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 30px 0;
+            }
+
+            .cta-button,
+            .secondary-button {
+                display: block;
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .floating-button button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
