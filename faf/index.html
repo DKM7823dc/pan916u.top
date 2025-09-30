@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2025</title>
+     <link rel="stylesheet" type="text/css" href="css/t.css">
+</head>
+<body>
+    <!-- WhatsApp Icon -->
+    <div class="whatsapp-icon" onclick="openyy()">
+        <div class="whatsapp-badge">1</div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Get 5 Quality Stocks, Start Your Wealth Growth Journey!</h1>
+                <div class="buffett-quote">
+                    "Be fearful when others are greedy, and greedy when others are fearful." — Warren Buffett
+                </div>
+                <p class="hero-description">
+                    As a legendary figure in the investment world, Buffett's investment philosophy emphasizes rationality and patience. He advocates choosing quality stocks to achieve long-term stable wealth appreciation. Now, we provide you with 5 professionally selected quality stock recommendations to help you go further on your investment journey.
+                </p>
+                <button class="cta-button" onclick="openyy()">Get Them Now</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Quality Stocks Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Quality Stocks?</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
+                Quality stocks are shares of companies that excel in financial performance, profitability, and market recognition. These stocks typically come from industry-leading companies with strong competitive advantages and stable business models.
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 class="feature-title">Stable Returns</h3>
+                    <p class="feature-description">
+                        Quality stocks usually come with stable dividend policies, providing investors with continuous cash flow and helping you achieve steady investment returns. Regardless of market fluctuations, quality stocks help maintain your investment income.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3 class="feature-title">Risk Management</h3>
+                    <p class="feature-description">
+                        Due to the solid fundamentals of quality stocks, their market volatility is relatively small, making them suitable for investors seeking safe investments. In uncertain market environments, holding quality stocks can effectively reduce overall portfolio risk.
+                    </p>
+                </div>
+            </div>
+            
+            <img src="img/1.jpg" alt="Investment Strategy" class="section-image">
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="cta-button" onclick="openyy()">Claim Your Stocks</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Limited Offer Section -->
+    <section class="section">
+        <div class="container">
+            <div class="alert-box">
+                ⚡ Limited Time: Only 20 Spots Remaining for Quality Stock Recommendations!
+            </div>
+            <div style="text-align: center;">
+                <button class="cta-button" onclick="openyy()">Secure Your Spot Now</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Social Proof Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What Our Investors Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        "The quality stock recommendations helped me build a solid foundation for my retirement portfolio. I've seen consistent growth over the past year."
+                    </p>
+                    <p class="testimonial-author">— Michael R., Retired Teacher</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        "As a beginner investor, these recommendations gave me confidence to start my investment journey. The educational content was invaluable."
+                    </p>
+                    <p class="testimonial-author">— Sarah L., Marketing Professional</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">
+                        "The risk management approach really appealed to me. I've been able to grow my savings while sleeping well at night."
+                    </p>
+                    <p class="testimonial-author">— David K., Small Business Owner</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="disclaimer">
+                <div class="disclaimer-title">📋 Non-Investment Advice</div>
+                <p>
+                    The information provided on this page is for educational and promotional purposes only and does not constitute any form of investment advice, securities recommendation, or financial planning services. All investments carry risk, including the potential loss of principal. Past performance does not guarantee future results.
+                </p>
+                <p>
+                    Before making any investment decisions, you should carefully consider your personal financial situation, investment objectives, and risk tolerance. We strongly recommend consulting with licensed professional advisors, including financial planners, investment advisors, and tax professionals, before making any investment decisions.
+                </p>
+                <p>
+                    The stocks mentioned are for educational purposes only and should not be considered as personalized investment recommendations. Market conditions can change rapidly, and what may be suitable for one investor may not be appropriate for another.
+                </p>
+                <p>
+                    By accessing this information, you acknowledge that you understand these limitations and agree to make your own independent investment decisions based on your own research and professional consultation.
+                </p>
+            </div>
+            
+            <div class="legal-links">
+                <a href="privacy.html" class="legal-link">Privacy Policy</a>
+                <a href="terms.html" class="legal-link">Terms of Service</a>
+            </div>
+            
+            <p style="margin-top: 2rem; color: #888; font-size: 0.9rem;">
+                © 2024 Investment Education Platform. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Floating Button -->
+    <button class="floating-button" onclick="openyy()">Get Your 5 Quality Stocks Now</button>
+    
+    <script>
+        function openyy() {
+            window.location.href = "https://wa.me/";
+        }
+        
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate cards on scroll
+            const cards = document.querySelectorAll('.feature-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
