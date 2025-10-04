@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$50 Gift Card - Hotel Experience Program</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DC2626', // Red-600
+                        primaryDark: '#B91C1C', // Red-700
+                        primaryLight: '#FEE2E2', // Red-50
+                        accent: '#991B1B', // Red-800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .breathing {
+            animation: breathing 2s ease-in-out infinite;
+        }
+        @keyframes breathing {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(220, 38, 38, 0.7);
+            }
+        }
+        .gift-card {
+            background: linear-gradient(145deg, #DC2626, #991B1B);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .gift-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(180deg); }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 dark:text-gray-200 smooth-scroll">
+    <!-- Dark mode setup -->
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-lg z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="img/UK.png" alt="Logo" class="h-10 w-10 mr-3">
+                    <h1 class="text-2xl font-bold text-primary">EXPEDIA</h1>
+                </div>
+               
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gift Card Hero Section -->
+    <section id="gift-card" class="pt-20 gradient-bg text-white min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center mb-16">
+                <div class="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold text-lg mb-6">
+                    🎉 CONGRATULATIONS! 🎉
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-shadow">
+                    Sign Up & Receive a <span class="text-yellow-300">$50 Gift Card</span>
+                </h1>
+                <h2 class="text-2xl lg:text-3xl font-semibold mb-8 text-shadow">
+                    Ready for Immediate Use!
+                </h2>
+                <p class="text-xl mb-12 text-red-100 max-w-4xl mx-auto leading-relaxed">
+                    This is your exclusive welcome gift! Thank you for starting the "7-Day $500+ Hotel Part-time" challenge. Our platform offers diverse business opportunities, and this gift card is a taste of our collaborative ecosystem.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div class="text-center lg:text-left">
+                    <div class="gift-card p-8 mb-8 relative">
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-start mb-6">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white">EXPEDIA</h3>
+                                    <p class="text-red-100">Gift Card</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-4xl font-black text-yellow-300">$50</div>
+                                    <p class="text-red-100 text-sm">USD</p>
+                                </div>
+                            </div>
+                            <div class="border-t border-red-300 pt-4">
+                                <p class="text-white font-semibold">Valid for all partner platforms</p>
+                                <p class="text-red-100 text-sm">No expiration date</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <button onclick="goBack()" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg text-xl font-bold btn-hover">
+                            🎁 Claim Your Gift Card Now
+                        </button>
+                        <button onclick="goBack()" class="w-full bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold btn-hover">
+                            Learn More About Job Details
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <img src="img/gift.jpg" alt="Gift Card Celebration" class="rounded-lg shadow-2xl max-w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl lg:text-5xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+                What Can This <span class="text-primary">$50 Gift Card</span> Bring You?
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-8 bg-primaryLight dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-primaryDark rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M2 17h20v2H2zm1.15-4.05L4 11l.85 1.95L6.8 13l-1.95.85L4 15.8l-.85-1.95L1.2 13l1.95-.05zM13 9.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S13 10.33 13 9.5zM22 2l-2.5 9-1.5-4-4-1.5 9-2.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Treat Yourself</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Before the busy challenge, treat yourself to a premium coffee and a hearty dinner. Start your journey with full energy and motivation.
+                    </p>
+                </div>
+
+                <div class="text-center p-8 bg-primaryLight dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-primaryDark rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Shopping Discount</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Use directly on our partner e-commerce platforms (like Amazon) for instant $50 off your favorite items. Smart shopping made easy.
+                    </p>
+                </div>
+
+                <div class="text-center p-8 bg-primaryLight dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary to-primaryDark rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary">Daily Essentials</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Perfect for online grocery shopping and daily necessities. This makes your part-time income almost "pure profit" by covering basic needs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center bg-gradient-to-r from-primaryLight to-red-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-12 shadow-xl">
+                <h3 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                    This isn't just <span class="text-primary">$50</span>
+                </h3>
+                <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
+                    It's a token of our sincerity and best wishes from our platform, giving you an easy and confident start to your journey with us.
+                </p>
+                <div class="inline-block bg-primary text-white px-6 py-2 rounded-full font-bold text-lg mb-8">
+                    ⏰ Limited Time Free Claim
+                </div>
+                <div>
+                    <button onclick="goBack()" class="bg-primary hover:bg-primaryDark text-white px-12 py-6 rounded-xl text-xl font-bold btn-hover breathing">
+                        Register Now - Claim Your Gift Card
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-400">
+                    © 2025 EXPEDIA Experience Program. All rights reserved. | 
+                    <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a> | 
+                    <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl max-w-md w-full mx-4">
+            <div class="text-center">
+                <div class="text-6xl mb-6">🎉</div>
+                <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Gift Card Claimed!</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-8 text-lg">
+                    Your $50 gift card has been activated! Check your email for redemption details.
+                </p>
+                <button onclick="closeSuccessModal()" class="px-8 py-4 bg-primary text-white rounded-xl hover:bg-primaryDark text-lg font-bold">
+                    Awesome!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="goBack()" class="bg-primary text-white px-6 py-4 rounded-full shadow-2xl hover:bg-primaryDark text-lg font-semibold breathing">
+            Back to Main
+        </button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSuccessModal();
+            }
+        });
+    </script>
+</body>
+</html>
