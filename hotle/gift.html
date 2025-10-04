@@ -77,6 +77,16 @@
             0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
             50% { transform: translate(-50%, -50%) rotate(180deg); }
         }
+        .gift-card-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 2rem;
+            padding: 20px;
+        }
+        .rounded-2xl {
+            border-radius: 2rem !important;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800 dark:text-gray-200 smooth-scroll">
@@ -128,13 +138,19 @@
             <!-- Three Gift Cards Display -->
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
                 <div class="text-center">
-                    <img src="img/g1.jpg" alt="Gift Card 1" class="rounded-lg shadow-2xl max-w-full h-auto card-hover">
+                    <div class="gift-card-container card-hover">
+                        <img src="img/t11.png" alt="Gift Card 1" class="rounded-2xl max-w-full h-auto shadow-xl">
+                    </div>
                 </div>
                 <div class="text-center">
-                    <img src="img/g2.jpg" alt="Gift Card 2" class="rounded-lg shadow-2xl max-w-full h-auto card-hover">
+                    <div class="gift-card-container card-hover">
+                        <img src="img/g2.jpg" alt="Gift Card 2" class="rounded-2xl max-w-full h-auto shadow-xl">
+                    </div>
                 </div>
                 <div class="text-center">
-                    <img src="img/g3.jpg" alt="Gift Card 3" class="rounded-lg shadow-2xl max-w-full h-auto card-hover">
+                    <div class="gift-card-container card-hover">
+                        <img src="img/g3.jpg" alt="Gift Card 3" class="rounded-2xl max-w-full h-auto shadow-xl">
+                    </div>
                 </div>
             </div>
 
