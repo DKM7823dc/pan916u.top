@@ -63,6 +63,23 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-slide {
+            transition: transform 0.5s ease-in-out;
+        }
+        .challenge-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: 3px solid #FFF;
+        }
+        .earn-highlight {
+            background: linear-gradient(135deg, #10B981, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800 dark:text-gray-200 smooth-scroll">
@@ -129,23 +146,52 @@
                     <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-shadow">
                         Start Your Premium Hotel Experience
                     </h1>
-                    <h2 class="text-2xl lg:text-3xl font-semibold mb-6 text-shadow">
-                        【7-Day Wealth Challenge】Complete and Earn $500+!
-                    </h2>
+                    
+                    <!-- Enhanced Challenge Badge -->
+                    <div class="relative mb-8">
+                        <div class="challenge-badge rounded-2xl p-6 text-center mb-4 shadow-2xl">
+                            <div class="flex items-center justify-center mb-3">
+                                <span class="text-2xl mr-2">🏆</span>
+                                <span class="text-gray-900 font-black text-lg sm:text-xl">7-DAY WEALTH CHALLENGE</span>
+                                <span class="text-2xl ml-2">🏆</span>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4 backdrop-blur-sm">
+                                <div class="text-gray-900 text-xl sm:text-2xl font-bold mb-2">COMPLETE AND</div>
+                                <div class="text-4xl sm:text-5xl font-black text-green-600 mb-2">EARN $500+!</div>
+                                <div class="text-gray-900 text-sm font-semibold">💰 GUARANTEED INCOME 💰</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <p class="text-xl mb-8 text-red-100">
                         Flexible schedule, daily payments! Join us to explore diverse earning channels including e-commerce, offline events, and brand promotion.
                     </p>
-                    <div class="flex justify-center lg:justify-start">
-                        <button onclick="k1()" class="bg-primary hover:bg-primaryDark text-white px-8 py-4 rounded-lg text-lg font-semibold btn-hover flex items-center justify-center">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button onclick="k1()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg text-lg font-bold btn-hover flex items-center justify-center shadow-lg">
                             <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.785"/>
                             </svg>
                             Contact via WhatsApp
                         </button>
+                        <button onclick="k2()" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-bold btn-hover flex items-center justify-center shadow-lg">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                            Contact via Telegram
+                        </button>
                     </div>
                 </div>
                 <div class="text-center">
-                    <img src="img/1.jpg" alt="Professional business person" class="rounded-lg shadow-2xl max-w-full h-auto">
+                    <div class="carousel-container rounded-lg shadow-2xl">
+                        <div class="carousel-slide" id="carousel">
+                            <img src="img/1.jpg" alt="Professional business person" class="rounded-lg max-w-full h-auto carousel-image">
+                        </div>
+                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                            <button class="w-3 h-3 rounded-full bg-white opacity-50 carousel-dot" onclick="goToSlide(0)"></button>
+                            <button class="w-3 h-3 rounded-full bg-white opacity-50 carousel-dot" onclick="goToSlide(1)"></button>
+                            <button class="w-3 h-3 rounded-full bg-white opacity-50 carousel-dot" onclick="goToSlide(2)"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,24 +205,24 @@
             </h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg card-hover">
-                    <div class="text-primary text-4xl mb-4">💰</div>
+                    <div class="text-primary text-6xl mb-4">💰</div>
                     <h3 class="text-xl font-semibold mb-3 text-primary">Need Money</h3>
                     <p class="text-gray-600 dark:text-gray-300">Want to quickly earn substantial income for shopping, travel, or education needs?</p>
                 </div>
                 <div class="text-center p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg card-hover">
-                    <div class="text-primary text-4xl mb-4">🎯</div>
+                    <div class="text-primary text-6xl mb-4">🎯</div>
                     <h3 class="text-xl font-semibold mb-3 text-primary">No Experience</h3>
                     <p class="text-gray-600 dark:text-gray-300">Worried about high entry barriers and skill mismatches?</p>
                 </div>
                 <div class="text-center p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg card-hover">
-                    <div class="text-primary text-4xl mb-4">⏰</div>
+                    <div class="text-primary text-6xl mb-4">⏰</div>
                     <h3 class="text-xl font-semibold mb-3 text-primary">Limited Time</h3>
                     <p class="text-gray-600 dark:text-gray-300">Busy with studies or main job, only able to use fragmented time?</p>
                 </div>
                 <div class="text-center p-6 bg-white dark:bg-gray-700 rounded-lg shadow-lg card-hover">
-                    <div class="text-primary text-4xl mb-4">🛡️</div>
-                    <h3 class="text-xl font-semibold mb-3 text-primary">Fear Scams</h3>
-                    <p class="text-gray-600 dark:text-gray-300">Concerned about online job safety and salary delays?</p>
+                    <div class="text-primary text-6xl mb-4">🏢</div>
+                    <h3 class="text-xl font-semibold mb-3 text-primary">Full-time Career Opportunity</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Looking for a pathway to secure permanent employment with growth potential?</p>
                 </div>
             </div>
 
@@ -249,12 +295,18 @@
                             </div>
                         </div>
                         
-                        <div class="mt-8">
-                            <button onclick="k2()" class="w-full bg-primary hover:bg-primaryDark text-white px-4 py-4 rounded-xl text-sm sm:text-lg font-semibold btn-hover flex flex-col sm:flex-row items-center justify-center gap-2">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                            <button onclick="k1()" class="flex-1 bg-green-500 hover:bg-green-600 text-white px-4 py-4 rounded-xl text-sm sm:text-lg font-semibold btn-hover flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.785"/>
+                                </svg>
+                                <span>WhatsApp</span>
+                            </button>
+                            <button onclick="k2()" class="flex-1 bg-primary hover:bg-primaryDark text-white px-4 py-4 rounded-xl text-sm sm:text-lg font-semibold btn-hover flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                                 </svg>
-                                <span class="text-center">Contact via Telegram</span>
+                                <span>Telegram</span>
                             </button>
                         </div>
                     </div>
@@ -272,7 +324,7 @@
             <h2 class="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
                 Why Choose Us? Your 7-Day $500+ Income Guarantee
             </h2>
-            <div class="grid lg:grid-cols-3 gap-8">
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
                 <div class="text-center p-8 bg-primaryLight dark:bg-gray-800 rounded-lg shadow-lg card-hover">
                     <div class="text-primary text-5xl mb-6">💰</div>
                     <h3 class="text-2xl font-bold mb-4 text-primary">$500+ Guaranteed Income</h3>
@@ -294,6 +346,20 @@
                         We promise daily or task-based salary settlement, paid directly through the platform - safe, fast, and transparent.
                     </p>
                 </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="k1()" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold btn-hover flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.785"/>
+                    </svg>
+                    Contact via WhatsApp
+                </button>
+                <button onclick="k2()" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold btn-hover flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                    Contact via Telegram
+                </button>
             </div>
         </div>
     </section>
@@ -340,9 +406,23 @@
                 </div>
                 <div class="text-center">
                     <img src="img/3.jpg" alt="Diverse opportunities" class="rounded-lg shadow-xl max-w-full h-auto mx-auto mb-8">
-                    <p class="text-lg text-gray-700 dark:text-gray-300 italic">
+                    <p class="text-lg text-gray-700 dark:text-gray-300 italic mb-8">
                         Join us and get not just a 7-day part-time job, but an opportunity to integrate into a diverse ecosystem with endless new projects waiting for you to challenge!
                     </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="k1()" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold btn-hover flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.785"/>
+                            </svg>
+                            Contact via WhatsApp
+                        </button>
+                        <button onclick="k2()" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold btn-hover flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                            Contact via Telegram
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -503,14 +583,42 @@
         </div>
     </div>
 
-    <!-- Floating Button -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <button onclick="k2()" class="bg-primary text-white px-6 py-4 rounded-full shadow-2xl hover:bg-primaryDark text-lg font-semibold breathing">
-            Join Now!
-        </button>
-    </div>
-
     <script>
+        // Carousel functionality
+        const images = ['img/1.jpg', 'img/1-1.jpg', 'img/1-2.jpg'];
+        let currentSlide = 0;
+        const carousel = document.getElementById('carousel');
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+            const img = carousel.querySelector('.carousel-image');
+            img.src = images[currentSlide];
+            
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.remove('opacity-50');
+                    dot.classList.add('opacity-100');
+                } else {
+                    dot.classList.remove('opacity-100');
+                    dot.classList.add('opacity-50');
+                }
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % images.length;
+            updateCarousel();
+        }
+
+        // Auto-play carousel
+        setInterval(nextSlide, 3000);
+        updateCarousel();
+
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
