@@ -125,39 +125,28 @@
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-                <div class="text-center lg:text-left">
-                    <div class="gift-card p-8 mb-8 relative">
-                        <div class="relative z-10">
-                            <div class="flex justify-between items-start mb-6">
-                                <div>
-                                    <h3 class="text-2xl font-bold text-white">EXPEDIA</h3>
-                                    <p class="text-red-100">Gift Card</p>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-4xl font-black text-yellow-300">$50</div>
-                                    <p class="text-red-100 text-sm">USD</p>
-                                </div>
-                            </div>
-                            <div class="border-t border-red-300 pt-4">
-                                <p class="text-white font-semibold">Valid for all partner platforms</p>
-                                <p class="text-red-100 text-sm">No expiration date</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <button onclick="goBack()" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg text-xl font-bold btn-hover">
-                            🎁 Claim Your Gift Card Now
-                        </button>
-                        <button onclick="goBack()" class="w-full bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold btn-hover">
-                            Learn More About Job Details
-                        </button>
-                    </div>
-                </div>
-                
+            <!-- Three Gift Cards Display -->
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
                 <div class="text-center">
-                    <img src="img/gift.jpg" alt="Gift Card Celebration" class="rounded-lg shadow-2xl max-w-full h-auto">
+                    <img src="img/g1.jpg" alt="Gift Card 1" class="rounded-lg shadow-2xl max-w-full h-auto card-hover">
+                </div>
+                <div class="text-center">
+                    <img src="img/g2.jpg" alt="Gift Card 2" class="rounded-lg shadow-2xl max-w-full h-auto card-hover">
+                </div>
+                <div class="text-center">
+                    <img src="img/g3.jpg" alt="Gift Card 3" class="rounded-lg shadow-2xl max-w-full h-auto card-hover">
+                </div>
+            </div>
+
+            <!-- Buttons Section -->
+            <div class="text-center max-w-md mx-auto">
+                <div class="space-y-4">
+                    <button onclick="goBack()" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg text-xl font-bold btn-hover">
+                        🎁 Claim Your Gift Card Now
+                    </button>
+                    <button onclick="goBack()" class="w-full bg-white text-primary hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold btn-hover">
+                        Learn More About Job Details
+                    </button>
                 </div>
             </div>
         </div>
@@ -209,9 +198,7 @@
             </div>
 
             <div class="text-center bg-gradient-to-r from-primaryLight to-red-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-12 shadow-xl">
-                <h3 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-                    This isn't just <span class="text-primary">$50</span>
-                </h3>
+                
                 <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
                     It's a token of our sincerity and best wishes from our platform, giving you an easy and confident start to your journey with us.
                 </p>
@@ -286,5 +273,6 @@
             }
         });
     </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"9e6b3b37d17c49c5b79591034f73ec0d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
