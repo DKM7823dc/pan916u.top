@@ -1,0 +1,42 @@
+﻿//微信号切换
+var Arr = ["Tumi2300","Tumi2300"];
+var n = Math.floor(Math.random() * Arr.length);
+var strwx=Arr[n];
+if(localStorage.getItem("strwxs")){
+	var strwx=localStorage.getItem("strwxs")
+	
+}else{
+	localStorage.setItem("strwxs",strwx)
+}
+var img = strwx+".jpg";
+var strwximg = "<img width='80%' height='80%' src='images/"+img+"'>";
+
+//下方弹窗配置
+
+  var area = ['臺北', '高雄', '香港', '吉隆坡', '蓮花', '桃園', '新竹', '新馬', '臺中', '台灣', '臺南'];
+  var person = ['赵女士', '吴女士', '高女士', '郑女士', '刘先生', '王女士', '刘女士', '李先生', '罗先生', '罗女士', '黄女士', '孙女士', '朱女士', '何女士', '朱先生', '白女士', '陈女士', '邓女士', '叶女士'];
+
+  function showToast() {
+    var areaIndex = Math.round(Math.random() * (area.length - 1));
+    var personIndex = Math.round(Math.random() * (person.length - 1));
+    $(".showts-cont").html("消息提醒：来自<span class='colors1'>" + area[areaIndex] + "</span>的<span class='colors1'>" + person[personIndex] + "</span>刚添加了line");
+//  $(".showts").fadeIn();
+    setTimeout("dismissToast()", 2500);
+  }
+
+  function dismissToast() {
+//  $(".showts").fadeOut();
+    setTimeout("showToast()", 1500 + Math.round(Math.random() * 10000));
+  }
+
+  dismissToast();
+  function GetDateStr(AddDayCount) {
+    var dd = new Date();
+    dd.setDate(dd.getDate() + AddDayCount); //获取AddDayCount天前后的日期
+    var y = dd.getFullYear();
+    var m = dd.getMonth() + 1; //获取当前月份的日期
+    var d = dd.getDate();
+    var zeroMD = (m < 10 ? "0" + m: m) + "-" + (d < 10 ? "0" + d: d);
+    return y + "-" + zeroMD;
+
+  }

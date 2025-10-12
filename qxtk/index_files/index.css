@@ -1,0 +1,176 @@
+﻿
+.contonts{
+	 width:100%;
+    max-width:640px;
+    margin: 0 auto;
+    height: auto;
+    padding-bottom: 130px;
+    box-sizing: border-box;
+}
+.nrcont{
+	width:100%;
+	padding: 0 20px;
+	max-width:640px;
+    margin: 0 auto;
+    color: #333;
+}
+/*头部*/
+.title{ width: 100%; overflow: hidden; margin-top: 20px;}
+.title h2{ font-size:20px;padding:0 5px;text-align: center; }
+.title span{color: #ff0000;font-size: 20px;}
+.date-text,.forms{ display: flex; padding: 0 5px; margin:10px 0; flex-direction: row; justify-content: space-between; align-items: center; }
+.riqi,.forms p{ font-size: 14px; color: #333; } 
+
+ .share-bar a { float: left; display: block; width: 40px; height: 30px; margin: 0; padding: 0; background: url(http://feng1.lzuis.cn/images/tubiao.jpg) no-repeat; } 
+ .share-bar .bds_tsina { background-position: 0 0; margin-left: 10px; } 
+ .share-bar .bds_qzone { background-position: 0 -32px; margin-left: 10px; } 
+ .share-bar .bds_twx { background-position: 0 -66px; margin-left: 10px; }
+ /*内容*/
+.texts{
+	color:#494949;
+	font-size: 16px;
+	line-height: 28px;
+	margin-bottom: 30px;
+	text-indent: 2em;
+}
+.imgs{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.imgs img{
+	width: 100%;
+	height: auto;
+	
+}
+.textC{color:#494949;font-size: 16px;text-align: center;line-height: 30px;}
+.bold{font-weight: bold;}
+.bt{margin-bottom: 30px;}
+.textCent{color:#f01127;font-size: 18px;font-weight: bold;text-align: center;margin-bottom: 8px;}
+.textCenb{color:#f01127;font-size: 18px;margin-bottom: 30px;font-weight: bold;text-align: center;}
+.ptit{font-size: 30px;margin-bottom: 30px;}
+.words{font-size: 16px;text-align: center;color: #ff0000;line-height: 26px;}
+.wxtext{font-size: 20px;text-indent:2em;color: #ff0000;line-height: 26px;margin-bottom: 30px;}
+.wxtext .copyBtn{cursor:pointer;background:#ff0000;color:#fff}
+.wxcolor{background:#ff0000;color:#fff;cursor: pointer;}
+/*评论*/
+ .commenttit {text-align: center;width: 100%;}
+.commenttit div {line-height: 20px;margin:30px auto;color:#494949;font-size: 16px;position: relative;}
+.com-all{width: 100%;overflow: hidden;}
+.com-all>img{
+	width: 8%;
+    height: 8%;
+	display: block;
+	border-radius: 50%;
+	float: left;
+}
+.com-right{
+	width: 90%;
+	float: right;
+	/* margin-left: 15px; */
+}
+.com-all li{margin-bottom: 15px;}
+.com-right-top{overflow: hidden;}
+.com-right-top>span{
+	color: rgb(64, 101, 153);
+    font-size: 15px;
+	display: block;
+	float: left;
+	margin-bottom: 5px;
+}
+.com-right-top>p{
+	float: right;
+	overflow: hidden;
+}
+.com-right-top>p>img{width: 20px;float: left;margin-right: 5px;}
+.com-right-top>p>span{font-size: 11px;color: rgb(153, 153, 153);float: left;}
+.com-right>p{
+	color: rgb(34, 34, 34);
+    font-size: 15px;
+    line-height: 23px;
+}
+.com-right .hf{
+	font-size: 15px;
+	margin-left: 20px;
+	position:relative;
+	padding-left: 5px;
+	margin-top: 15px;
+}
+.com-right .hf:after{
+	position:absolute;
+	content: "";
+	top:0;
+	left: 0;
+	height:20px;
+	width:2px;
+	background: #008000;
+	
+}
+
+.com-right .hf p{
+	line-height: 22px;
+	margin-top: 8px;
+}
+.com-right>span , .com-right .times{
+	display: block;
+	font-size: 10px;
+    color: #999;
+    padding-top: 5px;
+    padding-bottom:10px;display:block;
+}
+.com-right>span.active{
+	border-bottom: 1px solid #ddd;
+}
+.zan .icon-dianzan{color:#ff0000;}
+.pl-img{width: 60%;margin-top: 10px;margin-bottom: 5px;}
+.loadall{color:#999;margin: 5px 0 0 40px;}
+/*CSS伪类用法*/
+.commenttit div:after, .commenttit div:before {position: absolute;top: 50%;background: #ddd;content: "";height: 1px;width: 42%;}
+/*调整背景横线的左右距离*/
+.commenttit div:before {left: 0;}
+.commenttit div:after {right: 0;}
+/*右侧pc端显示*/
+.right{position: fixed;left: 50%;top: 90px;background: #F9F9F9;text-align: center;width: 250px;margin-left: 350px;}
+.right .righttext{font-size: 14px;letter-spacing: 2px;margin-top: 10px;color: #f95353;}
+/*提示*/
+.showts{text-align: center; width: 100%; left: 0;height:34px;width:100%;}
+.showts-cont{border-radius:32px;background:rgba(0,0,0,0.4);line-height:34px;font-size:14px;color:#333;height:34px;display: inline-block;width:90%;text-align: center;}
+/*视频*/
+.video_iframe{width: 100%;margin-bottom: 30px;}
+.txp_tipbar{display: none;}
+/*添加列表*/
+.giflist .color1{font-size: 18px;}
+.giflist{ text-align:center}
+.giflist p{width:320px;margin: 20px auto;}
+.giflist .item2{width:280px;}
+.giflist img {width:40px;height:40px;border-radius:50%;float: left;}
+
+/*弹窗*/
+.clipboards1{ position: fixed; top: 0; left: 0; display: none; z-index: 10001; width: 100%; height: 100%; overflow: hidden; background-color: rgba(0,0,0,.4);}
+.clipboards{ position: fixed; top: 0; left: 0; display: none; z-index: 10001; width: 100%; height: 100%; overflow: hidden; background-color: rgba(0,0,0,.4);}
+.openwx{ text-decoration: none;}
+.clipboards-main{position: relative; top: 30%;  height: auto; padding: 10px; margin: 0 auto; border-radius: 4px; background-color: #fff;width: 480px;max-width: 80%;}
+.clpclosed{position: absolute; top: 5px; right: 5px; height: 20px; line-height: 18px; font-size: 16px; text-align: center; width: 20px; border: 1px solid #888; border-radius: 50%;}
+.clpbox,.clpbox2{ padding: 15px 20px; text-align: center;line-height: 24px;}
+.clpinfo{ font-size: 18px; color: #ca0e00;}
+.clpinfo2{font-size: 14px; color: #555; margin-top: 10px;}
+.clpwx{ display: inline-block; background-color: #ca0e00; padding: 6px 10px; border-radius: 4px; color: #fff; font-size: 18px; }
+.opencolors{ color: #d21010;}
+button{ cursor:pointer;}
+#mydel {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    right: 10px;
+    top: -15px;
+    background: rgba(0, 0, 0, .85);
+    color: #fff;
+    border-radius: 50px;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+}
