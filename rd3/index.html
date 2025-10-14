@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI株式分析プラットフォーム</title>
+    
+	  <link rel="stylesheet" href="css/1.css"> 
+</head>
+<body>
+    <!-- Grid Background -->
+    <div class="grid-bg"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Main Content -->
+    <div class="main-wrapper">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <h1 class="main-title">AI株式分析アシスタント</h1>
+                <p class="subtitle">
+                    簡単な株式コードまたは会社名の入力により、分析レポートを取得できます。最新の市場トレンドと技術データを組み合わせています。
+                </p>
+                
+                <img src="img/4.jpg" alt="AI分析イメージ" class="hero-image">
+                
+                <div class="input-section">
+                    <div class="input-container">
+                        <input type="text" class="stock-input" id="stockInput" placeholder="株式コードまたは会社名を入力してください...">
+                    </div>
+                    <button class="analyze-btn" onclick="startAnalysis()">AI分析を開始</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer-section">
+            <div class="disclaimer">
+                <h3>免責事項</h3>
+                <p>
+                    本ウェブサイトで提供されるAI株式分析結果は参考のみであり、いかなる証券取引のアドバイス、推奨、または収益保証も構成しません。ユーザーは自身の財務状況とリスク許容度に基づいて自ら決定を行い、自分の決定に対して全責任を負うものとします。投資前に資格のある財務アドバイザーにご相談することをお勧めします。
+                </p>
+                <p>
+                    人工知能分析は過去のデータとアルゴリズムモデリングに基づいています。予測不可能な市場リスクは避けられず、実際の結果は予測と大きく異なる場合があります。過去の実績は将来の結果を示すものではありません。
+                </p>
+                <p>
+                    本サービスは日本金融商品取引法で定義される25歳以上のユーザーにのみ提供され、違法な金融活動に本サービスを使用することは禁止されています。運営者はいかなる形の投資収益や補償も約束しません。
+                </p>
+                
+                <div class="contact-info">
+                    <p><strong>お問い合わせ：</strong>support@mkaye531b.shop</p>
+                    <p><strong>連絡先：</strong>+8142-305-6648</p>
+                    <p><strong>所在地：</strong>高知四万十町四万十町奥古雷吉345-1170</p>
+                </div>
+                 
+                
+            </div>
+            
+            <div class="legal-links">
+                <a href="privacy.html" class="legal-link">プライバシーポリシー</a>
+                <a href="terms.html" class="legal-link">利用規約</a>
+            </div>
+            
+            <div class="copyright">
+                © 2025 AI株式分析。版権所有。
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <h3 id="modalTitle">AI分析中...</h3>
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">AIシステムが市場分析を実行中...</div>
+            </div>
+            <div id="completionContent" style="display: none;">
+                <p>あなたの株式分析レポートが完成しました。</p>
+                <p>下記のLINEリンクをクリックしてレポートを受け取ってください。</p>
+                <button class="line-btn" onclick="okm()">LINEでレポートを受け取る</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                particles.appendChild(particle);
+            }
+        }
+        
+        // Start analysis function
+        function startAnalysis() {
+            const input = document.getElementById('stockInput').value.trim();
+            if (!input) {
+                alert('株式コードまたは会社名を入力してください。');
+                return;
+            }
+            
+            const modal = document.getElementById('modalOverlay');
+            const progressContainer = document.getElementById('progressContainer');
+            const completionContent = document.getElementById('completionContent');
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            
+            modal.style.display = 'flex';
+            progressContainer.style.display = 'block';
+            completionContent.style.display = 'none';
+            
+            const analysisSteps = [
+                '市場分析を実行中...',
+                '最新ニュース分析を実行中...',
+                '過去データ分析を実行中...'
+            ];
+            
+            let currentStep = 0;
+            let progress = 0;
+            
+            const analysisInterval = setInterval(() => {
+                progress += 33.33;
+                progressFill.style.width = progress + '%';
+                
+                if (currentStep < analysisSteps.length) {
+                    progressText.textContent = 'AIシステムが' + analysisSteps[currentStep] + 'を結合中';
+                    currentStep++;
+                }
+                
+                if (progress >= 100) {
+                    clearInterval(analysisInterval);
+                    setTimeout(() => {
+                        progressContainer.style.display = 'none';
+                        completionContent.style.display = 'block';
+                        document.getElementById('modalTitle').textContent = '分析完了！';
+                    }, 500);
+                }
+            }, 600);
+        }
+        
+        // LINE redirect function
+        function okm() {
+            window.location.href = "https://line.me/";
+        }
+        
+        // Close modal function
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Allow enter key to trigger analysis
+            document.getElementById('stockInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    startAnalysis();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
