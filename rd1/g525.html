@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>株式AI分析ツール - 次世代投資サポート</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        :root {
+            --main-blue: #0047ab;
+            --light-blue: #3e95ff;
+            --dark-blue: #102542;
+            --main-yellow: #ffc107;
+            --light-yellow: #ffe082;
+            --accent-red: #ff4d4d;
+            --success-green: #2ecc71;
+            --bg-main: #0d1b2a;
+            --text-primary: #f0f4f8;
+            --panel-bg: rgba(22, 41, 70, 0.8);
+            --mesh-color: rgba(99, 179, 237, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .mesh-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--mesh-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--mesh-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .glow-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, var(--bg-main) 80%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .block {
+            padding: 60px 0;
+        }
+        
+        /* Header */
+        .site-header {
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .brand-name span {
+            color: var(--main-yellow);
+        }
+        
+        .brand-icon {
+            margin-right: 10px;
+            color: var(--main-yellow);
+        }
+        
+        /* Main Visual */
+        .main-visual {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+        
+        .image-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-photo {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--light-blue);
+            transition: all 0.5s ease;
+        }
+        
+        .hero-photo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+        }
+        
+        .main-content {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .main-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(120deg, var(--text-primary), var(--light-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        .main-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--main-yellow), var(--light-yellow));
+            border-radius: 10px;
+        }
+        
+        .main-description {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+            opacity: 0.9;
+        }
+        
+        .highlight-text {
+            color: var(--main-yellow);
+            font-weight: 700;
+        }
+        
+        /* Animation Area */
+        #particle-space {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        /* Stock Search Area */
+        .search-box {
+            background-color: var(--panel-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 179, 237, 0.2);
+        }
+        
+        .search-heading {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .stock-code-input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid var(--light-blue);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .stock-code-input:focus {
+            outline: none;
+            border-color: var(--main-yellow);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+        }
+        
+        .search-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(45deg, var(--main-yellow), var(--accent-red));
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+        }
+        
+        .search-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .search-button:hover::before {
+            left: 100%;
+        }
+        
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 25px rgba(255, 193, 7, 0.4);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 40px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-card {
+            background-color: var(--panel-bg);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 179, 237, 0.2);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--main-blue), var(--light-blue));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        .feature-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--main-yellow);
+        }
+        
+        /* Footer */
+        .site-footer {
+            background-color: rgba(16, 37, 66, 0.7);
+            padding: 30px 0;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(99, 179, 237, 0.2);
+        }
+        
+        .legal-text {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        
+        .legal-heading {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--main-yellow);
+            font-size: 1rem;
+        }
+        
+        .copyright-text {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            opacity: 0.7;
+            margin-top: 15px;
+        }
+        
+        /* Popup Dialog */
+        .popup-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .popup-backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-window {
+            background-color: var(--panel-bg);
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(99, 179, 237, 0.3);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        
+        .popup-backdrop.show .popup-window {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .loading-section {
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+        }
+        
+        .loading-indicator {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--main-blue), var(--main-yellow));
+            transition: width 2s linear;
+        }
+        
+        .processing-message {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .status-message {
+            font-size: 0.9rem;
+            color: var(--light-blue);
+            margin-bottom: 5px;
+        }
+        
+        .completion-message {
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+        
+        .highlight-offer {
+            color: var(--main-yellow);
+            font-weight: 700;
+        }
+        
+        .line-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #06C755;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+        
+        .line-link:hover {
+            background-color: #05A847;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 15px rgba(6, 199, 85, 0.3);
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .popup-close:hover {
+            color: var(--main-yellow);
+            transform: rotate(90deg);
+        }
+        
+        /* Floating Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            max-width: 500px;
+            z-index: 100;
+        }
+        
+        .floating-btn button {
+            width: 100%;
+            background: linear-gradient(45deg, var(--main-yellow), var(--accent-red));
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 77, 77, 0.4);
+            animation: pulse-animation 2s infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(255, 77, 77, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+            }
+        }
+        
+        /* Particles */
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .block {
+                padding: 30px 0;
+            }
+            
+            .main-visual {
+                min-height: auto;
+                padding: 40px 0;
+            }
+            
+            .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-photo {
+                margin-bottom: 20px;
+            }
+            
+            .features-section {
+                padding: 30px 0;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+            
+            .legal-text {
+                padding: 10px;
+                font-size: 0.8rem;
+            }
+            
+            .site-footer {
+                padding: 20px 0;
+            }
+            
+            /* Optimize for 3 screens on mobile */
+            .main-description, .search-heading {
+                font-size: 0.95rem;
+            }
+            
+            .feature-card {
+                padding: 15px;
+            }
+            
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 10px;
+            }
+            
+            .feature-title {
+                font-size: 1rem;
+                margin-bottom: 5px;
+            }
+            
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+            
+            /* Reduce spacing */
+            .search-box {
+                margin-top: 20px;
+                padding: 15px;
+            }
+            
+            .features-grid {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mesh-pattern"></div>
+    <div class="glow-effect"></div>
+    
+    <canvas id="particle-space"></canvas>
+    
+    <header class="site-header">
+        <div class="wrapper">
+            <div class="brand-name">
+                <div class="brand-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 3V21H21V3H3ZM19 19H5V5H19V19ZM11 7H13V17H11V7ZM15 10H17V17H15V10ZM7 13H9V17H7V13Z"/>
+                    </svg>
+                </div>
+                AI<span>マーケット</span>アナライザー
+            </div>
+        </div>
+    </header>
+    
+    <section class="main-visual">
+        <div class="wrapper">
+            <div class="image-container">
+                <img src="img/4.jpg" alt="AI株式分析" class="hero-photo">
+            </div>
+            
+            <div class="main-content">
+                <h1 class="main-title">AIパワーで株式分析を進化させる</h1>
+                <p class="main-description">最先端の人工知能を活用した株式分析で、<span class="highlight-text">投資判断の精度を向上</span>させます。市場データ、テクニカル指標、企業価値評価を総合的に解析します。</p>
+                
+                <div class="search-box">
+                    <h3 class="search-heading">詳細な銘柄分析をすぐに取得</h3>
+                    <div class="input-group">
+                        <input type="text" class="stock-code-input" placeholder="銘柄コードまたは会社名を入力" id="stockCodeField">
+                    </div>
+                    <button class="search-button" id="startAnalysisBtn">AI分析をスタート</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="wrapper">
+            <h2 class="section-title"><span class="highlight-text">賢明な投資</span>のための機能</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 3C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H3C2.44772 19 2 18.5523 2 18V4C2 3.44772 2.44772 3 3 3H21ZM20 5H4V17H20V5ZM9 9H7V15H9V9ZM15 9H13V15H15V9ZM17 7H19V15H17V7ZM11 11H5V13H11V11Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">高精度データ解析</h3>
+                    <p>市場のトレンド、価格変動パターン、業種別の動向など、多角的な視点から詳細な分析結果を提供します。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM12 5C13.1046 5 14 5.89543 14 7C14 8.10457 13.1046 9 12 9C10.8954 9 10 8.10457 10 7C10 5.89543 10.8954 5 12 5ZM8 14C8 11.7909 9.79086 10 12 10C14.2091 10 16 11.7909 16 14V18H8V14Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">カスタム投資提案</h3>
+                    <p>あなたの投資スタイルに合わせた最適な判断材料を提供し、市場変化への迅速な対応をサポートします。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5 3V19H21V21H3V3H5ZM20.2929 6.29289L21.7071 7.70711L16 13.4142L13 10.4142L8.70711 14.7071L7.29289 13.2929L13 7.58579L16 10.5858L20.2929 6.29289Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">マーケット状況監視</h3>
+                    <p>最新のニュース、市場センチメント、テクニカル指標をリアルタイムで追跡し、投資機会やリスク要因を早期に特定します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="site-footer">
+        <div class="wrapper">
+            <div class="legal-text">
+                <h4 class="legal-heading">重要な開示事項：</h4>
+                <p>本ウェブサイトは、投資教育目的のみで情報を提供しています。掲載される情報は、金融商品の購入、売却、または保有の推奨ではありません。投資には元本割れなどのリスクが伴います。過去のパフォーマンスは将来の結果を保証するものではありません。</p>
+                <p>当サイトで提供される分析やデータは、投資判断の参考情報として提供されるものであり、特定の投資活動を推奨または勧誘するものではありません。投資を行う前に、自己責任で調査を行うか、専門の金融アドバイザーに相談することをお勧めします。</p>
+            </div>
+            <div class="copyright-text">
+                © 2023 AIマーケットアナライザー. All Rights Reserved.
+            </div>
+			<a href="Terms of Service.html" style="color: white;">利用規約</a><br>
+<a href="Privacy Policy.html" style="color: white;">プライバシーポリシー</a><br>
+			 </div>
+			 
+        </div>
+    </footer>
+    
+    <!-- Popup Dialog -->
+    <div class="popup-backdrop" id="popupBackdrop">
+        <div class="popup-window">
+            <button class="popup-close" id="closePopupBtn">×</button>
+            
+            <div id="processingView">
+                <h3 class="processing-message">AIシステム処理中</h3>
+                <p class="status-message" id="statusText">市場データを収集しています...</p>
+                <div class="loading-section">
+                    <div class="loading-indicator" id="loadingBar"></div>
+                </div>
+            </div>
+            
+            <div id="resultView" style="display: none;">
+                <h3 class="completion-message">分析レポートの準備ができました</h3>
+                <p>詳細な株式分析レポートと<span class="highlight-offer">成長期待の高い10銘柄リスト</span>を無料でお送りします。</p>
+                <p class="highlight-offer">本日の無料枠残り：35名様</p>
+                <button class="line-link" onclick="openweba()">LINEでレポートを受け取る</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Button -->
+    <div class="floating-btn">
+        <button onclick="openweba()">今すぐ参加</button>
+    </div>
+    
+    <script>
+        // Animation Canvas Setup
+        const canvas = document.getElementById('particle-space');
+        const ctx = canvas.getContext('2d');
+        
+        // Canvas Sizing
+        function adjustCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        adjustCanvas();
+        window.addEventListener('resize', adjustCanvas);
+        
+        // Star Particles
+        const stars = [];
+        const starCount = 100;
+        
+        class Star {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.radius = Math.random() * 2 + 0.5;
+                this.velocityX = Math.random() * 1 - 0.5;
+                this.velocityY = Math.random() * 1 - 0.5;
+                this.starColor = this.selectRandomColor();
+            }
+            
+            selectRandomColor() {
+                const colorOptions = [
+                    'rgba(62, 149, 255, 0.5)',
+                    'rgba(255, 193, 7, 0.5)',
+                    'rgba(255, 77, 77, 0.3)'
+                ];
+                return colorOptions[Math.floor(Math.random() * colorOptions.length)];
+            }
+            
+            move() {
+                this.x += this.velocityX;
+                this.y += this.velocityY;
+                
+                if (this.x > canvas.width || this.x < 0) {
+                    this.velocityX = -this.velocityX;
+                }
+                
+                if (this.y > canvas.height || this.y < 0) {
+                    this.velocityY = -this.velocityY;
+                }
+            }
+            
+            render() {
+                ctx.fillStyle = this.starColor;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        
+        function initializeStars() {
+            for (let i = 0; i < starCount; i++) {
+                stars.push(new Star());
+            }
+        }
+        
+        function connectStars() {
+            for (let i = 0; i < stars.length; i++) {
+                for (let j = i; j < stars.length; j++) {
+                    const distanceX = stars[i].x - stars[j].x;
+                    const distanceY = stars[i].y - stars[j].y;
+                    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+                    
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(99, 179, 237, ${0.1 - distance/1000})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(stars[i].x, stars[i].y);
+                        ctx.lineTo(stars[j].x, stars[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        
+        function renderAnimation() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < stars.length; i++) {
+                stars[i].move();
+                stars[i].render();
+            }
+            
+            connectStars();
+            requestAnimationFrame(renderAnimation);
+        }
+        
+        initializeStars();
+        renderAnimation();
+        
+        // Image Animation
+        const heroImage = document.querySelector('.hero-photo');
+        anime({
+            targets: heroImage,
+            translateY: ['0px', '-15px'],
+            duration: 3000,
+            easing: 'easeInOutQuad',
+            direction: 'alternate',
+            loop: true
+        });
+        
+        // Popup Functionality
+        const startAnalysisBtn = document.getElementById('startAnalysisBtn');
+        const popupBackdrop = document.getElementById('popupBackdrop');
+        const closePopupBtn = document.getElementById('closePopupBtn');
+        const loadingBar = document.getElementById('loadingBar');
+        const statusText = document.getElementById('statusText');
+        const processingView = document.getElementById('processingView');
+        const resultView = document.getElementById('resultView');
+        
+        startAnalysisBtn.addEventListener('click', () => {
+            const stockCode = document.getElementById('stockCodeField').value;
+            
+            if (!stockCode) {
+                alert('銘柄コードまたは会社名を入力してください。');
+                return;
+            }
+            
+            // Display popup
+            popupBackdrop.classList.add('show');
+            
+            // Reset views
+            processingView.style.display = 'block';
+            resultView.style.display = 'none';
+            loadingBar.style.width = '0%';
+            
+            // Animation sequence
+            setTimeout(() => {
+                loadingBar.style.width = '30%';
+                statusText.textContent = '市場データを解析中...';
+            }, 500);
+            
+            setTimeout(() => {
+                loadingBar.style.width = '60%';
+                statusText.textContent = 'ニュース情報を評価中...';
+            }, 800);
+            
+            setTimeout(() => {
+                loadingBar.style.width = '90%';
+                statusText.textContent = '過去のデータを検証中...';
+            }, 1100);
+            
+            setTimeout(() => {
+                loadingBar.style.width = '100%';
+                statusText.textContent = 'レポート生成中...';
+            }, 1800);
+            
+            // Show results
+            setTimeout(() => {
+                processingView.style.display = 'none';
+                resultView.style.display = 'block';
+            }, 2300);
+        });
+        
+        closePopupBtn.addEventListener('click', () => {
+            popupBackdrop.classList.remove('show');
+        });
+        
+        // Close on background click
+        popupBackdrop.addEventListener('click', (e) => {
+            if (e.target === popupBackdrop) {
+                popupBackdrop.classList.remove('show');
+            }
+        });
+        
+        // LINE redirect function
+        function openweba() {
+            window.open('https://www.baidu.com', '_blank');
+        }
+    </script>
+</body>
+</html>
