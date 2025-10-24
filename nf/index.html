@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institutional Stock Research System - Power Your Alpha Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A2463',
+                        secondary: '#FFD700',
+                        dark: '#041E42'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #0A2463 0%, #041E42 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(255,215,0,0.2); }
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            animation: breathe 2s ease-in-out infinite alternate;
+        }
+        @keyframes breathe {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.4); }
+            100% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,215,0,0.8); }
+        }
+        .elite-shadow { box-shadow: 0 25px 50px -12px rgba(10, 36, 99, 0.25); }
+        .professional-border { border: 2px solid rgba(255,215,0,0.2); }
+    </style>
+</head>
+<body class="bg-white dark:bg-dark text-gray-900 dark:text-white">
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Institutional Stock Research System
+                </h1>
+                <p class="text-xl md:text-2xl font-light mb-8 opacity-90">
+                    Power Your Alpha Engine
+                </p>
+            </div>
+            
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold mb-8">
+                    Why Smart Investors Trust Us to Stay Ahead:
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
+                    <div class="text-4xl font-bold mb-4">17</div>
+                    <h3 class="text-xl font-semibold mb-3">Years of Precise Market Predictions</h3>
+                    <p class="opacity-90">Since 2008, we've called every economic crisis. Don't just survive—profit.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
+                    <div class="text-4xl font-bold mb-4">6,000+</div>
+                    <h3 class="text-xl font-semibold mb-3">Successful Trading Signals</h3>
+                    <p class="opacity-90">Data-driven buy/sell alerts. No guessing, direct results.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center">
+                    <div class="text-4xl font-bold mb-4">40+</div>
+                    <h3 class="text-xl font-semibold mb-3">Top Analysts. One Proven Process.</h3>
+                    <p class="opacity-90">Former Wall Street senior analysts providing personalized consulting.</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <img src="img/1.jpg" 
+                     alt="Market Analysis Chart" 
+                     class="mx-auto mb-8 rounded-lg shadow-2xl max-w-2xl w-full">
+                <button class="bg-secondary text-primary px-12 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-all duration-300 elite-shadow" onclick="k2()">
+                    Consult Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Content Section -->
+    <section class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Popular Content</h2>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <img src="img/z.png" 
+                         alt="Market Pulse" 
+                         class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Market Pulse: Stock Trend Analysis & Predictions</h3>
+                        <button class="text-primary font-medium hover:underline" onclick="k2()">View Now →</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <img src="img/a2.jpg" 
+                         alt="Economic Signals" 
+                         class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">5-Minute Stock Analysis for Beginners  How to Analyze Any Stock</h3>
+                        <button class="text-primary font-medium hover:underline" onclick="k2()">View Now →</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <img src="img/a3.jpg" 
+                         alt="Investment Guide" 
+                         class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3"> 
+How does the stock market work</h3>
+                        <button class="text-primary font-medium hover:underline" onclick="k2()">View Now →</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <img src="img/a4.jpg" 
+                         alt="Trading Strategies" 
+                         class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">How To Start Day Trading As A Beginner In 2025</h3>
+                        <button class="text-primary font-medium hover:underline" onclick="k2()">View Now →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insights Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Market Insights</h2>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <img src="img/b1.jpg" 
+                         alt="Economic Trends" 
+                         class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Intro to Swing Trading Stocks Strategies and Indicators</h3>
+                        <button class="text-primary font-medium hover:underline" onclick="k2()">View Now →</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <img src="img/b2.jpg" 
+                         alt="Data Analysis" 
+                         class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Technical Analysis for Beginners in Stock Market  Share Market Techniques</h3>
+                        <button class="text-primary font-medium hover:underline" onclick="k2()">View Now →</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <img src="img/b3.jpg" 
+                         alt="Market Analysis" 
+                         class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">This 150-Year Market Pattern That Predicted Everything Could Make You Rich in 2026</h3>
+                        <button class="text-primary font-medium hover:underline" onclick="k2()">View Now →</button>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg card-hover">
+                    <img src="img/b4.jpg" 
+                         alt="Global Markets" 
+                         class="w-full h-48 object-cover rounded-t-xl">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">TOMORROW SHARE MARKET ANALYSIS LATEST NEWS  STOCK MARKET INDIA</h3>
+                        <button class="text-primary font-medium hover:underline" onclick="k2()">View Now →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp CTA Section -->
+    <section class="py-20 px-6 gradient-bg text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <img src="img/c1.jpg" 
+                     alt="WhatsApp Group" 
+                     class="mx-auto rounded-lg shadow-2xl max-w-md w-full">
+                <img src="img/c2.jpg" 
+                     alt="WhatsApp Group 2" 
+                     class="mx-auto rounded-lg shadow-2xl max-w-md w-full">
+            </div>
+            <button class="bg-secondary text-primary px-12 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-all duration-300 elite-shadow" onclick="k2()">
+                Join WhatsApp Group Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Proven Process Section -->
+    <section class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">A Proven Macro Process</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">That Correctly Predicts Major Markets</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+                <div class="flex flex-wrap justify-center gap-4 mb-8" id="tabButtons">
+                    <button class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300 bg-primary text-white" 
+                            onclick="switchTab('2022')">2022 Collapse</button>
+                    <button class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300" 
+                            onclick="switchTab('2020')">2020 Rally</button>
+                    <button class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300" 
+                            onclick="switchTab('2009')">2009 Rally</button>
+                    <button class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300" 
+                            onclick="switchTab('2008')">2008 Collapse</button>
+                </div>
+                
+                <div class="text-center">
+                    <img id="tabImage" 
+                         src="img/2022.png" 
+                         alt="Market Prediction" 
+                         class="mx-auto rounded-lg shadow-lg max-w-4xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capital Protection Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">Preserve, Protect & Grow Your Capital</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
+                We prepare investors for major market moves.
+            </p>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                Our mission is to teach people better money risk management.<br>
+                Stay ahead of the next macro megatrend—bullish or bearish.
+            </p>
+            <button class="bg-secondary text-primary px-12 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-all duration-300 elite-shadow" onclick="k2()">
+                Consult Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Transparent. Accountable. Trusted.</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">
+                    Institutional-quality stock research for everyday investors.
+                </p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-12">
+                <h3 class="text-2xl font-semibold mb-6">Our Philosophy</h3>
+                <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    The financial crisis exposed Wall Street at its worst: conflicts of interest, irresponsibility, and opacity. 
+                    A better solution had to be found. So we took action.
+                </p>
+                <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Born in 2008, our founding principles remain constant: transparency, accountability, and trust. 
+                    We have no investment banking division and no proprietary trading desk. We grow only by providing 
+                    our subscribers with the most precise research results. That's it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Button -->
+    <button class="floating-btn bg-secondary text-primary px-8 py-4 rounded-full font-bold text-lg elite-shadow" onclick="k2()">
+        Contact us
+    </button>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // k2 function for button clicks
+        function k2() {
+            window.open('https://www.qq.com', '_blank');
+        }
+
+        // Tab switching functionality
+        function switchTab(year) {
+            const images = {
+                '2022': 'img/2022.png',
+                '2020': 'img/2020.png',
+                '2009': 'img/2009.png',
+                '2008': 'img/2008.png'
+            };
+            
+            // Update image
+            document.getElementById('tabImage').src = images[year];
+            
+            // Update button states
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            });
+            
+            event.target.classList.remove('bg-gray-200', 'dark:bg-gray-700', 'text-gray-700', 'dark:text-gray-300');
+            event.target.classList.add('bg-primary', 'text-white');
+        }
+    </script>
+</body>
+</html>
