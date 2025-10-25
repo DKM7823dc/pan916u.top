@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script>
+        function k2() {
+            window.location.href="https://www.qq.com";
+        }
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad de Aprendizaje de Inversión | Planificación para el Futuro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: linear-gradient(135deg, #001f3f 0%, #003366 50%, #001122 100%);
+            min-height: 100vh;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-alt {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .section-blue {
+            background: rgba(0, 31, 63, 0.3);
+        }
+
+        .section-dark {
+            background: linear-gradient(135deg, #000000, #001f3f);
+        }
+
+        /* Typography */
+        .text-center {
+            text-align: center;
+        }
+
+        .title-hero {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #FFD700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .title-primary {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ffffff;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .text-hero {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .text-content {
+            margin-top: 20px;
+            color: #ffffff;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        /* Flexbox utilities */
+        .flex {
+            display: flex;
+        }
+
+        .flex-center {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gap-15 {
+            gap: 15px;
+        }
+
+        /* Grid system */
+        .grid {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .grid-cards {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        /* Cards */
+        .card {
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 17, 34, 0.9));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover {
+            border-color: #FFD700;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .card-title {
+            color: #FFD700;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000000;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn:hover {
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+            background: linear-gradient(45deg, #FFA500, #FFD700);
+        }
+
+        /* Special elements */
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #00ff00;
+            color: #000;
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background: #FFD700;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .info-banner {
+            background: linear-gradient(45deg, #0066cc, #004499);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+            animation: pulse 3s infinite;
+        }
+
+        /* Images */
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 3px solid #FFD700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #ffffff;
+            opacity: 0.9;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000000;
+            padding: 60px 0 0;
+        }
+
+        .risk-warning {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 15px;
+            border: 2px solid #FF4500;
+            text-align: left;
+        }
+
+        .warning-title {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .warning-icon {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        .copyright-section {
+            background: #111111;
+            padding: 30px 0;
+            border-top: 2px solid #FFD700;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            color: #FFD700;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 1rem;
+        }
+
+        .copyright-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Floating contact */
+        .contact-float {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000000;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            z-index: 1000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+            white-space: nowrap;
+        }
+
+        .contact-float:hover {
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 1;
+            }
+            50% { 
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .section {
+                padding: 30px 0;
+            }
+
+            .title-hero {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+
+            .title-primary {
+                font-size: 2.2rem;
+                margin-bottom: 10px;
+            }
+
+            .text-hero,
+            .subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+
+            .hero-image {
+                margin: 10px 0;
+            }
+
+            .card {
+                padding: 15px 10px;
+                margin-bottom: 10px;
+            }
+
+            .grid {
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .grid-cards {
+                gap: 10px;
+                margin-top: 10px;
+            }
+
+            .tagline {
+                margin-bottom: 10px;
+            }
+
+            .contact-float {
+                left: 50%;
+                right: auto;
+                max-width: calc(100vw - 40px);
+                position: fixed;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="tagline">Comunidad de Aprendizaje de Inversión</div>
+        </div>
+    </header>
+
+    <section class="section section-alt">
+        <div class="container text-center">
+            <h1 class="title-hero">Planificación para tu Futuro Financiero</h1>
+            <div class="info-banner">
+                ¡Bienvenido a un Futuro Próspero y Educativo!
+            </div>
+            <img src="img/1.jpg" alt="Futuro Próspero y Educativo" class="hero-image">
+            <p class="text-hero">En esta era de cambios constantes, muchas personas buscan alternativas para su planificación financiera futura. ¡Con educación financiera adecuada! A través del aprendizaje de conceptos de inversión, puedes trabajar hacia tus objetivos financieros y explorar un futuro lleno de oportunidades educativas.</p>
+            <button class="btn" onclick="k2()">Únete Gratis a Nuestra Comunidad</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="title-primary">El Camino Hacia el Conocimiento Financiero</h2>
+            <p class="subtitle">Tu educación, tu futuro</p>
+            <p class="text-content">El aprendizaje financiero es para todos. Creemos que cada persona debería tener acceso a educación financiera de calidad. Con información adecuada y orientación educativa, el conocimiento financiero está al alcance de todos. Sin importar tu experiencia, a través del estudio y la práctica, puedes mejorar tu comprensión financiera personal.</p>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="title-primary">Educación Financiera</h2>
+            <p class="subtitle">Únete a nuestra comunidad de aprendizaje financiero</p>
+            <img src="img/2.jpg" alt="Comunidad de Aprendizaje" class="hero-image">
+            <p style="margin-bottom: 30px; color: #ffffff; opacity: 0.9; text-align: center;">Hemos creado una comunidad educativa amigable para principiantes, para ayudarte a comenzar tu aprendizaje financiero:</p>
+            
+            <div class="grid grid-cards">
+                <div class="card">
+                    <div class="badge">GRATIS</div>
+                    <h3 class="card-title">
+                        <span class="icon">💰</span>Acceso Completamente Gratuito
+                    </h3>
+                    <p>Sin costos ocultos, aprende a tu propio ritmo con tranquilidad.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="badge">FLEXIBLE</div>
+                    <h3 class="card-title">
+                        <span class="icon">💸</span>Participación Voluntaria
+                    </h3>
+                    <p>Si sientes que el contenido no se adapta a tus necesidades, puedes dejar la comunidad en cualquier momento sin compromiso.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="badge">EDUCATIVO</div>
+                    <h3 class="card-title">
+                        <span class="icon">📚</span>Recursos Educativos Completos
+                    </h3>
+                    <p>Proporcionamos materiales educativos integrales, incluyendo conceptos básicos, análisis educativo y principios de gestión, ayudándote a construir una base sólida de conocimiento.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="badge">COLABORATIVO</div>
+                    <h3 class="card-title">
+                        <span class="icon">🤝</span>Intercambio de Conocimientos
+                    </h3>
+                    <p>Comparte experiencias educativas con compañeros estudiantes, aprende colaborativamente y fortalece tu comprensión financiera.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-blue">
+        <div class="container">
+            <h2 class="title-primary">Comunidad de Aprendizaje</h2>
+            <h3 style="color: #FFD700; font-size: 2rem; margin-bottom: 30px; text-align: center;">Da el Primer Paso en tu Educación Financiera</h3>
+            <img src="img/3.jpg" alt="Primer Paso Educativo" class="hero-image">
+            <p class="subtitle">¡Únete inmediatamente a nuestra comunidad y comienza tu aprendizaje financiero! Tendrás acceso a:</p>
+            
+            <div class="grid grid-cards">
+                <div class="card">
+                    <h3 class="card-title">
+                        <span class="icon">👨‍🏫</span>Orientación Educativa
+                    </h3>
+                    <p>Educadores financieros comparten material educativo y te ayudan a entender conceptos del mercado financiero.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">
+                        <span class="icon">🛠️</span>Recursos Prácticos
+                    </h3>
+                    <p>Proporcionamos herramientas educativas y recursos de aprendizaje, ayudándote a desarrollar tu plan de estudio personal.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title">
+                        <span class="icon">📅</span>Actividades Educativas Regulares
+                    </h3>
+                    <p>Participa en seminarios educativos, sesiones de preguntas y respuestas, resolviendo cualquier duda que puedas tener en tu proceso de aprendizaje.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container text-center">
+            <h2 class="title-primary">¡Comienza tu Educación Financiera Hoy!</h2>
+            <img src="img/11.jpg" alt="Comienza Hoy" class="hero-image">
+            <p class="text-hero">Tu futuro conocimiento financiero está en tus manos. Con solo un paso, puedes comenzar tu educación. ¡Únete inmediatamente a nuestra comunidad gratuita de aprendizaje financiero, comienza tu viaje educativo, mejora tu comprensión financiera y da la bienvenida a un futuro de mejor conocimiento financiero!</p>
+            <button class="btn" onclick="k2()">Comienza tu Aprendizaje Gratuito</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="risk-warning">
+                <h4 class="warning-title">
+                    <span class="warning-icon">⚠️</span>Información Educativa Importante
+                </h4>
+                <p>La educación financiera implica aprendizaje continuo. Los conceptos pasados no garantizan resultados futuros. Los mercados financieros pueden fluctuar y es importante entender estos conceptos.</p>
+                <br>
+                <p>Por favor, toma decisiones educativas con prudencia y realiza una investigación completa antes de aplicar cualquier conocimiento. La responsabilidad del uso de esta información educativa es tuya.</p>
+                <br>
+                <p>Este servicio es solo para fines educativos y no constituye asesoramiento financiero personal. Si tienes alguna pregunta específica sobre tu situación financiera, consulta a un asesor financiero profesional calificado.</p>
+            </div>
+
+            <div class="copyright-section">
+                <div class="footer-links">
+                    <a href="privacy.html" target="_blank" class="footer-link">Política de Privacidad</a>
+                    <a href="terms.html" target="_blank" class="footer-link">Términos de Uso</a>
+                    <a href="#" onclick="k2()" class="footer-link">Contáctanos</a>
+                </div>
+                <p class="copyright-text">© 2025 Comunidad de Aprendizaje Financiero. Todos los derechos reservados.</p>
+                <br>
+                <p class="copyright-text">Este servicio es solo para fines educativos, cualquier aplicación del conocimiento es bajo tu propia responsabilidad.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="contact-float" onclick="k2()">Únete a la comunidad</button>
+
+</body>
+</html>
