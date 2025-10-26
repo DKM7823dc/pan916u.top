@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Piyasa Trendleri ve Yatırım Fırsatları</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: #333333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                align-items: flex-start;
+                padding: 10px 0;
+                overflow-y: auto;
+            }
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: #ffffff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .container {
+            max-width: 520px;
+            width: 90%;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.4);
+        }
+
+        .expert-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e5a96;
+            margin-bottom: 15px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #1e5a96, #f39c12, #2980b9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-section {
+            margin-bottom: 25px;
+        }
+
+        .welcome-text {
+            font-size: 16px;
+            color: #2c3e50;
+            font-weight: 500;
+            line-height: 1.6;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            border-left: 4px solid #1e5a96;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 0;
+        }
+
+        .stats-highlight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 25px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(30, 90, 150, 0.1), rgba(243, 156, 18, 0.1));
+            border-radius: 15px;
+            border: 2px solid rgba(30, 90, 150, 0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #1e5a96, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #2c3e50;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .stat-divider {
+            font-size: 24px;
+            color: rgba(30, 90, 150, 0.3);
+            margin: 0 15px;
+        }
+
+        .guarantee-box {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            margin: 20px 0;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .guarantee-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .guarantee-text {
+            font-size: 14px;
+            color: #2c3e50;
+            font-weight: 500;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(30, 90, 150, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .feature-text {
+            font-size: 12px;
+            color: #2c3e50;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .cta-message {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(243, 156, 18, 0.1);
+            border-radius: 12px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .cta-message p {
+            font-size: 14px;
+            color: #2c3e50;
+            font-weight: 500;
+            text-align: center;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 480px) {
+            .stats-highlight {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stat-divider {
+                transform: rotate(90deg);
+                font-size: 20px;
+                margin: 0;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .stat-label {
+                font-size: 11px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .guarantee-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .guarantee-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        .consultation-form {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .consultation-form.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #87ceeb;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: rgba(0, 102, 204, 0.1);
+            border-radius: 12px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .radio-option:hover {
+            background: rgba(0, 102, 204, 0.2);
+            border-color: rgba(0, 102, 204, 0.4);
+        }
+
+        .radio-option.disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .radio-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .radio-option.disabled input[type="radio"] {
+            cursor: not-allowed;
+        }
+
+        .radio-custom {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #87ceeb;
+            border-radius: 50%;
+            margin-right: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option input[type="radio"]:checked + .radio-custom {
+            border-color: #00ff88;
+            background: #00ff88;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .radio-option input[type="radio"]:checked + .radio-custom::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .radio-option input[type="radio"]:checked ~ span:not(.radio-custom) {
+            color: #00ff88;
+            font-weight: 600;
+        }
+
+        .benefits-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 243, 176, 0.9);
+            border-radius: 15px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .benefits-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e5a96;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 16px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .benefits-list li::before {
+            content: '✅';
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .limited-spots {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+            animation: pulse 2s infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .limited-spots:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        /* 底部悬浮按钮 */
+        .bottom-line-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #00C300, #00A000);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            z-index: 1001;
+            box-shadow: 0 8px 25px rgba(0, 195, 0, 0.4);
+            transition: all 0.3s ease;
+            animation: bottom-line-breathe 3s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 180px;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .bottom-line-button:hover {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 195, 0, 0.6);
+            animation-play-state: paused;
+        }
+
+        .bottom-line-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .bottom-line-button:hover::before {
+            left: 100%;
+        }
+
+        .line-icon-bottom {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #00C300;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        @keyframes bottom-line-breathe {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 8px 25px rgba(0, 195, 0, 0.4);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.05);
+                box-shadow: 0 12px 35px rgba(0, 195, 0, 0.7);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #1e5a96, #f39c12);
+            border: none;
+            color: white;
+            padding: 18px 50px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(30, 90, 150, 0.4);
+            transition: all 0.3s ease;
+            animation: breathe 3s infinite ease-in-out;
+        }
+
+        .cta-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            animation: none;
+            background: linear-gradient(135deg, #666, #444, #222);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 102, 204, 0.6);
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 15px 35px rgba(0, 102, 204, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 20px 45px rgba(0, 102, 204, 0.6);
+            }
+        }
+
+        .error-message {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(200, 0, 0, 0.1));
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+            text-align: center;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .error-message p {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .blocked-message {
+            background: linear-gradient(135deg, rgba(255, 100, 0, 0.2), rgba(200, 80, 0, 0.1));
+            border: 1px solid rgba(255, 100, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .blocked-message p {
+            color: #ff9500;
+            font-size: 16px;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .free-badge {
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3); }
+            to { box-shadow: 0 5px 25px rgba(0, 255, 136, 0.6); }
+        }
+
+        .legal-links {
+            margin-top: 20px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .legal-links a {
+            color: rgba(135, 206, 235, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .legal-links a:hover {
+            color: #87ceeb;
+        }
+
+        .separator {
+            margin: 0 8px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: linear-gradient(145deg, rgba(0, 40, 80, 0.95), rgba(0, 20, 40, 0.95));
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #fff;
+        }
+
+        .modal h2 {
+            color: #87ceeb;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .modal h3 {
+            color: #ffffff;
+            margin: 20px 0 10px 0;
+            font-size: 18px;
+        }
+
+        .modal p, .modal li {
+            color: #e6f3ff;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .modal ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            font-size: 11px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .copyright {
+            margin-bottom: 15px;
+        }
+
+        .copyright p {
+            margin-bottom: 5px;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (max-height: 700px) {
+            .container {
+                padding: 20px 15px;
+            }
+            .logo {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 20px;
+                font-size: 24px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .cta-button {
+                padding: 15px 40px;
+                font-size: 16px;
+            }
+            .legal-links {
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                max-width: 95%;
+                padding: 20px 15px;
+                margin-bottom: 100px;
+            }
+            
+            .form-label {
+                font-size: 15px;
+            }
+            
+            .radio-option {
+                padding: 12px;
+            }
+
+            .subtitle {
+                font-size: 13px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .bottom-line-button {
+                bottom: 15px;
+                padding: 12px 20px;
+                font-size: 14px;
+                min-width: 200px;
+                flex-wrap: nowrap;
+            }
+
+            .line-icon-bottom {
+                width: 20px;
+                height: 20px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+
+    <!-- Bottom floating WhatsApp button -->
+    <div class="bottom-line-button" onclick="k2()"> 
+        <span>WhatsApp ile Ücretsiz Katılın</span>
+    </div>
+
+    <div class="container">
+        <img src="img/1.webp" alt="Yatırım Uzmanı" class="logo">
+        <div class="expert-name">İslam Memiş</div>
+        
+        <div class="free-badge">ÜCRETSİZ ERİŞİM</div>
+        <h1>Özel Yatırım Topluluğuna Hoş Geldiniz</h1>
+        <div class="intro-section">
+            <p class="welcome-text">Merhaba, ben İslam Memiş. Özel bir topluluk kuruyoruz. Burada her gün sizin için çok miktarda bilgi, özenle seçilmiş fırsatlar, harika ipuçları ve gerçek zamanlı sohbet bulacaksınız.</p>
+        </div>
+
+        <div class="stats-highlight">
+            <div class="stat-item">
+                <div class="stat-number">%128+</div>
+                <div class="stat-label">Geçen Ay Ortalama Haftalık Getiri</div>
+            </div>
+            <div class="stat-divider">|</div>
+            <div class="stat-item">
+                <div class="stat-number">%1000+</div>
+                <div class="stat-label">Aylık Getiri Hedefimiz</div>
+            </div>
+        </div>
+
+        <div class="guarantee-box">
+            <div class="guarantee-icon">🛡️</div>
+            <p class="guarantee-text">Burada ortaya çıkabilecek herhangi bir potansiyel sorundan <strong>ben kişisel olarak sorumlu</strong> olacağım.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <div class="feature-text">Farklı Perspektifler</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-text">Uzman Teknik Detayları</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📺</div>
+                <div class="feature-text">Canlı Konferanslar</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💬</div>
+                <div class="feature-text">Gerçek Zamanlı Sohbet</div>
+            </div>
+        </div>
+
+        <div class="cta-message">
+            <p>Risksiz getiri ve mükemmel performansı kim istemez?<br><strong>Sizin için her zaman hazırız!</strong></p>
+        </div>
+        
+        <div class="limited-spots" onclick="k2()">Sadece 30 Kota Kaldı</div>
+        
+        <div class="benefits-section">
+            <div class="benefits-title">Özel Topluluğun Avantajları</div>
+            <ul class="benefits-list">
+                <li>Her gün çok miktarda bilgi ve analiz</li>
+                <li>Özenle seçilmiş yatırım fırsatları</li>
+				 <li>Uzman teknik detayları ve ipuçları</li>
+				 <li>Gerçek zamanlı sohbet ve canlı konferanslar</li>
+				<li>%128+ haftalık getiri potansiyeli</li>
+            </ul>
+            <div class="limited-spots" onclick="k2()">Başarı Yolculuğuna Şimdi Başlayın</div>
+        </div>
+        
+        <div class="footer-info">
+            <div class="copyright">
+                <p>© 2025 Tüm Hakları Saklıdır</p>
+            </div>
+            <div class="contact-info"> 
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Gizlilik Politikası</h2>
+            
+            <h3>1. Giriş</h3>
+            <p>Ücretsiz Yatırım Topluluğumuza hoş geldiniz. Gizliliğinize saygı duyuyor ve kişisel verilerinizi korumayı taahhüt ediyoruz. Bu gizlilik politikası, bilgilerinizi nasıl topladığımızı, kullandığımızı ve koruduğumuzu açıklar.</p>
+            
+            <h3>2. Topladığımız Bilgiler</h3>
+            <p>Ücretsiz hizmetimize kaydolduğunuzda aşağıdaki bilgileri toplayabiliriz:</p>
+            <ul>
+                <li>İletişim bilgileri (WhatsApp numarası)</li>
+                <li>İletişim tercihleri</li>
+                <li>Belirli hisse senetleri veya piyasa segmentlerine olan ilgi</li>
+            </ul>
+            
+            <h3>3. Bilgilerinizi Nasıl Kullanıyoruz</h3>
+            <p>Bilgileriniz yalnızca aşağıdaki amaçlar için kullanılır:</p>
+            <ul>
+                <li>Haftalık hisse senedi analizi gönderimi (1-3 seçim)</li>
+                <li>Fonlar ve birinci sınıf hisse senetlerinde piyasa trend bilgilerini paylaşma</li>
+                <li>Ücretsiz yatırım bilgisi sağlama</li>
+                <li>WhatsApp üzerinden hizmetlerimiz hakkında iletişim kurma</li>
+            </ul>
+            
+            <h3>4. Veri Paylaşımı</h3>
+            <p>Kişisel bilgilerinizi üçüncü taraflarla satmaz, kiralamaz veya paylaşmayız. Verileriniz gizli tutulur ve yalnızca bu politikada belirtilen amaçlar için kullanılır.</p>
+            
+            <h3>5. Veri Güvenliği</h3>
+            <p>Kişisel verilerinizi yetkisiz erişim, değişiklik, ifşa veya imhaya karşı korumak için uygun teknik ve organizasyonel önlemler uygularız.</p>
+            
+            <h3>6. Haklarınız</h3>
+            <p>Aşağıdaki haklara sahipsiniz:</p>
+            <ul>
+                <li>Kişisel verilerinize erişim talep etme hakkı</li>
+                <li>Yanlış verilerin düzeltilmesini talep etme hakkı</li>
+                <li>Verilerinizin silinmesini talep etme hakkı</li>
+                <li>Hizmetlerimizden istediğiniz zaman aboneliği iptal etme hakkı</li>
+            </ul>
+            
+            <h3>7. Veri Saklama</h3>
+            <p>Kişisel verilerinizi yalnızca ücretsiz hizmetimizi sağlamak ve yasal yükümlülüklere uymak için gerekli olduğu sürece saklarız.</p>
+            
+            <h3>8. Bizimle İletişim</h3>
+            <p>Bu gizlilik politikası veya kişisel verileriniz hakkında sorularınız için lütfen WhatsApp üzerinden bizimle iletişime geçin.</p>
+            
+            <p><strong>Son Güncelleme:</strong> Ocak 2024</p>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('termsModal')">&times;</span>
+            <h2>Hizmet Şartları</h2>
+            
+            <h3>1. Genel Şartlar</h3>
+            <p>WhatsApp üzerinden ücretsiz yatırım topluluğumuza katılarak, bu Hizmet Şartlarını tamamen kabul etmiş olursunuz. Bu şartlar sağladığımız tüm hizmetler için geçerlidir.</p>
+            
+            <h3>2. Hizmet Açıklaması</h3>
+            <p>Ücretsiz yatırım topluluğumuz aşağıdakileri sağlar:</p>
+            <ul>
+                <li>Haftalık profesyonel analiz edilmiş hisse senetleri (1-3 seçim) detaylı açıklamalarla</li>
+                <li>Fonlar, bireysel hisse senetleri ve birinci sınıf şirketlerde özel piyasa trend bilgileri</li>
+                <li>Yüksek kaliteli yatırım bilgileri ve eğitim materyalleri</li>
+                <li>Tartışmalar ve güncellemeler için WhatsApp topluluğuna erişim</li>
+            </ul>
+            
+            <h3>3. Ücretsiz Erişim ve Koşullar</h3>
+            <p>Hizmetimiz %100 ücretsizdir. Gizli maliyet, abonelik ücreti veya satın alma zorunluluğu yoktur. Hizmeti önceden haber vermeksizin sonlandırma veya değiştirme hakkını saklı tutarız.</p>
+            
+            <h3>4. Kullanıcı Sorumlulukları</h3>
+            <p>Topluluğumuzun bir üyesi olarak aşağıdakileri kabul ediyorsunuz:</p>
+            <ul>
+                <li>WhatsApp grubu içinde saygılı iletişim</li>
+                <li>Spam, reklam veya uygunsuz içerik paylaşımı yapmama</li>
+                <li>Yatırım kararları vermeden önce kendi araştırmanızı yapma</li>
+                <li>Paylaşılan bilgilerin gizliliğine saygı gösterme</li>
+            </ul>
+            
+            <h3>5. Sorumluluk Reddi ve Risk Uyarısı</h3>
+            <p><strong>Önemli:</strong> Sağlanan tüm bilgiler yalnızca eğitim amaçlıdır ve kişisel finansal tavsiye değildir. Hisse senedi yatırımı önemli riskler içerir:</p>
+            <ul>
+                <li>Tüm yatırımlar değer kaybedebilir</li>
+                <li>Sermayenizin bir kısmını veya tamamını kaybedebilirsiniz</li>
+                <li>Geçmiş performans gelecekteki sonuçları garanti etmez</li>
+                <li>Her zaman kalifiye bir finansal danışmana başvurun</li>
+            </ul>
+            
+            <h3>6. Fikri Mülkiyet</h3>
+            <p>Tarafımızca paylaşılan tüm içerik, analiz ve materyaller yatırım topluluğumuzun mülkiyetindedir. Yazılı izin olmaksızın çoğaltma, dağıtım veya ticari kullanım yasaktır.</p>
+            
+            <h3>7. Sorumluluk Sınırlaması</h3>
+            <p>Aşağıdakilerden sorumlu değiliz:</p>
+            <ul>
+                <li>Yatırım kararlarından kaynaklanan finansal kayıplar</li>
+                <li>WhatsApp veya diğer iletişim kanallarındaki teknik sorunlar</li>
+                <li>Bilgi teslimindeki gecikmeler</li>
+                <li>Analizlerdeki hatalar veya eksiklikler</li>
+            </ul>
+            
+            <h3>8. Üyelik İptali</h3>
+            <p>Üyeliğinizi istediğiniz zaman WhatsApp üzerinden mesaj göndererek sonlandırabilirsiniz. Bu şartları ihlal etmeniz durumunda erişiminizi sonlandırabiliriz.</p>
+            
+            <h3>9. Şartlarda Değişiklikler</h3>
+            <p>Bu Hizmet Şartlarını değiştirme hakkını saklı tutarız. Önemli değişiklikler WhatsApp üzerinden duyurulacaktır. Değişikliklerden sonra devam eden kullanım, yeni şartların kabulü anlamına gelir.</p>
+            
+            <h3>10. Geçerli Hukuk</h3>
+            <p>Bu Hizmet Şartları ABD hukukuna tabidir. Herhangi bir anlaşmazlık yetkili ABD mahkemelerine sunulacaktır.</p>
+            
+            <p><strong>İletişim:</strong> Bu şartlar hakkında sorularınız için lütfen WhatsApp üzerinden bizimle iletişime geçin.</p>
+            <p><strong>Son Güncelleme:</strong> Ocak 2024</p>
+        </div>
+    </div>
+
+    <script>
+        // Cookie utility functions
+        function setCookie(name, value, days) {
+            const expires = new Date();
+            expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = name + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Check if user is blocked on page load
+        function checkUserBlocked() {
+            const isBlocked = getCookie('user_blocked');
+            if (isBlocked === 'true') {
+                disableForm();
+                document.getElementById('blockedMessage').style.display = 'block';
+                return true;
+            }
+            return false;
+        }
+
+        // Disable form permanently
+        function disableForm() {
+            const form = document.getElementById('consultationForm');
+            const radioOptions = document.querySelectorAll('.radio-option');
+            const submitButton = document.querySelector('.cta-button');
+            
+            form.classList.add('disabled');
+            radioOptions.forEach(option => {
+                option.classList.add('disabled');
+                const input = option.querySelector('input');
+                if (input) {
+                    input.disabled = true;
+                }
+            });
+            submitButton.disabled = true;
+        }
+
+        // Create twinkling stars
+        function createStars() {
+            const starsContainer = document.querySelector('.stars');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = star.style.height = Math.random() * 3 + 1 + 'px';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        createStars();
+
+        // Dark mode support
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Custom alert function to replace browser alert
+        function showCustomAlert(message) {
+            const alertModal = document.createElement('div');
+            alertModal.className = 'modal';
+            alertModal.style.display = 'block';
+            alertModal.innerHTML = `
+                <div class="modal-content" style="max-width: 400px; text-align: center;">
+                    <h2 style="color: #87ceeb; margin-bottom: 20px;">Bildirim</h2>
+                    <p style="color: #e6f3ff; margin-bottom: 20px;">${message}</p>
+                    <button onclick="this.closest('.modal').remove(); document.body.style.overflow = 'auto';" 
+                            style="background: #0066cc; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer;">
+                        Tamam
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(alertModal);
+            document.body.style.overflow = 'hidden';
+        }
+
+        // k2 function for random redirect
+        function k2() {
+            
+            const urls = ['https://www.qq.com'];
+            const randomUrl = urls[Math.floor(Math.random() * urls.length)];
+            window.open(randomUrl, '_blank');
+        }
+
+        function showPrivacy() {
+            document.getElementById('privacyModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showTerms() {
+            document.getElementById('termsModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const privacyModal = document.getElementById('privacyModal');
+            const termsModal = document.getElementById('termsModal');
+            if (event.target == privacyModal) {
+                closeModal('privacyModal');
+            }
+            if (event.target == termsModal) {
+                closeModal('termsModal');
+            }
+        }
+
+        // Add visual feedback for radio button interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is blocked first
+            if (checkUserBlocked()) {
+                return;
+            }
+
+            const radioOptions = document.querySelectorAll('.radio-option');
+            
+            radioOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Don't allow interaction if form is disabled
+                    if (this.classList.contains('disabled')) {
+                        return;
+                    }
+
+                    const input = this.querySelector('input[type="radio"]');
+                    if (input && !input.disabled) {
+                        input.checked = true;
+                        
+                        // Remove selection from other options in the same group
+                        const groupName = input.name;
+                        document.querySelectorAll(`input[name="${groupName}"]`).forEach(radio => {
+                            if (radio !== input) {
+                                radio.checked = false;
+                            }
+                        });
+                        
+                        // Update visual state
+                        updateRadioVisuals();
+                    }
+                });
+            });
+        });
+
+        function updateRadioVisuals() {
+            const radioOptions = document.querySelectorAll('.radio-option');
+            radioOptions.forEach(option => {
+                if (option.classList.contains('disabled')) {
+                    return;
+                }
+                
+                const input = option.querySelector('input[type="radio"]');
+                if (input.checked) {
+                    option.style.borderColor = 'rgba(0, 255, 136, 0.6)';
+                    option.style.background = 'rgba(0, 255, 136, 0.1)';
+                } else {
+                    option.style.borderColor = 'transparent';
+                    option.style.background = 'rgba(0, 102, 204, 0.1)';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
