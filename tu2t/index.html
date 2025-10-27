@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+	
+ 
+
+<script>
+ function d2() {
+ 	 
+           window.location.href="https://www.qq.com";
+        }
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Profesyonel Hisse Senedi Yatırım Analizi - Uzman Ticaret Topluluğu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .breathing {
+            animation: breathing 2s ease-in-out infinite;
+        }
+        
+        @keyframes breathing {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #ef4444, #dc2626);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #dc2626, #b91c1c);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.4);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: #25d366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 80%;
+            max-width: 300px;
+        }
+        
+        .floating-btn button {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                right: 15px;
+                width: 50px;
+                height: 50px;
+            }
+            .floating-btn {
+                width: 90%;
+                bottom: 15px;
+            }
+            .floating-btn button {
+                font-size: 14px;
+                padding: 12px 16px;
+            }
+            .floating-btn span {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+    <!-- Header Section -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Profesyonel Yatırım Analizi
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Hala piyasa kayıpları konusunda endişeli misiniz? Ekibimiz ücretsiz çevrimiçi hizmetler sunan profesyonel analistlerden oluşur. Her gün iletişim kuruyor ve işbirliği yapıyoruz. Evet, ama biz finans sektöründeyiz. Değişmek istiyor musunuz? Mutlu bir yaşam sürmek istiyor musunuz?
+            </p>
+        </div>
+        
+        <div class="flex justify-center mb-12">
+            <img src="img/12.jpg" alt="Profesyonel Finansal Analist" class="rounded-lg shadow-2xl max-w-md w-full">
+        </div>
+        
+        <div class="text-center">
+            <button onclick="d2()" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center space-x-2">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                <span>WhatsApp'ı Hemen Ekle</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="bg-slate-800/50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Daha Akıllı, Daha Hızlı İş İçin</h2>
+                <p class="text-xl text-gray-300">
+                    Her yatırımcıya teknik zorlukların nasıl üstesinden geleceğini ve performansı artırmak için yapay zekayı nasıl kullanacağını gösteriyoruz!
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg">
+                    <div class="text-center">
+                        <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Yatırım Trend Analizi!</h3>
+                        <p class="text-gray-300">Grafik incelemeleri, yatırımcılara yeni başlayanların bile öğrenebileceği karlı yatırım ipuçları sağlar!</p>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg">
+                    <div class="text-center">
+                        <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bell text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Gerçek Zamanlı Uyarılar</h3>
+                        <p class="text-gray-300">Derin deneyime sahip profesyonel analistlerden eğitim, yapay zeka ile birleştirilmiş, ticareti destekler ve birçok piyasada kar maksimizasyonunu sağlar!</p>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg">
+                    <div class="text-center">
+                        <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-coins text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Kendi Temettü Portföyünüzü Oluşturun</h3>
+                        <p class="text-gray-300">Ücretsiz. Her gün bir ila üç başarı hikayesi paylaşın! Hedef protokolüm ücretsiz ve özel premium analistler için geçerlidir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stock Management Section -->
+    <div class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <p class="text-xl text-gray-300 mb-8">
+                    Evet, biz onlardan biriyiz. Borsa forumlarında kaliteli hisse senedi alıcıları artıyor. Hisse senedi fiyatları hafta içi ve Cuma günü arasında dalgalanıyor. Bugün envanter yönetimi analizinden bahsedelim.
+                </p>
+                <img src="img/2.jpg" alt="Hisse Senedi Analizi" class="rounded-lg shadow-2xl max-w-md w-full mx-auto mb-8">
+                <button onclick="d2()" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center space-x-2">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span>WhatsApp'ı Hemen Ekle</span>
+                </button>
+            </div>
+            
+            <div class="bg-yellow-500/20 p-6 rounded-lg border border-yellow-500/50 mb-12">
+                <p class="text-center text-lg">
+                    <strong>Not:</strong> Bu bizim özel grubumuz. Sadece hisse senetleri ve yatırım deneyimini tartışıyoruz. Paylaşım önemlidir! Eğer hisse senedi yatırımcısı değilseniz, lütfen başvuru yapmayın!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="bg-slate-800/50 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Bu En Popüler Faaliyetleri Neden Öneriyoruz?</h2>
+            <p class="text-xl text-center text-gray-300 mb-12">On yıllık teknik analiz deneyimimiz var ve çok deneyimliyiz. Gerçek zamanlı video oynatma!</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg text-center">
+                    <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-arrow-up text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Fırsatlarınızı Artırın</h3>
+                    <p class="text-gray-300">Ticaret ve yatırımınızı genişletin, piyasa değişikliklerine adapte olun.</p>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg text-center">
+                    <div class="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Riski Azaltın</h3>
+                    <p class="text-gray-300">Profesyonel sistemimizi kullanarak ve lazer hassasiyetine odaklanarak, doğrudan ticari faydalar elde edebilirsiniz.</p>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg text-center">
+                    <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Ticaret Psikolojisi</h3>
+                    <p class="text-gray-300">Net piyasa sinyallerimizden yararlanarak, duygusal dalgalanmalar ortadan kaldırılabilir.</p>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg text-center">
+                    <div class="bg-orange-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-pie text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Yatırımlarınızı Takip Edin</h3>
+                    <p class="text-gray-300">Zenginliğin kendi anlamı vardır, ancak onu takip etmek kolay değildir. Ekibimiz size yardımcı olabilir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Long-term Partnership Section -->
+    <div class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <img src="img/3.jpg" alt="Uzun Vadeli Ortaklık" class="rounded-lg shadow-2xl max-w-md w-full mx-auto mb-8">
+                <h2 class="text-3xl font-bold mb-6">Doğru Yönü Bulduğumuzda, Onlarca Yıl Sizi Eşlik Edeceğiz</h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Bireyler, aileler ve diğerleri ideal finansal hedeflerinize ulaşmanıza yardımcı olacaktır. Bu çok önemlidir. Zenginlik sonunda anlamını bulacaktır: sizin anlamınızı.
+                </p>
+                <img src="img/4.jpg" alt="Strateji Uygulama" class="rounded-lg shadow-2xl max-w-md w-full mx-auto mb-8">
+                <p class="text-xl text-gray-300">
+                    Geri dönüş stratejisi, tamamlandı. Ekonomi büyürken borsa neden düşüyor? Belki de ustalarınızdan hisse senedi ticareti öğrenmelisiniz. Hisse senedi ticareti yoluyla kar elde edin.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7 Steps Section -->
+    <div class="bg-slate-800/50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-6">Hisse Senedi Araştırması Borsa Ustası Olmanıza Yardımcı Olur</h2>
+                <p class="text-xl text-gray-300 mb-8">Sizi kazanan - başarılı bir tüccar yapmak için yedi adım derledik:</p>
+                <img src="img/5.jpg" alt="Başarıya Yedi Adım" class="rounded-lg shadow-2xl max-w-md w-full mx-auto mb-8">
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-700/50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <h3 class="font-semibold">Profesyonelleri Dinleyin</h3>
+                    </div>
+                    <p class="text-gray-300">Profesyonellerin operasyonları hakkındaki değerlendirmelerini dinleyin.</p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <h3 class="font-semibold">Piyasa Trendlerini Takip Edin</h3>
+                    </div>
+                    <p class="text-gray-300">Piyasa trendlerine ve hareketlerine dikkat edin.</p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <h3 class="font-semibold">Giriş Noktalarını Bulun</h3>
+                    </div>
+                    <p class="text-gray-300">İşlemleriniz için doğru giriş noktasını bulun.</p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <h3 class="font-semibold">Pozisyonları Tutun</h3>
+                    </div>
+                    <p class="text-gray-300">Trend bitene kadar pozisyonları tutun, ardından piyasaya itin.</p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <h3 class="font-semibold">Potansiyel Yatırımcıları Bulun</h3>
+                    </div>
+                    <p class="text-gray-300">En potansiyel yatırımcıları ve fırsatları bulun.</p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">6</span>
+                        </div>
+                        <h3 class="font-semibold">Piyasa Verilerini Okuyun</h3>
+                    </div>
+                    <p class="text-gray-300">Piyasa verilerini etkili bir şekilde yorumlamayı öğrenin.</p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg md:col-span-2 lg:col-span-3">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-500 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">7</span>
+                        </div>
+                        <h3 class="font-semibold">Zihniyetinizi Değiştirin</h3>
+                    </div>
+                    <p class="text-gray-300">Yeni piyasalara adapte olmak için düşünce tarzınızı ve ticaret yöntemlerinizi değiştirin. Değiştin mi?</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                
+                <button onclick="d2()" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center space-x-2">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span>WhatsApp'ı Hemen Ekle</span>
+                </button>
+            </div>
+        </div>
+    </div>
+ 
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12">
+        <div class="container mx-auto px-4">
+             
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Profesyonel Yatırım Analizi Topluluğu. Tüm hakları saklıdır.</p>
+                <p class="mt-2 text-sm">Bu web sitesi yatırım analizi ve piyasa trendleri hakkında eğitici içerik sağlar. Tüm içerik yalnızca bilgilendirme amaçlıdır.</p>
+                <p class="mt-2 text-xs">Lisanslı Yatırım Danışmanlık Hizmetleri | Düzenlenmiş Finansal Analiz Platformu</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float breathing">
+        <div class="badge breathing">1</div>
+        <i class="fab fa-whatsapp text-white text-2xl cursor-pointer" onclick="d2()"></i>
+    </div>
+
+    <!-- Floating Bottom Button -->
+    <div class="floating-btn">
+        <button onclick="d2()" class="btn-primary w-full py-4 rounded-full text-white font-semibold text-lg breathing inline-flex items-center justify-center space-x-2">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span>Profesyonel Topluluğumuza Katılın</span>
+        </button>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // WhatsApp redirect function
+       
+
+        // Smooth scrolling for better user experience
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
