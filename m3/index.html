@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Growth and Market Signal Analysis - Seize Investment Opportunities</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .header h1::before {
+            content: "💰";
+            position: absolute;
+            left: -30px;
+            top: 0;
+            font-size: 20px;
+        }
+
+        .header h1::after {
+            content: "📈";
+            position: absolute;
+            right: -30px;
+            top: 0;
+            font-size: 20px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-top: 15px;
+        }
+
+        /* Expert Section */
+        .expert-section {
+            padding: 30px 20px;
+            background: #f8f9fa;
+            border-left: 5px solid #007bff;
+        }
+
+        .expert-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .expert-avatar {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin: 0 auto 15px auto;
+            border: 3px solid #007bff;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .expert-details h3 {
+            font-size: 18px;
+            color: #1e3c72;
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .expert-details h3::before {
+            content: "👨‍💼";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 16px;
+        }
+
+        .expert-details p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid #007bff;
+            margin-top: 10px;
+        }
+
+        .limited-offer {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+        }
+
+        .limited-offer h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 30px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .content-section h2 {
+            font-size: 20px;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            text-align: center;
+            position: relative;
+            padding: 15px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #007bff;
+        }
+
+        .content-section h2::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+        }
+
+        .content-section:nth-child(4) h2::before {
+            content: "🔧";
+        }
+
+        .content-section:nth-child(5) h2::before {
+            content: "⭐";
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid #e9ecef;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .content-section p::before {
+            content: "💡";
+            position: absolute;
+            left: -15px;
+            top: 15px;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            padding: 15px 20px;
+            border-left: 4px solid #007bff;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .feature-list li::before {
+            content: "✨";
+            position: absolute;
+            left: -15px;
+            top: 15px;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .feature-list li:nth-child(1)::before { content: "📊"; }
+        .feature-list li:nth-child(2)::before { content: "⚡"; }
+        .feature-list li:nth-child(3)::before { content: "🎯"; }
+        .feature-list li:nth-child(4)::before { content: "🏆"; }
+        .feature-list li:nth-child(5)::before { content: "💼"; }
+        .feature-list li:nth-child(6)::before { content: "📚"; }
+
+        .feature-list li strong {
+            color: #1e3c72;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        /* Images */
+        .content-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* CTA Button */
+        .cta-section {
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,107,107,0.6);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 15px rgba(255,107,107,0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(255,107,107,0.7);
+            }
+            100% {
+                box-shadow: 0 4px 15px rgba(255,107,107,0.4);
+            }
+        }
+
+        .cta-text {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Risk Warning */
+        .risk-warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .risk-warning h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .risk-warning p {
+            color: #856404;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: #bdc3c7;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: #95a5a6;
+            margin-top: 15px;
+        }
+
+        /* Floating Limited Offer */
+        .floating-offer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 -4px 15px rgba(255,107,107,0.4);
+            z-index: 1000;
+            animation: floatBounce 2s ease-in-out infinite, heartbeat 1.5s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .floating-offer:hover {
+            animation: floatBounce 1s ease-in-out infinite, heartbeat 0.8s ease-in-out infinite;
+        }
+
+        .floating-offer h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            animation: textJump 2s ease-in-out infinite;
+        }
+
+        .floating-offer p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        @keyframes floatBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.02);
+            }
+            75% {
+                transform: scale(0.98);
+            }
+        }
+
+        @keyframes textJump {
+            0%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-3px);
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: #1a1a1a;
+                color: #fff;
+            }
+            
+            .content-section {
+                border-bottom-color: #333;
+            }
+            
+            .expert-section {
+                background: #2a2a2a;
+            }
+            
+            .feature-list li {
+                background: #2a2a2a;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Stock Growth and Stock Market Signal Analysis</h1>
+            <p>Seize investment opportunities and welcome wealth growth!</p>
+        </header>
+
+        <!-- Expert Section -->
+        <section class="expert-section">
+            <div class="expert-info">
+                <img src="img/1.jpg" alt="Yuichiro Ichikawa" class="expert-avatar">
+                <div class="expert-details">
+                    <h3>Cathie Wood</h3>
+                    <p>An American financial analyst and entrepreneur, currently the CEO and investment president of Ark Investments, she has gained widespread attention for her high returns on investments in disruptive innovative technology companies and their funds, earning her the nickname "The Female Goddess of Tech Stocks."</p>
+                </div>
+            </div>
+            
+
+        </section>
+
+        <!-- Problem Section -->
+        <section class="content-section">
+            <h2>Struggling with Proper Stock Selection?</h2>
+            <p>In the rapidly changing stock market, making correct investment decisions is extremely important. Data shows that many investors lack effective analytical tools and face difficulties in complex market environments.</p>
+            <p>We provide clear and reliable market signals to help you discover potential investment opportunities.</p>
+            
+            <img src="img/2.jpeg" alt="Investment Analysis" class="content-image">
+        </section>
+
+        <!-- Solution Section -->
+        <section class="content-section">
+            <h2>Our Solutions</h2>
+            <ul class="feature-list">
+                <li><strong>Data-Driven Analysis:</strong> Our expert team leverages the latest data analysis tools to provide personalized stock recommendations and support wise decisions.</li>
+                <li><strong>Real-Time Market Signals:</strong> We provide timely market signals to support investment decisions at the right timing.</li>
+                <li><strong>Professional Market Interpretation:</strong> Experts regularly analyze market trends to ensure you receive the latest information and advice.</li>
+            </ul>
+            
+            <img src="img/3.jpg" alt="Market Analysis" class="content-image">
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="content-section">
+            <h2>Why Choose Us?</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">85%</span>
+                    <span class="stat-label">Signal Accuracy</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8 Year</span>
+                    <span class="stat-label">Track Record</span>
+                </div>
+            </div>
+
+            <ul class="feature-list">
+                <li><strong>Industry-Leading Data Analysis:</strong> Our analytical models based on historical data and market trends use proven algorithms to identify potential investment opportunities.</li>
+                <li><strong>High Success Rate Market Signals:</strong> We achieved 85% accuracy over the past year, supporting optimal timing for entry and risk reduction.</li>
+                <li><strong>Customized Investment Advice:</strong> We provide personalized stock recommendations based on your investment preferences and risk tolerance.</li>
+                <li><strong>Continuous Education and Support:</strong> In addition to providing market signals, we support the improvement of your investment knowledge and skills through regular online seminars and educational resources.</li>
+            </ul>
+            
+            <img src="img/4.jpg" alt="Investment Success" class="content-image">
+        </section>
+
+        <!-- Risk Warning -->
+        <div class="risk-warning">
+            <h4>⚠️ Important Risk Warning</h4>
+            <p>Investing involves risks. Past performance does not guarantee future results. Please make investment decisions carefully and conduct thorough consideration and risk assessment before investing. Final investment decisions should be made at your own responsibility. Markets are unpredictable and losses may occur.</p>
+        </div>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-text">Take action now and begin your journey to wealth!</div>
+            <button class="cta-button" onclick="kma()">Join Now</button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>&copy; 2024 Stock Investment Analysis Service. All rights reserved.</p>
+            <p>This service is not an investment advisory business. Please make investment decisions at your own responsibility.</p>
+        </footer>
+    </div>
+
+    <!-- Floating Limited Offer -->
+    <div class="floating-offer" onclick="kma()">
+        <h4>🎯 Limited to 20 Free Spots</h4>
+        <p>Apply now!</p>
+    </div>
+
+    <script>
+        function kma() {
+            window.open('https://www.qq.com', '_blank');
+        }
+
+        // Dark mode support
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
