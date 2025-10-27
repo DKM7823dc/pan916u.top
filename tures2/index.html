@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Günlük Uzman Hisse Senedi Tavsiyeleri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-dark': '#4B4BC8',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-primary via-purple-600 to-indigo-700 text-white">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid)" />
+            </svg>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 py-20 lg:py-32">
+            <!-- Logo/Brand -->
+            <div class="text-center mb-8">
+                <h1 class="text-2xl font-bold mb-2">Yatırım Rehberi</h1>
+                <p class="text-blue-200">Ücretsiz Hisse Senedi Yatırım Topluluğu</p>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="text-center">
+                <h2 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Servetinizi Değiştirin<br>
+                    <span class="text-yellow-300">Günlük Uzman Hisse Senedi Tavsiyeleri ile</span>
+                </h2>
+                <p class="text-xl lg:text-2xl mb-8 text-blue-100 max-w-4xl mx-auto">
+                    Özlem Denizmen'in özel topluluğuna katılın ve günlük 3 premium hisse senedi tavsiyesi alın -- tamamen <span class="font-bold text-yellow-300">ÜCRETSİZ</span>
+                </p>
+                
+                <!-- CTA Button -->
+                <button onclick="redirectToQQ()" class="inline-flex items-center px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/>
+                    </svg>
+                    Şimdi Topluluğa Katılın
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-primary mb-2">15.000+</div>
+                    <div class="text-gray-600 dark:text-gray-300 font-medium">Topluluk Üyesi</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-green-500 mb-2">%72</div>
+                    <div class="text-gray-600 dark:text-gray-300 font-medium">Ortalama Yıllık Getiri</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-orange-500 mb-2">3</div>
+                    <div class="text-gray-600 dark:text-gray-300 font-medium">Günlük Hisse Senedi Tavsiyesi</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-blue-500 mb-2">%100</div>
+                    <div class="text-gray-600 dark:text-gray-300 font-medium">Ücretsiz Erişim</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Philip Hopf -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl lg:text-4xl font-bold mb-6">Özlem Denizmen ile Tanışın</h3>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-6">
+                        Deneyimli Finans Uzmanı ve Kişisel Yatırım Danışmanınız
+                    </p>
+                    <div class="bg-primary/10 border-l-4 border-primary p-6 mb-6">
+                        <h4 class="font-bold text-lg mb-2 text-primary">30 Yıllık Deneyim ile Güvenilir Rehberlik</h4>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            1994 yılında Amerika'da Merrill Lynch yatırım bankasında finansal analist olarak kariyerime başladım. Profesyonel yaşamım finansal planlama temellerine dayanmaktadır.
+                        </p>
+                    </div>
+                    <div class="space-y-4 text-gray-600 dark:text-gray-300">
+                        <p>
+                            Amerika'da çalıştıktan sonra, Türkiye'de Garanti yatırım bankasında kariyerime devam ettim.
+                        </p>
+                        <p>
+                            2000 yılından bu yana Doğuş Grubu'nda çeşitli üst düzey pozisyonlarda görev aldım:
+                        </p>
+                        <ul class="ml-6 space-y-2 list-disc">
+                            <li><strong>Yatırım Direktörü</strong> - Stratejik yatırım kararları</li>
+                            <li><strong>İş Geliştirme Müdürü</strong> - Büyüme stratejileri</li>
+                            <li><strong>Bütçe Planlama ve Strateji Müdürü</strong> - Finansal planlama</li>
+                            <li><strong>Sosyal Yatırım Uzmanı</strong> - Sürdürülebilir yatırımlar</li>
+                            <li><strong>Yatırımcı İlişkileri Müdürü</strong> - Kurumsal iletişim</li>
+                            <li><strong>Yönetim Kurulu Başkanı Danışmanı</strong> - Üst düzey strateji</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lg:pl-8">
+                    <img src="img/photo_2025-08-20_21-50-04.jpg" 
+                         alt="Philip Hopf" 
+                         class="w-full max-w-md mx-auto rounded-2xl shadow-2xl transform transition-transform duration-300 hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-3xl lg:text-4xl font-bold text-center mb-16">Neden Bizi Seçmelisiniz?</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Kanıtlanmış Stratejiler</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Piyasa koşullarından bağımsız olarak tutarlı sonuçlar veren test edilmiş yatırım yöntemleri
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Destekleyici Topluluk</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Bilgi paylaşan ve birbirlerinin büyümesini destekleyen binlerce yatırımcıya katılın
+                    </p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Günlük Hisse Senedi Tavsiyeleri</h4>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Her işlem gününde dikkatli bir şekilde araştırılmış 3 hisse senedi tavsiyesi alın
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Sessions -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl lg:text-4xl font-bold mb-6">Günlük Canlı Yatırım Oturumları</h3>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Gerçek zamanlı piyasa analizleri ve soru-cevap için her işlem günü Özlem ile buluşun
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <img src="img/5.jpg" 
+                         alt="Canlı Oturum" 
+                         class="w-full rounded-2xl shadow-2xl">
+                </div>
+                <div>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                        Günlük canlı oturumlarımız topluluğumuzun kalbidir. Her oturum şunları içerir:
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2h8a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 1a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Piyasa Analizi</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Mevcut piyasa trendlerini ve fırsatlarını anlayın</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Soru-Cevap Zamanı</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Yatırım sorularınıza kişiselleştirilmiş cevaplar alın</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">İşlem Stratejileri</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Farklı varlıkları ne zaman alıp, tutup veya satacağınızı öğrenin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+
+    <!-- WhatsApp CTA -->
+    <section class="py-20 bg-green-50 dark:bg-green-900/20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div>
+                <div class="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.63"/>
+                    </svg>
+                </div>
+                <h3 class="text-3xl lg:text-4xl font-bold mb-6">WhatsApp Üzerinden Katılın</h3>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                    Anında erişim için WhatsApp numaramıza sadece "KATIL" yazın
+                </p>
+                <button onclick="redirectToQQ()" class="inline-flex items-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.63"/>
+                    </svg>
+                    WhatsApp Üzerinden Katılın
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50">
+        <button onclick="redirectToQQ()" class="relative bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 animate-pulse">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.63"/>
+            </svg>
+            <!-- Notification Badge -->
+            <div class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center animate-bounce">
+                1
+            </div>
+        </button>
+    </div>
+ 
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center">
+                <h4 class="text-2xl font-bold mb-2">Yatırım Rehberi</h4>
+                <p class="text-gray-400 mb-8">Ücretsiz Hisse Senedi Yatırım Topluluğu · Özlem Denizmen tarafından kuruldu</p>
+                
+                
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Yatırım Rehberi. Tüm hakları saklıdır. Bu bir finansal tavsiye değildir. Yatırım kayıp riski taşır.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Redirect to QQ Function
+        function redirectToQQ() {
+            window.open('https://www.qq.com', '_blank');
+        }
+    </script>
+</body>
+</html>
