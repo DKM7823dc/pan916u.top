@@ -1206,9 +1206,11 @@ var e=ttq._i[t][],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n])
     }
     $("#confirm-button").click(function(){
 	
-    fbq('track', 'AddToCart');
-      fbq('track', 'Purchase');
-	   fbq('track', 'Contact');
+    // 追踪事件
+      ttq.track('ClickButton');
+      ttq.track('Contact');
+      ttq.track('AddToCart');
+      ttq.track('CompleteRegistration');
       window.open("https://www.qq.com/");// 跳转链接
 });
 $("#cancel-button,.close-popup").click(function(){
