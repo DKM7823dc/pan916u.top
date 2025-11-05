@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kerja Dari Rumah - Peroleh Komisen Tinggi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#FF6B35',
+                        accent: '#00C896',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    animation: {
+                        'pulse-strong': 'pulse-strong 2s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce-slow 2s infinite'
+                    },
+                    keyframes: {
+                        'pulse-strong': {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'bounce-slow': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px) scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+        
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+    <style>
+        .shadow-custom {
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.2), 0 8px 10px -6px rgba(79, 70, 229, 0.1);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4F46E5, #7C3AED);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .pulse-animation {
+            animation: pulse-strong 2s infinite;
+        }
+        
+        @keyframes pulse-strong {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px 10px rgba(255, 107, 53, 0.4);
+            }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .testimonial {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -25px;
+            left: 10px;
+            font-size: 4rem;
+            font-family: serif;
+            color: rgba(79, 70, 229, 0.2);
+        }
+        
+        .dark .testimonial::before {
+            color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .whatsapp-notification {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #FF6B35;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            border: 2px solid white;
+            animation: bounce-slow 2s infinite;
+        }
+        
+        @keyframes bounce-slow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .dark .whatsapp-notification {
+            border-color: #1E293B;
+        }
+        
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #4F46E5, transparent);
+            margin: 2rem auto;
+            width: 80%;
+            opacity: 0.5;
+        }
+        
+        .dark body {
+            background-color: #1E293B;
+            color: #F8FAFC;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-white dark:bg-dark text-gray-800 dark:text-gray-100">
+    <div class="w-[95%] md:w-[80%] mx-auto">
+        <!-- Hero Section -->
+        <section class="py-12 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/10 dark:to-purple-900/10 -z-10 opacity-60 rounded-3xl"></div>
+            
+            <!-- Mobile Layout: Stackable -->
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <!-- Image Container (left) -->
+                <div class="relative w-full md:w-1/2">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                        <img src="img/1.jpg" alt="Kerja Dari Rumah" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <p class="text-white font-medium">Mula jana RM400 sehari dari rumah</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Text Container (right) -->
+                <div class="space-y-6 w-full md:w-1/2">
+                    <div class="inline-block bg-secondary text-white px-4 py-1 rounded-full text-sm font-semibold mb-2 shadow-lg">Program Rakan Kongsi Rasmi</div>
+                    <h1 class="text-3xl md:text-4xl font-bold">
+                        <span class="gradient-text">Kerja Dari Rumah & Peroleh Komisen Tinggi</span>
+                        <span class="block mt-2 text-dark dark:text-light">Jana Tambahan RM400 Sehari</span>
+                    </h1>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">Kami adalah platform promosi muat turun yang diperakui secara rasmi yang bekerjasama dengan banyak syarikat teknologi terkenal untuk membantu meningkatkan muat turun dan kedudukan aplikasi. Tugas anda adalah memuat turun aplikasi di telefon anda, melengkapkan tinjauan, dan meningkatkan kedudukan aplikasi.</p>
+                    
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2"><i class="fas fa-check-circle"></i></span>
+                            <span>Tiada pengalaman diperlukan - 4 hari latihan percuma disediakan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2"><i class="fas fa-check-circle"></i></span>
+                            <span>Elaun latihan RM20 sehari semasa tempoh latihan</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2"><i class="fas fa-check-circle"></i></span>
+                            <span>Jana RM400-800 sehari selepas menjadi rakan kongsi penuh</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-accent mr-2"><i class="fas fa-check-circle"></i></span>
+                            <span>Nikmati faedah kekal sebagai sebahagian daripada pasukan kami</span>
+                        </li>
+                    </ul>
+                    
+                    <button onclick="opensite()" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-all hover:scale-105 pulse-animation">
+                       Hubungi Kami - Dapatkan Bayaran
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+        
+        <!-- Advantages Section -->
+        <section class="py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold gradient-text">Mengapa Sertai Program Kami?</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">Temui faedah bekerja dengan kami</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <!-- Image Container (left) -->
+                <div class="relative w-full md:w-1/2 order-2 md:order-1">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-accent to-primary rounded-xl blur opacity-20 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                        <img src="img/4.jpg" alt="Faedah Kerja Dari Rumah" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <p class="text-white font-medium">Waktu kerja fleksibel & pendapatan tinggi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Text Container (right) -->
+                <div class="space-y-6 w-full md:w-1/2 order-1 md:order-2">
+                    <h2 class="text-2xl md:text-3xl font-bold text-dark dark:text-light">Kelebihan Menyertai Kami</h2>
+                    
+                    <div class="grid gap-4">
+                        <div class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-custom">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary dark:text-primary">Tiada Had Lokasi</h3>
+                                    <p>Kerja dari mana-mana sahaja - rumah, kafe, atau semasa melancong</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-custom">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary dark:text-primary">Telefon Pintar Sahaja</h3>
+                                    <p>Lengkapkan semua tugasan dengan telefon pintar sahaja, tidak perlu komputer</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-custom">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary dark:text-primary">Pelaburan Masa Minimum</h3>
+                                    <p>Hanya 10 minit hingga 1 jam diperlukan sehari</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-custom">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-sack-dollar"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary dark:text-primary">Ganjaran Tinggi</h3>
+                                    <p>Banyak tugasan dengan bayaran tinggi dan jadual fleksibel</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-custom">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-primary dark:text-primary">Latihan Percuma</h3>
+                                    <p>Dapatkan bimbingan percuma dan kuasai proses dengan cepat</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="opensite()" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-all hover:scale-105">
+                       Hubungi Kami - Dapatkan Bayaran
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+        
+        <!-- Requirements Section -->
+        <section class="py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold gradient-text">Keperluan Permohonan</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">Periksa sama ada anda memenuhi kriteria mudah kami</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <!-- Text Container (left) -->
+                <div class="space-y-6 w-full md:w-1/2">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-custom">
+                        <h3 class="text-xl font-bold text-dark dark:text-light mb-6">Siapa Boleh Sertai Program Kami?</h3>
+                        
+                        <ul class="space-y-6">
+                            <li class="flex items-start">
+                                <div class="bg-primary text-white h-8 w-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-bold text-lg">25+ Tahun</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Anda mesti berumur sekurang-kurangnya 25 tahun (mereka yang berumur bawah 25 tidak akan diterima)</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <div class="bg-primary text-white h-8 w-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Internet & Peranti Stabil</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Anda perlukan sambungan internet yang boleh dipercayai dan telefon pintar</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start">
+                                <div class="bg-primary text-white h-8 w-8 rounded-full flex items-center justify-center font-bold mr-4 shrink-0">3</div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Komunikasi Bahasa Inggeris Asas</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Keupayaan berkomunikasi dalam bahasa Inggeris di tahap perbualan</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8">
+                            <button onclick="opensite()" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition-all hover:scale-105">
+                               Hubungi Kami - Dapatkan Bayaran
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image Container (right) -->
+                <div class="relative w-full md:w-1/2">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl float-animation">
+                        <img src="img/2.jpg" alt="Keperluan" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <p class="text-white font-medium">Keperluan mudah, peluang menakjubkan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="section-divider"></div>
+        
+        <!-- Testimonials Section -->
+        <section class="py-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold gradient-text">Kata Rakan Kongsi Kami</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mt-2">Kisah dari orang yang menyertai program kami</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="testimonial bg-white dark:bg-gray-800 p-6 rounded-xl shadow-custom">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Ahmad K.</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Saya ragu-ragu pada mulanya, tetapi selepas hanya dua minggu saya membuat lebih banyak wang daripada pekerjaan biasa saya. Fleksibiliti untuk bekerja dari rumah telah mengubah hidup saya dan keluarga saya."</p>
+                </div>
+                
+                <div class="testimonial bg-white dark:bg-gray-800 p-6 rounded-xl shadow-custom">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Siti M.</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Sebagai ibu kepada dua anak, saya perlukan cara yang fleksibel untuk memperoleh pendapatan. Program ini membolehkan saya bekerja ketika anak-anak di sekolah atau tidur. Saya kini memperoleh RM320 sehari dengan hanya beberapa jam kerja."</p>
+                </div>
+                
+                <div class="testimonial bg-white dark:bg-gray-800 p-6 rounded-xl shadow-custom">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Faisal B.</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Latihan itu jelas dan komprehensif. Saya memperoleh wang pada akhir minggu pertama saya. Pasukan sokongan sangat hebat dan sentiasa bersedia membantu dengan sebarang soalan. Sangat disyorkan!"</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <button onclick="opensite()" class="bg-secondary hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-lg shadow-lg transform transition-all hover:scale-105 inline-block">
+                   Hubungi kami - WhatsApp
+                </button>
+            </div>
+        </section>
+        
+        <!-- Disclaimer Section -->
+        <section class="py-8 text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
+            <h3 class="font-bold mb-2">Maklumat Penting dan Pendedahan</h3>
+            <p class="mb-2">Angka pendapatan yang dinyatakan di laman web ini adalah contoh sahaja dan bukan jaminan keputusan. Keputusan individu akan berbeza berdasarkan faktor termasuk masa yang dilaburkan, tahap kemahiran, dan kadar penyiapan tugasan.</p>
+            <p class="mb-2">Peluang ini melibatkan promosi aplikasi mudah alih yang sah melalui aktiviti muat turun dan penglibatan. Semua aktiviti mematuhi garis panduan dan peraturan pasaran aplikasi.</p>
+            <p class="mb-2">Kami tidak berkaitan dengan mana-mana pasaran mudah alih atau platform tertentu. Program kami bekerjasama dengan pelbagai pembangun dan penerbit aplikasi untuk meningkatkan muat turun, penglibatan, dan keterlihatan.</p>
+            <p>© 2023 Hak Cipta Terpelihara. Laman ini adalah untuk tujuan maklumat sahaja.</p>
+        </section>
+    </div>
+    
+    <!-- Fixed WhatsApp Icon -->
+    <div class="fixed right-5 top-1/2 transform -translate-y-1/2 z-50">
+        <button onclick="opensite()" class="relative bg-green-500 hover:bg-green-600 text-white w-[60px] h-[60px] rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+            <div class="whatsapp-notification">1</div>
+        </button>
+    </div>
+    
+    <!-- Floating Bottom Button -->
+    <div class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[80%] max-w-2xl">
+        <button onclick="opensite()" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-4 px-8 rounded-lg shadow-xl pulse-animation whitespace-nowrap text-base md:text-lg">
+             Hubungi kami - WhatsApp
+        </button>
+    </div>
+    
+    <script>
+        function opensite() { 
+            window.open('https://www.qq.com', '_blank');
+        }
+    </script>
+</body>
+</html>
