@@ -643,9 +643,11 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                 <p class="text-lg leading-relaxed mb-6">
                     要是你也正被肾病折磨——水肿不消、乏力没劲儿、夜里痒得睡不着，或者透析得快撑不下去了，不妨试着联系刘医师，像我一样跟她说说自己的情况。她很温柔，会耐心听你讲，还会根据你的情况给建议。
                 </p>
+				<!--
                 <div class="bg-white/10 p-6 rounded-xl mb-6"> 
                     <p class="text-xl font-bold">刘医师 WS：601121181484</p>
                 </div>
+				-->
                 <p class="text-lg">
                     记住，别放弃，砂拉越河的水还在流，Satok巴刹的菜还等着我们去挑，好起来的日子，说不定就在前面等着呢！
                 </p>
@@ -685,12 +687,28 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
         });
 
         // CTA Button Action
-        function k2() {
+        function hk2() {
 			 fbq('track', 'AddToCart');
       fbq('track', 'Purchase');
             window.open('https://wa.me/601121181484?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E7%9C%8B%E5%88%B0%E4%BD%A0%E4%BB%AC%E7%BA%AF%E4%B8%AD%E5%8C%BB%E8%B0%83%E7%90%86%E8%82%BE%E7%97%85%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E6%88%91%E4%B9%9F%E6%9C%89%E7%B1%BB%E4%BC%BC%E7%9A%84%E6%83%85%E5%86%B5%EF%BC%8C%E6%83%B3%E5%92%A8%E8%AF%A2%E4%B8%80%E4%B8%8B%E5%85%B3%E4%BA%8E%E8%82%BE%E7%97%85%E6%B2%BB%E7%96%97%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E9%97%AE%E6%98%AF%E6%80%8E%E4%B9%88%E6%B2%BB%E7%96%97%E7%9A%84%EF%BC%9F', '_blank');
-        }
+        } 
+    function k2() { 
+        fbq('track', 'AddToCart');
+        fbq('track', 'Purchase');
 
+        // 定义两个链接
+        const links = [
+            '  window.open('https://wa.me/601121181484?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E7%9C%8B%E5%88%B0%E4%BD%A0%E4%BB%AC%E7%BA%AF%E4%B8%AD%E5%8C%BB%E8%B0%83%E7%90%86%E8%82%BE%E7%97%85%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E6%88%91%E4%B9%9F%E6%9C%89%E7%B1%BB%E4%BC%BC%E7%9A%84%E6%83%85%E5%86%B5%EF%BC%8C%E6%83%B3%E5%92%A8%E8%AF%A2%E4%B8%80%E4%B8%8B%E5%85%B3%E4%BA%8E%E8%82%BE%E7%97%85%E6%B2%BB%E7%96%97%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E9%97%AE%E6%98%AF%E6%80%8E%E4%B9%88%E6%B2%BB%E7%96%97%E7%9A%84%EF%BC%9F', '_blank');',
+            '  window.open('https://wa.me/601160879552?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E7%9C%8B%E5%88%B0%E4%BD%A0%E4%BB%AC%E7%BA%AF%E4%B8%AD%E5%8C%BB%E8%B0%83%E7%90%86%E8%82%BE%E7%97%85%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E6%88%91%E4%B9%9F%E6%9C%89%E7%B1%BB%E4%BC%BC%E7%9A%84%E6%83%85%E5%86%B5%EF%BC%8C%E6%83%B3%E5%92%A8%E8%AF%A2%E4%B8%80%E4%B8%8B%E5%85%B3%E4%BA%8E%E8%82%BE%E7%97%85%E6%B2%BB%E7%96%97%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E9%97%AE%E6%98%AF%E6%80%8E%E4%B9%88%E6%B2%BB%E7%96%97%E7%9A%84%EF%BC%9F', '_blank');' // 替换为第二个链接
+        ];
+
+        // 随机选择一个链接
+        const randomLink = links[Math.floor(Math.random() * links.length)];
+
+        // 打开随机链接
+        window.open(randomLink, '_blank');
+    } 
+	
         // Smooth scroll for better UX
         document.addEventListener('DOMContentLoaded', function() {
             // Add scroll animations
@@ -719,6 +737,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
     </script>
 </body>
 </html>
+
 
 
 
