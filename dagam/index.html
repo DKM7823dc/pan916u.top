@@ -3,8 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game World - Premium Game Collection</title>
+    <title>Game World - Premium Game Collection</title> 
     <script src="https://cdn.tailwindcss.com"></script>
+	
+	
+	      <!--adjust接口start-->
+  <script>
+    // 创建 URLSearchParams 对象
+    const urlParams = new URLSearchParams(window.location.search);
+    let p0 = urlParams.get('p0');
+    let p1 = urlParams.get('p1');
+    let p2 = urlParams.get('p2');
+    let p3 = urlParams.get('p3');
+    let p4 = urlParams.get('p4');
+    let p5 = urlParams.get('p5');
+    let p6 = urlParams.get('p6');
+    let fbclid = urlParams.get('fbclid') || 'null';
+    let fbpid = getFbpid();
+    let adjhref = "https://app.adjust.com/";
+    let downurl = encodeURI("https://www.qq.com"); // 最终下载链接
+    let downloadApk = adjhref + buildUrl(p0, p1, p2, p3, p4, p5, p6);
+
+    downloadApk += fbclid === 'null' ? "&fbclid=" : "&fbclid=" + fbclid;
+    downloadApk += fbpid === 'null' ? "&fbpid=" : "&fbpid=" + fbpid;
+    downloadApk += "&redirect=" + downurl;
+
+    function buildUrl(a, b, c, d, e, f, g) {
+      return a + "?" + "campaign=" + b + "(" + c + ")" + "&adgroup=" + d + "(" + e + ")" + "&creative=" + f + "(" + g + ")";
+    }
+
+    function getFbpid() {
+      let Pid = document.cookie.match(/(^|;) ?_fbp=([^;]*)(;|$)/);
+      return Pid ? Pid[2] : 'null';
+    }
+
+    // 点击事件绑定 Adjust 下载
+    document.addEventListener('DOMContentLoaded', function () {
+      var button = document.getElementById('Download_app');
+      button.addEventListener('click', function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log("Adjust tracked");
+          }
+        }
+        xhr.open('GET', downloadApk, true);
+        xhr.send();
+
+        // 触发下载
+        window.location.href = downurl;
+      });
+    });
+  </script>
+  <!--adjust接口end-->
+  
+  
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
         
@@ -12,6 +65,110 @@
             font-family: 'Inter', sans-serif;
         }
         
+		
+.stage {
+  /* 设置舞台的背景，靠下 */
+  background-image: url(../images/stage.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+.game-list {
+  perspective: 40vw;
+  height: 30vw;
+  width: 30vw;
+}
+
+.game-item-container {
+  width: 30vw;
+  height: 30vw;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+
+.game-list .game-item {
+  width: 25vw;
+  height: 25vw;
+  position: absolute;
+  overflow: hidden;
+}
+
+.game-item-container img:nth-child(1) { 
+  transform: translateX(  0vw ) translateZ( 0vw ); 
+  animation: rotate 12s ease infinite;
+  animation-delay: 0s;
+}
+.game-item-container img:nth-child(2) { 
+  transform: translateX(  -30vw ) translateZ( -15vw ); 
+  animation: rotate 12s ease infinite;
+  animation-delay: -1.5s;
+}
+.game-item-container img:nth-child(3) { 
+  transform: translateX(  -60vw ) translateZ( -30vw );
+  animation: rotate 12s ease infinite;
+  animation-delay: -3s;
+}
+.game-item-container img:nth-child(4) { 
+  transform: translateX(  -30vw ) translateZ( -45vw );
+  animation: rotate 12s ease infinite;
+  animation-delay: -4.5s;
+}
+.game-item-container img:nth-child(5) { 
+  transform: translateX(  0vw ) translateZ( -60vw );
+  animation: rotate 12s ease infinite;
+  animation-delay: -6s;
+}
+.game-item-container img:nth-child(6) { 
+  transform: translateX(  30vw ) translateZ( -45vw );
+  animation: rotate 12s ease infinite;
+  animation-delay: -7.5s;
+}
+.game-item-container img:nth-child(7) { 
+  transform: translateX(  60vw ) translateZ( -30vw );
+  animation: rotate 12s ease infinite;
+  animation-delay: -9s;
+}
+.game-item-container img:nth-child(8) { 
+  transform: translateX(  30vw ) translateZ( -15vw );
+  animation: rotate 12s ease infinite;
+  animation-delay: -10.5s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(  0vw ) translateZ( 0vw );
+  }
+  12.5% {
+    transform: translateX(  -30vw ) translateZ( -15vw );
+  }
+  25% {
+    transform: translateX(  -60vw ) translateZ( -30vw );
+  }
+  37.5% {
+    transform: translateX(  -30vw ) translateZ( -45vw );
+  }
+  50% {
+    transform: translateX(  0vw ) translateZ( -60vw );
+  }
+  62.5% {
+    transform: translateX(  30vw ) translateZ( -45vw );
+  }
+  75% {
+    transform: translateX(  60vw ) translateZ( -30vw );
+  }
+  87.5% {
+    transform: translateX(  30vw ) translateZ( -15vw );
+  }
+  100% {
+    transform: translateX(  0vw ) translateZ( 0vw );
+  }
+}
         body {
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             background-attachment: fixed;
@@ -463,68 +620,22 @@
         </div>
     </section>
     
-    <!-- Games showcase section -->
-    <section class="py-4 md:py-20 px-4 relative z-10">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-title">
-                Trending Games
-            </h2>
-            
-            <!-- 9 game images -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mb-4 md:mb-20">
-                <div class="game-card rounded-xl p-3 glow-effect animate-slide-in-up relative" style="animation-delay: 0.1s;">
-                    <div class="absolute top-1 left-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs px-2 py-1 rounded-full z-10 animate-pulse">
-                        🔥 HOT
-                    </div>
-                    <img src="https://mak922p.site/mak/img/1.png" alt="Game 1" class="w-full rounded-lg">
-                </div>
-                <div class="game-card rounded-xl p-3 glow-effect animate-slide-in-up relative" style="animation-delay: 0.2s;">
-                    <div class="absolute top-1 left-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs px-2 py-1 rounded-full z-10">
-                        ✨ NEW
-                    </div>
-                    <img src="https://mak922p.site/mak/img/2.png" alt="Game 2" class="w-full rounded-lg">
-                </div>
-                <div class="game-card rounded-xl p-3 glow-effect animate-slide-in-up relative" style="animation-delay: 0.3s;">
-                    <div class="absolute top-1 left-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs px-2 py-1 rounded-full z-10">
-                        💰 HIGH EARN
-                    </div>
-                    <img src="https://mak922p.site/mak/img/3.png" alt="Game 3" class="w-full rounded-lg">
-                </div>
-                <div class="game-card rounded-xl p-3 glow-effect animate-slide-in-up relative" style="animation-delay: 0.4s;">
-                    <div class="absolute top-1 left-1 bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-xs px-2 py-1 rounded-full z-10">
-                        👑 POPULAR
-                    </div>
-                    <img src="https://mak922p.site/mak/img/4.png" alt="Game 4" class="w-full rounded-lg">
-                </div>
-                <div class="game-card rounded-xl p-3 glow-effect animate-slide-in-up relative" style="animation-delay: 0.5s;">
-                    <div class="absolute top-1 left-1 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-xs px-2 py-1 rounded-full z-10 animate-bounce">
-                        ⚡ LIMITED
-                    </div>
-                    <img src="https://mak922p.site/mak/img/5.png" alt="Game 5" class="w-full rounded-lg">
-                </div>
-                <div class="game-card rounded-xl p-3 glow-effect animate-slide-in-up relative" style="animation-delay: 0.6s;">
-                    <div class="absolute top-1 left-1 bg-gradient-to-r from-teal-500 to-green-500 text-white text-xs px-2 py-1 rounded-full z-10">
-                        🎯 FEATURED
-                    </div>
-                    <img src="https://mak922p.site/mak/img/6.png" alt="Game 6" class="w-full rounded-lg">
-                </div>
-                <div class="game-card rounded-xl p-3 glow-effect animate-slide-in-up relative" style="animation-delay: 0.7s;">
-                    <div class="absolute top-1 left-1 bg-gradient-to-r from-rose-500 to-red-500 text-white text-xs px-2 py-1 rounded-full z-10">
-                        🏆 CHAMPION
-                    </div>
-                    <img src="https://mak922p.site/mak/img/7.png" alt="Game 7" class="w-full rounded-lg">
-                </div>
-                <div class="game-card rounded-xl p-3 glow-effect animate-slide-in-up relative" style="animation-delay: 0.8s;">
-                    <div class="absolute top-1 left-1 bg-gradient-to-r from-amber-500 to-yellow-500 text-white text-xs px-2 py-1 rounded-full z-10 animate-pulse">
-                        💎 PREMIUM
-                    </div>
-                    <img src="https://mak922p.site/mak/img/8.png" alt="Game 8" class="w-full rounded-lg">
-                </div>
-                
-            </div>
+	   <div class="stage">
+        <div class="game-list">
+          <div class="game-item-container">
+            <img class="game-item" src="images/1.png" alt="game">
+            <img class="game-item" src="images/2.png" alt="game">
+            <img class="game-item" src="images/3.png" alt="game">
+            <img class="game-item" src="images/4.png" alt="game">
+            <img class="game-item" src="images/5.png" alt="game">
+            <img class="game-item" src="images/6.png" alt="game">
+            <img class="game-item" src="images/7.png" alt="game">
+            <img class="game-item" src="images/8.png" alt="game">
+          </div>
         </div>
-    </section>
-    
+      </div>
+    <!-- Games showcase section -->
+     
     <!-- Features showcase section -->
     <section class="py-4 md:py-20 px-4 relative z-10">
         <div class="max-w-6xl mx-auto">
@@ -580,7 +691,7 @@
             <img src="https://mak922p.site/mak/img/tel.png" alt="Phone" class="w-8 h-8">
             <div class="notification-badge">1</div>
         </div>
-        <div class="floating-icon w-16 h-16 rounded-full flex items-center justify-center cursor-pointer relative" onclick="k2()" style="animation-delay: 1.5s;">
+        <div class="floating-icon w-16 h-16 rounded-full flex items-center justify-center cursor-pointer relative"  onclick="k2()" style="animation-delay: 1.5s;">
             <img src="https://mak922p.site/mak/img/wapp.png" alt="WhatsApp" class="w-8 h-8">
             <div class="notification-badge">1</div>
         </div>
@@ -666,8 +777,8 @@
     </section>
 
     <!-- Floating bottom button -->
-    <button class="floating-button" onclick="k2()">
-        <span class="hidden md:inline">🎮 Play Now & Earn</span>
+    <button id="Download_app" class="floating-button" >
+        <span  class="hidden md:inline">🎮 Play Now & Earn</span>
         <span class="md:hidden">Download for free and enjoy</span>
     </button>
     
@@ -683,10 +794,10 @@
     </footer>
     
     <script>
-        // k2 method - handle contact icon click events
-        function k2() {
-            window.open('https://www.qq.com', '_blank');
-        }
+        function k2()
+		{
+		window.location.href="https://www.qq.com";
+		}
         
         // Create particle effects
         function createParticles() {
