@@ -1,0 +1,32 @@
+.text-content {
+    background: none !important;
+    padding: 0px !important;
+}
+
+#end {
+    padding: 10px 0px !important;
+}
+
+.section__box {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+.section__box .section__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section__box .section__item h2 {
+    color: red;
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 750px) {
+    .section__box {
+        flex-direction: column;
+    }
+}
