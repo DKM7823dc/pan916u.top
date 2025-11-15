@@ -930,7 +930,7 @@
             const track = document.getElementById('carouselTrack');
             const indicators = document.querySelectorAll('.carousel-indicator');
             
-            track.style.transform = `translateX(-${currentSlide * (100/6)}%)`;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
             
             indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === currentSlide);
