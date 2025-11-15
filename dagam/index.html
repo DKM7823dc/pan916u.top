@@ -332,34 +332,25 @@
             overflow: hidden;
             border-radius: 16px;
             width: 100%;
-            max-width: 24rem;
-            margin: 0 auto;
-        }
-        
-        .carousel-inner {
-            position: relative;
-            width: 100%;
-            height: auto;
-            overflow: hidden;
-            border-radius: 12px;
         }
         
         .carousel-track {
             display: flex;
             transition: transform 0.5s ease;
-            width: 600%; /* 6 slides * 100% */
         }
         
         .carousel-slide {
-            width: 100%;
-            flex: 0 0 100%;
-            position: relative;
+            min-width: 100%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .carousel-slide img {
             width: 100%;
             height: auto;
-            display: block;
+            object-fit: contain;
             border-radius: 8px;
         }
         
@@ -695,9 +686,8 @@
             </h2>
             
             <!-- Carousel container -->
-            <div class="carousel-container game-card">
-                <div class="carousel-inner">
-                    <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-container game-card max-w-md mx-auto">
+                <div class="carousel-track" id="carouselTrack">
                     <!-- Carousel images -->
                     <div class="carousel-slide">
                         <img src="https://mak922p.site/mak/img/011.png" alt="Feature 1" class="w-full">
