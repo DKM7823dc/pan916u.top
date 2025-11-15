@@ -560,27 +560,47 @@
                 opacity: 0;
             }
         }
+        
+        /* Language Switcher Styles */
+        .lang-btn {
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .lang-btn:hover {
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .lang-btn.active {
+            color: white;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            border-color: rgba(59, 130, 246, 0.8);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        }
     </style>
 </head>
 <body class="min-h-screen text-white">
     <!-- Particle background -->
     <div class="particles" id="particles"></div>
-
-	    <!-- Language Switcher -->
+    
+    <!-- Language Switcher -->
     <div class="fixed top-4 right-4 z-50">
         <div class="glass-effect rounded-lg p-2 border border-blue-400/30">
             <div class="flex gap-2">
-                <button class="lang-btn active px-3 py-1 rounded text-sm font-medium transition-all duration-300" data-lang="bn" onclick="switchLanguage('index.html')">
+                <button class="lang-btn px-3 py-1 rounded text-sm font-medium transition-all duration-300" data-lang="bn" onclick="switchLanguage('index.html')">
                     🇧🇩 বাংলা
                 </button>
-                <button class="lang-btn px-3 py-1 rounded text-sm font-medium transition-all duration-300" data-lang="en" onclick="switchLanguage('en.html')">
+                <button class="lang-btn active px-3 py-1 rounded text-sm font-medium transition-all duration-300" data-lang="en" onclick="switchLanguage('en.html')">
                     🇺🇸 English
                 </button>
             </div>
         </div>
     </div>
-
-	
+    
     <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center justify-center relative z-10">
         <div class="text-center px-4 relative z-20">
@@ -793,7 +813,7 @@
 
     <!-- Floating bottom button -->
     <button id="Download_app" class="floating-button" >
-        <span  class="hidden md:inline">🎮 Play Now & Earn</span>
+        <span  class="hidden md:inline">  Play Now & Earn</span>
         <span class="md:hidden">Download for free and enjoy</span>
     </button>
     
@@ -813,6 +833,11 @@
 		{
 		window.location.href="https://www.qq.com";
 		}
+        
+        // Language switcher functionality
+        function switchLanguage(page) {
+            window.location.href = page;
+        }
         
         // Create particle effects
         function createParticles() {
@@ -970,4 +995,3 @@
     </script>
 </body>
 </html>
-
