@@ -332,25 +332,34 @@
             overflow: hidden;
             border-radius: 16px;
             width: 100%;
+            max-width: 24rem;
+            margin: 0 auto;
+        }
+        
+        .carousel-inner {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            border-radius: 12px;
         }
         
         .carousel-track {
             display: flex;
             transition: transform 0.5s ease;
+            width: 600%; /* 6 slides * 100% */
         }
         
         .carousel-slide {
-            min-width: 100%;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 100%;
+            flex: 0 0 100%;
+            position: relative;
         }
         
         .carousel-slide img {
             width: 100%;
             height: auto;
-            object-fit: contain;
+            display: block;
             border-radius: 8px;
         }
         
@@ -566,6 +575,8 @@
             color: rgba(255, 255, 255, 0.7);
             background: rgba(30, 41, 59, 0.6);
             border: 1px solid rgba(59, 130, 246, 0.2);
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
         
         .lang-btn:hover {
@@ -573,6 +584,11 @@
             background: rgba(59, 130, 246, 0.3);
             border-color: rgba(59, 130, 246, 0.5);
             transform: scale(1.05);
+        }
+        
+        .lang-btn:active {
+            transform: scale(0.95);
+            background: rgba(59, 130, 246, 0.5);
         }
         
         .lang-btn.active {
@@ -590,13 +606,13 @@
     <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center justify-center relative z-10">
         <!-- Language Switcher -->
-        <div class="absolute top-4 right-4 z-20">
-            <div class="glass-effect rounded-lg p-2 border border-blue-400/30">
-                <div class="flex gap-2">
-                    <button class="lang-btn active px-3 py-1 rounded text-sm font-medium transition-all duration-300" data-lang="bn" onclick="switchLanguage('index.html')">
+        <div class="absolute top-4 right-4 z-50">
+            <div class="glass-effect rounded-lg p-3 border border-blue-400/30">
+                <div class="flex gap-3">
+                    <button class="lang-btn active px-4 py-2 rounded text-base font-medium transition-all duration-300 min-h-[44px] min-w-[80px] touch-manipulation" data-lang="bn" onclick="switchLanguage('index.html')">
                         🇧🇩 বাংলা
                     </button>
-                    <button class="lang-btn px-3 py-1 rounded text-sm font-medium transition-all duration-300" data-lang="en" onclick="switchLanguage('en.html')">
+                    <button class="lang-btn px-4 py-2 rounded text-base font-medium transition-all duration-300 min-h-[44px] min-w-[80px] touch-manipulation" data-lang="en" onclick="switchLanguage('en.html')">
                         🇺🇸 English
                     </button>
                 </div>
@@ -679,27 +695,27 @@
             </h2>
             
             <!-- Carousel container -->
-            <div class="carousel-container game-card max-w-md mx-auto">
-                <div class="carousel-inner overflow-hidden rounded-xl">
+            <div class="carousel-container game-card">
+                <div class="carousel-inner">
                     <div class="carousel-track" id="carouselTrack">
                     <!-- Carousel images -->
                     <div class="carousel-slide">
-                        <img src="https://mak922p.site/mak/img/011.png" alt="Feature 1" class="w-full rounded-lg">
+                        <img src="https://mak922p.site/mak/img/011.png" alt="Feature 1" class="w-full">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://mak922p.site/mak/img/022.png" alt="Feature 2" class="w-full rounded-lg">
+                        <img src="https://mak922p.site/mak/img/022.png" alt="Feature 2" class="w-full">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://mak922p.site/mak/img/033.png" alt="Feature 3" class="w-full rounded-lg">
+                        <img src="https://mak922p.site/mak/img/033.png" alt="Feature 3" class="w-full">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://mak922p.site/mak/img/044.png" alt="Feature 4" class="w-full rounded-lg">
+                        <img src="https://mak922p.site/mak/img/044.png" alt="Feature 4" class="w-full">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://mak922p.site/mak/img/055.png" alt="Feature 5" class="w-full rounded-lg">
+                        <img src="https://mak922p.site/mak/img/055.png" alt="Feature 5" class="w-full">
                     </div>
                     <div class="carousel-slide">
-                        <img src="https://mak922p.site/mak/img/066.png" alt="Feature 6" class="w-full rounded-lg">
+                        <img src="https://mak922p.site/mak/img/066.png" alt="Feature 6" class="w-full">
                     </div>
                 </div>
                 
@@ -914,7 +930,7 @@
             const track = document.getElementById('carouselTrack');
             const indicators = document.querySelectorAll('.carousel-indicator');
             
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            track.style.transform = `translateX(-${currentSlide * (100/6)}%)`;
             
             indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === currentSlide);
@@ -993,6 +1009,7 @@
             observer.observe(commentsContainer);
         }
     </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"9e6b3b37d17c49c5b79591034f73ec0d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"9e6b3b37d17c49c5b79591034f73ec0d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"9e6b3b37d17c49c5b79591034f73ec0d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
