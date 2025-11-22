@@ -306,18 +306,18 @@
             </p>
 
             <!-- Platform Stats -->
-            <div class="flex flex-row justify-center items-center gap-3 md:gap-6 mb-6 md:mb-12 animate-slide-in-up overflow-x-auto" style="animation-delay: 0.6s;">
-                <div class="glass-effect rounded-xl px-4 md:px-8 py-3 md:py-5 border border-yellow-400 flex-shrink-0">
-                    <div class="text-yellow-400 text-xs md:text-sm mb-1">প্রতি রেফারেল</div>
-                    <div class="text-xl md:text-3xl font-bold text-white">৳30</div>
+            <div class="flex flex-row justify-start md:justify-center items-center gap-2 md:gap-6 mb-6 md:mb-12 animate-slide-in-up overflow-x-auto pb-2" style="animation-delay: 0.6s; -webkit-overflow-scrolling: touch;">
+                <div class="glass-effect rounded-lg md:rounded-xl px-3 md:px-8 py-2 md:py-5 border border-yellow-400 flex-shrink-0 min-w-[110px] md:min-w-0">
+                    <div class="text-yellow-400 text-[10px] md:text-sm mb-1 whitespace-nowrap">প্রতি রেফারেল</div>
+                    <div class="text-lg md:text-3xl font-bold text-white">৳30</div>
                 </div>
-                <div class="glass-effect rounded-xl px-4 md:px-8 py-3 md:py-5 border border-green-400 flex-shrink-0">
-                    <div class="text-green-400 text-xs md:text-sm mb-1">সর্বোচ্চ কমিশন</div>
-                    <div class="text-xl md:text-3xl font-bold text-white">৳6,30,000+</div>
+                <div class="glass-effect rounded-lg md:rounded-xl px-3 md:px-8 py-2 md:py-5 border border-green-400 flex-shrink-0 min-w-[130px] md:min-w-0">
+                    <div class="text-green-400 text-[10px] md:text-sm mb-1 whitespace-nowrap">সর্বোচ্চ কমিশন</div>
+                    <div class="text-lg md:text-3xl font-bold text-white whitespace-nowrap">৳6,30,000+</div>
                 </div>
-                <div class="glass-effect rounded-xl px-4 md:px-8 py-3 md:py-5 border border-purple-400 flex-shrink-0">
-                    <div class="text-purple-400 text-xs md:text-sm mb-1">প্রথম ডিপোজিট বোনাস</div>
-                    <div class="text-xl md:text-3xl font-bold text-white">200%</div>
+                <div class="glass-effect rounded-lg md:rounded-xl px-3 md:px-8 py-2 md:py-5 border border-purple-400 flex-shrink-0 min-w-[110px] md:min-w-0">
+                    <div class="text-purple-400 text-[10px] md:text-sm mb-1 whitespace-nowrap">প্রথম ডিপোজিট বোনাস</div>
+                    <div class="text-lg md:text-3xl font-bold text-white">200%</div>
                 </div>
             </div>
         </div>
@@ -722,12 +722,13 @@
             </div>
 
             <div class="glass-effect rounded-2xl p-4 md:p-12 mb-3 md:mb-12">
-                <p class="text-xl text-blue-200 mb-8 text-center leading-relaxed">
+                <p class="text-xl text-blue-200 mb-3 md:mb-8 text-center leading-relaxed">
                     প্রত্যেক প্লেয়ার শুধুমাত্র একবারই প্রথম ডিপোজিট বোনাস উপভোগ করতে পারবেন।<br>
                     নিচে ডিপোজিট এবং বোনাসের পরিমাণ দেখানো হলো:
                 </p>
 
-                <div class="deposit-table rounded-xl overflow-hidden">
+                <div class="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0" style="-webkit-overflow-scrolling: touch;">
+                <div class="deposit-table rounded-xl overflow-hidden min-w-[600px] md:min-w-0">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-blue-500/20">
                         <!-- Header -->
                         <div class="bg-blue-900/50 p-4 font-bold text-center text-yellow-400">ডিপোজিট</div>
@@ -801,6 +802,7 @@
                         <div class="deposit-row bg-gradient-to-r from-yellow-900/50 to-purple-900/50 p-4 text-center text-xl font-bold text-yellow-400">৳1,500,000</div>
                         <div class="deposit-row bg-gradient-to-r from-yellow-900/50 to-purple-900/50 p-4 text-center text-sm text-gray-300 hidden md:block">50,000 + 1,000,000</div>
                     </div>
+                </div>
                 </div>
 
                 <div class="highlight-box mt-8">
