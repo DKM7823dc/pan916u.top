@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDRUMMY - রেফার করুন এবং উপার্জন করুন</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 46, 0.9) 50%, rgba(22, 33, 62, 0.95) 100%);
+            position: relative;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1), transparent 70%);
+        }
+
+        .glass-effect {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .agent-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.7));
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg) translateX(-150%);
+            transition: transform 0.8s ease;
+        }
+
+        .agent-card:hover {
+            border-color: rgba(168, 85, 247, 0.8);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+        }
+
+        .agent-card:hover::before {
+            transform: rotate(45deg) translateX(150%);
+        }
+
+        .agent-a {
+            border-color: rgba(251, 191, 36, 0.5);
+            background: linear-gradient(145deg, rgba(251, 191, 36, 0.1), rgba(15, 23, 42, 0.9));
+        }
+
+        .agent-a:hover {
+            border-color: rgba(251, 191, 36, 0.9);
+            box-shadow: 0 20px 50px rgba(251, 191, 36, 0.4);
+        }
+
+        .agent-b {
+            border-color: rgba(59, 130, 246, 0.5);
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(15, 23, 42, 0.9));
+        }
+
+        .agent-b:hover {
+            border-color: rgba(59, 130, 246, 0.9);
+            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4);
+        }
+
+        .agent-c {
+            border-color: rgba(168, 85, 247, 0.5);
+            background: linear-gradient(145deg, rgba(168, 85, 247, 0.1), rgba(15, 23, 42, 0.9));
+        }
+
+        .agent-c:hover {
+            border-color: rgba(168, 85, 247, 0.9);
+            box-shadow: 0 20px 50px rgba(168, 85, 247, 0.4);
+        }
+
+        .info-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: rgba(168, 85, 247, 0.6);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .floating-button {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .floating-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
+        }
+
+        .deposit-table {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .deposit-row {
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .deposit-row:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: scale(1.02);
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.8), transparent);
+            border-radius: 50%;
+            animation: particleFloat 15s infinite linear;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slide-in-up {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        .bonus-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border: 2px solid rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .icon-container:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.1));
+            border-left: 4px solid #fbbf24;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        .calculation-box {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 16px;
+            border-radius: 12px;
+            margin: 12px 0;
+        }
+
+        .feature-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .feature-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen text-white">
+    <!-- Particle background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative z-10 py-20 px-4">
+        <div class="text-center max-w-6xl mx-auto relative z-20">
+            <!-- Main Title -->
+            <div class="glass-effect rounded-full px-6 py-3 inline-block mb-6 animate-slide-in-up border border-green-400">
+                <span class="text-green-400 font-bold text-lg">💰 BDRUMMY রেফারেল প্রোগ্রাম</span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-slide-in-up" style="animation-delay: 0.2s;">
+                রেফার করুন এবং উপার্জন করুন
+            </h1>
+
+            <p class="text-xl md:text-2xl mb-12 text-blue-200 animate-slide-in-up max-w-3xl mx-auto leading-relaxed" style="animation-delay: 0.4s;">
+                খেলোয়াড়দের নম্বর যুক্ত করতে এবং প্রথম ডিপোজিট করতে আমন্ত্রণ জানান,<br>
+                <span class="text-yellow-400 font-bold text-3xl">প্রতি আমন্ত্রণে 30 টাকা</span> উপার্জন করুন।
+            </p>
+
+            <!-- Platform Stats -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12 animate-slide-in-up" style="animation-delay: 0.6s;">
+                <div class="glass-effect rounded-xl px-8 py-5 border border-yellow-400">
+                    <div class="text-yellow-400 text-sm mb-1">প্রতি রেফারেল</div>
+                    <div class="text-3xl font-bold text-white">৳30</div>
+                </div>
+                <div class="glass-effect rounded-xl px-8 py-5 border border-green-400">
+                    <div class="text-green-400 text-sm mb-1">সর্বোচ্চ কমিশন</div>
+                    <div class="text-3xl font-bold text-white">৳6,30,000+</div>
+                </div>
+                <div class="glass-effect rounded-xl px-8 py-5 border border-purple-400">
+                    <div class="text-purple-400 text-sm mb-1">প্রথম ডিপোজিট বোনাস</div>
+                    <div class="text-3xl font-bold text-white">200%</div>
+                </div>
+            </div>
+
+            <button class="floating-button animate-slide-in-up" style="animation-delay: 0.8s;" onclick="scrollToSection('agent-section')">
+                🎯 এখনই শুরু করুন
+            </button>
+        </div>
+    </section>
+
+    <!-- Agent Levels Section -->
+    <section id="agent-section" class="py-20 px-4 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 section-title">
+                এজেন্ট লেভেল এবং কমিশন
+            </h2>
+            <p class="text-center text-blue-200 text-lg mb-16 max-w-2xl mx-auto">
+                তিনটি এজেন্ট লেভেল থেকে আপনার পছন্দের লেভেল বেছে নিন এবং আনলিমিটেড কমিশন উপার্জন করুন
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Agent A -->
+                <div class="agent-card agent-a rounded-2xl p-8 text-center">
+                    <div class="icon-container mb-6">
+                        <span class="text-5xl">👑</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-yellow-400 mb-6">AGENT A</h3>
+                    <div class="space-y-4 text-left">
+                        <div class="info-card rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">বন্ধু আমানত ছাড়</div>
+                            <div class="text-2xl font-bold text-yellow-400">1.5%</div>
+                        </div>
+                        <div class="info-card rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">বন্ধু বাজি ছাড়</div>
+                            <div class="text-2xl font-bold text-yellow-400">1.5%</div>
+                        </div>
+                        <div class="info-card rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">বন্ধু বাজি কর ছাড়</div>
+                            <div class="text-2xl font-bold text-yellow-400">60%</div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <span class="bonus-badge text-white">সর্বোচ্চ আয়</span>
+                    </div>
+                </div>
+
+                <!-- Agent B -->
+                <div class="agent-card agent-b rounded-2xl p-8 text-center">
+                    <div class="icon-container mb-6">
+                        <span class="text-5xl">💎</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-blue-400 mb-6">AGENT B</h3>
+                    <div class="space-y-4 text-left">
+                        <div class="info-card rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">বন্ধু আমানত ছাড়</div>
+                            <div class="text-2xl font-bold text-blue-400">0.5%</div>
+                        </div>
+                        <div class="info-card rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">বন্ধু বাজি ছাড়</div>
+                            <div class="text-2xl font-bold text-blue-400">0.5%</div>
+                        </div>
+                        <div class="info-card rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">বন্ধু বাজি কর ছাড়</div>
+                            <div class="text-2xl font-bold text-blue-400">20%</div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <span class="bonus-badge text-white">মাঝারি আয়</span>
+                    </div>
+                </div>
+
+                <!-- Agent C -->
+                <div class="agent-card agent-c rounded-2xl p-8 text-center">
+                    <div class="icon-container mb-6">
+                        <span class="text-5xl">⭐</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-purple-400 mb-6">AGENT C</h3>
+                    <div class="space-y-4 text-left">
+                        <div class="info-card rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">বন্ধু আমানত ছাড়</div>
+                            <div class="text-2xl font-bold text-purple-400">0.2%</div>
+                        </div>
+                        <div class="info-card rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">বন্ধু বাজি ছাড়</div>
+                            <div class="text-2xl font-bold text-purple-400">0.2%</div>
+                        </div>
+                        <div class="info-card rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">বন্ধু বাজি কর ছাড়</div>
+                            <div class="text-2xl font-bold text-purple-400">10%</div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <span class="bonus-badge text-white">প্রাথমিক লেভেল</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Image -->
+            <div class="max-w-2xl mx-auto mb-12">
+                <img src="mnt/https___pan916u.top_dagam_images_8.png" alt="Agent Levels" class="w-full feature-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Commission Calculation Section -->
+    <section class="py-20 px-4 relative z-10 bg-gradient-to-b from-transparent to-rgba(10, 10, 10, 0.5)">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 section-title">
+                উদাহরণ: এজেন্ট কমিশন হিসাব
+            </h2>
+            <p class="text-center text-blue-200 text-lg mb-16 max-w-3xl mx-auto">
+                প্রতিটি এজেন্ট লেভেলের কমিশন কিভাবে হিসাব হয় তা দেখুন
+            </p>
+
+            <!-- Agent A Calculation -->
+            <div class="glass-effect rounded-2xl p-8 mb-12 border-2 border-yellow-400">
+                <h3 class="text-3xl font-bold text-yellow-400 mb-6 flex items-center">
+                    <span class="step-number mr-4">1</span>
+                    এজেন্ট A -এর কমিশন হিসাব
+                </h3>
+
+                <div class="space-y-4 text-lg">
+                    <div class="calculation-box">
+                        <div class="text-gray-300 mb-2">এজেন্ট A -এর প্লেয়ারের ডিপোজিট:</div>
+                        <div class="text-yellow-400 font-bold text-xl">1,00,000 × 1.5% = <span class="text-2xl">15,000</span></div>
+                    </div>
+
+                    <div class="calculation-box">
+                        <div class="text-gray-300 mb-2">এজেন্ট A-এর প্লেয়ারের বেট:</div>
+                        <div class="text-yellow-400 font-bold text-xl">1,00,000 × 1.5% = <span class="text-2xl">15,000</span></div>
+                    </div>
+
+                    <div class="calculation-box">
+                        <div class="text-gray-300 mb-2">এজেন্ট A-এর প্লেয়ারের বেট ট্যাক্স:</div>
+                        <div class="text-yellow-400 font-bold text-xl">1,00,000 × 60% = <span class="text-2xl">6,00,000</span></div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <div class="text-gray-300 mb-2">মোট অর্জিত কমিশন:</div>
+                        <div class="text-yellow-400 font-bold text-3xl">15,000 + 15,000 + 6,00,000 = ৳6,30,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent B Calculation -->
+            <div class="glass-effect rounded-2xl p-8 mb-12 border-2 border-blue-400">
+                <h3 class="text-3xl font-bold text-blue-400 mb-6 flex items-center">
+                    <span class="step-number mr-4">2</span>
+                    এজেন্ট A দ্বারা ডেভেলপ করা এজেন্ট B-এর কমিশন হিসাব
+                </h3>
+
+                <div class="space-y-4 text-lg">
+                    <div class="calculation-box">
+                        <div class="text-gray-300 mb-2">এজেন্ট B-এর প্লেয়ারের ডিপোজিট:</div>
+                        <div class="text-blue-400 font-bold text-xl">1,00,000 × 0.5% = <span class="text-2xl">5,000</span></div>
+                    </div>
+
+                    <div class="calculation-box">
+                        <div class="text-gray-300 mb-2">এজেন্ট B-এর প্লেয়ারের বেট:</div>
+                        <div class="text-blue-400 font-bold text-xl">1,00,000 × 0.5% = <span class="text-2xl">5,000</span></div>
+                    </div>
+
+                    <div class="calculation-box">
+                        <div class="text-gray-300 mb-2">এজেন্ট B-এর প্লেয়ারের বেট ট্যাক্স:</div>
+                        <div class="text-blue-400 font-bold text-xl">1,00,000 × 20% = <span class="text-2xl">200,000</span></div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <div class="text-gray-300 mb-2">মোট কমিশন অর্জন:</div>
+                        <div class="text-blue-400 font-bold text-3xl">5,000 + 5,000 + 200,000 = ৳210,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent C Calculation -->
+            <div class="glass-effect rounded-2xl p-8 mb-12 border-2 border-purple-400">
+                <h3 class="text-3xl font-bold text-purple-400 mb-6 flex items-center">
+                    <span class="step-number mr-4">3</span>
+                    এজেন্ট A দ্বারা ডেভেলপ করা এজেন্ট C-এর কমিশন হিসাব
+                </h3>
+
+                <div class="space-y-4 text-lg">
+                    <div class="calculation-box">
+                        <div class="text-gray-300 mb-2">এজেন্ট C-এর প্লেয়ারের ডিপোজিট:</div>
+                        <div class="text-purple-400 font-bold text-xl">100,000 × 0.2% = <span class="text-2xl">2,000</span></div>
+                    </div>
+
+                    <div class="calculation-box">
+                        <div class="text-gray-300 mb-2">এজেন্ট C-এর প্লেয়ারের বেট:</div>
+                        <div class="text-purple-400 font-bold text-xl">100,000 × 0.2% = <span class="text-2xl">2,000</span></div>
+                    </div>
+
+                    <div class="calculation-box">
+                        <div class="text-gray-300 mb-2">এজেন্ট C-এর প্লেয়ারের বেট ট্যাক্স:</div>
+                        <div class="text-purple-400 font-bold text-xl">100,000 × 10% = <span class="text-2xl">100,000</span></div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <div class="text-gray-300 mb-2">মোট কমিশন অর্জন:</div>
+                        <div class="text-purple-400 font-bold text-3xl">2,000 + 2,000 + 100,000 = ৳104,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Image -->
+            <div class="max-w-2xl mx-auto">
+                <img src="mnt/https___pan916u.top_dagam_images_8.png" alt="Commission Calculation" class="w-full feature-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Cash Section -->
+    <section class="py-20 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="icon-container mb-6 w-24 h-24 mx-auto">
+                    <span class="text-6xl">💵</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
+                    Free CASH
+                </h2>
+                <p class="text-2xl text-yellow-400 font-bold mb-8">ফ্রি ক্যাশ কিভাবে পাবেন?</p>
+            </div>
+
+            <div class="glass-effect rounded-2xl p-8 md:p-12 mb-12">
+                <div class="space-y-8">
+                    <!-- Step 1 -->
+                    <div class="flex items-start space-x-4">
+                        <span class="step-number flex-shrink-0">1</span>
+                        <div class="flex-1">
+                            <p class="text-lg md:text-xl text-blue-200 leading-relaxed">
+                                BDRUMMY অ্যাপের হোম পেজ খুলুন।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex items-start space-x-4">
+                        <span class="step-number flex-shrink-0">2</span>
+                        <div class="flex-1">
+                            <p class="text-lg md:text-xl text-blue-200 leading-relaxed">
+                                মাঝের ডানদিকের কোণায় থাকা <span class="text-yellow-400 font-bold">"FREE CASH"</span> আইকনে ক্লিক করুন।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex items-start space-x-4">
+                        <span class="step-number flex-shrink-0">3</span>
+                        <div class="flex-1">
+                            <p class="text-lg md:text-xl text-blue-200 leading-relaxed">
+                                <span class="text-green-400 font-bold">"SHARE TO FRIENDS"</span> এ ক্লিক করুন। একটি শেয়ারিং লিঙ্ক দেখাবে। WhatsApp, Facebook বা Telegram এর মাধ্যমে এটি বন্ধুদের সাথে শেয়ার করুন। সফল রেজিস্ট্রেশন এবং ডিপোজিট করলে আপনি ফ্রি ক্যাশ পাবেন।
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex items-start space-x-4">
+                        <span class="step-number flex-shrink-0">4</span>
+                        <div class="flex-1">
+                            <p class="text-lg md:text-xl text-blue-200 leading-relaxed">
+                                <span class="text-purple-400 font-bold">"SHARE TO PLAYER"</span> এ ক্লিক করুন। একটি WhatsApp নাম্বার পুল দেখাবে। এটি PLAYER এর সাথে WhatsApp এর মাধ্যমে শেয়ার করুন। সফল রেজিস্ট্রেশন এবং ডিপোজিট করলে আপনি <span class="text-yellow-400 font-bold text-2xl">x2 পরিমাণ</span> ফ্রি ক্যাশ পাবেন!!!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box mt-8">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-3xl">⚠️</span>
+                        <div>
+                            <div class="text-yellow-400 font-bold text-xl mb-2">গুরুত্বপূর্ণ:</div>
+                            <div class="text-gray-200 text-lg leading-relaxed">
+                                <span class="font-bold text-white">কোনও সম্পদ ছাড়াই এজেন্ট কিভাবে হওয়া যায়?</span><br>
+                                BDRUMMY সকল প্লেয়ারকে এজেন্ট হওয়ার সুযোগ দেবে। আপনি প্লেয়ারদের সাথে ফ্রি ক্যাশ শেয়ার করে এবং আপনার প্লেয়ার বেস বাড়িয়ে অসীম কমিশন উপার্জন করতে পারবেন। এখনই পদক্ষেপ নিন, এবং BDRUMMY আপনার সাথে বৃদ্ধি পাবে!!!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Bonus Section -->
+    <section class="py-20 px-4 relative z-10 bg-gradient-to-b from-rgba(10, 10, 10, 0.5) to-transparent">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="icon-container mb-6 w-24 h-24 mx-auto">
+                    <span class="text-6xl">👑</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
+                    VIP BONUS
+                </h2>
+                <p class="text-2xl text-yellow-400 font-bold mb-8">ভিআইপি বোনাস ইভেন্টের বিস্তারিতঃ</p>
+            </div>
+
+            <div class="glass-effect rounded-2xl p-8 md:p-12 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                    <!-- VIP 20 Upgrade -->
+                    <div class="info-card rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-4">🎁</div>
+                        <div class="text-gray-400 text-sm mb-2">ভিআইপি 20 আপগ্রেড</div>
+                        <div class="text-yellow-400 font-bold text-3xl mb-2">৳88,888</div>
+                        <div class="text-blue-200">আপগ্রেড রিওয়ার্ড</div>
+                    </div>
+
+                    <!-- Weekly Reward -->
+                    <div class="info-card rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-4">📅</div>
+                        <div class="text-gray-400 text-sm mb-2">প্রতি সোমবার</div>
+                        <div class="text-green-400 font-bold text-3xl mb-2">৳10,000</div>
+                        <div class="text-blue-200">সাপ্তাহিক রিওয়ার্ড</div>
+                    </div>
+
+                    <!-- Monthly Reward -->
+                    <div class="info-card rounded-xl p-6 text-center">
+                        <div class="text-5xl mb-4">🗓️</div>
+                        <div class="text-gray-400 text-sm mb-2">প্রতি মাসের 1 তারিখ</div>
+                        <div class="text-purple-400 font-bold text-3xl mb-2">৳20,000</div>
+                        <div class="text-blue-200">মাসিক রিওয়ার্ড</div>
+                    </div>
+                </div>
+
+                <div class="space-y-6 text-lg">
+                    <div class="calculation-box">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">🔝</span>
+                            <p class="text-blue-200 leading-relaxed">
+                                ভিআইপি 20-এ আপগ্রেড করুন এবং <span class="text-yellow-400 font-bold text-xl">88,888 টাকা</span> আপগ্রেড রিওয়ার্ড পান।
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="calculation-box">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">💰</span>
+                            <p class="text-blue-200 leading-relaxed">
+                                প্রতি সোমবার উপভোগ করুন সাপ্তাহিক <span class="text-green-400 font-bold text-xl">10,000 টাকার</span> ভিআইপি রিওয়ার্ড।
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="calculation-box">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">🎊</span>
+                            <p class="text-blue-200 leading-relaxed">
+                                প্রতি মাসের 1 তারিখে উপভোগ করুন মাসিক <span class="text-purple-400 font-bold text-xl">20,000 টাকার</span> ভিআইপি রিওয়ার্ড।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box mt-8">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-3xl">⚠️</span>
+                        <div>
+                            <div class="text-yellow-400 font-bold text-xl mb-2">গুরুত্বপূর্ণ:</div>
+                            <div class="text-gray-200 text-lg leading-relaxed">
+                                আপগ্রেড রিওয়ার্ড ও সাপ্তাহিক/মাসিক ভিআইপি বোনাস পেতে অবশ্যই <span class="text-yellow-400 font-bold">50 টাকা রিচার্জ</span> করতে হবে!! BDRUMMY-তে যোগ দিন এবং আরও বেশি ভিআইপি বোনাস ও ইভেন্ট উপভোগ করুন—অসংখ্য চমক আপনার অপেক্ষায়!!!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Image -->
+            <div class="max-w-2xl mx-auto">
+                <img src="mnt/https___pan916u.top_dagam_images_8.png" alt="VIP Bonus" class="w-full feature-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mystery Bonus Section -->
+    <section class="py-20 px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="icon-container mb-6 w-24 h-24 mx-auto">
+                    <span class="text-6xl">🎁</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
+                    Mystery bonus
+                </h2>
+                <p class="text-2xl text-yellow-400 font-bold mb-8">মিস্ট্রি বোনাস কীভাবে পাবেন?</p>
+            </div>
+
+            <div class="glass-effect rounded-2xl p-8 md:p-12 mb-12">
+                <div class="text-lg md:text-xl text-blue-200 leading-relaxed mb-8">
+                    <span class="font-bold text-yellow-400 text-2xl">উদাহরণ:</span> আজ যেকোনো জমা (ডিপোজিট) এবং বেট সম্পন্ন করুন, আর আগামীকাল সকাল <span class="text-green-400 font-bold">10:00 AM-এ</span> আপনি একটি মিস্ট্রি বোনাস পাবেন।
+                </div>
+
+                <div class="calculation-box">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-5xl">📈</span>
+                        <div class="flex-1">
+                            <p class="text-xl text-blue-200 leading-relaxed">
+                                আপনার ভিআইপি লেভেল যত বেশি হবে, ক্যাশ রিওয়ার্ড তত বেশি হবে—<span class="text-yellow-400 font-bold text-2xl">এর কোনো সীমা নেই!</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <p class="text-xl text-white leading-relaxed">
+                        এখনই BDRUMMY-তে ভিআইপি সুবিধা এবং বিভিন্ন কার্যক্রম উপভোগ করা শুরু করুন!!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature Image -->
+            <div class="max-w-2xl mx-auto">
+                <img src="mnt/https___pan916u.top_dagam_images_8.png" alt="Mystery Bonus" class="w-full feature-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- First Deposit Section -->
+    <section class="py-20 px-4 relative z-10 bg-gradient-to-b from-rgba(10, 10, 10, 0.5) to-transparent">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="icon-container mb-6 w-24 h-24 mx-auto">
+                    <span class="text-6xl">💎</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
+                    Frist Deposit
+                </h2>
+                <p class="text-2xl text-yellow-400 font-bold mb-4">প্রথম ডিপোজিট বোনাস</p>
+                <p class="text-xl text-green-400 font-bold mb-8">সর্বোচ্চ 200% পর্যন্ত রিবেট</p>
+            </div>
+
+            <div class="glass-effect rounded-2xl p-8 md:p-12 mb-12">
+                <p class="text-xl text-blue-200 mb-8 text-center leading-relaxed">
+                    প্রত্যেক প্লেয়ার শুধুমাত্র একবারই প্রথম ডিপোজিট বোনাস উপভোগ করতে পারবেন।<br>
+                    নিচে ডিপোজিট এবং বোনাসের পরিমাণ দেখানো হলো:
+                </p>
+
+                <div class="deposit-table rounded-xl overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-blue-500/20">
+                        <!-- Header -->
+                        <div class="bg-blue-900/50 p-4 font-bold text-center text-yellow-400">ডিপোজিট</div>
+                        <div class="bg-blue-900/50 p-4 font-bold text-center text-green-400">বোনাস</div>
+                        <div class="bg-blue-900/50 p-4 font-bold text-center text-purple-400">মোট</div>
+                        <div class="bg-blue-900/50 p-4 font-bold text-center text-blue-400 hidden md:block">গণনা</div>
+
+                        <!-- Row 1 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳50</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳50</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳100</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">50 + 50</div>
+
+                        <!-- Row 2 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳100</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳120</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳220</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">100 + 120</div>
+
+                        <!-- Row 3 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳200</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳240</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳440</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">200 + 240</div>
+
+                        <!-- Row 4 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳300</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳375</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳675</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">300 + 375</div>
+
+                        <!-- Row 5 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳500</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳650</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳1,150</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">500 + 650</div>
+
+                        <!-- Row 6 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳1,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳1,400</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳2,400</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">1,000 + 1,400</div>
+
+                        <!-- Row 7 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳3,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳4,500</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳7,500</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">3,000 + 4,500</div>
+
+                        <!-- Row 8 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳5,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳8,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳13,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">5,000 + 8,000</div>
+
+                        <!-- Row 9 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳10,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳17,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳27,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">10,000 + 17,000</div>
+
+                        <!-- Row 10 -->
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg">৳25,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg text-green-400">৳45,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-lg font-bold text-yellow-400">৳70,000</div>
+                        <div class="deposit-row bg-slate-900/30 p-4 text-center text-sm text-gray-400 hidden md:block">25,000 + 45,000</div>
+
+                        <!-- Row 11 - Highlighted -->
+                        <div class="deposit-row bg-gradient-to-r from-yellow-900/50 to-purple-900/50 p-4 text-center text-xl font-bold">৳50,000</div>
+                        <div class="deposit-row bg-gradient-to-r from-yellow-900/50 to-purple-900/50 p-4 text-center text-xl font-bold text-green-400">৳1,000,000</div>
+                        <div class="deposit-row bg-gradient-to-r from-yellow-900/50 to-purple-900/50 p-4 text-center text-xl font-bold text-yellow-400">৳1,500,000</div>
+                        <div class="deposit-row bg-gradient-to-r from-yellow-900/50 to-purple-900/50 p-4 text-center text-sm text-gray-300 hidden md:block">50,000 + 1,000,000</div>
+                    </div>
+                </div>
+
+                <div class="highlight-box mt-8">
+                    <div class="flex items-start space-x-3">
+                        <span class="text-3xl">⚠️</span>
+                        <div>
+                            <div class="text-yellow-400 font-bold text-xl mb-2">গুরুত্বপূর্ণ:</div>
+                            <div class="text-gray-200 text-lg leading-relaxed">
+                                যে খেলোয়াড়রা তাদের প্রথম ডিপোজিট সম্পন্ন করবেন, তারা <span class="text-green-400 font-bold">7-দিনের সাপোর্ট বোনাস</span> পেতে পারেন (7-দিনের সাপোর্ট বোনাস প্রতি দিন <span class="text-yellow-400 font-bold">10:00 AM-এ</span> লগইন করে দাবি করতে হবে)। এটি আপনাকে BDRUMMY-তে আপনার লাভ সর্বাধিক করতে সাহায্য করবে!!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Image -->
+            <div class="max-w-2xl mx-auto">
+                <img src="mnt/https___pan916u.top_dagam_images_8.png" alt="First Deposit" class="w-full feature-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Code Section -->
+    <section class="py-20 px-4 relative z-10 mb-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="icon-container mb-6 w-24 h-24 mx-auto">
+                    <span class="text-6xl">🎟️</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 section-title">
+                    PROMO CODE
+                </h2>
+                <p class="text-2xl text-yellow-400 font-bold mb-8">প্রোমো কোড কীভাবে পাবেন এবং ক্লেইম করবেন?</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <!-- How to Get Promo Code -->
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-green-400 mb-6 flex items-center">
+                        <span class="text-3xl mr-3">📥</span>
+                        প্রোমো কোড কীভাবে পাবেন:
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <span class="step-number flex-shrink-0 text-lg w-10 h-10">1</span>
+                            <p class="text-blue-200 leading-relaxed pt-2">
+                                BDRUMMY হোম পেজ খুলুন।
+                            </p>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="step-number flex-shrink-0 text-lg w-10 h-10">2</span>
+                            <p class="text-blue-200 leading-relaxed pt-2">
+                                উপরের ডানদিকের <span class="text-yellow-400 font-bold">"নোটিশ"</span> এ ট্যাপ করুন।
+                            </p>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="step-number flex-shrink-0 text-lg w-10 h-10">3</span>
+                            <p class="text-blue-200 leading-relaxed pt-2">
+                                WhatsApp বা Telegram থেকে একটি ছবি স্লাইড করে সিলেক্ট করুন, তারপর এটি চ্যানেলে যোগ করুন।
+                            </p>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="step-number flex-shrink-0 text-lg w-10 h-10">4</span>
+                            <p class="text-blue-200 leading-relaxed pt-2">
+                                প্রতিদিন দুপুর <span class="text-green-400 font-bold">12:00 টায়</span> WhatsApp এবং Telegram চ্যানেল থেকে প্রোমো কোড পেতে পারবেন।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Claim Promo Code -->
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-purple-400 mb-6 flex items-center">
+                        <span class="text-3xl mr-3">🎁</span>
+                        প্রোমো কোড কীভাবে ক্লেইম করবেন:
+                    </h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <span class="step-number flex-shrink-0 text-lg w-10 h-10">1</span>
+                            <p class="text-blue-200 leading-relaxed pt-2">
+                                BDRUMMY হোম পেজ খুলুন।
+                            </p>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="step-number flex-shrink-0 text-lg w-10 h-10">2</span>
+                            <p class="text-blue-200 leading-relaxed pt-2">
+                                <span class="text-yellow-400 font-bold">প্রোমো কোড & ভাউচার</span> আইকনে ট্যাপ করুন।
+                            </p>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="step-number flex-shrink-0 text-lg w-10 h-10">3</span>
+                            <p class="text-blue-200 leading-relaxed pt-2">
+                                প্রাপ্ত প্রোমো কোডটি প্রোমো কোড ফিল্ডে লিখুন।
+                            </p>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <span class="step-number flex-shrink-0 text-lg w-10 h-10">4</span>
+                            <p class="text-blue-200 leading-relaxed pt-2">
+                                <span class="text-green-400 font-bold">"ক্লেইম"</span> এ ট্যাপ করে আপনার ক্যাশ রিওয়ার্ড পান।
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Box -->
+            <div class="glass-effect rounded-2xl p-8 mb-12 border-2 border-yellow-400">
+                <h3 class="text-2xl font-bold text-yellow-400 mb-6 flex items-center">
+                    <span class="text-3xl mr-3">💡</span>
+                    উদাহরণ:
+                </h3>
+
+                <div class="space-y-4 text-lg">
+                    <p class="text-blue-200 leading-relaxed">
+                        WhatsApp এবং Telegram চ্যানেল থেকে প্রেরিত প্রোমো কোড হলো <span class="bg-blue-900/50 px-4 py-2 rounded-lg font-mono text-yellow-400 font-bold">bdrummy.game</span>
+                    </p>
+
+                    <p class="text-blue-200 leading-relaxed">
+                        অনুগ্রহ করে এই প্রোমো কোডটি কপি করুন, প্রোমো কোড & ভাউচার আইকন ফিল্ডে <span class="bg-blue-900/50 px-4 py-2 rounded-lg font-mono text-green-400 font-bold">"bdrummy.game"</span> লিখুন এবং <span class="text-green-400 font-bold">"ক্লেইম"</span> এ ট্যাপ করুন, আপনার ক্যাশ রিওয়ার্ড পেতে।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="glass-effect rounded-2xl p-12 border-2 border-blue-400">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+                    এখনই BDRUMMY-তে যোগ দিন!
+                </h2>
+                <p class="text-xl text-blue-200 mb-8 leading-relaxed">
+                    অসীম আয়ের সুযোগ, এক্সক্লুসিভ বোনাস এবং ভিআইপি সুবিধা উপভোগ করুন
+                </p>
+                <button class="floating-button text-xl px-12 py-5" onclick="window.location.href='https://www.baidu.com'">
+                    🚀 আজই শুরু করুন
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 text-center relative z-10">
+        <div class="glass-effect rounded-lg mx-4 py-8 max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold gradient-text mb-4">BDRUMMY</h3>
+            <p class="text-blue-200 mb-6">আপনার বিশ্বস্ত গেমিং এবং আয়ের প্ল্যাটফর্ম</p>
+            <div class="text-sm text-gray-400">
+                © ২০২৪ BDRUMMY | সকল অধিকার সংরক্ষিত
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create particle effects
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Scroll animation observer
+        function setupScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Observe all agent cards and info cards
+            document.querySelectorAll('.agent-card, .info-card, .glass-effect').forEach((card) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        }
+
+        // Dark mode support
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Initialize after page load
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            setupScrollAnimations();
+        });
+    </script>
+</body>
+</html>
