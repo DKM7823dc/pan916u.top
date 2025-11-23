@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
- 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		      <meta property="og:title" content="Będę na Ciebie czekać dziś wieczorem">
-    <meta property="og:description" content="Czekam na Ciebie dziś wieczorem, dzisiejsza impreza, samotne młode kobiety, do zobaczenia tam">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Społeczność randkowa w Twojej okolicy">
+    <meta property="og:description" content="Poznawaj nowych ludzi, umawiaj się na randki i buduj relacje w bezpiecznej społeczności online.">
     <meta property="og:image" content="https://www.vpdsotpo.online/s2/img/1.jpg">
-    <meta property="og:url" content=https://www.vpdsotpo.online/s2/4s.html">
-    <meta property="og:type" content="webpage"> <!-- 可以是 article, website, video 等 -->
-	
-    <title>Społeczność Randkowa</title>
+    <meta property="og:url" content="https://www.vpdsotpo.online/s2/4s.html">
+    <meta property="og:type" content="website">
+
+    <title>Społeczność randkowa w Twojej okolicy</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script>
-	    function openLine() { 
-            window.open("https://t.me/qwimg1268", "_blank");
+
+    <script>
+        function openChat() {
+            window.open("https://t.me/qwimg1268", "_blank", "noopener,noreferrer");
         }
-</script>
-	
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
     <style>
         :root {
             --primary-pink: #ff5c8d;
@@ -40,6 +44,7 @@
             --gradient-fire: linear-gradient(45deg, #ff416c, #ff4b2b);
             --gradient-candy: linear-gradient(to right, #fc466b, #3f5efb);
             --gradient-sunset: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+            --gradient-pink-purple: linear-gradient(135deg, #ff5c8d, #9c5cfc);
             --profile-bg: linear-gradient(135deg, #251036, #1e0c2b);
             --profile-bg-lighter: linear-gradient(135deg, #342a3d, #2d1a3e);
             --white: #ffffff;
@@ -55,37 +60,37 @@
             --radius-lg: 20px;
             --radius-full: 9999px;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Noto Sans KR', sans-serif;
             color: var(--text-dark);
             background-color: #1a0030;
             overflow-x: hidden;
         }
-        
+
         .container {
             width: 100%;
             margin: 0 auto;
             padding: 0;
             overflow: hidden;
         }
-        
+
         @media (min-width: 768px) {
             .container {
                 width: 80%;
             }
         }
-        
-        /* Redesigned Hero Section */
+
+        /* Hero Section */
         .hero {
             position: relative;
-            height: 70vh; /* Reduced height */
+            height: 70vh;
             min-height: 500px;
             max-height: 600px;
             width: 100%;
@@ -96,7 +101,7 @@
             justify-content: center;
             padding: 1rem;
         }
-        
+
         .hero-background {
             position: absolute;
             top: 0;
@@ -105,18 +110,18 @@
             height: 100%;
             overflow: hidden;
         }
-        
+
         .hero-backdrop {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             z-index: 1;
         }
-        
+
         .circle-glow {
             position: absolute;
             border-radius: 50%;
@@ -124,7 +129,7 @@
             opacity: 0.4;
             z-index: 1;
         }
-        
+
         .circle-glow-1 {
             width: 250px;
             height: 250px;
@@ -132,7 +137,7 @@
             top: -50px;
             left: -100px;
         }
-        
+
         .circle-glow-2 {
             width: 300px;
             height: 300px;
@@ -140,7 +145,7 @@
             bottom: -100px;
             right: -150px;
         }
-        
+
         .circle-glow-3 {
             width: 150px;
             height: 150px;
@@ -148,7 +153,7 @@
             top: 70%;
             left: 30%;
         }
-        
+
         .hero-content-wrapper {
             position: relative;
             display: flex;
@@ -158,7 +163,7 @@
             height: 100%;
             z-index: 10;
         }
-        
+
         .hero-content {
             display: flex;
             flex-direction: column;
@@ -169,7 +174,7 @@
             padding: 0 1rem;
             margin-top: 1rem;
         }
-        
+
         .hero-title {
             font-size: 2.3rem;
             font-weight: 800;
@@ -182,7 +187,7 @@
             transform: translateY(20px);
             opacity: 0;
         }
-        
+
         .hero-subtitle {
             font-size: 1rem;
             color: var(--white);
@@ -192,7 +197,7 @@
             margin: 0 auto 1rem;
             text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
         }
-        
+
         .cta-button {
             padding: 0.8rem 2rem;
             border-radius: var(--radius-full);
@@ -211,7 +216,7 @@
             text-decoration: none;
             transform: translateY(20px);
         }
-        
+
         .cta-button::before {
             content: '';
             position: absolute;
@@ -223,16 +228,16 @@
             transition: 0.5s;
             z-index: -1;
         }
-        
+
         .cta-button:hover {
             box-shadow: 0 0 25px rgba(252, 70, 107, 0.8);
             transform: translateY(-3px);
         }
-        
+
         .cta-button:hover::before {
             left: 100%;
         }
-        
+
         /* Map Style Profile Display */
         .map-profiles-container {
             position: relative;
@@ -241,7 +246,7 @@
             margin-top: 1rem;
             z-index: 5;
         }
-        
+
         .map-background {
             position: absolute;
             top: 0;
@@ -253,7 +258,7 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .map-grid {
             position: absolute;
             top: 0;
@@ -266,7 +271,7 @@
             background-size: 40px 40px;
             opacity: 0.7;
         }
-        
+
         .map-location-dot {
             position: absolute;
             width: 6px;
@@ -275,7 +280,7 @@
             border-radius: 50%;
             transform: scale(0);
         }
-        
+
         .location-pulse {
             position: absolute;
             top: 50%;
@@ -286,7 +291,7 @@
             border-radius: 50%;
             transform: translate(-50%, -50%) scale(0);
         }
-        
+
         .user-location {
             position: absolute;
             width: 20px;
@@ -300,7 +305,7 @@
             box-shadow: 0 0 10px rgba(255, 92, 141, 0.7);
             z-index: 10;
         }
-        
+
         .user-location::after {
             content: '';
             position: absolute;
@@ -313,13 +318,13 @@
             transform: translate(-50%, -50%);
             animation: pulse-user 2s infinite;
         }
-        
+
         @keyframes pulse-user {
             0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.8; }
             70% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
             100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
         }
-        
+
         .map-profile {
             position: absolute;
             transform: translate(-50%, -50%) scale(0);
@@ -327,11 +332,11 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .map-profile:hover {
             z-index: 10;
         }
-        
+
         .map-profile-image {
             width: 44px;
             height: 44px;
@@ -341,12 +346,12 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
-        
+
         .map-profile:hover .map-profile-image {
             transform: scale(1.2);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4), 0 0 10px var(--primary-pink);
         }
-        
+
         .map-online-indicator {
             position: absolute;
             bottom: 0;
@@ -359,7 +364,7 @@
             box-shadow: 0 0 5px rgba(57, 255, 20, 0.7);
             animation: pulse 1.5s infinite;
         }
-        
+
         .map-profile-info {
             position: absolute;
             top: -40px;
@@ -375,12 +380,12 @@
             transition: all 0.3s ease;
             pointer-events: none;
         }
-        
+
         .map-profile:hover .map-profile-info {
             opacity: 1;
             transform: translateX(-50%) translateY(0);
         }
-        
+
         .map-distance {
             position: absolute;
             bottom: -25px;
@@ -394,24 +399,24 @@
             white-space: nowrap;
             pointer-events: none;
         }
-        
+
         /* Decorative Elements */
         .decorative-shape {
             position: absolute;
             z-index: 2;
             opacity: 0.6;
         }
-        
+
         .dec-circle {
             border-radius: 50%;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .dec-square {
             border: 1px solid rgba(255, 255, 255, 0.2);
             transform: rotate(45deg);
         }
-        
+
         .dec-icon {
             display: flex;
             align-items: center;
@@ -419,7 +424,7 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: 1rem;
         }
-        
+
         .pulse-light {
             width: 6px;
             height: 6px;
@@ -429,7 +434,7 @@
             box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
             opacity: 0;
         }
-        
+
         .floating-badge {
             position: absolute;
             padding: 5px 10px;
@@ -443,7 +448,7 @@
             opacity: 0;
             white-space: nowrap;
         }
-        
+
         /* Social Proof Notifications */
         .notification-container {
             position: fixed;
@@ -452,7 +457,7 @@
             z-index: 9999;
             max-width: 80%;
         }
-        
+
         .notification {
             background: linear-gradient(135deg, rgba(156, 92, 252, 0.95), rgba(255, 92, 141, 0.95));
             border-radius: var(--radius-md);
@@ -471,36 +476,36 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(5px);
         }
-        
+
         .notification i {
             font-size: 1.2rem;
             color: #ffda79;
         }
-        
+
         /* Animation Helpers */
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(57, 255, 20, 0); }
             100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0); }
         }
-        
+
         @keyframes neonPulse {
             0% { box-shadow: 0 0 5px rgba(255, 0, 255, 0.5), 0 0 10px rgba(255, 0, 255, 0.3); }
             50% { box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.5); }
             100% { box-shadow: 0 0 5px rgba(255, 0, 255, 0.5), 0 0 10px rgba(255, 0, 255, 0.3); }
         }
-        
+
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
         }
-        
+
         /* Profiles Section */
         .profiles-section {
             padding: 2rem 1rem;
             background-color: #180029;
         }
-        
+
         .profiles-section-title {
             color: white;
             font-size: 1.8rem;
@@ -508,13 +513,13 @@
             text-align: center;
             text-shadow: 0 0 10px rgba(156, 92, 252, 0.5);
         }
-        
+
         .profiles-list {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
-        
+
         .profile-item {
             display: flex;
             flex-direction: column;
@@ -527,24 +532,24 @@
             transform: translateY(20px);
             border: 1px solid rgba(156, 92, 252, 0.2);
         }
-        
+
         .profile-item:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg), var(--shadow-pink);
             border: 1px solid rgba(156, 92, 252, 0.4);
         }
-        
+
         .profile-image-side {
             width: 100%;
             position: relative;
         }
-        
+
         .profile-main-image {
             width: 100%;
             height: 300px;
             object-fit: cover;
         }
-        
+
         .profile-badge {
             position: absolute;
             top: 15px;
@@ -558,7 +563,7 @@
             box-shadow: var(--shadow-sm);
             z-index: 2;
         }
-        
+
         .profile-online {
             position: absolute;
             bottom: 15px;
@@ -575,7 +580,7 @@
             gap: 6px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-        
+
         .online-dot {
             width: 8px;
             height: 8px;
@@ -584,7 +589,7 @@
             display: inline-block;
             animation: pulse 1.5s infinite;
         }
-        
+
         .profile-info-side {
             width: 100%;
             padding: 1.2rem;
@@ -593,26 +598,26 @@
             position: relative;
             color: var(--text-light);
         }
-        
+
         .profile-details-scroll {
             width: 100%;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             margin-bottom: 0.8rem;
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        
+
         .profile-details-scroll::-webkit-scrollbar {
             display: none;
         }
-        
+
         .profile-details {
             display: flex;
             gap: 0.5rem;
             min-width: max-content;
         }
-        
+
         .profile-detail {
             display: flex;
             align-items: center;
@@ -627,12 +632,12 @@
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .profile-detail i {
             color: var(--primary-pink-light);
             font-size: 0.9rem;
         }
-        
+
         .profile-views {
             position: relative;
             font-size: 0.9rem;
@@ -649,7 +654,7 @@
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .profile-views::before {
             content: '';
             position: absolute;
@@ -661,27 +666,25 @@
             background-size: 5px 5px;
             z-index: 1;
         }
-        
+
         .profile-views i {
             color: var(--primary-pink);
             font-size: 1.1rem;
             position: relative;
             z-index: 2;
         }
-        
-        .view-count {
+
+        .profile-views-text {
             position: relative;
             z-index: 2;
-            color: var(--primary-pink-light);
-            font-weight: 700;
         }
-        
+
         .profile-gallery {
             display: flex;
             gap: 6px;
             margin: 0.8rem 0;
         }
-        
+
         .gallery-thumb {
             position: relative;
             width: 90px;
@@ -692,7 +695,7 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
         }
-        
+
         .gallery-thumb img {
             width: 100%;
             height: 100%;
@@ -700,7 +703,7 @@
             filter: blur(2px);
             transition: all 0.3s ease;
         }
-        
+
         .gallery-thumb::before {
             content: '';
             position: absolute;
@@ -711,8 +714,7 @@
             background-color: rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
-        
-        /* Enhanced Play Button */
+
         .play-button {
             position: absolute;
             top: 50%;
@@ -732,7 +734,7 @@
             background: linear-gradient(135deg, #ff3377, #ff66cc);
             animation: neonPulse 2s infinite;
         }
-        
+
         .play-button::before {
             content: '';
             position: absolute;
@@ -744,7 +746,7 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .play-button i {
             color: white;
             font-size: 1rem;
@@ -753,9 +755,9 @@
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
             transform: translateX(1px);
         }
-        
+
         .play-button::after {
-            content: "Oglądaj Film";
+            content: "Zobacz więcej";
             position: absolute;
             bottom: -35px;
             left: 50%;
@@ -769,39 +771,39 @@
             opacity: 0;
             transition: all 0.3s ease;
         }
-        
+
         .gallery-thumb:hover img {
             filter: blur(1px) brightness(1.1);
             transform: scale(1.05);
         }
-        
+
         .gallery-thumb:hover .play-button {
             transform: translate(-50%, -50%) scale(1.1);
             box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.4);
             background: linear-gradient(135deg, #ff33cc, #ff3377);
         }
-        
+
         .gallery-thumb:hover .play-button::before {
             opacity: 0.3;
             animation: rotateLight 1.5s linear infinite;
         }
-        
+
         .gallery-thumb:hover .play-button::after {
             opacity: 1;
             bottom: -25px;
         }
-        
+
         @keyframes rotateLight {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
+
         .profile-buttons {
             display: flex;
             gap: 8px;
             margin-top: 0.8rem;
         }
-        
+
         .btn {
             display: inline-block;
             background: var(--gradient-pink-purple);
@@ -820,7 +822,7 @@
             font-size: 0.85rem;
             flex: 1;
         }
-        
+
         .btn::after {
             content: '';
             position: absolute;
@@ -833,35 +835,35 @@
             transition: all 0.5s ease;
             opacity: 0;
         }
-        
+
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-md), var(--shadow-glow);
+            box-shadow: var(--shadow-md), var(--shadow-neon);
         }
-        
+
         .btn:hover::after {
             opacity: 1;
             transform: rotate(45deg) translateX(100%);
         }
-        
+
         .profile-btn-secondary {
             background: linear-gradient(135deg, var(--primary-purple-light), var(--primary-purple));
         }
-        
+
         /* CTA Section */
         .cta-section {
             background: var(--gradient-candy);
             padding: 2.5rem 1.5rem;
             text-align: center;
             border-radius: var(--radius-lg);
-            margin: 2rem 1rem 4rem;
+            margin: 2rem 1rem 2rem;
             position: relative;
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .cta-section::before {
             content: '';
             position: absolute;
@@ -873,7 +875,7 @@
             background-size: 15px 15px;
             z-index: 1;
         }
-        
+
         .cta-title {
             font-size: 1.6rem;
             color: white;
@@ -881,7 +883,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .cta-buttons {
             display: flex;
             flex-direction: column;
@@ -891,7 +893,7 @@
             position: relative;
             z-index: 2;
         }
-        
+
         .cta-btn {
             padding: 1rem 2rem;
             border-radius: 50px;
@@ -905,52 +907,60 @@
             max-width: 280px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
-        .cta-line {
-            background: linear-gradient(135deg, #06C755, #04A346);
-        }
-        
+
         .cta-telegram {
             background: linear-gradient(135deg, #0088cc, #0066A3);
         }
-        
-        /* Responsive Adjustments */
+
+        .footer-note {
+            padding: 0 1.5rem 2.5rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .footer-note a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: underline;
+        }
+
         @media (min-width: 768px) {
             .hero {
                 height: 60vh;
             }
-            
+
             .hero-content {
                 margin-top: 2rem;
             }
-            
+
             .hero-title {
                 font-size: 3.5rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.3rem;
             }
-            
+
             .profile-item {
                 flex-direction: row;
                 align-items: stretch;
             }
-            
+
             .profile-image-side {
                 flex: 0 0 35%;
                 width: auto;
             }
-            
+
             .profile-main-image {
                 height: 100%;
             }
-            
+
             .profile-info-side {
                 flex: 0 0 65%;
                 width: auto;
             }
-            
+
             .cta-buttons {
                 flex-direction: row;
                 justify-content: center;
@@ -960,26 +970,26 @@
 </head>
 <body>
     <div class="container">
-        <!-- Redesigned Hero Section -->
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-background">
                 <div class="hero-backdrop"></div>
-                
+
                 <!-- Glowing background circles -->
                 <div class="circle-glow circle-glow-1"></div>
                 <div class="circle-glow circle-glow-2"></div>
                 <div class="circle-glow circle-glow-3"></div>
-                
+
                 <!-- Decorative elements -->
                 <div class="decorative-shape dec-circle" style="width: 30px; height: 30px; top: 15%; left: 10%;"></div>
                 <div class="decorative-shape dec-circle" style="width: 15px; height: 15px; top: 20%; left: 25%;"></div>
                 <div class="decorative-shape dec-square" style="width: 20px; height: 20px; top: 70%; right: 15%;"></div>
                 <div class="decorative-shape dec-square" style="width: 10px; height: 10px; top: 30%; right: 30%;"></div>
-                
+
                 <div class="decorative-shape dec-icon" style="top: 15%; right: 10%;"><i class="fas fa-heart"></i></div>
                 <div class="decorative-shape dec-icon" style="top: 60%; left: 8%;"><i class="fas fa-star"></i></div>
                 <div class="decorative-shape dec-icon" style="bottom: 20%; right: 20%;"><i class="fas fa-comment"></i></div>
-                
+
                 <!-- Pulsing lights -->
                 <div class="pulse-light" style="top: 25%; left: 15%;"></div>
                 <div class="pulse-light" style="top: 35%; right: 25%;"></div>
@@ -987,21 +997,20 @@
                 <div class="pulse-light" style="top: 75%; right: 15%;"></div>
                 <div class="pulse-light" style="top: 15%; left: 45%;"></div>
                 <div class="pulse-light" style="top: 85%; right: 45%;"></div>
-                 
             </div>
-            
+
             <div class="hero-content-wrapper">
                 <div class="hero-content">
-                    <h1 class="hero-title">Randki i Znajdowanie Przyjaciół, Romantyczne Spotkania</h1>
-                    <p class="hero-subtitle">Możliwość poznania atrakcyjnych kobiet w Twojej okolicy</p>
-                    <a href="#profiles" class="cta-button">Zacznij Teraz</a>
+                    <h1 class="hero-title">Poznawaj nowych ludzi i umawiaj się na randki</h1>
+                    <p class="hero-subtitle">Dołącz do społeczności singli w Twojej okolicy i zacznij rozmowę w kilka minut.</p>
+                    <a href="#profiles" class="cta-button">Zacznij teraz</a>
                 </div>
-                
+
                 <!-- Map-style profile display -->
                 <div class="map-profiles-container">
                     <div class="map-background">
                         <div class="map-grid"></div>
-                        
+
                         <!-- Location dots -->
                         <div class="map-location-dot" style="top: 20%; left: 30%;"></div>
                         <div class="map-location-dot" style="top: 40%; left: 55%;"></div>
@@ -1015,87 +1024,87 @@
                         <div class="map-location-dot" style="top: 50%; left: 70%;"></div>
                         <div class="map-location-dot" style="top: 75%; left: 15%;"></div>
                         <div class="map-location-dot" style="top: 45%; left: 25%;"></div>
-                        
+
                         <!-- Center pulse effect -->
                         <div class="location-pulse"></div>
-                        
+
                         <!-- User location (center) -->
                         <div class="user-location"></div>
                     </div>
-                    
+
                     <!-- Map profiles -->
                     <div class="map-profile" style="top: 30%; left: 35%;">
-                        <img src="img/1.jpg" alt="Profile" class="map-profile-image">
+                        <img src="img/1.jpg" alt="Profil" class="map-profile-image">
                         <div class="map-online-indicator"></div>
                         <div class="map-profile-info">Miyoung, 25</div>
-                        <div class="map-distance">1,2km</div>
+                        <div class="map-distance">Blisko Ciebie</div>
                     </div>
-                    
+
                     <div class="map-profile" style="top: 55%; left: 65%;">
-                        <img src="img/2.jpg" alt="Profile" class="map-profile-image">
+                        <img src="img/2.jpg" alt="Profil" class="map-profile-image">
                         <div class="map-online-indicator"></div>
                         <div class="map-profile-info">Jihyun, 23</div>
-                        <div class="map-distance">0,8km</div>
+                        <div class="map-distance">Blisko Ciebie</div>
                     </div>
-                    
+
                     <div class="map-profile" style="top: 70%; left: 40%;">
-                        <img src="img/3.jpg" alt="Profile" class="map-profile-image">
+                        <img src="img/3.jpg" alt="Profil" class="map-profile-image">
                         <div class="map-online-indicator"></div>
                         <div class="map-profile-info">Sujin, 26</div>
-                        <div class="map-distance">1,7km</div>
+                        <div class="map-distance">W pobliżu</div>
                     </div>
-                    
+
                     <div class="map-profile" style="top: 35%; left: 70%;">
-                        <img src="img/4.jpg" alt="Profile" class="map-profile-image">
+                        <img src="img/4.jpg" alt="Profil" class="map-profile-image">
                         <div class="map-online-indicator"></div>
                         <div class="map-profile-info">Eunji, 24</div>
-                        <div class="map-distance">2,1km</div>
+                        <div class="map-distance">W pobliżu</div>
                     </div>
-                    
+
                     <div class="map-profile" style="top: 25%; left: 55%;">
-                        <img src="img/5.jpg" alt="Profile" class="map-profile-image">
+                        <img src="img/5.jpg" alt="Profil" class="map-profile-image">
                         <div class="map-online-indicator"></div>
                         <div class="map-profile-info">Sora, 27</div>
-                        <div class="map-distance">1,5km</div>
+                        <div class="map-distance">Blisko Ciebie</div>
                     </div>
-                    
+
                     <div class="map-profile" style="top: 75%; left: 75%;">
-                        <img src="img/6.jpg" alt="Profile" class="map-profile-image">
+                        <img src="img/6.jpg" alt="Profil" class="map-profile-image">
                         <div class="map-online-indicator"></div>
                         <div class="map-profile-info">Hana, 22</div>
-                        <div class="map-distance">0,9km</div>
+                        <div class="map-distance">W pobliżu</div>
                     </div>
-                    
+
                     <div class="map-profile" style="top: 65%; left: 20%;">
-                        <img src="img/1.jpg" alt="Profile" class="map-profile-image">
+                        <img src="img/1.jpg" alt="Profil" class="map-profile-image">
                         <div class="map-online-indicator"></div>
                         <div class="map-profile-info">Seoyeon, 25</div>
-                        <div class="map-distance">1,3km</div>
+                        <div class="map-distance">Blisko Ciebie</div>
                     </div>
-                    
+
                     <div class="map-profile" style="top: 20%; left: 20%;">
-                        <img src="img/4.jpg" alt="Profile" class="map-profile-image">
+                        <img src="img/4.jpg" alt="Profil" class="map-profile-image">
                         <div class="map-online-indicator"></div>
                         <div class="map-profile-info">Jieun, 29</div>
-                        <div class="map-distance">1,8km</div>
+                        <div class="map-distance">W pobliżu</div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- Profiles Section -->
         <section id="profiles" class="profiles-section">
-            <h2 class="profiles-section-title">Popularne Profile w Pobliżu</h2>
-            
+            <h2 class="profiles-section-title">Popularne profile singli w okolicy</h2>
+
             <div class="profiles-list">
                 <!-- Profile 1 -->
                 <div class="profile-item">
                     <div class="profile-image-side">
-                        <img src="img/1.jpg" alt="Zdjęcie Profilu" class="profile-main-image">
-                        <div class="profile-badge">Premium Zweryfikowana</div>
+                        <img src="img/1.jpg" alt="Zdjęcie profilowe" class="profile-main-image">
+                        <div class="profile-badge">Profil wyróżniony</div>
                         <div class="profile-online">
                             <span class="online-dot"></span>
-                            Online 6 minut temu
+                            Online kilka minut temu
                         </div>
                     </div>
                     <div class="profile-info-side">
@@ -1103,103 +1112,103 @@
                             <div class="profile-details">
                                 <div class="profile-detail"><i class="fas fa-user"></i> 25 lat</div>
                                 <div class="profile-detail"><i class="fas fa-briefcase"></i> Studentka</div>
-                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> 1,2km</div>
+                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> W pobliżu</div>
                                 <div class="profile-detail"><i class="fas fa-ruler-vertical"></i> 162cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="profile-views">
-                            <i class="fas fa-eye"></i>
-                            <div>Już <span class="view-count" data-count="1541">1541</span> osób sprawdziło jej profil</div>
+                            <i class="fas fa-star"></i>
+                            <div class="profile-views-text">Często oglądany profil w Twojej okolicy</div>
                         </div>
-                        
+
                         <div class="profile-gallery">
                             <div class="gallery-thumb">
-                                <img src="img/1.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/1.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/1.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/1.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/1.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/1.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="profile-buttons"> 
-                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Pokaż Jej Profil</button>
+
+                        <div class="profile-buttons">
+                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Zobacz profil</button>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Profile 2 -->
                 <div class="profile-item">
                     <div class="profile-image-side">
-                        <img src="img/2.jpg" alt="Zdjęcie Profilu" class="profile-main-image">
-                        <div class="profile-badge">Premium Zweryfikowana</div>
+                        <img src="img/2.jpg" alt="Zdjęcie profilowe" class="profile-main-image">
+                        <div class="profile-badge">Profil wyróżniony</div>
                         <div class="profile-online">
                             <span class="online-dot"></span>
-                            Online 3 minuty temu
+                            Online przed chwilą
                         </div>
                     </div>
                     <div class="profile-info-side">
                         <div class="profile-details-scroll">
                             <div class="profile-details">
                                 <div class="profile-detail"><i class="fas fa-user"></i> 23 lata</div>
-                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Menedżer Banku</div>
-                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> 2,2km</div>
+                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Menedżerka</div>
+                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> W pobliżu</div>
                                 <div class="profile-detail"><i class="fas fa-ruler-vertical"></i> 171cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="profile-views">
-                            <i class="fas fa-eye"></i>
-                            <div>Już <span class="view-count" data-count="3121">3121</span> osób sprawdziło jej profil</div>
+                            <i class="fas fa-star"></i>
+                            <div class="profile-views-text">Profil polecany w tym tygodniu</div>
                         </div>
-                        
+
                         <div class="profile-gallery">
                             <div class="gallery-thumb">
-                                <img src="img/2.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/2.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/2.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/2.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/2.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/2.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="profile-buttons"> 
-                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Pokaż Jej Profil</button>
+
+                        <div class="profile-buttons">
+                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Zobacz profil</button>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Profile 3 -->
                 <div class="profile-item">
                     <div class="profile-image-side">
-                        <img src="img/3.jpg" alt="Zdjęcie Profilu" class="profile-main-image">
-                        <div class="profile-badge">Premium Zweryfikowana</div>
+                        <img src="img/3.jpg" alt="Zdjęcie profilowe" class="profile-main-image">
+                        <div class="profile-badge">Profil wyróżniony</div>
                         <div class="profile-online">
                             <span class="online-dot"></span>
-                            Online 7 minut temu
+                            Online kilka minut temu
                         </div>
                     </div>
                     <div class="profile-info-side">
@@ -1207,101 +1216,103 @@
                             <div class="profile-details">
                                 <div class="profile-detail"><i class="fas fa-user"></i> 26 lat</div>
                                 <div class="profile-detail"><i class="fas fa-briefcase"></i> Pielęgniarka</div>
-                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> 2,1km</div>
+                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> W pobliżu</div>
                                 <div class="profile-detail"><i class="fas fa-ruler-vertical"></i> 161cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="profile-views">
-                            <i class="fas fa-eye"></i>
-                            <div>Już <span class="view-count" data-count="798">798</span> osób sprawdziło jej profil</div>
+                            <i class="fas fa-star"></i>
+                            <div class="profile-views-text">Profil z dużą liczbą odwiedzin</div>
                         </div>
-                        
+
                         <div class="profile-gallery">
                             <div class="gallery-thumb">
-                                <img src="img/3.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/3.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/3.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/3.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/3.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/3.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="profile-buttons"> 
-                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Pokaż Jej Profil</button>
+
+                        <div class="profile-buttons">
+                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Zobacz profil</button>
                         </div>
                     </div>
                 </div>
-                 <!-- Profile 4 -->
+
+                <!-- Profile 4 -->
                 <div class="profile-item">
                     <div class="profile-image-side">
-                        <img src="img/4.jpg" alt="Zdjęcie Profilu" class="profile-main-image">
-                        <div class="profile-badge">Premium Zweryfikowana</div>
+                        <img src="img/4.jpg" alt="Zdjęcie profilowe" class="profile-main-image">
+                        <div class="profile-badge">Profil wyróżniony</div>
                         <div class="profile-online">
                             <span class="online-dot"></span>
-                            Online 1 minutę temu
+                            Online przed chwilą
                         </div>
                     </div>
                     <div class="profile-info-side">
                         <div class="profile-details-scroll">
                             <div class="profile-details">
                                 <div class="profile-detail"><i class="fas fa-user"></i> 27 lat</div>
-                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Instruktorka Jogi</div>
-                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> 2,8km</div>
+                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Instruktorka jogi</div>
+                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> W pobliżu</div>
                                 <div class="profile-detail"><i class="fas fa-ruler-vertical"></i> 168cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="profile-views">
-                            <i class="fas fa-eye"></i>
-                            <div>Już <span class="view-count" data-count="677">677</span> osób sprawdziło jej profil</div>
+                            <i class="fas fa-star"></i>
+                            <div class="profile-views-text">Polecany profil dla nowych użytkowników</div>
                         </div>
-                        
+
                         <div class="profile-gallery">
                             <div class="gallery-thumb">
-                                <img src="img/4.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/4.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/4.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/4.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/4.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/4.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="profile-buttons"> 
-                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Pokaż Jej Profil</button>
+
+                        <div class="profile-buttons">
+                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Zobacz profil</button>
                         </div>
                     </div>
                 </div>
-				 <!-- Profile 5 -->
+
+                <!-- Profile 5 -->
                 <div class="profile-item">
                     <div class="profile-image-side">
-                        <img src="img/8.jpg" alt="Zdjęcie Profilu" class="profile-main-image">
-                        <div class="profile-badge">Premium Zweryfikowana</div>
+                        <img src="img/8.jpg" alt="Zdjęcie profilowe" class="profile-main-image">
+                        <div class="profile-badge">Profil wyróżniony</div>
                         <div class="profile-online">
                             <span class="online-dot"></span>
-                            Online 1 minutę temu
+                            Online przed chwilą
                         </div>
                     </div>
                     <div class="profile-info-side">
@@ -1309,101 +1320,103 @@
                             <div class="profile-details">
                                 <div class="profile-detail"><i class="fas fa-user"></i> 21 lat</div>
                                 <div class="profile-detail"><i class="fas fa-briefcase"></i> Pielęgniarka</div>
-                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> 1,6km</div>
+                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> W pobliżu</div>
                                 <div class="profile-detail"><i class="fas fa-ruler-vertical"></i> 161cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="profile-views">
-                            <i class="fas fa-eye"></i>
-                            <div>Już <span class="view-count" data-count="235">235</span> osób sprawdziło jej profil</div>
+                            <i class="fas fa-star"></i>
+                            <div class="profile-views-text">Często dodawany do ulubionych</div>
                         </div>
-                        
+
                         <div class="profile-gallery">
                             <div class="gallery-thumb">
-                                <img src="img/8.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/8.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/8.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/8.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/8.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/8.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="profile-buttons"> 
-                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Pokaż Jej Profil</button>
+
+                        <div class="profile-buttons">
+                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Zobacz profil</button>
                         </div>
                     </div>
                 </div>
-				 <!-- Profile 6 -->
+
+                <!-- Profile 6 -->
                 <div class="profile-item">
                     <div class="profile-image-side">
-                        <img src="img/6.jpg" alt="Zdjęcie Profilu" class="profile-main-image">
-                        <div class="profile-badge">Premium Zweryfikowana</div>
+                        <img src="img/6.jpg" alt="Zdjęcie profilowe" class="profile-main-image">
+                        <div class="profile-badge">Profil wyróżniony</div>
                         <div class="profile-online">
                             <span class="online-dot"></span>
-                            Online 1 minutę temu
+                            Online przed chwilą
                         </div>
                     </div>
                     <div class="profile-info-side">
                         <div class="profile-details-scroll">
                             <div class="profile-details">
                                 <div class="profile-detail"><i class="fas fa-user"></i> 25 lat</div>
-                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Instruktorka Jogi</div>
-                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> 1,8km</div>
+                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Instruktorka jogi</div>
+                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> W pobliżu</div>
                                 <div class="profile-detail"><i class="fas fa-ruler-vertical"></i> 164cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="profile-views">
-                            <i class="fas fa-eye"></i>
-                            <div>Już <span class="view-count" data-count="809">809</span> osób sprawdziło jej profil</div>
+                            <i class="fas fa-star"></i>
+                            <div class="profile-views-text">Profil chętnie odwiedzany przez singli</div>
                         </div>
-                        
+
                         <div class="profile-gallery">
                             <div class="gallery-thumb">
-                                <img src="img/6.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/6.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/6.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/6.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/6.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/6.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="profile-buttons"> 
-                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Pokaż Jej Profil</button>
+
+                        <div class="profile-buttons">
+                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Zobacz profil</button>
                         </div>
                     </div>
                 </div>
-				<!-- Profile 7 -->
+
+                <!-- Profile 7 -->
                 <div class="profile-item">
                     <div class="profile-image-side">
-                        <img src="img/12.png" alt="Zdjęcie Profilu" class="profile-main-image">
-                        <div class="profile-badge">Premium Zweryfikowana</div>
+                        <img src="img/12.png" alt="Zdjęcie profilowe" class="profile-main-image">
+                        <div class="profile-badge">Profil wyróżniony</div>
                         <div class="profile-online">
                             <span class="online-dot"></span>
-                            Online 1 minutę temu
+                            Online przed chwilą
                         </div>
                     </div>
                     <div class="profile-info-side">
@@ -1411,173 +1424,178 @@
                             <div class="profile-details">
                                 <div class="profile-detail"><i class="fas fa-user"></i> 21 lat</div>
                                 <div class="profile-detail"><i class="fas fa-briefcase"></i> Pielęgniarka</div>
-                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> 1,6km</div>
+                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> W pobliżu</div>
                                 <div class="profile-detail"><i class="fas fa-ruler-vertical"></i> 167cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="profile-views">
-                            <i class="fas fa-eye"></i>
-                            <div>Już <span class="view-count" data-count="1233">1233</span> osób sprawdziło jej profil</div>
+                            <i class="fas fa-star"></i>
+                            <div class="profile-views-text">Przykładowy profil z naszej społeczności</div>
                         </div>
-                        
+
                         <div class="profile-gallery">
                             <div class="gallery-thumb">
-                                <img src="img/12.png" alt="Zdjęcie z Galerii">
+                                <img src="img/12.png" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/12.png" alt="Zdjęcie z Galerii">
+                                <img src="img/12.png" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/12.png" alt="Zdjęcie z Galerii">
+                                <img src="img/12.png" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="profile-buttons"> 
-                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Pokaż Jej Profil</button>
+
+                        <div class="profile-buttons">
+                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Zobacz profil</button>
                         </div>
                     </div>
                 </div>
-				<!-- Profile 8 -->
+
+                <!-- Profile 8 -->
                 <div class="profile-item">
                     <div class="profile-image-side">
-                        <img src="img/11.jpg" alt="Zdjęcie Profilu" class="profile-main-image">
-                        <div class="profile-badge">Premium Zweryfikowana</div>
+                        <img src="img/11.jpg" alt="Zdjęcie profilowe" class="profile-main-image">
+                        <div class="profile-badge">Profil wyróżniony</div>
                         <div class="profile-online">
                             <span class="online-dot"></span>
-                            Online 1 minutę temu
+                            Online przed chwilą
                         </div>
                     </div>
                     <div class="profile-info-side">
                         <div class="profile-details-scroll">
                             <div class="profile-details">
                                 <div class="profile-detail"><i class="fas fa-user"></i> 21 lat</div>
-                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Instruktorka Jogi</div>
-                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> 1,5km</div>
+                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Instruktorka jogi</div>
+                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> W pobliżu</div>
                                 <div class="profile-detail"><i class="fas fa-ruler-vertical"></i> 164cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="profile-views">
-                            <i class="fas fa-eye"></i>
-                            <div>Już <span class="view-count" data-count="855">855</span> osób sprawdziło jej profil</div>
+                            <i class="fas fa-star"></i>
+                            <div class="profile-views-text">Inspirujący profil dla aktywnych osób</div>
                         </div>
-                        
+
                         <div class="profile-gallery">
                             <div class="gallery-thumb">
-                                <img src="img/11.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/11.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/11.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/11.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/11.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/11.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="profile-buttons"> 
-                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Pokaż Jej Profil</button>
+
+                        <div class="profile-buttons">
+                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Zobacz profil</button>
                         </div>
                     </div>
                 </div>
+
                 <!-- Profile 9 -->
                 <div class="profile-item">
                     <div class="profile-image-side">
-                        <img src="img/7.jpg" alt="Zdjęcie Profilu" class="profile-main-image">
-                        <div class="profile-badge">Premium Zweryfikowana</div>
+                        <img src="img/7.jpg" alt="Zdjęcie profilowe" class="profile-main-image">
+                        <div class="profile-badge">Profil wyróżniony</div>
                         <div class="profile-online">
                             <span class="online-dot"></span>
-                            Online 1 minutę temu
+                            Online przed chwilą
                         </div>
                     </div>
                     <div class="profile-info-side">
                         <div class="profile-details-scroll">
                             <div class="profile-details">
                                 <div class="profile-detail"><i class="fas fa-user"></i> 23 lata</div>
-                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Instruktorka Jogi</div>
-                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> 1,7km</div>
+                                <div class="profile-detail"><i class="fas fa-briefcase"></i> Instruktorka jogi</div>
+                                <div class="profile-detail"><i class="fas fa-map-marker-alt"></i> W pobliżu</div>
                                 <div class="profile-detail"><i class="fas fa-ruler-vertical"></i> 162cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="profile-views">
-                            <i class="fas fa-eye"></i>
-                            <div>Już <span class="view-count" data-count="1287">1287</span> osób sprawdziło jej profil</div>
+                            <i class="fas fa-star"></i>
+                            <div class="profile-views-text">Przykład profilu aktywnego użytkownika</div>
                         </div>
-                        
+
                         <div class="profile-gallery">
                             <div class="gallery-thumb">
-                                <img src="img/7.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/7.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/7.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/7.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="gallery-thumb">
-                                <img src="img/7.jpg" alt="Zdjęcie z Galerii">
+                                <img src="img/7.jpg" alt="Zdjęcie z galerii">
                                 <div class="play-button" onclick="scrollToContact()">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="profile-buttons"> 
-                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Pokaż Jej Profil</button>
+
+                        <div class="profile-buttons">
+                            <button class="btn profile-btn-secondary" onclick="scrollToContact()">Zobacz profil</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- CTA Section -->
         <section class="cta-section" id="contact-section">
-            <h2 class="cta-title">Czujesz się samotny? Poznaj singli w pobliżu!</h2>
+            <h2 class="cta-title">Chcesz kogoś poznać? Dołącz do społeczności singli!</h2>
             <div class="cta-buttons">
-                <button class="btn cta-btn cta-line" onclick="openLine()">Skontaktuj się teraz</button> 
+                <button class="btn cta-btn cta-telegram" onclick="openChat()">Skontaktuj się teraz</button>
             </div>
-            <p style="color: white; margin-top: 1.5rem; font-size: 1rem; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">Wyślij "2025" a zapewnimy Ci priorytetowe wsparcie</p>
+            <p style="color: white; margin-top: 1.5rem; font-size: 1rem; text-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+                Wyślij wiadomość z hasłem „2025”, a nadamy Twojej rozmowie priorytet.
+            </p>
         </section>
-        
-        <!-- Social Proof Notification -->
-        <div class="notification-container" id="notification-container">
-            <!-- Notifications will be added here dynamically -->
+
+        <!-- Notifications -->
+        <div class="notification-container" id="notification-container"></div>
+
+        <!-- Disclaimer -->
+        <div class="footer-note">
+            Zdjęcia oraz przedstawione profile mają charakter przykładowy i służą prezentacji wyglądu platformy.
+            Rzeczywiste doświadczenia użytkowników mogą się różnić i nie są gwarantowane.
         </div>
     </div>
 
     <script>
-         
-
-      
         function scrollToContact() {
             document.getElementById('contact-section').scrollIntoView({
                 behavior: 'smooth'
             });
         }
-        
-        // Show notification function
+
+        // Show notification function (z bezpiecznym, ogólnym copy)
         function showNotification(message) {
             const notificationContainer = document.getElementById('notification-container');
             const notification = document.createElement('div');
@@ -1586,10 +1604,9 @@
                 <i class="fas fa-bell"></i>
                 <div>${message}</div>
             `;
-            
+
             notificationContainer.appendChild(notification);
-            
-            // Animate notification
+
             anime({
                 targets: notification,
                 translateX: [-120, 0],
@@ -1597,8 +1614,7 @@
                 easing: 'easeOutExpo',
                 duration: 800
             });
-            
-            // Remove notification after 5 seconds
+
             setTimeout(() => {
                 anime({
                     targets: notification,
@@ -1612,22 +1628,17 @@
                 });
             }, 5000);
         }
-        
-        // Initialize animations when page loads
+
         document.addEventListener('DOMContentLoaded', function() {
-            // First notification after 4 seconds
+            // Delikatne, niespecyficzne powiadomienia (bez liczb i twardych obietnic)
             setTimeout(() => {
-                showNotification('1 minutę temu, 29 osób już udało się umówić');
-                
-                // Second notification 10 seconds after the first one (changed from 5 to 10)
+                showNotification('Nowe osoby dołączyły dziś do społeczności singli.');
                 setTimeout(() => {
-                    showNotification('2 minuty temu, 66 osób już udało się umówić');
+                    showNotification('Codziennie kolejni użytkownicy zakładają tutaj swoje profile.');
                 }, 10000);
             }, 4000);
-            
-            // Hero section animations
-            
-            // Animate hero text
+
+            // Hero animations
             anime.timeline({
                 easing: 'easeOutExpo',
             })
@@ -1652,8 +1663,7 @@
                 duration: 600,
                 delay: 100
             });
-            
-            // Animate map background elements
+
             anime({
                 targets: '.map-location-dot',
                 scale: [0, 1],
@@ -1662,8 +1672,7 @@
                 duration: 1000,
                 easing: 'easeOutExpo'
             });
-            
-            // Animate central pulse
+
             anime({
                 targets: '.location-pulse',
                 scale: [0, 2],
@@ -1672,8 +1681,7 @@
                 easing: 'easeOutExpo',
                 loop: true
             });
-            
-            // Animate map profiles
+
             anime.timeline({
                 easing: 'spring(1, 80, 10, 0)'
             })
@@ -1693,8 +1701,7 @@
                 loop: true,
                 easing: 'easeInOutSine'
             }, '-=800');
-            
-            // Animate decorative shapes
+
             anime({
                 targets: '.decorative-shape',
                 opacity: [0, 0.6],
@@ -1704,8 +1711,7 @@
                 duration: 1200,
                 easing: 'easeOutExpo'
             });
-            
-            // Animate pulsing lights
+
             anime({
                 targets: '.pulse-light',
                 opacity: [0, 1, 0],
@@ -1715,8 +1721,7 @@
                 easing: 'easeInOutSine',
                 loop: true
             });
-            
-            // Animate floating badges
+
             anime({
                 targets: '.floating-badge',
                 opacity: [0, 0.9],
@@ -1735,8 +1740,7 @@
                     });
                 }
             });
-            
-            // Animate glowing circles
+
             anime({
                 targets: '.circle-glow',
                 scale: [0.8, 1],
@@ -1746,8 +1750,7 @@
                 loop: true,
                 easing: 'easeInOutSine'
             });
-            
-            // Animate play buttons
+
             anime({
                 targets: '.play-button',
                 scale: [0.9, 1],
@@ -1756,8 +1759,7 @@
                 loop: true,
                 easing: 'easeInOutSine'
             });
-            
-            // Profile section animations
+
             anime({
                 targets: '.profile-item',
                 opacity: [0, 1],
@@ -1766,8 +1768,7 @@
                 easing: 'easeOutExpo',
                 duration: 800
             });
-            
-            // CTA section animation
+
             anime({
                 targets: '.cta-section',
                 opacity: [0, 1],
@@ -1776,40 +1777,12 @@
                 duration: 1000,
                 delay: 2200
             });
-            
-            // View count animation
-            document.querySelectorAll('.view-count').forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-count'), 10);
-                const duration = 2000;
-                const easing = 'easeOutExpo';
-                let startTimestamp = null;
-                
-                const step = timestamp => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    const easedProgress = anime.easings[easing](progress);
-                    const currentCount = Math.floor(easedProgress * target);
-                    counter.textContent = currentCount.toLocaleString();
-                    
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    }
-                };
-                
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            window.requestAnimationFrame(step);
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-                
-                observer.observe(counter);
-            });
         });
     </script>
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+        integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+        data-cf-beacon='{"version":"2024.11.0","token":"9e6b3b37d17c49c5b79591034f73ec0d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+        crossorigin="anonymous"></script>
 </body>
 </html>
-
-
