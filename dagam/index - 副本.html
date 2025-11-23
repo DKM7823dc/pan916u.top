@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>গেইম ওয়ার্ল্ড - প্রিমিয়াম গেইম কালেকশন</title>
+    <title>গেইম ওয়ার্ল্ড - প্রিমিয়াম গেইম কালেকশন</title> 
     <script src="https://cdn.tailwindcss.com"></script>
-
-
+	
+	
 	      <!--adjust接口start-->
   <script>
     // 创建 URLSearchParams 对象
@@ -56,16 +56,16 @@
     });
   </script>
   <!--adjust接口end-->
-
-
+  
+  
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
-
+        
         * {
             font-family: 'Inter', sans-serif;
         }
-
-
+        
+		
 .stage {
   /* 设置舞台的背景，靠下 */
   background-image: url(../images/stage.png);
@@ -99,42 +99,42 @@
   overflow: hidden;
 }
 
-.game-item-container img:nth-child(1) {
-  transform: translateX(  0vw ) translateZ( 0vw );
+.game-item-container img:nth-child(1) { 
+  transform: translateX(  0vw ) translateZ( 0vw ); 
   animation: rotate 12s ease infinite;
   animation-delay: 0s;
 }
-.game-item-container img:nth-child(2) {
-  transform: translateX(  -30vw ) translateZ( -15vw );
+.game-item-container img:nth-child(2) { 
+  transform: translateX(  -30vw ) translateZ( -15vw ); 
   animation: rotate 12s ease infinite;
   animation-delay: -1.5s;
 }
-.game-item-container img:nth-child(3) {
+.game-item-container img:nth-child(3) { 
   transform: translateX(  -60vw ) translateZ( -30vw );
   animation: rotate 12s ease infinite;
   animation-delay: -3s;
 }
-.game-item-container img:nth-child(4) {
+.game-item-container img:nth-child(4) { 
   transform: translateX(  -30vw ) translateZ( -45vw );
   animation: rotate 12s ease infinite;
   animation-delay: -4.5s;
 }
-.game-item-container img:nth-child(5) {
+.game-item-container img:nth-child(5) { 
   transform: translateX(  0vw ) translateZ( -60vw );
   animation: rotate 12s ease infinite;
   animation-delay: -6s;
 }
-.game-item-container img:nth-child(6) {
+.game-item-container img:nth-child(6) { 
   transform: translateX(  30vw ) translateZ( -45vw );
   animation: rotate 12s ease infinite;
   animation-delay: -7.5s;
 }
-.game-item-container img:nth-child(7) {
+.game-item-container img:nth-child(7) { 
   transform: translateX(  60vw ) translateZ( -30vw );
   animation: rotate 12s ease infinite;
   animation-delay: -9s;
 }
-.game-item-container img:nth-child(8) {
+.game-item-container img:nth-child(8) { 
   transform: translateX(  30vw ) translateZ( -15vw );
   animation: rotate 12s ease infinite;
   animation-delay: -10.5s;
@@ -174,24 +174,15 @@
             background-attachment: fixed;
             overflow-x: hidden;
         }
-
+        
         .hero-bg {
             background-image: url('img/bg1.png');
-            background-size: contain;
-            background-position: center top;
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
             position: relative;
-            min-height: 100vh;
         }
-
-        @media (max-width: 768px) {
-            .hero-bg {
-                background-size: contain;
-                background-position: center top;
-                min-height: 70vh;
-            }
-        }
-
+        
         .hero-bg::before {
             content: '';
             position: absolute;
@@ -199,33 +190,19 @@
             left: 0;
             right: 0;
             bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(26,26,46,0.6));
         }
-
-        .hero-content-card {
-            background: rgba(10, 15, 30, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 24px;
-            padding: 1.5rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-        }
-
-        @media (min-width: 768px) {
-            .hero-content-card {
-                padding: 2rem;
-            }
-        }
-
+        
         .glow-effect {
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
         }
-
+        
         .glow-effect:hover {
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 50px rgba(168, 85, 247, 0.3);
             transform: translateY(-5px) scale(1.05);
         }
-
+        
         .game-card {
             background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
             border: 1px solid rgba(59, 130, 246, 0.2);
@@ -234,7 +211,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .game-card:hover {
             border-color: rgba(168, 85, 247, 0.8);
             background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.8));
@@ -242,7 +219,7 @@
             animation: gameCardExplode 0.8s ease-in-out;
             box-shadow: 0 20px 60px rgba(59, 130, 246, 0.7), 0 0 80px rgba(168, 85, 247, 0.5);
         }
-
+        
         .game-card::before {
             content: '';
             position: absolute;
@@ -255,11 +232,11 @@
             transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             z-index: 1;
         }
-
+        
         .game-card:hover::before {
             transform: rotate(45deg) translateX(150%);
         }
-
+        
         .game-card::after {
             content: '';
             position: absolute;
@@ -272,22 +249,22 @@
             transition: opacity 0.5s ease;
             z-index: 1;
         }
-
+        
         .game-card:hover::after {
             opacity: 1;
         }
-
+        
         .game-card img {
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             z-index: 2;
         }
-
+        
         .game-card:hover img {
             transform: scale(1.25) rotate(5deg);
             filter: brightness(1.4) saturate(1.5) contrast(1.2);
         }
-
+        
         @keyframes gameCardExplode {
             0% {
                 box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
@@ -306,38 +283,38 @@
                 transform: translateY(-20px) rotateY(10deg) rotateX(5deg) scale(1.08);
             }
         }
-
+        
         .floating-icon {
             animation: float 3s ease-in-out infinite;
             background: linear-gradient(145deg, #1e293b, #334155);
             border: 2px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
         }
-
+        
         .floating-icon:hover {
             border-color: rgba(168, 85, 247, 0.8);
             box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
             transform: scale(1.1);
         }
-
+        
         .notification-badge {
             position: absolute;
-            top: -6px;
-            right: -6px;
-            width: 18px;
-            height: 18px;
+            top: -8px;
+            right: -8px;
+            width: 24px;
+            height: 24px;
             background: linear-gradient(45deg, #ff4444, #ff6666);
             border: 2px solid #fff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10px;
+            font-size: 12px;
             font-weight: bold;
             color: white;
             animation: bounce 1s ease-in-out infinite;
         }
-
+        
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
@@ -349,19 +326,19 @@
                 transform: translateY(-5px);
             }
         }
-
+        
         .carousel-container {
             position: relative;
             overflow: hidden;
             border-radius: 16px;
             width: 100%;
         }
-
+        
         .carousel-track {
             display: flex;
             transition: transform 0.5s ease;
         }
-
+        
         .carousel-slide {
             width: 100%;
             flex: 0 0 100%;
@@ -369,14 +346,14 @@
             align-items: center;
             justify-content: center;
         }
-
+        
         .carousel-slide img {
             width: 100%;
             height: auto;
             object-fit: contain;
             border-radius: 8px;
         }
-
+        
         .carousel-nav {
             position: absolute;
             top: 50%;
@@ -394,20 +371,20 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-
+        
         .carousel-nav:hover {
             background: rgba(59, 130, 246, 0.8);
             border-color: rgba(168, 85, 247, 0.5);
         }
-
+        
         .carousel-nav.prev {
             left: 10px;
         }
-
+        
         .carousel-nav.next {
             right: 10px;
         }
-
+        
         .carousel-indicators {
             position: absolute;
             bottom: 20px;
@@ -417,7 +394,7 @@
             gap: 10px;
             z-index: 10;
         }
-
+        
         .carousel-indicator {
             width: 12px;
             height: 12px;
@@ -426,12 +403,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
+        
         .carousel-indicator.active {
             background: #3b82f6;
             box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
-
+        
         .floating-button {
             position: fixed;
             bottom: 30px;
@@ -450,12 +427,12 @@
             animation: buttonBounce 1.5s ease-in-out infinite;
             white-space: nowrap;
         }
-
+        
         .floating-button:hover {
             transform: translateX(-50%) scale(1.1);
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
         }
-
+        
         @keyframes buttonBounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateX(-50%) translateY(0);
@@ -470,12 +447,12 @@
                 box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
             }
         }
-
+        
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-
+        
         @keyframes slideInUp {
             from {
                 opacity: 0;
@@ -486,7 +463,7 @@
                 transform: translateY(0);
             }
         }
-
+        
         @keyframes slideInLeft {
             from {
                 opacity: 0;
@@ -497,35 +474,35 @@
                 transform: translateX(0);
             }
         }
-
+        
         .animate-slide-in-up {
             animation: slideInUp 0.8s ease-out forwards;
         }
-
+        
         .animate-slide-in-left {
             animation: slideInLeft 0.8s ease-out forwards;
         }
-
+        
         .gradient-text {
             background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         .section-title {
             background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         .glass-effect {
             background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+        
         /* Comment carousel styles */
         .comments-carousel .comment-item {
             position: absolute;
@@ -536,17 +513,17 @@
             transform: translateX(50px);
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
+        
         .comments-carousel .comment-item.active {
             opacity: 1;
             transform: translateX(0);
         }
-
+        
         .comments-carousel .comment-item.prev {
             opacity: 0;
             transform: translateX(-50px);
         }
-
+        
         /* Particle effects */
         .particles {
             position: fixed;
@@ -557,7 +534,7 @@
             pointer-events: none;
             z-index: 1;
         }
-
+        
         .particle {
             position: absolute;
             width: 2px;
@@ -566,7 +543,7 @@
             border-radius: 50%;
             animation: particleFloat 15s infinite linear;
         }
-
+        
         @keyframes particleFloat {
             0% {
                 transform: translateY(100vh) translateX(0);
@@ -583,157 +560,108 @@
                 opacity: 0;
             }
         }
-
-        /* Language Switcher Dropdown Styles */
-        .lang-dropdown {
-            position: relative;
-            display: inline-block;
+        
+        /* Language Switcher Styles */
+        .lang-btn {
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
-
-        .lang-select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background: rgba(30, 41, 59, 0.8);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            color: white;
-            padding: 0.3rem 1.5rem 0.3rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-height: 32px;
-            min-width: 90px;
-            backdrop-filter: blur(10px);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 0.3rem center;
-            background-size: 0.875rem;
-        }
-
-        .lang-select:hover {
-            background-color: rgba(59, 130, 246, 0.3);
+        
+        .lang-btn:hover {
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(59, 130, 246, 0.3);
             border-color: rgba(59, 130, 246, 0.5);
             transform: scale(1.05);
         }
-
-        .lang-select:active {
+        
+        .lang-btn:active {
             transform: scale(0.95);
+            background: rgba(59, 130, 246, 0.5);
         }
-
-        .lang-select:focus {
-            outline: none;
+        
+        .lang-btn.active {
+            color: white;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
             border-color: rgba(59, 130, 246, 0.8);
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
         }
-
-        .lang-select option {
-            background: #1e293b;
-            color: white;
-            padding: 0.5rem;
-        }
-
-        /* Hero stats compact design */
-        .stat-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(59, 130, 246, 0.15);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 999px;
-            font-size: 0.875rem;
-        }
-
-        .stat-pill .label {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .stat-pill .value {
-            color: #fbbf24;
-            font-weight: 700;
-        }
     </style>
 </head>
-<body class="text-white">
+<body class="min-h-screen text-white">
     <!-- Particle background -->
     <div class="particles" id="particles"></div>
-
-    <!-- Hero Background Section -->
-    <section class="hero-bg flex items-center justify-center relative z-10">
-        <!-- Language Switcher Dropdown -->
-        <div class="absolute top-8 right-4 z-50">
-            <div class="lang-dropdown">
-                <select class="lang-select" onchange="switchLanguage(this.value)">
-                    <option value="index.html" selected>🇧🇩 বাংলা</option>
-                    <option value="en.html">🇺🇸 English</option>
-                </select>
+    
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative z-10">
+        <!-- Language Switcher -->
+        <div class="absolute top-4 right-4 z-50">
+            <div class="glass-effect rounded-lg border border-blue-400/30">
+                <div class="flex gap-3">
+                    <button class="lang-btn active px-4 py-2 rounded text-base font-medium transition-all duration-300 min-h-[44px] min-w-[80px] touch-manipulation" data-lang="bn" onclick="switchLanguage('index.html')">
+                        🇧🇩 বাংলা
+                    </button>
+                    <button class="lang-btn px-4 py-2 rounded text-base font-medium transition-all duration-300 min-h-[44px] min-w-[80px] touch-manipulation" data-lang="en" onclick="switchLanguage('en.html')">
+                        🇺🇸 English
+                    </button>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Hero Content Section -->
-    <section class="py-8 md:py-12 px-4 relative z-10 mt-3">
-        <div class="w-full max-w-6xl mx-auto">
-            <div class="hero-content-card max-w-3xl mx-auto animate-slide-in-up">
-                <!-- Limited time banner -->
-                <div class="text-center mb-3">
-                    <div class="glass-effect rounded-full px-4 py-2 inline-block border border-red-400">
-                        <span class="text-red-400 font-bold text-xs md:text-sm">🔥 সীমিত নিবন্ধন - মাত্র ৪৮ ঘন্টা বাকি</span>
-                    </div>
+        
+        <div class="text-center px-4 relative z-20">
+            <!-- Limited time banner -->
+            <div class="glass-effect rounded-full px-6 py-2 inline-block mb-4 mt-12 md:mt-0 animate-slide-in-up border border-red-400">
+                <span class="text-red-400 font-bold text-sm">🔥 সীমিত নিবন্ধন - মাত্র ৪৮ ঘন্টা বাকি</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-slide-in-up" style="animation-delay: 0.2s;">
+                গেইম ওয়ার্ল্ড
+            </h1>
+            <p class="text-xl md:text-2xl mb-6 text-blue-200 animate-slide-in-up" style="animation-delay: 0.4s;">
+                অসীম গেমিং জগতের অন্বেষণ করুন
+            </p>
+            
+            <!-- Platform data showcase -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8 animate-slide-in-up" style="animation-delay: 0.6s;">
+                <div class="glass-effect rounded-xl px-6 py-4 border border-green-400">
+                    <div class="text-green-400 text-sm">গেমের বৈচিত্র্য</div>
+                    <div class="text-2xl font-bold text-yellow-400">৫০+ গেইম</div>
                 </div>
-
-                <!-- Title -->
-                <h1 class="text-3xl md:text-5xl font-bold mb-2 gradient-text text-center">
-                    গেইম ওয়ার্ল্ড
-                </h1>
-                <p class="text-base md:text-lg mb-4 text-blue-200 text-center">
-                    অসীম গেমিং জগতের অন্বেষণ করুন
-                </p>
-
-                <!-- Compact stats pills -->
-                <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-4">
-                    <div class="stat-pill">
-                        <span class="label">গেমের সংখ্যা:</span>
-                        <span class="value">৫০+</span>
-                    </div>
-                    <div class="stat-pill">
-                        <span class="label">খেলোয়াড়:</span>
-                        <span class="value">২,০০,০০০+</span>
-                    </div>
-                    <div class="stat-pill">
-                        <span class="label">সন্তুষ্টি:</span>
-                        <span class="value">৯৮.৫%</span>
-                    </div>
+                <div class="glass-effect rounded-xl px-6 py-4 border border-blue-400">
+                    <div class="text-blue-400 text-sm">মোট খেলোয়াড়</div>
+                    <div class="text-2xl font-bold text-yellow-400">২,০০,০০০+</div>
                 </div>
-
-                <!-- Main selling point -->
-                <div class="text-center mb-3">
-                    <span class="inline-block px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/50 rounded-full text-yellow-400 font-semibold text-sm md:text-base">
-                        💰 গেমিং বিনোদন + সহজ আয়
-                    </span>
+                <div class="glass-effect rounded-xl px-6 py-4 border border-purple-400">
+                    <div class="text-purple-400 text-sm">সন্তুষ্টির হার</div>
+                    <div class="text-2xl font-bold text-yellow-400">৯৮.৫%</div>
                 </div>
-
-                <!-- Trust indicators -->
-                <div class="flex flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm text-gray-300">
-                    <div class="flex items-center">
-                        <span class="text-green-400 mr-1">✓</span>
-                        <span>তাৎক্ষণিক পেআউট</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-green-400 mr-1">✓</span>
-                        <span>নিরাপদ ও সুরক্ষিত</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-green-400 mr-1">✓</span>
-                        <span>শূন্য বিনিয়োগ</span>
-                    </div>
+            </div>
+            
+            <!-- Main selling point -->
+            <div class="glass-effect rounded-full px-8 py-3 inline-block mb-6 animate-slide-in-up" style="animation-delay: 0.8s;">
+                <span class="text-yellow-400 font-semibold">💰 গেমিং বিনোদন + সহজ আয়</span>
+            </div>
+            
+            <!-- Trust indicators -->
+            <div class="flex justify-center items-center gap-8 text-sm text-gray-300 animate-slide-in-up" style="animation-delay: 1.0s;">
+                <div class="flex items-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>তাৎক্ষণিক পেআউট</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>নিরাপদ ও সুরক্ষিত</span>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-green-400 mr-2">✓</span>
+                    <span>শূন্য বিনিয়োগ</span>
                 </div>
             </div>
         </div>
     </section>
-
+    
 	   <div class="stage">
         <div class="game-list">
           <div class="game-item-container">
@@ -749,14 +677,14 @@
         </div>
       </div>
     <!-- Games showcase section -->
-
+     
     <!-- Features showcase section -->
     <section class="py-4 md:py-20 px-4 relative z-10">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-title">
                 গেমের বৈশিষ্ট্য
             </h2>
-
+            
             <!-- Carousel container -->
             <div class="carousel-container game-card max-w-md mx-auto">
                 <div class="carousel-track" id="carouselTrack">
@@ -780,11 +708,11 @@
                         <img src="img/066.png" alt="Feature 6" class="w-full">
                     </div>
                 </div>
-
+                
                 <!-- Navigation buttons -->
                 <button class="carousel-nav prev" onclick="prevSlide()">‹</button>
                 <button class="carousel-nav next" onclick="nextSlide()">›</button>
-
+                
                 <!-- Indicators -->
                 <div class="carousel-indicators" id="carouselIndicators">
                     <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
@@ -797,31 +725,26 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Floating contact icons -->
-    <div class="fixed right-2 md:right-4 top-1/2 transform -translate-y-1/2 space-y-3 z-30">
-        <div class="floating-icon w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center cursor-pointer relative" onclick="k2()">
-            <img src="img/tel.png" alt="Phone" class="w-6 h-6 md:w-7 md:h-7">
+    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 space-y-4 z-30">
+        <div class="floating-icon w-16 h-16 rounded-full flex items-center justify-center cursor-pointer relative" onclick="k2()">
+            <img src="img/tel.png" alt="Phone" class="w-8 h-8">
             <div class="notification-badge">1</div>
         </div>
-        <div class="floating-icon w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center cursor-pointer relative"  onclick="k2()" style="animation-delay: 1.5s;">
-            <img src="img/wapp.png" alt="WhatsApp" class="w-6 h-6 md:w-7 md:h-7">
+        <div class="floating-icon w-16 h-16 rounded-full flex items-center justify-center cursor-pointer relative"  onclick="k2()" style="animation-delay: 1.5s;">
+            <img src="img/wapp.png" alt="WhatsApp" class="w-8 h-8">
             <div class="notification-badge">1</div>
         </div>
     </div>
-
+    
     <!-- User reviews section -->
     <section class="pt-4 md:py-20 px-4 relative z-10">
         <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-8">
-                <a href="agent.html" target="_blank" class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                    আরও দেখুন
-                </a>
-            </div>
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-title">
                 খেলোয়াড়দের পর্যালোচনা
             </h2>
-
+            
             <!-- Comment container - carousel mode -->
             <div class="comments-carousel glass-effect rounded-xl p-6 max-w-2xl mx-auto min-h-[200px] relative overflow-hidden" id="commentsContainer">
                 <!-- Comment carousel items -->
@@ -833,7 +756,7 @@
                             <p class="text-gray-400 text-sm">নিউ ইয়র্ক থেকে · ২ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"প্রতিদিন 800 টাকা আয় করা BDRUMMY-তে খুবই সহজ। এখানে অনেক ধরনের গেম আছে, আর আমি বিশেষ করে  Super Ace এবং Crazy 777 খুব পছন্দ করি। প্রতিদিন দুপুর 12:00 টায় আমি চ্যানেল থেকে ফ্রি প্রোমো কোড পেতে পারি!!"</p>
+                    <p class="text-blue-200 text-lg">"অবিশ্বাস্য! মার্কিন যুক্তরাষ্ট্রে এই গেইম খেলে একদিনে ৫০ ডলার আয় করেছি! আমার পার্ট-টাইম কাজের চেয়ে ভাল 💰"</p>
                 </div>
 
                 <div class="comment-item">
@@ -844,7 +767,7 @@
                             <p class="text-gray-400 text-sm">লস এঞ্জেলেস থেকে · ৫ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"আমি BDRUMMY–এর " ফ্রি ক্যাশ " ইভেন্টটি খুবই পছন্দ করি। প্রোমোশনের জন্য কোনো রিসোর্স না থাকলেও, ফ্রি ক্যাশ  খেলোয়াড়দের প্রচারের জন্য একটি WhatsApp লিংক দেয়, যার মাধ্যমে কমিশন অর্জন করা যায়। আমি প্রতিদিন 500 টাকা কমিশন আয় করতে পারি, যা সত্যিই বেশ লাভজনক। আমি এটিকে পুরোপুরি সমর্থন করি!!!"</p>
+                    <p class="text-blue-200 text-lg">"একক মা হিসেবে, এই গেইম আমাকে অতিরিক্ত আয় করতে সাহায্য করে! মাসিক ৩০০ ডলার আমার পরিবারের সহায়তার জন্য 🎮💸"</p>
                 </div>
 
                 <div class="comment-item">
@@ -855,7 +778,7 @@
                             <p class="text-gray-400 text-sm">শিকাগো থেকে · ৮ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"আমি BDRUMMY–তে একজন এজেন্ট হিসেবে কাজ করি। আমি যেকোনো খেলোয়াড়কে রেজ���স্ট্রেশন ও ডিপোজিট করালে প্রতি জনে 30 টাকা কমিশন পাই। খেলোয়াড়দের বেট ও ডিপোজিট থেকেও আমি কমিশন পাই। বর্তমানে আমি প্রতিদিন 1000 টাকা কমিশন আয় করি। আমি BDRUMMY-এর মাধ্যমে আর্থিক স্বাধীনতা অর্জন করবো!!!"</p>
+                    <p class="text-blue-200 text-lg">"কলেজ ছাত্রদের আশীর্বাদ! অবসর সময়ে গেইম খেলে এই সেমিস্টারে ৮০০ ডলার আয় করেছি 💯"</p>
                 </div>
 
                 <div class="comment-item">
@@ -866,7 +789,7 @@
                             <p class="text-gray-400 text-sm">মিয়ামি থেকে · ১২ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"আমি কৌতূহলবশত BDRUMMY ডাউনলোড করি, 100 টাকা রিচার্জ করে ভিআইপি  হই, এবং এরপর থেকে প্রতি সোমবার সাপ্তাহিক বোনাস ও প্রতি মাসে মাসিক বোনাস পেতে থাকি। এতে আমি অনেক লাভ পেয়েছি, এবং এটি আমি সত্যিই উপভোগ করি!!!"</p>
+                    <p class="text-blue-200 text-lg">"নিখুঁত অবসর বিনোদন! গেমিং মজা + পেনশন সাপ্লিমেন্ট, প্রতিদিন ২৫ ডলার আয় 🏆"</p>
                 </div>
 
                 <div class="comment-item">
@@ -877,7 +800,7 @@
                             <p class="text-gray-400 text-sm">লাস ভেগাস থেকে · ১৫ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"BDRUMMY-তে Super Ace লিডারবোর্ড ইভেন্ট আছে, যেখানে আসল খেলোয়াড়দের সঙ্গে প্রথম পুরস্কারের জন্য প্রতিযোগিতা করা যায় এবং বড় অঙ্কের পুরস্কার জেতা যায়! রেজিস্ট্রেশন ফ্রি, যার ফলে আমি Slots Arena–র রোমাঞ্চ ও উত্তেজনা উপভোগ করতে পেরেছি!!"</p>
+                    <p class="text-blue-200 text-lg">"ওয়াল স্ট্রিটের চাপ উপশম! গেমিং বিশ্রাম + অর্থ আয়, সপ্তাহান্তে ১২০ ডলার আয় ⭐⭐⭐⭐⭐"</p>
                 </div>
 
                 <div class="comment-item">
@@ -888,7 +811,7 @@
                             <p class="text-gray-400 text-sm">সিয়াটেল থেকে · ১৮ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"দৈনিক টাস্কে Slots ও Flight গেম থাকে, যেগুলো করে প���রতিদিন সহজেই 2000 টাকা আয় করা যায়। আমি আমার বন্ধুদেরও BDRUMMY–তে যোগ দিতে বলি যাতে তারাও আর্থিক স্বাধীনতা অর্জন করতে পারে; এটি সত্যিই দারুণ একটি অভিজ্ঞতা!!"</p>
+                    <p class="text-blue-200 text-lg">"দূরবর্তী কর্মীদের জন্য নিখুঁত পার্শ্ব কাজ! কাজের বিরতিতে গেমিং, মাসিক +৪০০ ডলার আয় 🔥🔥🔥"</p>
                 </div>
             </div>
         </div>
@@ -899,7 +822,7 @@
         <span  class="hidden md:inline">🎮 এখনই খেলুন ও আয় করুন</span>
         <span class="md:hidden">বিনামূল্যে ডাউনলোড করুন এবং উপভোগ করুন</span>
     </button>
-
+    
     <!-- Footer -->
     <footer class="pb-12 text-center relative z-10">
         <div class="glass-effect rounded-lg mx-4 py-8">
@@ -910,23 +833,23 @@
             </div>
         </div>
     </footer>
-
+    
     <script>
         function k2()
 		{
 		window.location.href="https://www.qq.com";
 		}
-
+        
         // Language switcher functionality
         function switchLanguage(page) {
             window.location.href = page;
         }
-
+        
         // Create particle effects
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 50;
-
+            
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
@@ -936,7 +859,7 @@
                 particlesContainer.appendChild(particle);
             }
         }
-
+        
         // Scroll animation observer
         function setupScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
@@ -950,7 +873,7 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
-
+            
             // Observe all game cards
             document.querySelectorAll('.game-card').forEach((card) => {
                 card.style.opacity = '0';
@@ -959,7 +882,7 @@
                 observer.observe(card);
             });
         }
-
+        
         // Dark mode support
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.classList.add('dark');
@@ -971,14 +894,14 @@
                 document.documentElement.classList.remove('dark');
             }
         });
-
+        
         // Initialize after page load
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
             setupScrollAnimations();
             setupCommentsObserver();
         });
-
+        
         // Page scroll parallax effect (desktop only)
         window.addEventListener('scroll', () => {
             if (window.innerWidth > 768) { // Enable parallax only on desktop
@@ -988,51 +911,51 @@
                 parallax.style.transform = `translateY(${speed}px)`;
             }
         });
-
+        
         // Carousel functionality
         let currentSlide = 0;
         const totalSlides = 6;
-
+        
         function updateCarousel() {
             const track = document.getElementById('carouselTrack');
             const indicators = document.querySelectorAll('.carousel-indicator');
-
+            
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
-
+            
             indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === currentSlide);
             });
         }
-
+        
         function nextSlide() {
             currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
         }
-
+        
         function prevSlide() {
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateCarousel();
         }
-
+        
         function goToSlide(index) {
             currentSlide = index;
             updateCarousel();
         }
-
+        
         // Auto carousel
         setInterval(nextSlide, 4000);
-
+        
         // User comment carousel functionality
         let currentComment = 0;
         const totalComments = 6;
         let commentsInterval;
-
+        
         function updateCommentCarousel() {
             const comments = document.querySelectorAll('.comment-item');
-
+            
             comments.forEach((comment, index) => {
                 comment.classList.remove('active', 'prev');
-
+                
                 if (index === currentComment) {
                     comment.classList.add('active');
                     // Add flash effect
@@ -1045,20 +968,20 @@
                 }
             });
         }
-
+        
         function nextComment() {
             currentComment = (currentComment + 1) % totalComments;
             updateCommentCarousel();
         }
-
+        
         function startCommentsCarousel() {
             // Show first comment immediately
             updateCommentCarousel();
-
+            
             // Switch to next comment every 3 seconds
             commentsInterval = setInterval(nextComment, 2500);
         }
-
+        
         // Observe comment area for viewport entry
         function setupCommentsObserver() {
             const commentsContainer = document.getElementById('commentsContainer');
@@ -1072,7 +995,7 @@
             }, {
                 threshold: 0.3
             });
-
+            
             observer.observe(commentsContainer);
         }
     </script>
