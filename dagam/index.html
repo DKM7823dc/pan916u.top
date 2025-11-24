@@ -230,81 +230,17 @@
             background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
             border: 1px solid rgba(59, 130, 246, 0.2);
             backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
 
-        .game-card:hover {
-            border-color: rgba(168, 85, 247, 0.8);
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.8));
-            transform: translateY(-20px) rotateY(10deg) rotateX(5deg);
-            animation: gameCardExplode 0.8s ease-in-out;
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.7), 0 0 80px rgba(168, 85, 247, 0.5);
-        }
-
-        .game-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
-            transform: rotate(45deg) translateX(-150%);
-            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 1;
-        }
-
-        .game-card:hover::before {
-            transform: rotate(45deg) translateX(150%);
-        }
-
-        .game-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, transparent 30%, rgba(59, 130, 246, 0.1) 70%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 1;
-        }
-
-        .game-card:hover::after {
-            opacity: 1;
-        }
-
-        .game-card img {
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        /* Simple carousel wrapper - no hover effects */
+        .carousel-wrapper {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(10px);
             position: relative;
-            z-index: 2;
-        }
-
-        .game-card:hover img {
-            transform: scale(1.25) rotate(5deg);
-            filter: brightness(1.4) saturate(1.5) contrast(1.2);
-        }
-
-        @keyframes gameCardExplode {
-            0% {
-                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-                transform: translateY(0) rotateY(0deg) rotateX(0deg) scale(1);
-            }
-            30% {
-                box-shadow: 0 10px 40px rgba(168, 85, 247, 0.6), 0 0 60px rgba(59, 130, 246, 0.4);
-                transform: translateY(-10px) rotateY(5deg) rotateX(2deg) scale(1.05);
-            }
-            70% {
-                box-shadow: 0 25px 80px rgba(168, 85, 247, 0.8), 0 0 100px rgba(59, 130, 246, 0.6);
-                transform: translateY(-25px) rotateY(12deg) rotateX(6deg) scale(1.1);
-            }
-            100% {
-                box-shadow: 0 20px 60px rgba(59, 130, 246, 0.7), 0 0 80px rgba(168, 85, 247, 0.5);
-                transform: translateY(-20px) rotateY(10deg) rotateX(5deg) scale(1.08);
-            }
+            overflow: hidden;
         }
 
         .floating-icon {
@@ -663,8 +599,8 @@
 
     <!-- Hero Background Section -->
     <section class="hero-bg flex items-center justify-center relative z-10">
-        <!-- Language Switcher Dropdown -->
-        <div class="absolute top-8 right-4 z-50">
+        <!-- Language Switcher Dropdown - 优化后向下移动 -->
+        <div class="absolute top-24 md:top-28 right-4 z-50">
             <div class="lang-dropdown">
                 <select class="lang-select" onchange="switchLanguage(this.value)">
                     <option value="index.html" selected>🇧🇩 বাংলা</option>
@@ -759,7 +695,7 @@
             </h2>
 
             <!-- Carousel container -->
-            <div class="carousel-container game-card max-w-md mx-auto">
+            <div class="carousel-container carousel-wrapper max-w-md mx-auto">
                 <div class="carousel-track" id="carouselTrack">
                     <!-- Carousel images -->
                     <div class="carousel-slide" onclick="k8()">
@@ -814,7 +750,7 @@
     <!-- User reviews section -->
     <section class="pt-4 md:py-20 px-4 relative z-10">
         <div class="max-w-4xl mx-auto">
-             
+
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-title">
                 খেলোয়াড়দের পর্যালোচনা
             </h2>
@@ -841,7 +777,7 @@
                             <p class="text-gray-400 text-sm">লস এঞ্জেলেস থেকে · ৫ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"আমি BDRUMMY–এর " ফ্রি ক্যাশ " ইভেন্টটি খুবই পছন্দ করি। প্রোমোশনের জন্য কোনো রিসোর্স না থাকলেও, ফ্রি ক্যাশ  খেলোয়াড়দের প্রচারের জন্য একটি WhatsApp লিংক দেয়, যার মাধ্যমে কমিশন অর্জন করা যায়। আমি প্রতিদিন 500 টাকা কমিশন আয় করতে পারি, যা সত্যিই বেশ লাভজনক। আমি এটিকে পুরোপুরি সমর্থন করি!!!"</p>
+                    <p class="text-blue-200 text-sm">"আমি BDRUMMY–এর " ফ্রি ক্যাশ " ইভেন্টটি খুবই পছন্দ করি। প্রোমোশনের জন্য কোনো রিসোর্স না থাকলেও, ফ্রি ���্যাশ  খেলোয়াড়দের প্রচারের জন্য একটি WhatsApp লিংক দেয়, যার মাধ্যমে কমিশন অর্জন করা যায়। আমি প্রতিদিন 500 টাকা কমিশন আয় করতে পারি, যা সত্যিই বেশ লাভজনক। আমি এটিকে পুরোপুরি সমর্থন করি!!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -852,7 +788,7 @@
                             <p class="text-gray-400 text-sm">শিকাগো থেকে · ৮ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"আমি BDRUMMY–তে একজন এজেন���ট হিসেবে কাজ করি। আমি যেকোনো খেলোয়াড়কে রেজিস্ট্রেশন ও ডিপোজিট করালে প্রতি জনে 30 টাকা কমিশন পাই। খেলোয়াড়দের বেট ও ডিপোজিট থেকেও আমি কমিশন পাই। বর্তমানে আমি প্রতিদিন 1000 টাকা কমিশন আয় করি। আমি BDRUMMY-এর মাধ্যমে আর্থিক স্বাধীনতা অর্জন করবো!!!"</p>
+                    <p class="text-blue-200 text-sm">"আমি BDRUMMY–তে একজন এজেন্ট হিসেবে কাজ করি। আমি যেকোনো খেলোয়াড়কে রেজিস্ট্রেশন ও ডিপোজিট করালে প্রতি জনে 30 টাকা কমিশন পাই। খেলোয়াড়দের বেট ও ডিপোজিট থেকেও আমি কমিশন পাই। বর্তমানে আমি প্রতিদিন 1000 টাকা কমিশন আয় করি। আমি BDRUMMY-এর মাধ্যমে আর্থিক স্বাধীনতা অর্জন করবো!!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -874,7 +810,7 @@
                             <p class="text-gray-400 text-sm">লাস ভেগাস থেকে · ১৫ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"BDRUMMY-তে Super Ace লিডারবোর্ড ইভেন্ট আছে, যেখানে আসল খেলোয়াড়দের সঙ্গে প্রথম পুরস্কারের জন্য প্রতিযোগিতা করা যায় এবং বড় অঙ্কের পুরস্কার জেতা যায়! রেজিস্ট্রেশন ফ্রি, যার ফলে আমি Slots Arena–র রোমাঞ্চ ও উত্তেজনা উপভোগ করতে পেরেছি!!"</p>
+                    <p class="text-blue-200 text-sm">"BDRUMMY-তে Super Ace লিড���রবোর্ড ইভেন্ট আছে, যেখানে আসল খেলোয়াড়দের সঙ্গে প্রথম পুরস্কারের জন্য প্রতিযোগিতা করা যায় এবং বড় অঙ্কের পুরস্কার জেতা যায়! রেজিস্ট্রেশন ফ্রি, যার ফলে আমি Slots Arena–র রোমাঞ্চ ও উত্তেজনা উপভোগ করতে পেরেছি!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -894,7 +830,7 @@
     <!-- Floating bottom button -->
     <button id="Download_app" class="floating-button" >
         <span  class="hidden md:inline">🎮 এখনই খেলুন ও আয় করুন</span>
-        <span class="md:hidden">বিনামূল্যে ডাউনলোড করুন এবং উপভোগ করুন</span>
+        <span class="md:hidden">এখনই অ্যাপ ডাউনলোড করুন/</span>
     </button>
 
     <!-- Footer -->
@@ -954,8 +890,8 @@
                 rootMargin: '0px 0px -50px 0px'
             });
 
-            // Observe all game cards
-            document.querySelectorAll('.game-card').forEach((card) => {
+            // Observe all game cards (excluding carousel)
+            document.querySelectorAll('.game-card:not(.carousel-wrapper)').forEach((card) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
