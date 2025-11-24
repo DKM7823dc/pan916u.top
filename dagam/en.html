@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game World - Premium Game Collection</title> 
+    <title>Game World - Premium Game Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
-	
-	
+
+
 	      <!--adjust接口start-->
   <script>
     // 创建 URLSearchParams 对象
@@ -56,16 +56,16 @@
     });
   </script>
   <!--adjust接口end-->
-  
-  
+
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
-        
+
         * {
             font-family: 'Inter', sans-serif;
         }
-        
-		
+
+
 .stage {
   /* 设置舞台的背景，靠下 */
   background-image: url(../images/stage.png);
@@ -99,42 +99,42 @@
   overflow: hidden;
 }
 
-.game-item-container img:nth-child(1) { 
-  transform: translateX(  0vw ) translateZ( 0vw ); 
+.game-item-container img:nth-child(1) {
+  transform: translateX(  0vw ) translateZ( 0vw );
   animation: rotate 12s ease infinite;
   animation-delay: 0s;
 }
-.game-item-container img:nth-child(2) { 
-  transform: translateX(  -30vw ) translateZ( -15vw ); 
+.game-item-container img:nth-child(2) {
+  transform: translateX(  -30vw ) translateZ( -15vw );
   animation: rotate 12s ease infinite;
   animation-delay: -1.5s;
 }
-.game-item-container img:nth-child(3) { 
+.game-item-container img:nth-child(3) {
   transform: translateX(  -60vw ) translateZ( -30vw );
   animation: rotate 12s ease infinite;
   animation-delay: -3s;
 }
-.game-item-container img:nth-child(4) { 
+.game-item-container img:nth-child(4) {
   transform: translateX(  -30vw ) translateZ( -45vw );
   animation: rotate 12s ease infinite;
   animation-delay: -4.5s;
 }
-.game-item-container img:nth-child(5) { 
+.game-item-container img:nth-child(5) {
   transform: translateX(  0vw ) translateZ( -60vw );
   animation: rotate 12s ease infinite;
   animation-delay: -6s;
 }
-.game-item-container img:nth-child(6) { 
+.game-item-container img:nth-child(6) {
   transform: translateX(  30vw ) translateZ( -45vw );
   animation: rotate 12s ease infinite;
   animation-delay: -7.5s;
 }
-.game-item-container img:nth-child(7) { 
+.game-item-container img:nth-child(7) {
   transform: translateX(  60vw ) translateZ( -30vw );
   animation: rotate 12s ease infinite;
   animation-delay: -9s;
 }
-.game-item-container img:nth-child(8) { 
+.game-item-container img:nth-child(8) {
   transform: translateX(  30vw ) translateZ( -15vw );
   animation: rotate 12s ease infinite;
   animation-delay: -10.5s;
@@ -174,15 +174,24 @@
             background-attachment: fixed;
             overflow-x: hidden;
         }
-        
+
         .hero-bg {
             background-image: url('img/bg1.png');
-            background-size: cover;
-            background-position: center;
+            background-size: contain;
+            background-position: center top;
             background-repeat: no-repeat;
             position: relative;
+            min-height: 100vh;
         }
-        
+
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-size: contain;
+                background-position: center top;
+                min-height: 70vh;
+            }
+        }
+
         .hero-bg::before {
             content: '';
             position: absolute;
@@ -190,131 +199,81 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(26,26,46,0.6));
         }
-        
+
+        .hero-content-card {
+            background: rgba(10, 15, 30, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (min-width: 768px) {
+            .hero-content-card {
+                padding: 2rem;
+            }
+        }
+
         .glow-effect {
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
         }
-        
+
         .glow-effect:hover {
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 50px rgba(168, 85, 247, 0.3);
             transform: translateY(-5px) scale(1.05);
         }
-        
+
         .game-card {
             background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
             border: 1px solid rgba(59, 130, 246, 0.2);
             backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
-        
-        .game-card:hover {
-            border-color: rgba(168, 85, 247, 0.8);
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.8));
-            transform: translateY(-20px) rotateY(10deg) rotateX(5deg);
-            animation: gameCardExplode 0.8s ease-in-out;
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.7), 0 0 80px rgba(168, 85, 247, 0.5);
-        }
-        
-        .game-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
-            transform: rotate(45deg) translateX(-150%);
-            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            z-index: 1;
-        }
-        
-        .game-card:hover::before {
-            transform: rotate(45deg) translateX(150%);
-        }
-        
-        .game-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, transparent 30%, rgba(59, 130, 246, 0.1) 70%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 1;
-        }
-        
-        .game-card:hover::after {
-            opacity: 1;
-        }
-        
-        .game-card img {
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        /* Simple carousel wrapper - no hover effects */
+        .carousel-wrapper {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            backdrop-filter: blur(10px);
             position: relative;
-            z-index: 2;
+            overflow: hidden;
         }
-        
-        .game-card:hover img {
-            transform: scale(1.25) rotate(5deg);
-            filter: brightness(1.4) saturate(1.5) contrast(1.2);
-        }
-        
-        @keyframes gameCardExplode {
-            0% {
-                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-                transform: translateY(0) rotateY(0deg) rotateX(0deg) scale(1);
-            }
-            30% {
-                box-shadow: 0 10px 40px rgba(168, 85, 247, 0.6), 0 0 60px rgba(59, 130, 246, 0.4);
-                transform: translateY(-10px) rotateY(5deg) rotateX(2deg) scale(1.05);
-            }
-            70% {
-                box-shadow: 0 25px 80px rgba(168, 85, 247, 0.8), 0 0 100px rgba(59, 130, 246, 0.6);
-                transform: translateY(-25px) rotateY(12deg) rotateX(6deg) scale(1.1);
-            }
-            100% {
-                box-shadow: 0 20px 60px rgba(59, 130, 246, 0.7), 0 0 80px rgba(168, 85, 247, 0.5);
-                transform: translateY(-20px) rotateY(10deg) rotateX(5deg) scale(1.08);
-            }
-        }
-        
+
         .floating-icon {
             animation: float 3s ease-in-out infinite;
             background: linear-gradient(145deg, #1e293b, #334155);
             border: 2px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
         }
-        
+
         .floating-icon:hover {
             border-color: rgba(168, 85, 247, 0.8);
             box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
             transform: scale(1.1);
         }
-        
+
         .notification-badge {
             position: absolute;
-            top: -8px;
-            right: -8px;
-            width: 24px;
-            height: 24px;
+            top: -6px;
+            right: -6px;
+            width: 18px;
+            height: 18px;
             background: linear-gradient(45deg, #ff4444, #ff6666);
             border: 2px solid #fff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 10px;
             font-weight: bold;
             color: white;
             animation: bounce 1s ease-in-out infinite;
         }
-        
+
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
@@ -326,34 +285,35 @@
                 transform: translateY(-5px);
             }
         }
-        
+
         .carousel-container {
             position: relative;
             overflow: hidden;
             border-radius: 16px;
             width: 100%;
         }
-        
+
         .carousel-track {
             display: flex;
             transition: transform 0.5s ease;
         }
-        
+
         .carousel-slide {
             width: 100%;
             flex: 0 0 100%;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
         }
-        
+
         .carousel-slide img {
             width: 100%;
             height: auto;
             object-fit: contain;
             border-radius: 8px;
         }
-        
+
         .carousel-nav {
             position: absolute;
             top: 50%;
@@ -371,20 +331,20 @@
             transition: all 0.3s ease;
             z-index: 10;
         }
-        
+
         .carousel-nav:hover {
             background: rgba(59, 130, 246, 0.8);
             border-color: rgba(168, 85, 247, 0.5);
         }
-        
+
         .carousel-nav.prev {
             left: 10px;
         }
-        
+
         .carousel-nav.next {
             right: 10px;
         }
-        
+
         .carousel-indicators {
             position: absolute;
             bottom: 20px;
@@ -394,7 +354,7 @@
             gap: 10px;
             z-index: 10;
         }
-        
+
         .carousel-indicator {
             width: 12px;
             height: 12px;
@@ -403,15 +363,15 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .carousel-indicator.active {
             background: #3b82f6;
             box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
-        
+
         .floating-button {
             position: fixed;
-            bottom: 30px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
@@ -427,12 +387,12 @@
             animation: buttonBounce 1.5s ease-in-out infinite;
             white-space: nowrap;
         }
-        
+
         .floating-button:hover {
             transform: translateX(-50%) scale(1.1);
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
         }
-        
+
         @keyframes buttonBounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateX(-50%) translateY(0);
@@ -447,12 +407,12 @@
                 box-shadow: 0 8px 30px rgba(59, 130, 246, 0.6);
             }
         }
-        
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-        
+
         @keyframes slideInUp {
             from {
                 opacity: 0;
@@ -463,7 +423,7 @@
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes slideInLeft {
             from {
                 opacity: 0;
@@ -474,35 +434,35 @@
                 transform: translateX(0);
             }
         }
-        
+
         .animate-slide-in-up {
             animation: slideInUp 0.8s ease-out forwards;
         }
-        
+
         .animate-slide-in-left {
             animation: slideInLeft 0.8s ease-out forwards;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .section-title {
             background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .glass-effect {
             background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         /* Comment carousel styles */
         .comments-carousel .comment-item {
             position: absolute;
@@ -513,17 +473,17 @@
             transform: translateX(50px);
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        
+
         .comments-carousel .comment-item.active {
             opacity: 1;
             transform: translateX(0);
         }
-        
+
         .comments-carousel .comment-item.prev {
             opacity: 0;
             transform: translateX(-50px);
         }
-        
+
         /* Particle effects */
         .particles {
             position: fixed;
@@ -534,7 +494,7 @@
             pointer-events: none;
             z-index: 1;
         }
-        
+
         .particle {
             position: absolute;
             width: 2px;
@@ -543,7 +503,7 @@
             border-radius: 50%;
             animation: particleFloat 15s infinite linear;
         }
-        
+
         @keyframes particleFloat {
             0% {
                 transform: translateY(100vh) translateX(0);
@@ -560,101 +520,183 @@
                 opacity: 0;
             }
         }
-        
-        /* Language Switcher Styles */
-        .lang-btn {
-            color: rgba(255, 255, 255, 0.7);
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+
+        /* Language Switcher Button Styles */
+        .lang-switcher-container {
+            position: absolute;
+            top: 0rem;
+            right: 1rem;
+            z-index: 50;
         }
-        
+
+        @media (min-width: 768px) {
+            .lang-switcher-container {
+                top: 8rem;
+            }
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: white;
+            padding: 0.35rem 0.65rem;
+            border-radius: 0.5rem;
+            font-size: 0.625rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            display: inline-block;
+        }
+
         .lang-btn:hover {
-            color: rgba(255, 255, 255, 0.9);
-            background: rgba(59, 130, 246, 0.3);
+            background-color: rgba(59, 130, 246, 0.3);
             border-color: rgba(59, 130, 246, 0.5);
             transform: scale(1.05);
         }
-        
+
+        .lang-btn:active {
+            transform: scale(0.95);
+        }
+
         .lang-btn.active {
-            color: white;
-            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            background: rgba(59, 130, 246, 0.5);
             border-color: rgba(59, 130, 246, 0.8);
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
         }
+
+        /* Hero stats compact design */
+        .stat-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 999px;
+            font-size: 0.875rem;
+        }
+
+        .stat-pill .label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .stat-pill .value {
+            color: #fbbf24;
+            font-weight: 700;
+        }
     </style>
 </head>
-<body class="min-h-screen text-white">
+<body class="text-white">
     <!-- Particle background -->
     <div class="particles" id="particles"></div>
-    
-    <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center justify-center relative z-10">
-        <!-- Language Switcher -->
-        <div class="absolute top-4 right-4 z-50">
-            <div class="glass-effect rounded-lg p-2 border border-blue-400/30">
-                <div class="flex gap-2">
-                    <button class="lang-btn px-3 py-1 rounded text-sm font-medium transition-all duration-300" data-lang="bn" onclick="switchLanguage('index.html')">
-                        🇧🇩 বাংলা
-                    </button>
-                    <button class="lang-btn active px-3 py-1 rounded text-sm font-medium transition-all duration-300" data-lang="en" onclick="switchLanguage('en.html')">
-                        🇺🇸 English
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center px-4 relative z-20">
-            <!-- Limited time banner -->
-            <div class="glass-effect rounded-full px-6 py-2 inline-block mb-4 mt-20 md:mt-0 animate-slide-in-up border border-red-400">
-                <span class="text-red-400 font-bold text-sm">🔥 Limited Registration - Only 48 Hours Left</span>
-            </div>
-            
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-slide-in-up" style="animation-delay: 0.2s;">
-                Game World
-            </h1>
-            <p class="text-xl md:text-2xl mb-6 text-blue-200 animate-slide-in-up" style="animation-delay: 0.4s;">
-                Explore Unlimited Gaming Universe
-            </p>
-            
-            <!-- Platform data showcase -->
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8 animate-slide-in-up" style="animation-delay: 0.6s;">
-                <div class="glass-effect rounded-xl px-6 py-4 border border-green-400">
-                    <div class="text-green-400 text-sm">Game Varieties</div>
-                    <div class="text-2xl font-bold text-yellow-400">50+ Games</div>
-                </div>
-                <div class="glass-effect rounded-xl px-6 py-4 border border-blue-400">
-                    <div class="text-blue-400 text-sm">Total Players</div>
-                    <div class="text-2xl font-bold text-yellow-400">200,000+</div>
-                </div>
-                <div class="glass-effect rounded-xl px-6 py-4 border border-purple-400">
-                    <div class="text-purple-400 text-sm">Satisfaction Rate</div>
-                    <div class="text-2xl font-bold text-yellow-400">98.5%</div>
-                </div>
-            </div>
-            
-            <!-- Main selling point -->
-            <div class="glass-effect rounded-full px-8 py-3 inline-block mb-6 animate-slide-in-up" style="animation-delay: 0.8s;">
-                <span class="text-yellow-400 font-semibold">💰 Gaming Entertainment + Easy Earning</span>
-            </div>
-            
-            <!-- Trust indicators -->
-            <div class="flex justify-center items-center gap-8 text-sm text-gray-300 animate-slide-in-up" style="animation-delay: 1.0s;">
-                <div class="flex items-center">
-                    <span class="text-green-400 mr-2">✓</span>
-                    <span>Instant Payout</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-green-400 mr-2">✓</span>
-                    <span>Safe & Secure</span>
-                </div>
-                <div class="flex items-center">
-                    <span class="text-green-400 mr-2">✓</span>
-                    <span>Zero Investment</span>
-                </div>
+
+    <!-- Hero Background Section -->
+    <section class="hero-bg flex items-center justify-center relative z-10">
+        <!-- Language Switcher Buttons - Top Right -->
+        <div class="lang-switcher-container">
+            <div class="lang-switcher">
+                <a href="index.html" class="lang-btn">🇧🇩 বাংলা</a>
+                <a href="en.html" class="lang-btn active">🇺🇸 English</a>
             </div>
         </div>
     </section>
-    
+
+    <!-- Hero Content Section -->
+    <section class="py-8 md:py-12 px-4 relative z-10 mt-3">
+        <div class="w-full max-w-6xl mx-auto">
+            <!-- Three Feature Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <!-- Feature 1: Fast Recharge Experience -->
+                <div class="hero-content-card animate-slide-in-up">
+                    <div class="text-center mb-4">
+                        <div class="inline-block p-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full mb-3">
+                            <span class="text-4xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold gradient-text mb-4">
+                            Fast Recharge Experience
+                        </h3>
+                    </div>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">Recharge in 3 seconds</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">1-click deposit, secure & fast</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">Payment support: bKash / Nagad / Rocket / Upay</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2: Fast Withdrawal Experience -->
+                <div class="hero-content-card animate-slide-in-up" style="animation-delay: 0.1s;">
+                    <div class="text-center mb-4">
+                        <div class="inline-block p-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full mb-3">
+                            <span class="text-4xl">💰</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold gradient-text mb-4">
+                            Fast Withdrawal Experience
+                        </h3>
+                    </div>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">Withdrawal within 30 seconds</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">Instant withdrawal approval</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">100% guaranteed payout</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3: World Class Security -->
+                <div class="hero-content-card animate-slide-in-up" style="animation-delay: 0.2s;">
+                    <div class="text-center mb-4">
+                        <div class="inline-block p-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full mb-3">
+                            <span class="text-4xl">🔒</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold gradient-text mb-4">
+                            World Class Security
+                        </h3>
+                    </div>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">Advanced data protection</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">Trusted & certified platform</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">Secure payment & fast processing</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 	   <div class="stage">
         <div class="game-list">
           <div class="game-item-container">
@@ -670,42 +712,42 @@
         </div>
       </div>
     <!-- Games showcase section -->
-     
+
     <!-- Features showcase section -->
     <section class="py-4 md:py-20 px-4 relative z-10">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-title">
                 Game Features
             </h2>
-            
+
             <!-- Carousel container -->
-            <div class="carousel-container game-card max-w-md mx-auto">
+            <div class="carousel-container carousel-wrapper max-w-md mx-auto">
                 <div class="carousel-track" id="carouselTrack">
                     <!-- Carousel images -->
-                    <div class="carousel-slide">
-                        <img src="img/011.png" alt="Feature 1" class="w-full">
+                    <div class="carousel-slide" onclick="k8()">
+                        <img src="imgen/011.png" alt="Feature 1" class="w-full">
                     </div>
-                    <div class="carousel-slide">
-                        <img src="img/022.png" alt="Feature 2" class="w-full">
+                    <div class="carousel-slide" onclick="k8()">
+                        <img src="imgen/022.png" alt="Feature 2" class="w-full">
                     </div>
-                    <div class="carousel-slide">
-                        <img src="img/033.png" alt="Feature 3" class="w-full">
+                    <div class="carousel-slide" onclick="k8()">
+                        <img src="imgen/033.png" alt="Feature 3" class="w-full">
                     </div>
-                    <div class="carousel-slide">
-                        <img src="img/044.png" alt="Feature 4" class="w-full">
+                    <div class="carousel-slide" onclick="k8()">
+                        <img src="imgen/044.png" alt="Feature 4" class="w-full">
                     </div>
-                    <div class="carousel-slide">
-                        <img src="img/055.png" alt="Feature 5" class="w-full">
+                    <div class="carousel-slide" onclick="k8()">
+                        <img src="imgen/055.png" alt="Feature 5" class="w-full">
                     </div>
-                    <div class="carousel-slide">
-                        <img src="img/066.png" alt="Feature 6" class="w-full">
+                    <div class="carousel-slide" onclick="k8()">
+                        <img src="imgen/066.png" alt="Feature 6" class="w-full">
                     </div>
                 </div>
-                
+
                 <!-- Navigation buttons -->
                 <button class="carousel-nav prev" onclick="prevSlide()">‹</button>
                 <button class="carousel-nav next" onclick="nextSlide()">›</button>
-                
+
                 <!-- Indicators -->
                 <div class="carousel-indicators" id="carouselIndicators">
                     <div class="carousel-indicator active" onclick="goToSlide(0)"></div>
@@ -718,26 +760,27 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Floating contact icons -->
-    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 space-y-4 z-30">
-        <div class="floating-icon w-16 h-16 rounded-full flex items-center justify-center cursor-pointer relative" onclick="k2()">
-            <img src="img/tel.png" alt="Phone" class="w-8 h-8">
+    <div class="fixed right-2 md:right-4 top-1/2 transform -translate-y-1/2 space-y-3 z-30">
+        <div class="floating-icon w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center cursor-pointer relative" onclick="k2()">
+            <img src="img/tel.png" alt="Phone" class="w-6 h-6 md:w-7 md:h-7">
             <div class="notification-badge">1</div>
         </div>
-        <div class="floating-icon w-16 h-16 rounded-full flex items-center justify-center cursor-pointer relative"  onclick="k2()" style="animation-delay: 1.5s;">
-            <img src="img/wapp.png" alt="WhatsApp" class="w-8 h-8">
+        <div class="floating-icon w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center cursor-pointer relative"  onclick="k2()" style="animation-delay: 1.5s;">
+            <img src="img/wapp.png" alt="WhatsApp" class="w-6 h-6 md:w-7 md:h-7">
             <div class="notification-badge">1</div>
         </div>
     </div>
-    
+
     <!-- User reviews section -->
     <section class="pt-4 md:py-20 px-4 relative z-10">
         <div class="max-w-4xl mx-auto">
+
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 section-title">
                 Player Reviews
             </h2>
-            
+
             <!-- Comment container - carousel mode -->
             <div class="comments-carousel glass-effect rounded-xl p-6 max-w-2xl mx-auto min-h-[200px] relative overflow-hidden" id="commentsContainer">
                 <!-- Comment carousel items -->
@@ -746,10 +789,10 @@
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format" alt="John" class="w-12 h-12 rounded-full object-cover border-2 border-blue-400">
                         <div class="ml-4">
                             <h4 class="text-yellow-400 font-semibold">John Smith★★★★★</h4>
-                            <p class="text-gray-400 text-sm">From New York · 2 min ago</p>
+                            <p class="text-gray-400 text-sm">From New York · 2 minutes ago</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-lg">"Unbelievable! Made $50 in one day playing this game in the US! Better than my part-time job 💰"</p>
+                    <p class="text-blue-200 text-sm">"Earning 800 BDT daily on BDRUMMY is very easy. There are many types of games here, and I especially love Super Ace and Crazy 777. Every day at 12:00 PM I can get free promo codes from the channel!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -757,10 +800,10 @@
                         <img src="img/21.jpg" alt="Emily" class="w-12 h-12 rounded-full object-cover border-2 border-green-400">
                         <div class="ml-4">
                             <h4 class="text-yellow-400 font-semibold">Emily Johnson★★★★★</h4>
-                            <p class="text-gray-400 text-sm">From Los Angeles · 5 min ago</p>
+                            <p class="text-gray-400 text-sm">From Los Angeles · 5 minutes ago</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-lg">"As a single mom, this game helps me earn extra income! $300 monthly to support my family 🎮💸"</p>
+                    <p class="text-blue-200 text-sm">"I really love BDRUMMY's 'Free Cash' event. Even without resources for promotion, Free Cash gives players a WhatsApp link to promote and earn commissions. I can earn 500 BDT commission daily, which is really profitable. I totally support it!!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -768,10 +811,10 @@
                         <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face&auto=format" alt="Mike" class="w-12 h-12 rounded-full object-cover border-2 border-pink-400">
                         <div class="ml-4">
                             <h4 class="text-yellow-400 font-semibold">Mike Williams★★★★★</h4>
-                            <p class="text-gray-400 text-sm">From Chicago · 8 min ago</p>
+                            <p class="text-gray-400 text-sm">From Chicago · 8 minutes ago</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-lg">"College student's blessing! Earned $800 this semester playing games during spare time 💯"</p>
+                    <p class="text-blue-200 text-sm">"I work as an agent at BDRUMMY. I get 30 BDT commission per person when I help any player register and deposit. I also get commissions from players' bets and deposits. Currently, I earn 1000 BDT commission daily. I will achieve financial freedom through BDRUMMY!!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -779,10 +822,10 @@
                         <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=150&h=150&fit=crop&crop=face&auto=format" alt="David" class="w-12 h-12 rounded-full object-cover border-2 border-yellow-400">
                         <div class="ml-4">
                             <h4 class="text-yellow-400 font-semibold">David Brown★★★★★</h4>
-                            <p class="text-gray-400 text-sm">From Miami · 12 min ago</p>
+                            <p class="text-gray-400 text-sm">From Miami · 12 minutes ago</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-lg">"Perfect retirement entertainment! Gaming fun + pension supplement, $25 daily income 🏆"</p>
+                    <p class="text-blue-200 text-sm">"I downloaded BDRUMMY out of curiosity, recharged 100 BDT to become VIP, and since then I've been getting weekly bonuses every Monday and monthly bonuses every month. I've gained so much from this, and I really enjoy it!!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -790,10 +833,10 @@
                         <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face&auto=format" alt="James" class="w-12 h-12 rounded-full object-cover border-2 border-indigo-400">
                         <div class="ml-4">
                             <h4 class="text-yellow-400 font-semibold">James Davis★★★★★</h4>
-                            <p class="text-gray-400 text-sm">From Las Vegas · 15 min ago</p>
+                            <p class="text-gray-400 text-sm">From Las Vegas · 15 minutes ago</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-lg">"Wall Street stress relief! Gaming relaxation + earning money, $120 weekend income ⭐⭐⭐⭐⭐"</p>
+                    <p class="text-blue-200 text-sm">"BDRUMMY has a Super Ace leaderboard event where you can compete with real players for the first prize and win big rewards! Registration is free, which allowed me to enjoy the thrill and excitement of Slots Arena!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -801,10 +844,10 @@
                         <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face&auto=format" alt="Sarah" class="w-12 h-12 rounded-full object-cover border-2 border-purple-400">
                         <div class="ml-4">
                             <h4 class="text-yellow-400 font-semibold">Sarah Miller★★★★★</h4>
-                            <p class="text-gray-400 text-sm">From Seattle · 18 min ago</p>
+                            <p class="text-gray-400 text-sm">From Seattle · 18 minutes ago</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-lg">"Perfect side job for remote workers! Gaming during work breaks, +$400 monthly income 🔥🔥🔥"</p>
+                    <p class="text-blue-200 text-sm">"Daily tasks include Slots and Flight games, which make it easy to earn 2000 BDT daily. I also tell my friends to join BDRUMMY so they can achieve financial freedom too; it's truly a wonderful experience!!"</p>
                 </div>
             </div>
         </div>
@@ -812,37 +855,38 @@
 
     <!-- Floating bottom button -->
     <button id="Download_app" class="floating-button" >
-        <span  class="hidden md:inline">🎮 Play Now & Earn</span>
-        <span class="md:hidden">Download for free and enjoy</span>
+        <span  class="hidden md:inline">Download App Now</span>
+        <span class="md:hidden">Download App Now</span>
     </button>
-    
+
     <!-- Footer -->
     <footer class="pb-12 text-center relative z-10">
         <div class="glass-effect rounded-lg mx-4 py-8">
             <h3 class="text-2xl font-bold gradient-text mb-4">Join Our Gaming World</h3>
-            <p class="text-blue-200 mb-6">Experience the Most Exciting Gaming Adventures</p>
+            <p class="text-blue-200 mb-6">Experience the most exciting gaming adventure</p>
             <div class="text-sm text-gray-400">
                 © 2024 Game World | Making Games More Exciting
             </div>
         </div>
     </footer>
-    
+
     <script>
         function k2()
 		{
 		window.location.href="https://www.qq.com";
 		}
-        
-        // Language switcher functionality
-        function switchLanguage(page) {
-            window.location.href = page;
+
+        // Function to navigate to agent.html
+        function k8()
+        {
+            window.location.href="agenten.html";
         }
-        
+
         // Create particle effects
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 50;
-            
+
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
@@ -852,7 +896,7 @@
                 particlesContainer.appendChild(particle);
             }
         }
-        
+
         // Scroll animation observer
         function setupScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
@@ -866,16 +910,16 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
-            
-            // Observe all game cards
-            document.querySelectorAll('.game-card').forEach((card) => {
+
+            // Observe all game cards (excluding carousel)
+            document.querySelectorAll('.game-card:not(.carousel-wrapper)').forEach((card) => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
         }
-        
+
         // Dark mode support
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.documentElement.classList.add('dark');
@@ -887,14 +931,14 @@
                 document.documentElement.classList.remove('dark');
             }
         });
-        
+
         // Initialize after page load
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
             setupScrollAnimations();
             setupCommentsObserver();
         });
-        
+
         // Page scroll parallax effect (desktop only)
         window.addEventListener('scroll', () => {
             if (window.innerWidth > 768) { // Enable parallax only on desktop
@@ -904,51 +948,51 @@
                 parallax.style.transform = `translateY(${speed}px)`;
             }
         });
-        
+
         // Carousel functionality
         let currentSlide = 0;
         const totalSlides = 6;
-        
+
         function updateCarousel() {
             const track = document.getElementById('carouselTrack');
             const indicators = document.querySelectorAll('.carousel-indicator');
-            
+
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
+
             indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === currentSlide);
             });
         }
-        
+
         function nextSlide() {
             currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
         }
-        
+
         function prevSlide() {
             currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateCarousel();
         }
-        
+
         function goToSlide(index) {
             currentSlide = index;
             updateCarousel();
         }
-        
+
         // Auto carousel
         setInterval(nextSlide, 4000);
-        
+
         // User comment carousel functionality
         let currentComment = 0;
         const totalComments = 6;
         let commentsInterval;
-        
+
         function updateCommentCarousel() {
             const comments = document.querySelectorAll('.comment-item');
-            
+
             comments.forEach((comment, index) => {
                 comment.classList.remove('active', 'prev');
-                
+
                 if (index === currentComment) {
                     comment.classList.add('active');
                     // Add flash effect
@@ -961,20 +1005,20 @@
                 }
             });
         }
-        
+
         function nextComment() {
             currentComment = (currentComment + 1) % totalComments;
             updateCommentCarousel();
         }
-        
+
         function startCommentsCarousel() {
             // Show first comment immediately
             updateCommentCarousel();
-            
+
             // Switch to next comment every 3 seconds
             commentsInterval = setInterval(nextComment, 2500);
         }
-        
+
         // Observe comment area for viewport entry
         function setupCommentsObserver() {
             const commentsContainer = document.getElementById('commentsContainer');
@@ -988,10 +1032,9 @@
             }, {
                 threshold: 0.3
             });
-            
+
             observer.observe(commentsContainer);
         }
     </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"9e6b3b37d17c49c5b79591034f73ec0d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body>
+ </body>
 </html>
