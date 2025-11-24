@@ -521,54 +521,55 @@
             }
         }
 
-        /* Language Switcher Dropdown Styles */
-        .lang-dropdown {
-            position: relative;
-            display: inline-block;
+        /* Language Switcher Button Styles */
+        .lang-switcher-container {
+            position: absolute;
+            top: 4rem;
+            right: 1rem;
+            z-index: 50;
         }
 
-        .lang-select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
+        @media (min-width: 768px) {
+            .lang-switcher-container {
+                top: 8rem;
+            }
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-btn {
             background: rgba(30, 41, 59, 0.8);
             border: 1px solid rgba(59, 130, 246, 0.3);
             color: white;
-            padding: 0.3rem 1.5rem 0.3rem 0.5rem;
-            border-radius: 0.25rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 0.5rem;
             font-size: 0.75rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            min-height: 32px;
-            min-width: 90px;
             backdrop-filter: blur(10px);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 0.3rem center;
-            background-size: 0.875rem;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .lang-select:hover {
+        .lang-btn:hover {
             background-color: rgba(59, 130, 246, 0.3);
             border-color: rgba(59, 130, 246, 0.5);
             transform: scale(1.05);
         }
 
-        .lang-select:active {
+        .lang-btn:active {
             transform: scale(0.95);
         }
 
-        .lang-select:focus {
-            outline: none;
+        .lang-btn.active {
+            background: rgba(59, 130, 246, 0.5);
             border-color: rgba(59, 130, 246, 0.8);
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
-        }
-
-        .lang-select option {
-            background: #1e293b;
-            color: white;
-            padding: 0.5rem;
         }
 
         /* Hero stats compact design */
@@ -599,13 +600,11 @@
 
     <!-- Hero Background Section -->
     <section class="hero-bg flex items-center justify-center relative z-10">
-        <!-- Language Switcher Dropdown - 优化后向下移动 -->
-        <div class="absolute top-24 md:top-28 right-4 z-50">
-            <div class="lang-dropdown">
-                <select class="lang-select" onchange="switchLanguage(this.value)">
-                    <option value="index.html" selected>🇧🇩 বাংলা</option>
-                    <option value="en.html">🇺🇸 English</option>
-                </select>
+        <!-- Language Switcher Buttons - 右上角 -->
+        <div class="lang-switcher-container">
+            <div class="lang-switcher">
+                <a href="index.html" class="lang-btn active">🇧🇩 বাংলা</a>
+                <a href="en.html" class="lang-btn">🇺🇸 English</a>
             </div>
         </div>
     </section>
@@ -613,60 +612,87 @@
     <!-- Hero Content Section -->
     <section class="py-8 md:py-12 px-4 relative z-10 mt-3">
         <div class="w-full max-w-6xl mx-auto">
-            <div class="hero-content-card max-w-3xl mx-auto animate-slide-in-up">
-                <!-- Limited time banner -->
-                <div class="text-center mb-3">
-                    <div class="glass-effect rounded-full px-4 py-2 inline-block border border-red-400">
-                        <span class="text-red-400 font-bold text-xs md:text-sm">🔥 সীমিত নিবন্ধন - মাত্র ৪৮ ঘন্টা বাকি</span>
+            <!-- Three Feature Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <!-- Feature 1: দ্রুত রিচার্জ অভিজ্ঞতা -->
+                <div class="hero-content-card animate-slide-in-up">
+                    <div class="text-center mb-4">
+                        <div class="inline-block p-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full mb-3">
+                            <span class="text-4xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold gradient-text mb-4">
+                            দ্রুত রিচার্জ অভিজ্ঞতা
+                        </h3>
                     </div>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">3 সেকেন্ডে রিচার্জ</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">1-ক্লিক ডিপোজিট, নিরাপদ ও দ্রুত</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">পেমেন্ট সমর্থন: bKash / Nagad / Rocket / Upay</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Title -->
-                <h1 class="text-3xl md:text-5xl font-bold mb-2 gradient-text text-center">
-                    গেইম ওয়ার্ল্ড
-                </h1>
-                <p class="text-base md:text-lg mb-4 text-blue-200 text-center">
-                    অসীম গেমিং জগতের অন্বেষণ করুন
-                </p>
-
-                <!-- Compact stats pills -->
-                <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-4">
-                    <div class="stat-pill">
-                        <span class="label">গেমের সংখ্যা:</span>
-                        <span class="value">৫০+</span>
+                <!-- Feature 2: দ্রুত উত্তোলন অভিজ্ঞতা -->
+                <div class="hero-content-card animate-slide-in-up" style="animation-delay: 0.1s;">
+                    <div class="text-center mb-4">
+                        <div class="inline-block p-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full mb-3">
+                            <span class="text-4xl">💰</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold gradient-text mb-4">
+                            দ্রুত উত্তোলন অভিজ্ঞতা
+                        </h3>
                     </div>
-                    <div class="stat-pill">
-                        <span class="label">খেলোয়াড়:</span>
-                        <span class="value">২,০০,০০০+</span>
-                    </div>
-                    <div class="stat-pill">
-                        <span class="label">সন্তুষ্টি:</span>
-                        <span class="value">৯৮.৫%</span>
-                    </div>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">30 সেকেন্ডের মধ্যে উত্তোলন</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">ইনস্ট্যান্ট উইথড্রয়াল অনুমোদন</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">100% গ্যারান্টিযুক্ত পেআউট</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Main selling point -->
-                <div class="text-center mb-3">
-                    <span class="inline-block px-4 py-2 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/50 rounded-full text-yellow-400 font-semibold text-sm md:text-base">
-                        💰 গেমিং বিনোদন + সহজ আয়
-                    </span>
+                <!-- Feature 3: ওয়ার্ল্ড ক্লাস সিকিউরিটি -->
+                <div class="hero-content-card animate-slide-in-up" style="animation-delay: 0.2s;">
+                    <div class="text-center mb-4">
+                        <div class="inline-block p-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full mb-3">
+                            <span class="text-4xl">🔒</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold gradient-text mb-4">
+                            ওয়ার্ল্ড ক্লাস সিকিউরিটি
+                        </h3>
+                    </div>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">উন্নত ডেটা সুরক্ষা</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">বিশ্বস্ত ও সার্টিফায়েড প্ল্যাটফর্ম</span>
+                        </li>
+                        <li class="flex items-start text-blue-200">
+                            <span class="text-green-400 mr-2 mt-1 flex-shrink-0">✓</span>
+                            <span class="text-sm md:text-base">নিরাপদ পেমেন্ট ও দ্রুত প্রসেসিং</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Trust indicators -->
-                <div class="flex flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm text-gray-300">
-                    <div class="flex items-center">
-                        <span class="text-green-400 mr-1">✓</span>
-                        <span>তাৎক্ষণিক পেআউট</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-green-400 mr-1">✓</span>
-                        <span>নিরাপদ ও সুরক্ষিত</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="text-green-400 mr-1">✓</span>
-                        <span>শূন্য বিনিয়োগ</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -777,7 +803,7 @@
                             <p class="text-gray-400 text-sm">লস এঞ্জেলেস থেকে · ৫ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"আমি BDRUMMY–এর " ফ্রি ক্যাশ " ইভেন্টটি খুবই পছন্দ করি। প্রোমোশনের জন্য কোনো রিসোর্স না থাকলেও, ফ্রি ���্যাশ  খেলোয়াড়দের প্রচারের জন্য একটি WhatsApp লিংক দেয়, যার মাধ্যমে কমিশন অর্জন করা যায়। আমি প্রতিদিন 500 টাকা কমিশন আয় করতে পারি, যা সত্যিই বেশ লাভজনক। আমি এটিকে পুরোপুরি সমর্থন করি!!!"</p>
+                    <p class="text-blue-200 text-sm">"আমি BDRUMMY–এর " ফ্রি ক্যাশ " ইভেন্টটি খুবই পছন্দ করি। প্রোমোশনের জন্য কোনো রিসোর্স না থাকলেও, ফ্রি ক্যাশ  খেলোয়াড়দের প্রচারের জন্য একটি WhatsApp লিংক দেয়, যার মাধ্যমে কমিশন অর্জন করা যায়। আমি প্রতিদিন 500 টাকা কমিশন আয় করতে পারি, যা সত্যিই বেশ লাভজনক। আমি এটিকে পুরোপুরি সমর্থন করি!!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -810,7 +836,7 @@
                             <p class="text-gray-400 text-sm">লাস ভেগাস থেকে · ১৫ মিনিট আগে</p>
                         </div>
                     </div>
-                    <p class="text-blue-200 text-sm">"BDRUMMY-তে Super Ace লিড���রবোর্ড ইভেন্ট আছে, যেখানে আসল খেলোয়াড়দের সঙ্গে প্রথম পুরস্কারের জন্য প্রতিযোগিতা করা যায় এবং বড় অঙ্কের পুরস্কার জেতা যায়! রেজিস্ট্রেশন ফ্রি, যার ফলে আমি Slots Arena–র রোমাঞ্চ ও উত্তেজনা উপভোগ করতে পেরেছি!!"</p>
+                    <p class="text-blue-200 text-sm">"BDRUMMY-তে Super Ace লিডারবোর্ড ইভেন্ট আছে, যেখানে আসল খেলোয়াড়দের সঙ্গে প্রথম পুরস্কারের জন্য প্রতিযোগিতা করা যায় এবং বড় অঙ্কের পুরস্কার জেতা যায়! রেজিস্ট্রেশন ফ্রি, যার ফলে আমি Slots Arena–র রোমাঞ্চ ও উত্তেজনা উপভোগ করতে পেরেছি!!"</p>
                 </div>
 
                 <div class="comment-item">
@@ -830,7 +856,7 @@
     <!-- Floating bottom button -->
     <button id="Download_app" class="floating-button" >
         <span  class="hidden md:inline">🎮 এখনই খেলুন ও আয় করুন</span>
-        <span class="md:hidden">এখনই অ্যাপ ডাউনলোড করুন/</span>
+        <span class="md:hidden">এখনই অ্যাপ ডাউনলোড করুন</span>
     </button>
 
     <!-- Footer -->
@@ -854,11 +880,6 @@
         function k8()
         {
             window.location.href="agent.html";
-        }
-
-        // Language switcher functionality
-        function switchLanguage(page) {
-            window.location.href = page;
         }
 
         // Create particle effects
