@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Exclusive Market Intelligence Report</title>
+    <style>
+        :root {
+            --bg-dark: #0a0e1a;
+            --bg-card: #141824;
+            --primary-gold: #ffd700;
+            --accent-cyan: #00f0ff;
+            --text-light: #e8eaf0;
+            --text-muted: #8891a8;
+            --danger-red: #ff3366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 30%, rgba(0, 240, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+            animation: bgPulse 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, var(--danger-red), #ff6b35);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 4px 15px rgba(255, 51, 102, 0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            aspect-ratio: 9 / 4;
+            margin: 0 auto 24px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow:
+                0 0 40px rgba(0, 240, 255, 0.3),
+                0 0 80px rgba(255, 215, 0, 0.2),
+                inset 0 0 20px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            animation: imageFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes imageFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        h1 {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .description {
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .stats {
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-number {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--primary-gold);
+            margin-bottom: 4px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .stats-label {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timer {
+            background: linear-gradient(135deg, rgba(20, 24, 36, 0.9), rgba(30, 34, 46, 0.9));
+            border: 2px solid var(--danger-red);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 32px;
+            box-shadow:
+                0 8px 32px rgba(255, 51, 102, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .timer-label {
+            text-align: center;
+            font-size: 13px;
+            color: var(--danger-red);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .timer-unit {
+            background: rgba(255, 51, 102, 0.1);
+            border: 1px solid rgba(255, 51, 102, 0.3);
+            border-radius: 12px;
+            padding: 12px 8px;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        .timer-value {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--primary-gold);
+            line-height: 1;
+            display: block;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .timer-text {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-gold), #ffed4e);
+            color: #0a0e1a;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow:
+                0 8px 24px rgba(255, 215, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+            box-shadow:
+                0 4px 12px rgba(255, 215, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-height: 700px) {
+            .container {
+                padding: 16px;
+            }
+
+            .hero-image {
+                max-width: 320px;
+                margin-bottom: 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+
+            .description {
+                font-size: 15px;
+                margin-bottom: 24px;
+            }
+
+            .timer {
+                padding: 16px;
+                margin-bottom: 24px;
+            }
+
+            .timer-value {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: center;">
+            <span class="badge">⚡ AI Alert</span>
+        </div>
+
+        <div class="hero-image">
+            <img src="img/1.jpg" alt="Market Intelligence" onerror="this.src='https://pfst.cf2.poecdn.net/base/image/cd9e87f44da0f16dfbc602febbcfe57189c5da7b08b7c2c8ad490432958d5b55?w=340&h=340'">
+        </div>
+
+        <h1>Rare Market Pattern Detected</h1>
+
+        <p class="description">
+            Our AI system just discovered a rare market pattern that could trigger major shifts soon. Get the full report before it goes public — free for a limited time.
+        </p>
+
+        <div class="stats">
+            <div class="stats-number">12,811</div>
+            <div class="stats-label">Already Claimed</div>
+        </div>
+
+        <div class="timer">
+            <div class="timer-label">⏰ Offer Expires In</div>
+            <div class="timer-display">
+                <div class="timer-unit">
+                    <span class="timer-value" id="minutes">30</span>
+                    <span class="timer-text">Min</span>
+                </div>
+                <div class="timer-unit">
+                    <span class="timer-value" id="seconds">00</span>
+                    <span class="timer-text">Sec</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="cta-button" onclick="k2()">
+            <span class="cta-text">🎁 Claim Free Report</span>
+        </button>
+    </div>
+
+    <script>
+        // 30-minute countdown timer
+        let totalSeconds = 30 * 60; // 30 minutes in seconds
+
+        function updateTimer() {
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            if (totalSeconds > 0) {
+                totalSeconds--;
+            } else {
+                // Timer expired - restart for demo purposes
+                totalSeconds = 30 * 60;
+            }
+        }
+
+        // Update timer every second
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Initial call
+
+        // CTA button action - k2 method
+        function k2() {
+            window.location.href = 'https://www.qq.com';
+        }
+    </script>
+</body>
+</html>
