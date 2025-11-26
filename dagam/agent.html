@@ -6,6 +6,61 @@
     <title>BDRUMMY - রেফার এন্ড আর্ন</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
+<!--adjust接口start-->
+<script>
+  // 创建 URLSearchParams 对象
+  const urlParams = new URLSearchParams(window.location.search);
+  let p0 = urlParams.get('p0');
+  let p1 = urlParams.get('p1');
+  let p2 = urlParams.get('p2');
+  let p3 = urlParams.get('p3');
+  let p4 = urlParams.get('p4');
+  let p5 = urlParams.get('p5');
+  let p6 = urlParams.get('p6');
+  let fbclid = urlParams.get('fbclid') || 'null';
+  let fbpid = getFbpid();
+  let adjhref = "https://app.adjust.com/";
+  let downurl = encodeURI("https://www.qq.com"); // 最终下载链接
+
+  function buildUrl(a, b, c, d, e, f, g) {
+    return a + "?" + "campaign=" + b + "(" + c + ")" + "&adgroup=" + d + "(" + e + ")" + "&creative=" + f + "(" + g + ")";
+  }
+
+  function getFbpid() {
+    let Pid = document.cookie.match(/(^|;) ?_fbp=([^;]*)(;|$)/);
+    return Pid ? Pid[2] : 'null';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // 选择所有下载按钮
+    var buttons = document.querySelectorAll('[id^="Download_app_"]');
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        let downloadApk = adjhref + buildUrl(p0, p1, p2, p3, p4, p5, p6);
+        
+        downloadApk += fbclid === 'null' ? "&fbclid=" : "&fbclid=" + fbclid;
+        downloadApk += fbpid === 'null' ? "&fbpid=" : "&fbpid=" + fbpid;
+        downloadApk += "&redirect=" + downurl;
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log("Adjust tracked");
+          }
+        }
+        xhr.open('GET', downloadApk, true);
+        xhr.send();
+
+        // 触发下载
+        window.location.href = downurl;
+      });
+    });
+  });
+</script>
+<!--adjust接口end-->
+
+  
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -282,11 +337,135 @@
             transform: scale(1.05);
             box-shadow: 0 15px 50px rgba(59, 130, 246, 0.5);
         }
+
+        /* 独立的悬浮下载按钮样式 */
+        .download-float-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #dc2626 100%);
+            color: white;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 20px;
+            border: 3px solid rgba(251, 191, 36, 0.5);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 32px rgba(239, 68, 68, 0.6),
+                        0 0 0 0 rgba(251, 191, 36, 0.7);
+            animation: downloadBounce 2s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        .download-float-btn:hover {
+            transform: translateX(-50%) scale(1.1) translateY(-5px);
+            box-shadow: 0 12px 48px rgba(239, 68, 68, 0.8),
+                        0 0 60px rgba(251, 191, 36, 0.6);
+            border-color: rgba(251, 191, 36, 1);
+        }
+
+        .download-float-btn:active {
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        @keyframes downloadBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-12px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-6px);
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .download-float-btn {
+                padding: 14px 32px;
+                font-size: 16px;
+                bottom: 15px;
+            }
+        }
+
+        /* 右上角下载按钮独立样式 */
+        .top-right-download-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 9998;
+            background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 14px;
+            border: 2px solid rgba(16, 185, 129, 0.6);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.5),
+                        0 0 0 0 rgba(16, 185, 129, 0.4);
+            animation: topRightPulse 3s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            backdrop-filter: blur(10px);
+        }
+
+        .top-right-download-btn:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 8px 28px rgba(16, 185, 129, 0.7),
+                        0 0 40px rgba(16, 185, 129, 0.5);
+            border-color: rgba(16, 185, 129, 1);
+            background: linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%);
+        }
+
+        .top-right-download-btn:active {
+            transform: scale(0.98);
+        }
+
+        @keyframes topRightPulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(16, 185, 129, 0.5),
+                            0 0 0 0 rgba(16, 185, 129, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(16, 185, 129, 0.5),
+                            0 0 0 10px rgba(16, 185, 129, 0);
+            }
+        }
+
+        /* 响应式设计 - 右上角按钮 */
+        @media (max-width: 768px) {
+            .top-right-download-btn {
+                top: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+        }
+
+        /* 超小屏幕优化 */
+        @media (max-width: 480px) {
+            .top-right-download-btn {
+                padding: 8px 16px;
+                font-size: 11px;
+            }
+        }
     </style>
 </head>
-<body class="text-white">
+<body class="text-white" style="position: relative;">
     <!-- Particle background -->
     <div class="particles" id="particles"></div>
+
+    <!-- 右上角下载按钮 -->
+    <button class="top-right-download-btn" id="Download_app_2"> এখনই ডাউনলোড করতে ক্লিক করুন</button>
 
     <!-- Hero Section -->
     <section class="hero-bg flex items-center justify-center relative z-10 py-20 px-4">
@@ -399,7 +578,7 @@
 
             <!-- Feature Image -->
             <div class="max-w-2xl mx-auto mb-3 md:mb-12">
-                <img src="imgicon/ben_agents.png" alt="Agent Levels" class="w-full feature-image">
+                <img src="imgicon/en/1en_agents.png" alt="Agent Levels" class="w-full feature-image">
             </div>
         </div>
     </section>
@@ -506,7 +685,7 @@
 
             <!-- Feature Image -->
             <div class="max-w-2xl mx-auto">
-                <img src="imgicon/ben_fcashbd.png" alt="Commission Calculation" class="w-full feature-image">
+                <img src="imgicon/en/2fcashbd.png" alt="Commission Calculation" class="w-full feature-image">
             </div>
         </div>
     </section>
@@ -635,7 +814,7 @@
 
             <!-- Feature Image -->
             <div class="max-w-2xl mx-auto">
-                <img src="imgicon/ben_myst.png" alt="VIP Bonus" class="w-full feature-image">
+                <img src="imgicon/en/3myst1200.png" alt="VIP Bonus" class="w-full feature-image">
             </div>
         </div>
     </section>
@@ -675,7 +854,7 @@
 
             <!-- Feature Image -->
             <div class="max-w-2xl mx-auto">
-                <img src="imgicon/ben_7daybd.png" alt="Mystery Bonus" class="w-full feature-image">
+                <img src="imgicon/en/5en_7daybd.png" alt="Mystery Bonus" class="w-full feature-image">
             </div>
         </div>
     </section>
@@ -698,7 +877,7 @@
                 </p>
   <!-- Feature Image -->
             <div class="max-w-2xl mx-auto">
-                <img src="imgicon/tablebd.png" alt="Mystery Bonus" class="w-full feature-image">
+                <img src="imgicon/en/en_tablebd.png" alt="Mystery Bonus" class="w-full feature-image">
             </div>
 
 
@@ -716,7 +895,7 @@
 
             <!-- Feature Image -->
             <div class="max-w-2xl mx-auto">
-                <img src="imgicon/pcode_icon.png" alt="First Deposit" class="w-full feature-image">
+                <img src="imgicon/en/6EN_PCODE.png" alt="First Deposit" class="w-full feature-image">
             </div>
         </div>
     </section>
@@ -830,7 +1009,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-4 text-center relative z-10">
+    <footer class="py-12 px-4 text-center relative z-10" style="padding-bottom: 100px;">
         <div class="glass-effect rounded-lg mx-4 py-8 max-w-4xl mx-auto">
             <h3 class="text-2xl font-bold gradient-text mb-4">BDRUMMY</h3>
             <p class="text-blue-200 mb-6">আপনার বিশ্বস্ত গেমিং ও আয়ের প্ল্যাটফর্ম</p>
@@ -840,7 +1019,15 @@
         </div>
     </footer>
 
+    <!-- 悬浮下载按钮 -->
+    <button class="download-float-btn" id="Download_app_1" > এখনই ডাউনলোড করতে ক্লিক করুন</button>
+
     <script>
+        // 跳转函数
+        function a2() {
+            
+        }
+
         // Create particle effects
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
