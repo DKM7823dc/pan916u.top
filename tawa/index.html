@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
- 
+
 	
-       <script>
+
+    <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -21,50 +21,50 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-
 	
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>从透析椅到砂拉越河畔：古晋69岁阿叔的肾病重生记</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
-        
+
         body {
             font-family: 'Noto Sans SC', sans-serif;
         }
-        
+
         .gradient-bg {
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         }
-        
+
         .text-shadow {
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
+
         .card-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-        
+
         .pulse-btn {
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        
+
         /* 深海蓝色配色方案 */
         .deep-blue-primary { background-color: #1e3a8a; }
         .deep-blue-secondary { background-color: #1e40af; }
         .golden-yellow { background-color: #fbbf24; }
         .golden-yellow-light { background-color: #fef3c7; }
-        
+
         /* 手机端悬浮按钮 */
         .mobile-floating-btn {
             position: fixed;
@@ -74,18 +74,18 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
             z-index: 1000;
             animation: breathe 2s ease-in-out infinite;
         }
-        
+
         @keyframes breathe {
-            0%, 100% { 
+            0%, 100% {
                 transform: translateX(-50%) scale(1);
                 box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
             }
-            50% { 
+            50% {
                 transform: translateX(-50%) scale(1.1);
                 box-shadow: 0 12px 30px rgba(251, 191, 36, 0.5);
             }
         }
-        
+
         /* 手机端图片优化 - 适当留白保持美观 */
         @media (max-width: 768px) {
             .mobile-first-image,
@@ -96,13 +96,13 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                 border-radius: 8px !important;
                 max-width: none !important;
             }
-            
+
             .mobile-container {
                 padding-left: 0.75rem;
                 padding-right: 0.75rem;
             }
         }
-        
+
         .quote-mark {
             font-size: 4rem;
             line-height: 1;
@@ -114,12 +114,49 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
             aspect-ratio: 3/4;
             min-height: 300px;
         }
-        
+
         @media (min-width: 768px) {
             .hero-image {
                 aspect-ratio: 4/5;
                 min-height: 350px;
             }
+        }
+
+        /* WhatsApp 联系框样式 */
+        .whatsapp-contact-box {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            border: 3px solid #fbbf24;
+            animation: highlight-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes highlight-pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(37, 211, 102, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(251, 191, 36, 0.8), 0 0 60px rgba(37, 211, 102, 0.5);
+            }
+        }
+
+        .copy-btn {
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+
+        .copied-tooltip {
+            animation: fadeInOut 2s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
         }
     </style>
 </head>
@@ -161,8 +198,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                         </div>
                     </div>
                     <div class="md:w-1/3 w-full order-1 md:order-2">
-                        <img src="img/1.jpg" 
-                             alt="黄文发先生" 
+                        <img src="img/1.jpg"
+                             alt="黄文发先生"
                              class="w-full object-cover rounded-xl shadow-lg">
                     </div>
                 </div>
@@ -188,8 +225,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                         </p>
                     </div>
                      <div class="text-center mb-6">
-                        <img src="img/2.jpg" 
-                             alt="治疗过程" 
+                        <img src="img/2.jpg"
+                             alt="治疗过程"
                              class="w-48 object-cover rounded-lg mx-auto shadow-lg mobile-full-image">
                     </div>
                     <!-- 尝试过的方法 -->
@@ -202,13 +239,52 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                 </div>
             </div>
 
+            <!-- WhatsApp 联系框 1 (中部) -->
+            <div class="whatsapp-contact-box p-8 rounded-2xl mb-12 text-white">
+                <div class="text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">WhatsApp 直接联系医师</h3>
+                    <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl mb-4">
+                        <p class="text-3xl md:text-4xl font-bold mb-2" id="phone-number-1">+447933473917</p>
+                        <p class="text-sm mb-4 opacity-90">点击号码即可跳转 WhatsApp</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="https://wa.me/447933473917"
+                               target="_blank"
+                               class="bg-white text-green-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-all inline-flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                直接打开 WhatsApp
+                            </a>
+                            <button onclick="copyPhoneNumber('phone-number-1', 'copy-btn-1')"
+                                    id="copy-btn-1"
+                                    class="copy-btn bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 transition-all inline-flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                                复制号码
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-400 text-blue-900 p-4 rounded-lg">
+                        <p class="font-bold text-lg mb-2">🎁 特别福利</p>
+                        <p class="text-sm">若无法跳转，请手动复制号码添加 WhatsApp<br>
+                        主动通过复制号码添加的患者，添加之后主动发消息，可以额外领取价值不菲的<span class="font-bold">护肾大礼包</span>！</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Treatment Journey -->
             <div class="mb-12">
                 <h3 class="text-2xl font-bold mb-6 text-center text-blue-800">转机：遇见刘医师</h3>
                 <div class="bg-blue-50 dark:bg-blue-900 p-8 rounded-2xl mobile-container">
                     <div class="text-center mb-6">
-                        <img src="img/3.jpg" 
-                             alt="治疗过程" 
+                        <img src="img/3.jpg"
+                             alt="治疗过程"
                              class="w-48 object-cover rounded-lg mx-auto shadow-lg mobile-full-image">
                     </div>
                     <p class="text-lg leading-relaxed mb-6">
@@ -217,7 +293,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-inner">
                         <h4 class="font-semibold mb-4 text-blue-800">刘医师的专业建议：</h4>
                         <p class="mb-4">
-                            加上WS后，我跟刘女医师絮絮叨叨说了自己的苦："医师，我现在连穿袜子都要老伴帮，夜里痒得睡不着，透析完浑身软得像没骨头……"她没说晦涩的术语，反而温柔地问："阿叔，Satok巴刹的空心菜还爱吃不？最近有没有喝到合口味的椰浆？"后来约了第一次见面，她拿出几盒"固元益肾贴"，笑着说："这是外用穴位贴，睡前贴腰上，就像给肾捂了个暖水袋，先让它'缓口气'，不清楚怎么贴的话，我发图到你WS上。"
+                            加上WS后，我跟刘女医师絮絮叨叨说了自己的苦："医师，我现在连穿袜子都要老伴帮，夜里痒得睡不着，透析完浑身软得像没骨头……"她没说晦涩的术语，反而温柔地问："阿叔，Satok巴刹的空心菜还���吃不？最近有没有喝到合口味的椰浆？"后来约了第一次见面，她拿出几盒"固元益肾贴"，笑着说："这是外用穴位贴，睡前贴腰上，就像给肾捂了个暖水袋，先让它'缓口气'，不清楚怎么贴的话，我发图到你WS上。"
                         </p>
                     </div>
                 </div>
@@ -230,7 +306,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <p class="text-lg leading-relaxed mb-6">
                         我抱着"死马当活马医"的心态试了，没想到变化来得比我想的快：
                     </p>
-                    
+
                     <div class="space-y-6">
                         <div class="bg-white dark:bg-gray-800 p-6 rounded-xl card-hover">
                             <div class="flex items-center mb-3">
@@ -239,7 +315,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                             </div>
                             <p>腰上的凉气散了，暖暖的很舒服，夜里居然能睡够5个小时，不用再抓着腿熬到天亮</p>
                         </div>
-                        
+
                         <div class="bg-white dark:bg-gray-800 p-6 rounded-xl card-hover">
                             <div class="flex items-center mb-3">
                                 <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">7</div>
@@ -247,7 +323,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                             </div>
                             <p>水肿消了些，腿能塞进自己的拖鞋了，早上能自己坐起来叠被子，不用再喊老伴帮忙</p>
                         </div>
-                        
+
                         <div class="bg-white dark:bg-gray-800 p-6 rounded-xl card-hover">
                             <div class="flex items-center mb-3">
                                 <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mr-4">10</div>
@@ -256,7 +332,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                             <p>我慢慢走到楼下的咖啡店，跟老友们喝了半杯kopi O——要知道，之前我连走到门口都要歇两次，更别说坐下来聊天了</p>
                         </div>
                     </div>
-                    
+
                     <!-- 刘医师的贴心服务 -->
                     <div class="mt-8 bg-blue-100 dark:bg-blue-800 p-6 rounded-lg">
                         <h4 class="font-semibold mb-3 text-blue-800 dark:text-blue-200">刘医师的贴心指导：</h4>
@@ -274,8 +350,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
             <div class="mb-12">
                 <h3 class="text-2xl font-bold mb-6 text-center text-blue-800">医学检查结果</h3>
 				 <div class="text-center mb-6">
-                        <img src="img/4.jpg" 
-                             alt="治疗过程" 
+                        <img src="img/4.jpg"
+                             alt="治疗过程"
                              class="w-48 object-cover rounded-lg mx-auto shadow-lg mobile-full-image">
                     </div>
                 <div class="bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900 dark:to-green-900 p-8 rounded-2xl">
@@ -289,7 +365,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                             老伴也跟着改了食谱：早上煮番薯粥配kuih lapis（千层糕），中午炒空心菜配清蒸鱼，傍晚陪我去砂拉越河边走一小段——我还会把每天的状态拍个小视频发给刘医师，比如"今天走了20分钟没歇""今天吃了两颗山竹，很甜"，她偶尔会点赞，回复一句"阿叔状态越来越好，继续坚持，咱们慢慢把肾'养'回来"。
                         </p>
                     </div>
-                    
+
                     <div class="grid md:grid-cols-3 gap-6 text-center mb-8">
                         <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
                             <div class="text-3xl font-bold text-red-500 mb-2">13</div>
@@ -307,7 +383,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                             <div class="text-xs">肾小球滤过率</div>
                         </div>
                     </div>
-                    
+
                     <!-- 两个月后的检查结果 -->
                     <div class="bg-yellow-100 dark:bg-yellow-800 p-6 rounded-lg mb-6">
                         <h4 class="font-semibold mb-3 text-yellow-800 dark:text-yellow-200">两个月后的惊喜：</h4>
@@ -315,7 +391,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                             两个月后去复查，医生看着报告愣了半天，说："黄叔，你的肾小球滤过率升到26了！尿量也正常了，水肿基本消了！"我以为自己听错了，让医生再念一遍，直到看到报告上的数字，眼泪才忍不住掉下来——这意味着，我不用再像以前那样频繁跑医院，甚至能慢慢减少透析次数了！我第一时间把报告拍给刘女医师，她回复："恭喜阿叔！你看，坚持就有效果，咱们继续调，争取早点摆脱透析。"
                         </p>
                     </div>
-                    
+
                     <div class="text-center">
                         <div class="bg-green-100 dark:bg-green-800 p-4 rounded-lg">
                             <p class="text-green-800 dark:text-green-200 font-bold text-lg">
@@ -327,11 +403,50 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                         </div>
                     </div>
 					<div class="text-center mb-6">
-                        <img src="img/4.jpg" 
-                             alt="治疗过程" 
+                        <img src="img/4.jpg"
+                             alt="治疗过程"
                              class="w-48 object-cover rounded-lg mx-auto shadow-lg mobile-full-image">
                     </div>
-					
+
+                </div>
+            </div>
+
+            <!-- WhatsApp 联系框 2 (中下部) -->
+            <div class="whatsapp-contact-box p-8 rounded-2xl mb-12 text-white">
+                <div class="text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">WhatsApp 直接联系医师</h3>
+                    <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl mb-4">
+                        <p class="text-3xl md:text-4xl font-bold mb-2" id="phone-number-2">+447933473917</p>
+                        <p class="text-sm mb-4 opacity-90">点击号码即可跳转 WhatsApp</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="https://wa.me/447933473917"
+                               target="_blank"
+                               class="bg-white text-green-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-all inline-flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                直接打开 WhatsApp
+                            </a>
+                            <button onclick="copyPhoneNumber('phone-number-2', 'copy-btn-2')"
+                                    id="copy-btn-2"
+                                    class="copy-btn bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 transition-all inline-flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                                复制号码
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-400 text-blue-900 p-4 rounded-lg">
+                        <p class="font-bold text-lg mb-2">🎁 特别福利</p>
+                        <p class="text-sm">若无法跳转，请手动复制号码添加 WhatsApp<br>
+                        主动通过复制号码添加的患者，添加之后主动发消息，可以额外领取价值不菲的<span class="font-bold">护肾大礼包</span>！</p>
+                    </div>
                 </div>
             </div>
 
@@ -342,7 +457,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <p class="text-lg leading-relaxed mb-6 text-gray-700 dark:text-gray-300">
                         现在的我，早没了以前的狼狈：
                     </p>
-                    
+
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-3">
                             <div class="flex items-center space-x-3">
@@ -373,7 +488,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="mt-6 p-4 bg-yellow-200 dark:bg-yellow-700 rounded-lg">
                         <p class="text-yellow-800 dark:text-yellow-200 italic text-center">
                             "夜里一觉能睡到天亮，再也不用抓着腿熬"——这些在以前看来"不可能"的事，现在都成了日常。
@@ -408,8 +523,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <!-- 评论1 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/a1.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/a1.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">李**珍</p>
@@ -424,8 +539,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <!-- 评论2 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/a2.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/a2.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">陈**强</p>
@@ -440,8 +555,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <!-- 评论3 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/a3.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/a3.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">王**华</p>
@@ -456,8 +571,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <!-- 评论4 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/a4.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/a4.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">张**国</p>
@@ -472,8 +587,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <!-- 评论5 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/a5.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/a5.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">林**芬</p>
@@ -488,8 +603,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <!-- 评论6 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/a6.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/a6.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">刘**祥</p>
@@ -504,8 +619,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                     <!-- 评论7 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/a7.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/a7.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">吴**梅</p>
@@ -520,8 +635,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
 					   <!-- 评论7 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/s1.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/s1.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">赵**强</p>
@@ -536,8 +651,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
 					   <!-- 评论7 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/s2.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/s2.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">陈**杰</p>
@@ -552,8 +667,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
 					   <!-- 评论7 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/s3.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/s3.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">张**伟</p>
@@ -568,8 +683,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
 					   <!-- 评论7 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/s4.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/s4.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">王**芳</p>
@@ -584,8 +699,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
 					   <!-- 评论7 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/s5.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/s5.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">黄**丽 </p>
@@ -599,8 +714,8 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
    <!-- 评论7 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/s6.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/s6.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">刘**婷</p>
@@ -612,12 +727,12 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                         </p>
                     </div>
 
-					
+
                     <!-- 评论8 -->
                     <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
                         <div class="flex items-center mb-4">
-                            <img src="img/a8.jpg" 
-                                 alt="用户头像" 
+                            <img src="img/a8.jpg"
+                                 alt="用户头像"
                                  class="w-12 h-12 rounded-full object-cover mr-4">
                             <div>
                                 <p class="font-semibold text-gray-800 dark:text-gray-200">黄**明</p>
@@ -641,17 +756,51 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
                 <p class="text-lg leading-relaxed mb-6">
                     要是你也正被肾病折磨——水肿不消、乏力没劲儿、夜里痒得睡不着，或者透析得快撑不下去了，不妨试着联系刘医师，像我一样跟她说说自己的情况。她很温柔，会耐心听你讲，还会根据你的情况给建议。
                 </p>
-				<!--
-                <div class="bg-white/10 p-6 rounded-xl mb-6"> 
-                    <p class="text-xl font-bold">刘医师 WS：601163755239</p>
-                </div>
-				-->
                 <p class="text-lg">
                     记住，别放弃，砂拉越河的水还在流，Satok巴刹的菜还等着我们去挑，好起来的日子，说不定就在前面等着呢！
                 </p>
             </div>
-            
-            <button onclick="kb2()" 
+
+            <!-- WhatsApp 联系框 3 (底部) -->
+            <div class="whatsapp-contact-box p-8 rounded-2xl mb-8 text-white max-w-3xl mx-auto">
+                <div class="text-center">
+                    <div class="mb-4">
+                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">WhatsApp 直接联系医师</h3>
+                    <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl mb-4">
+                        <p class="text-3xl md:text-4xl font-bold mb-2" id="phone-number-3">+447933473917</p>
+                        <p class="text-sm mb-4 opacity-90">点击号码即可跳转 WhatsApp</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="https://wa.me/447933473917"
+                               target="_blank"
+                               class="bg-white text-green-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition-all inline-flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                直接打开 WhatsApp
+                            </a>
+                            <button onclick="copyPhoneNumber('phone-number-3', 'copy-btn-3')"
+                                    id="copy-btn-3"
+                                    class="copy-btn bg-yellow-400 text-blue-900 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 transition-all inline-flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                                复制号码
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-400 text-blue-900 p-4 rounded-lg">
+                        <p class="font-bold text-lg mb-2">🎁 特别福利</p>
+                        <p class="text-sm">若无法跳转，请手动复制号码添加 WhatsApp<br>
+                        主动通过复制号码添加的患者，添加之后主动发消息，可以额外领取价值不菲的<span class="font-bold">护肾大礼包</span>！</p>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="kb2()"
                     class="golden-yellow text-blue-900 px-12 py-4 rounded-full text-xl font-bold hover:bg-yellow-300 transition-all duration-300 pulse-btn shadow-2xl">
                点击添加WS，专业医师在线一对一咨询
             </button>
@@ -660,7 +809,7 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
 
     <!-- Mobile Floating Button -->
     <div class="block md:hidden">
-        <button onclick="kb2()" 
+        <button onclick="kb2()"
                 class="mobile-floating-btn golden-yellow text-blue-900 px-8 py-3 rounded-full text-lg font-bold shadow-2xl">
             联系刘医师
         </button>
@@ -684,10 +833,66 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
             }
         });
 
+        // Copy phone number function
+        function copyPhoneNumber(elementId, buttonId) {
+            const phoneNumber = document.getElementById(elementId).textContent;
+            const button = document.getElementById(buttonId);
+
+            // Create a temporary textarea to copy the text
+            const textarea = document.createElement('textarea');
+            textarea.value = phoneNumber;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                document.execCommand('copy');
+
+                // Change button text temporarily
+                const originalHTML = button.innerHTML;
+                button.innerHTML = `
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    已复制！
+                `;
+                button.classList.add('bg-green-500', 'text-white');
+                button.classList.remove('bg-yellow-400', 'text-blue-900');
+
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                    button.classList.remove('bg-green-500', 'text-white');
+                    button.classList.add('bg-yellow-400', 'text-blue-900');
+                }, 2000);
+            } catch (err) {
+                console.error('复制失败:', err);
+            }
+
+            document.body.removeChild(textarea);
+        }
+
         // CTA Button Action
-     
-  
-	
+        function kb2() {
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'AddToCart');
+                fbq('track', 'Purchase');
+                fbq('track', 'Contact');
+            }
+
+            // 定义两个链接
+            const links = [
+                'https://wa.me/601160621761?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E5%92%A8%E8%AF%A2%E4%B8%80%E4%B8%8B%E4%BD%A0%E4%BB%AC%E4%B8%AD%E5%8C%BB%E6%98%AF%E5%A6%82%E4%BD%95%E6%B2%BB%E7%96%97%E8%82%BE%E7%97%85%E7%9A%84%EF%BC%9F'
+            ];
+
+            // 随机选择一个链接
+            const randomLink = links[Math.floor(Math.random() * links.length)];
+
+            // 打开随机链接
+            window.open(randomLink, '_blank');
+        }
+
         // Smooth scroll for better UX
         document.addEventListener('DOMContentLoaded', function() {
             // Add scroll animations
@@ -715,48 +920,6 @@ src="https://www.facebook.com/tr?id=1511970569948325&ev=PageView&noscript=1"
         });
     </script>
 
- <script>
-    function kb2() { 
-        fbq('track', 'AddToCart');
-        fbq('track', 'Purchase');
- fbq('track', 'Contact');
-        // 定义两个链接
-        const links = [
-            'https://wa.me/601160621761?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E5%92%A8%E8%AF%A2%E4%B8%80%E4%B8%8B%E4%BD%A0%E4%BB%AC%E4%B8%AD%E5%8C%BB%E6%98%AF%E5%A6%82%E4%BD%95%E6%B2%BB%E7%96%97%E8%82%BE%E7%97%85%E7%9A%84%EF%BC%9F'
-      
-        ];
-
-        // 随机选择一个链接
-        const randomLink = links[Math.floor(Math.random() * links.length)];
-
-        // 打开随机链接
-        window.open(randomLink, '_blank');
-    } 
-</script>
-
-	
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"9e6b3b37d17c49c5b79591034f73ec0d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
