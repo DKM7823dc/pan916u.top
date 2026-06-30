@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支援制度サポートセンター</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-green': '#289d38',
+                        'brand-red': '#cc2b2b',
+                        'brand-bg': '#f8f9f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #e5e7eb; }
+        .page-container { max-width: 500px; margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .custom-shadow { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+<div class="page-container relative">
+    <header class="flex justify-between items-center px-4 py-3 border-b">
+        <div class="flex items-center gap-2">
+            <div class="w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center text-white font-bold text-xs">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+            <span class="font-bold text-sm">支援制度サポートセンター</span>
+        </div>
+        <button class="text-2xl text-gray-800">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <section class="px-4 pt-6 pb-2 relative">
+        <div class="inline-block bg-gray-100 rounded-full px-4 py-1 text-xs font-bold mb-4 border border-gray-200">
+            あなたが利用できる支援制度を<span class="text-brand-green">無料</span>で确认
+        </div>
+        <h2 class="text-brand-red font-bold text-sm mb-1 tracking-wider">知らないと损するかもしれません</h2>
+        <h1 class="text-2xl font-black leading-tight mb-4 text-gray-900">
+            あなたが利用できる<br>
+            <span class="text-brand-green text-3xl">支援制度を無料で确认</span>
+        </h1>
+
+        <ul class="text-sm font-bold space-y-2 mb-6">
+            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-brand-green text-lg"></i> 受给できる可能性を無料で诊断</li>
+            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-brand-green text-lg"></i> 复杂的な申请手続きを彻底サポート</li>
+            <li class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-brand-green text-lg"></i> 受给まで完全無料でサポート</li>
+        </ul>
+
+        <div class="relative w-full h-64 bg-gray-100 rounded-lg mb-6 overflow-hidden flex items-center justify-center">
+            <img src="img/1.jpg" alt="支援制度を無料で确认" class="absolute inset-0 w-full h-full object-cover">
+            
+            <div class="absolute bottom-2 right-2 bg-gradient-to-b from-yellow-300 to-yellow-500 rounded-full w-28 h-28 flex flex-col items-center justify-center border-4 border-white custom-shadow rotate-12 z-10">
+                <span class="text-xs font-bold text-red-700">サポート実績</span>
+                <span class="text-xl font-black text-red-700 leading-none my-1">20,000<span class="text-sm">件</span></span>
+                <span class="text-xs font-bold text-red-700">突破!</span>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <p class="text-brand-green font-bold text-sm mb-2">＼ まずはLINEでお気軽にご相谈ください ／</p>
+            <a href="#" class="block bg-brand-green text-white rounded-full py-4 px-6 font-bold text-lg relative custom-shadow hover:bg-green-700 transition">
+                <i class="fa-brands fa-line text-2xl absolute left-6 top-1/2 -translate-y-1/2"></i>
+                LINEで免费诊断を受ける
+                <i class="fa-solid fa-chevron-right absolute right-6 top-1/2 -translate-y-1/2 bg-white text-brand-green rounded-full w-6 h-6 flex items-center justify-center text-sm"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="flex justify-between px-4 py-6 border-b border-gray-100">
+        <div class="flex items-start gap-2 w-1/3">
+            <i class="fa-solid fa-hand-holding-dollar text-brand-green text-2xl mt-1"></i>
+            <div>
+                <p class="font-bold text-xs">完全免费</p>
+                <p class="text-[10px] text-gray-500 mt-1 leading-tight">料金は一切かかりません</p>
+            </div>
+        </div>
+        <div class="flex items-start gap-2 w-1/3">
+            <i class="fa-solid fa-stopwatch text-brand-green text-2xl mt-1"></i>
+            <div>
+                <p class="font-bold text-xs">最短当日回答</p>
+                <p class="text-[10px] text-gray-500 mt-1 leading-tight">最短当日に回答します</p>
+            </div>
+        </div>
+        <div class="flex items-start gap-2 w-1/3">
+            <i class="fa-solid fa-lock text-brand-green text-2xl mt-1"></i>
+            <div>
+                <p class="font-bold text-xs">秘密厳守</p>
+                <p class="text-[10px] text-gray-500 mt-1 leading-tight">安心してご相谈ください</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-4 py-8 bg-brand-bg">
+        <h3 class="text-center font-bold text-xl mb-6 text-gray-800">
+            简単<span class="text-brand-green text-3xl mx-1">3</span>ステップで诊断完了
+        </h3>
+        <div class="flex justify-between items-start relative">
+            <div class="absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -z-10 -translate-y-1/2"></div>
+            
+            <div class="bg-white p-3 rounded-lg custom-shadow w-[30%] text-center flex flex-col items-center">
+                <span class="text-brand-green font-bold text-[10px] mb-2">STEP 01</span>
+                <i class="fa-solid fa-mobile-screen text-4xl text-brand-green mb-3"></i>
+                <p class="font-bold text-xs mb-1">LINEを追加</p>
+                <p class="text-[9px] text-gray-600">ボタンから<br>LINEを追加します</p>
+            </div>
+            
+            <div class="bg-white p-3 rounded-lg custom-shadow w-[30%] text-center flex flex-col items-center">
+                <span class="text-brand-green font-bold text-[10px] mb-2">STEP 02</span>
+                <i class="fa-regular fa-comments text-4xl text-brand-green mb-3"></i>
+                <p class="font-bold text-xs mb-1">简単な质问に回答</p>
+                <p class="text-[9px] text-gray-600">状况に応じた质问に<br>ご回答ください</p>
+            </div>
+
+            <div class="bg-white p-3 rounded-lg custom-shadow w-[30%] text-center flex flex-col items-center">
+                <span class="text-brand-green font-bold text-[10px] mb-2">STEP 03</span>
+                <i class="fa-regular fa-envelope text-4xl text-brand-green mb-3"></i>
+                <p class="font-bold text-xs mb-1">结果をご案内</p>
+                <p class="text-[9px] text-gray-600">利用できる制度を<br>LINEでご案内します</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-4 pt-6">
+        <img src="img/2.jpg" alt="安心のサポート体制" class="w-full h-auto rounded-lg shadow-sm">
+    </section>
+
+    <section class="px-4 py-6">
+        <h3 class="text-center font-bold text-lg mb-6 text-gray-800">サポート対象となる制度の一例</h3>
+        <div class="grid grid-cols-4 gap-2 mb-2">
+            <div class="border rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
+                <i class="fa-solid fa-hand-holding-heart text-brand-green text-2xl mb-1"></i>
+                <p class="text-[9px] font-bold">生活支援・给付金</p>
+            </div>
+            <div class="border rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
+                <i class="fa-solid fa-house-chimney text-brand-green text-2xl mb-1"></i>
+                <p class="text-[9px] font-bold">住居确保给付金</p>
+            </div>
+            <div class="border rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
+                <i class="fa-regular fa-lightbulb text-brand-green text-2xl mb-1"></i>
+                <p class="text-[9px] font-bold">光热费补助</p>
+            </div>
+            <div class="border rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
+                <i class="fa-solid fa-book-open text-brand-green text-2xl mb-1"></i>
+                <p class="text-[9px] font-bold">教育支援・奨学金</p>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 mb-4 max-w-[240px] mx-auto">
+            <div class="border rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
+                <i class="fa-solid fa-briefcase text-brand-green text-2xl mb-1"></i>
+                <p class="text-[10px] font-bold">就労支援・助成金</p>
+            </div>
+            <div class="border rounded-lg p-2 text-center flex flex-col items-center justify-center h-20">
+                <i class="fa-solid fa-building text-brand-green text-2xl mb-1"></i>
+                <p class="text-[10px] font-bold">その他各种支援制度</p>
+            </div>
+        </div>
+        <p class="text-[10px] text-gray-500 text-center">※ご状况により対象となる制度は異なります。诊断後に詳しくご案内します。</p>
+    </section>
+
+    <section class="px-4 pb-8">
+        <div class="border rounded-lg overflow-hidden border-brand-green">
+            <div class="bg-brand-bg px-4 py-2 border-b border-brand-green flex items-center gap-2">
+                <i class="fa-regular fa-clipboard text-brand-green"></i>
+                <h4 class="font-bold text-sm">情報公示</h4>
+            </div>
+            <table class="w-full text-xs">
+                <tbody>
+                    <tr class="border-b">
+                        <th class="w-1/3 bg-gray-50 text-left py-3 px-4 font-normal text-brand-green">運営会社</th>
+                        <td class="w-2/3 py-3 px-4 font-medium">支援制度サポートセンター（運営法人：〇〇株式会社）</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="w-1/3 bg-gray-50 text-left py-3 px-4 font-normal text-brand-green">所在地</th>
+                        <td class="w-2/3 py-3 px-4">〒000-0000 東京都〇〇区〇〇1丁目2番3号 〇〇ビル4階</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="w-1/3 bg-gray-50 text-left py-3 px-4 font-normal text-brand-green">連絡先</th>
+                        <td class="w-2/3 py-3 px-4">TEL：03-XXXX-XXXX<br>Email：info@example.com<br><span class="text-[10px] text-gray-400">（受付時間：平日 10:00～18:00）</span></td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="w-1/3 bg-gray-50 text-left py-3 px-4 font-normal text-brand-green">サービス内容</th>
+                        <td class="w-2/3 py-3 px-4">支援制度・補助金などの情報提供および申請サポート</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="w-1/3 bg-gray-50 text-left py-3 px-4 font-normal text-brand-green">料金について</th>
+                        <td class="w-2/3 py-3 px-4">初期診断から申請サポートの相談まで完全無料です。ユーザーの同意のない費用請求は一切発生いたしません。</td>
+                    </tr>
+                    <tr class="border-b">
+                        <th class="w-1/3 bg-gray-50 text-left py-3 px-4 font-normal text-brand-green">個人情報の取扱い</th>
+                        <td class="w-2/3 py-3 px-4 leading-relaxed">ご入力いただいた情報はSSL暗号化通信により保護され、厳重に管理します。本サービスのご案内以外の目的で使用することはありません。</td>
+                    </tr>
+                    <tr>
+                        <th class="w-1/3 bg-gray-50 text-left py-3 px-4 font-normal text-brand-green">お問い合わせ</th>
+                        <td class="w-2/3 py-3 px-4">LINEにて24時間受け付けております</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="px-4 py-6 bg-brand-bg border-t border-b">
+        <h3 class="text-center font-bold text-lg mb-6 text-gray-800">選ばれる理由</h3>
+        <div class="grid grid-cols-4 gap-2">
+            <div class="text-center">
+                <div class="text-brand-green text-3xl font-bold mb-2">¥0</div>
+                <p class="font-bold text-[10px] mb-1">完全無料</p>
+                <p class="text-[8px] text-gray-600">相談から受給まで<br>すべて無料です</p>
+            </div>
+            <div class="text-center">
+                <i class="fa-solid fa-headset text-brand-green text-3xl mb-2"></i>
+                <p class="font-bold text-[10px] mb-1">専門スタッフ対応</p>
+                <p class="text-[8px] text-gray-600">経験豊富なスタッフが<br>丁寧にサポート</p>
+            </div>
+            <div class="text-center">
+                <i class="fa-solid fa-lock text-brand-green text-3xl mb-2"></i>
+                <p class="font-bold text-[10px] mb-1">プライバシー厳守</p>
+                <p class="text-[8px] text-gray-600">個人情報は厳重に管理し<br>秘密を厳守します</p>
+            </div>
+            <div class="text-center">
+                <i class="fa-solid fa-handshake text-brand-green text-3xl mb-2"></i>
+                <p class="font-bold text-[10px] mb-1">受給までサポート</p>
+                <p class="text-[8px] text-gray-600">申請から受給まで<br>しっかりサポート</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-4 pt-8 pb-4 relative">
+        <div class="flex justify-center mb-2">
+            <div class="w-24 h-24 rounded-full flex items-center justify-center overflow-hidden border-4 border-white shadow -mt-12 z-10 bg-gray-100">
+                <img src="img/3.jpg" alt="専門スタッフ" class="w-full h-full object-cover">
+            </div>
+        </div>
+        
+        <p class="text-center font-bold text-sm mb-4">一人で悩まず、まずはお気軽にご相談ください</p>
+        
+        <a href="#" class="block bg-brand-green text-white rounded-full py-4 px-6 font-bold text-lg relative custom-shadow hover:bg-green-700 transition text-center mb-3">
+            <i class="fa-brands fa-line text-2xl absolute left-6 top-1/2 -translate-y-1/2"></i>
+            LINEで無料診断を受ける
+            <i class="fa-solid fa-chevron-right absolute right-6 top-1/2 -translate-y-1/2 bg-white text-brand-green rounded-full w-6 h-6 flex items-center justify-center text-sm"></i>
+        </a>
+        <p class="text-center text-gray-500 text-xs font-bold tracking-widest mb-6">＼ 最短当日にご案内します！ ／</p>
+    </section>
+
+    <footer class="px-4 py-6 bg-gray-900 text-gray-400 text-[10px] leading-relaxed border-t border-gray-800">
+        <div class="space-y-2">
+            <p class="font-bold text-gray-300 text-xs mb-1">【公的機関との関係性に関する重要開示】</p>
+            <p>当サイト（支援制度サポートセンター）は、国、地方自治体、厚生労働省、またはその他の政府公的機関の公式ウェブサイトではなく、それらの委託を受けた組織でもありません。独立した民間のコンサルティング事業者として、情報提供および申請に向けた自主的な準備のアドバイス・サポートを行っております。本サービスは、特定の給付金や補助金の受給を100%保証するものではありません。</p>
+            <p class="pt-1">【広告について】</p>
+            <p>本ページはプロモーション（広告）を含みます。ユーザーが本ページを通じて提供する個人情報は、上記の運営会社によって、日本の個人情報保護法および当社のプライバシーポリシーに従い適切に管理・保護されます。</p>
+        </div>
+        
+        <div class="flex justify-center gap-4 mt-4 pt-3 border-t border-gray-800 text-brand-green font-bold text-xs">
+            <a href="/privacy-policy.html" target="_blank" class="hover:underline">プライバシーポリシー</a>
+            <a href="/terms.html" target="_blank" class="hover:underline">利用規約</a>
+            <a href="/tokushoho.html" target="_blank" class="hover:underline">特定商取引法に基づく表記</a>
+        </div>
+        
+        <p class="text-center mt-4 text-[9px] text-gray-600">&copy; 支援制度サポートセンター All Rights Reserved.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
