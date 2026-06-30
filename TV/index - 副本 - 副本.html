@@ -1,0 +1,1039 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>VidioNode — Free Live TV, Movies, Cricket | Android App</title>
+    <meta name="description" content="VidioNode — 1000+ live TV channels, IPL, cricket, Hindi series and films. No charges, no sign-up. Download the free APK for Android.">
+
+
+    <link href="css/css2.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Meta Pixel Code -->
+    <script async="" src="js/fbevents.js"></script><script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2321578038271781');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2321578038271781&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+
+
+
+    <nav class="nav">
+        <div class="nav-logo">
+            <img src="images/logo.jpg" alt="VidioNode" width="32" height="32">
+            <span>VidioNode</span>
+        </div>
+        <div class="nav-right">
+
+            <a href="/install.html" class="nav-dl" data-i18n="nav_inst">Install Guide</a>
+        </div>
+    </nav>
+
+    <div class="bd-flags"></div>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+            <div class="hero-chip"><span class="dot"></span> <span data-i18n="chip">Live now — free streaming</span>
+            </div>
+            <h1><span data-i18n="h1a">Live TV & Cricket</span><br><span class="gold" data-i18n="h1b">Movies,
+                    series & Hindi shows</span><br><span data-i18n="h1c">— Always free</span></h1>
+            <p class="hero-sub" data-i18n="hero_sub">Watch 1000+ channels free — live cricket & IPL,
+                Hindi dramas, Bollywood. HD quality, no ads, no sign-up.</p>
+            <div class="hero-cta">
+                <button class="btn-dl" onclick="handleDownload()">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path>
+                    </svg>
+                    <span data-i18n="cta_dl">Download Free APK</span>
+                </button>
+            </div>
+            <div class="hero-info">
+                <div class="hero-info-item">
+                    <div class="val">1000+</div>
+                    <div class="lbl" data-i18n="hi1">Channels</div>
+                </div>
+                <div class="hero-info-item">
+                    <div class="val">4K</div>
+                    <div class="lbl" data-i18n="hi2">Quality</div>
+                </div>
+                <div class="hero-info-item">
+                    <div class="val">500K+</div>
+                    <div class="lbl" data-i18n="hi3">Users</div>
+                </div>
+                <div class="hero-info-item">
+                    <div class="val">Free</div>
+                    <div class="lbl" data-i18n="hi4">Forever</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bd-divider"></div>
+
+    <!-- Trending movies (India) -->
+    <section class="cat-section">
+        <div class="cat-header">
+            <h2><span class="emoji">🎬</span> <span data-i18n="cat1_h">Trending Movies</span></h2><span class="see-all" data-i18n="see_all">In app →</span>
+        </div>
+        <p style="padding:0 16px;font-size:12px;color:var(--dim);margin:-8px 0 10px" data-i18n="cat1_sub">Bollywood
+            & hit cinema • New 2026 releases • Watch it all free</p>
+        <div class="cat-scroll">
+
+
+
+
+
+
+            <div class="scroll-track">
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie1.jpg" alt="Poran" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m1">Poran</div>
+                    <div class="meta" data-i18n="m1d">2026 • Romantic drama</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie2.jpg" alt="Hawa" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m2">Hawa</div>
+                    <div class="meta" data-i18n="m2d">2026 • Thriller</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie3.jpg" alt="Surongo" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m3">Surongo</div>
+                    <div class="meta" data-i18n="m3d">2026 • Heist thriller</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie4.jpg" alt="Priyotama" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m4">Priyotama</div>
+                    <div class="meta" data-i18n="m4d">2026 • Romance</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie5.jpg" alt="Gondi" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m5">Gondi</div>
+                    <div class="meta" data-i18n="m5d">2026 • Action</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/pathaan.jpg" alt="Pathaan" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m6">Pathaan</div>
+                    <div class="meta" data-i18n="m6d">Bollywood • Spy action</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie1.jpg" alt="Poran" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m1">Poran</div>
+                    <div class="meta" data-i18n="m1d">2026 • Romantic drama</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie2.jpg" alt="Hawa" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m2">Hawa</div>
+                    <div class="meta" data-i18n="m2d">2026 • Thriller</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie3.jpg" alt="Surongo" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m3">Surongo</div>
+                    <div class="meta" data-i18n="m3d">2026 • Heist thriller</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie4.jpg" alt="Priyotama" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m4">Priyotama</div>
+                    <div class="meta" data-i18n="m4d">2026 • Romance</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/movie5.jpg" alt="Gondi" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m5">Gondi</div>
+                    <div class="meta" data-i18n="m5d">2026 • Action</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/pathaan.jpg" alt="Pathaan" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="m6">Pathaan</div>
+                    <div class="meta" data-i18n="m6d">Bollywood • Spy action</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bd-divider"></div>
+
+    <!-- Live sports -->
+    <section class="cat-section">
+        <div class="cat-header">
+            <h2><span class="emoji">🏏</span> <span data-i18n="cat2_h">Live Sports</span></h2><span class="see-all" data-i18n="see_all">In app →</span>
+        </div>
+        <p style="padding:0 16px;font-size:12px;color:var(--dim);margin:-8px 0 10px" data-i18n="cat2_sub">🇮🇳
+            Cricket • IPL T20 • Football • Kabaddi • All matches live & free</p>
+        <div class="cat-scroll">
+
+
+
+
+            <div class="scroll-track">
+                <div class="wide-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/cricket.jpg" alt="BD Cricket" loading="lazy">
+                        <div class="overlay">
+                            <div class="tag"><span class="livedot"></span> Live</div>
+                            <h3 data-i18n="sp1">🇮🇳 Team India — International Cricket</h3>
+                            <p data-i18n="sp1d">Watch live in HD • Free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wide-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/football.jpg" alt="BD Football" loading="lazy">
+                        <div class="overlay">
+                            <div class="tag"><span class="livedot"></span> Live</div>
+                            <h3 data-i18n="sp2">🇮🇳 ISL — Indian Super League</h3>
+                            <p data-i18n="sp2d">Football league • HD</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wide-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/basketball.jpg" alt="IPL 2026" loading="lazy">
+                        <div class="overlay">
+                            <div class="tag"><span class="livedot"></span> Live</div>
+                            <h3 data-i18n="sp3">IPL 2026 — Free Streaming</h3>
+                            <p data-i18n="sp3d">Every match free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wide-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kabaddi.jpg" alt="Kabaddi" loading="lazy">
+                        <div class="overlay">
+                            <div class="tag"><span class="livedot"></span> Live</div>
+                            <h3 data-i18n="sp4">Pro Kabaddi — Live</h3>
+                            <p data-i18n="sp4d">Watch kabaddi free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wide-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/cricket.jpg" alt="BD Cricket" loading="lazy">
+                        <div class="overlay">
+                            <div class="tag"><span class="livedot"></span> Live</div>
+                            <h3 data-i18n="sp1">🇮🇳 Team India — International Cricket</h3>
+                            <p data-i18n="sp1d">Watch live in HD • Free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wide-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/football.jpg" alt="BD Football" loading="lazy">
+                        <div class="overlay">
+                            <div class="tag"><span class="livedot"></span> Live</div>
+                            <h3 data-i18n="sp2">🇮🇳 ISL — Indian Super League</h3>
+                            <p data-i18n="sp2d">Football league • HD</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wide-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/basketball.jpg" alt="IPL 2026" loading="lazy">
+                        <div class="overlay">
+                            <div class="tag"><span class="livedot"></span> Live</div>
+                            <h3 data-i18n="sp3">IPL 2026 — Free Streaming</h3>
+                            <p data-i18n="sp3d">Every match free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wide-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kabaddi.jpg" alt="Kabaddi" loading="lazy">
+                        <div class="overlay">
+                            <div class="tag"><span class="livedot"></span> Live</div>
+                            <h3 data-i18n="sp4">Pro Kabaddi — Live</h3>
+                            <p data-i18n="sp4d">Watch kabaddi free</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bd-divider"></div>
+ 
+
+    <div class="bd-divider"></div>
+
+    <!-- Hindi & regional TV serials -->
+    <section class="cat-section">
+        <div class="cat-header">
+            <h2><span class="emoji">🇮🇳</span> <span data-i18n="cat7_h">Hindi & Regional Serials</span></h2>
+            <span class="see-all" data-i18n="cat7_more">In app →</span>
+        </div>
+        <p style="padding:0 16px;font-size:12px;color:var(--dim);margin:-8px 0 10px" data-i18n="cat7_sub">Star Jalsha •
+            Zee Bangla • Anupama • Naagin • Colors • All free</p>
+        <div class="cat-scroll">
+
+
+
+
+
+            <div class="scroll-track">
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind1.jpg" alt="Anurager Chhowa" loading="lazy"><span class="badge" <span="" style="background:#ff6b35">★ Top</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv1">Anurager Chhowa</div>
+                    <div class="meta" data-i18n="tv1d">Star Jalsha • Drama</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind2.jpg" alt="Mithai" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv2">Mithai</div>
+                    <div class="meta" data-i18n="tv2d">Zee Bangla • Drama</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind3.jpg" alt="Naagin" loading="lazy"><span class="badge" style="background:#8b5cf6">🔮 New</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv3">Naagin 7</div>
+                    <div class="meta" data-i18n="tv3d">Colors • Fantasy</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind4.jpg" alt="Anupamaa" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv4">Anupamaa</div>
+                    <div class="meta" data-i18n="tv4d">Star Plus • Family</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind5.jpg" alt="Bigg Boss" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv5">Bigg Boss 20</div>
+                    <div class="meta" data-i18n="tv5d">Colors • Reality</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind1.jpg" alt="Anurager Chhowa" loading="lazy"><span class="badge" <span="" style="background:#ff6b35">★ Top</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv1">Anurager Chhowa</div>
+                    <div class="meta" data-i18n="tv1d">Star Jalsha • Drama</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind2.jpg" alt="Mithai" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv2">Mithai</div>
+                    <div class="meta" data-i18n="tv2d">Zee Bangla • Drama</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind3.jpg" alt="Naagin" loading="lazy"><span class="badge" style="background:#8b5cf6">🔮 New</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv3">Naagin 7</div>
+                    <div class="meta" data-i18n="tv3d">Colors • Fantasy</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind4.jpg" alt="Anupamaa" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv4">Anupamaa</div>
+                    <div class="meta" data-i18n="tv4d">Star Plus • Family</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ind5.jpg" alt="Bigg Boss" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="tv5">Bigg Boss 20</div>
+                    <div class="meta" data-i18n="tv5d">Colors • Reality</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bd-divider"></div>
+
+    <!-- News & entertainment -->
+    <section class="cat-section">
+        <div class="cat-header">
+            <h2><span class="emoji">📺</span> <span data-i18n="cat3_h">News & Entertainment</span></h2><span class="see-all" data-i18n="see_all">In app →</span>
+        </div>
+        <p style="padding:0 16px;font-size:12px;color:var(--dim);margin:-8px 0 10px" data-i18n="cat3_sub">Aaj Tak •
+            Republic TV • Music channels • DD & regional drama • Free 24/7</p>
+        <div class="cat-scroll">
+
+
+
+
+
+
+
+            <div class="scroll-track">
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/news.jpg" alt="Aaj Tak news" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n1">Aaj Tak News 24/7</div>
+                    <div class="meta" data-i18n="n1d">Breaking headlines</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/music.jpg" alt="Baul Music" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n2">Indian Folk & Film Music</div>
+                    <div class="meta" data-i18n="n2d">Hits & folk tunes</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/comedy.jpg" alt="Natok" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n3">Comedy Theatre</div>
+                    <div class="meta" data-i18n="n3d">Nonstop laughs</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/drama.jpg" alt="DD drama" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n4">DD & Regional Drama</div>
+                    <div class="meta" data-i18n="n4d">Indian classics</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ex5.jpg" alt="Channel 24" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n7">Channel 24 News</div>
+                    <div class="meta" data-i18n="n7d">📺 Live news</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/news.jpg" alt="Aaj Tak news" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n1">Aaj Tak News 24/7</div>
+                    <div class="meta" data-i18n="n1d">Breaking headlines</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/music.jpg" alt="Baul Music" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n2">Indian Folk & Film Music</div>
+                    <div class="meta" data-i18n="n2d">Hits & folk tunes</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/comedy.jpg" alt="Natok" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n3">Comedy Theatre</div>
+                    <div class="meta" data-i18n="n3d">Nonstop laughs</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/drama.jpg" alt="DD drama" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n4">DD & Regional Drama</div>
+                    <div class="meta" data-i18n="n4d">Indian classics</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/ex5.jpg" alt="Channel 24" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="n7">Channel 24 News</div>
+                    <div class="meta" data-i18n="n7d">📺 Live news</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bd-divider"></div>
+
+    <!-- South Indian Dubbed Hits -->
+    <section class="cat-section">
+        <div class="cat-header">
+            <h2><span class="emoji">🎥</span> <span data-i18n="cat9_h">South Indian Dubbed Hits</span></h2><span class="see-all" data-i18n="see_all">In app →</span>
+        </div>
+        <p style="padding:0 16px;font-size:12px;color:var(--dim);margin:-8px 0 10px" data-i18n="cat9_sub">Pushpa • KGF •
+            RRR • Baahubali • Hindi dub • Free</p>
+        <div class="cat-scroll">
+
+
+
+
+
+            <div class="scroll-track">
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_pushpa2.jpg" alt="Pushpa 2" loading="lazy"><span class="badge" style="background:#ff6b35">🔥 Hit</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si1">Pushpa 2: The Rule</div>
+                    <div class="meta" data-i18n="si1d">Telugu dub • Action</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_kgf2.jpg" alt="KGF 2" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si2">KGF: Chapter 2</div>
+                    <div class="meta" data-i18n="si2d">Kannada dub • Action</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_rrr.jpg" alt="RRR" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si3">RRR</div>
+                    <div class="meta" data-i18n="si3d">Telugu dub • Epic</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_bahubali2.jpg" alt="Bahubali 2" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si4">Bahubali 2</div>
+                    <div class="meta" data-i18n="si4d">Telugu dub • Epic</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_kantara.jpg" alt="Kantara" loading="lazy"><span class="badge" style="background:#e11d48">🔥 Hit</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si5">Kantara</div>
+                    <div class="meta" data-i18n="si5d">Kannada dub • Thriller</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_pushpa2.jpg" alt="Pushpa 2" loading="lazy"><span class="badge" style="background:#ff6b35">🔥 Hit</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si1">Pushpa 2: The Rule</div>
+                    <div class="meta" data-i18n="si1d">Telugu dub • Action</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_kgf2.jpg" alt="KGF 2" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si2">KGF: Chapter 2</div>
+                    <div class="meta" data-i18n="si2d">Kannada dub • Action</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_rrr.jpg" alt="RRR" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si3">RRR</div>
+                    <div class="meta" data-i18n="si3d">Telugu dub • Epic</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_bahubali2.jpg" alt="Bahubali 2" loading="lazy"><span class="badge hd">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si4">Bahubali 2</div>
+                    <div class="meta" data-i18n="si4d">Telugu dub • Epic</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/si_kantara.jpg" alt="Kantara" loading="lazy"><span class="badge" style="background:#e11d48">🔥 Hit</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="si5">Kantara</div>
+                    <div class="meta" data-i18n="si5d">Kannada dub • Thriller</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="bd-divider"></div>
+
+    <!-- 🔒 Private 18+ Channels -->
+    <section class="priv-section">
+        <div class="cat-header">
+            <h2><span class="emoji">🔒</span> <span data-i18n="priv_h">Private 18+ Channels</span></h2>
+        </div>
+        <p style="padding:0 16px;font-size:12px;color:var(--dim);margin:-8px 0 10px" data-i18n="priv_sub">Adults only •
+            Private viewing • HD channels • Free in the app</p>
+        <div class="priv-card">
+            <div class="lock-icon">🔞</div>
+            <h3 data-i18n="priv_t">Private 18+ Content</h3>
+            <p data-i18n="priv_d">Adult-only private 18+ content is available inside the app.</p>
+            <button class="priv-btn" onclick="handleDownload()" data-i18n="priv_btn">Open in app — free access</button>
+        </div>
+    </section>
+
+    <div class="bd-divider"></div>
+
+    <!-- K-Drama & Anime -->
+    <section class="cat-section">
+        <div class="cat-header">
+            <h2><span class="emoji">🇰🇷</span> <span data-i18n="cat8_h">K-Drama & Anime</span></h2><span class="see-all" data-i18n="cat8_more">In app →</span>
+        </div>
+        <p style="padding:0 16px;font-size:12px;color:var(--dim);margin:-8px 0 10px" data-i18n="cat8_sub">Squid Game •
+            Crash Landing on You • Demon Slayer • True Beauty • Stream free</p>
+        <div class="cat-scroll">
+
+
+
+
+
+            <div class="scroll-track">
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd1.jpg" alt="Squid Game" loading="lazy"><span class="badge" style="background:#e11d48">🔥 Hit</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt1">Squid Game S3</div>
+                    <div class="meta" data-i18n="kd1d">Netflix • Thriller</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd2.jpg" alt="CLOY" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt2">Crash Landing on You</div>
+                    <div class="meta" data-i18n="kd2d">K-drama • Romance</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd3.jpg" alt="True Beauty" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt3">True Beauty</div>
+                    <div class="meta" data-i18n="kd3d">K-drama • School</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd4.jpg" alt="Demon Slayer" loading="lazy"><span class="badge" style="background:#3b82f6">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt4">Demon Slayer</div>
+                    <div class="meta" data-i18n="kd4d">Anime • Action</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd5.jpg" alt="All of Us Are Dead" loading="lazy"><span class="badge" style="background:#e11d48">🆕 New</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt5">All of Us Are Dead</div>
+                    <div class="meta" data-i18n="kd5d">K-drama • Horror</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd1.jpg" alt="Squid Game" loading="lazy"><span class="badge" style="background:#e11d48">🔥 Hit</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt1">Squid Game S3</div>
+                    <div class="meta" data-i18n="kd1d">Netflix • Thriller</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd2.jpg" alt="CLOY" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt2">Crash Landing on You</div>
+                    <div class="meta" data-i18n="kd2d">K-drama • Romance</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd3.jpg" alt="True Beauty" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt3">True Beauty</div>
+                    <div class="meta" data-i18n="kd3d">K-drama • School</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd4.jpg" alt="Demon Slayer" loading="lazy"><span class="badge" style="background:#3b82f6">4K</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt4">Demon Slayer</div>
+                    <div class="meta" data-i18n="kd4d">Anime • Action</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/kd5.jpg" alt="All of Us Are Dead" loading="lazy"><span class="badge" style="background:#e11d48">🆕 New</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="kdt5">All of Us Are Dead</div>
+                    <div class="meta" data-i18n="kd5d">K-drama • Horror</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bd-divider"></div>
+
+    <!-- 📈 Finance, Stocks & Crypto -->
+    <section class="cat-section">
+        <div class="cat-header">
+            <h2><span class="emoji">📈</span> <span data-i18n="cat5_h">Finance, Stocks & Crypto</span></h2><span class="see-all" data-i18n="see_all">In app →</span>
+        </div>
+        <p style="padding:0 16px;font-size:12px;color:var(--dim);margin:-8px 0 10px" data-i18n="cat5_sub">Live markets •
+            BTC/ETH crypto • Forex USD/INR • RBI news • Market headlines</p>
+        <div class="cat-scroll">
+
+
+
+
+
+            <div class="scroll-track">
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin1.jpg" alt="DSE" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn1">Stock Market Live</div>
+                    <div class="meta" data-i18n="fn1d">📊 Live indices</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin2.jpg" alt="Crypto" loading="lazy"><span class="badge" style="background:#f59e0b;color:#000">₿ BTC</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn2">BTC & ETH — Crypto</div>
+                    <div class="meta" data-i18n="fn2d">₿ Bitcoin • Ethereum</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin3.jpg" alt="BB" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn3">RBI & Banking News</div>
+                    <div class="meta" data-i18n="fn3d">🏦 Policy & updates</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin4.jpg" alt="Forex" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn4">Forex & Commodities</div>
+                    <div class="meta" data-i18n="fn4d">💱 USD/INR • Gold • Oil</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin5.jpg" alt="Business" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn5">Business & Economy</div>
+                    <div class="meta" data-i18n="fn5d">📰 Market news</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin1.jpg" alt="DSE" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn1">Stock Market Live</div>
+                    <div class="meta" data-i18n="fn1d">📊 Live indices</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin2.jpg" alt="Crypto" loading="lazy"><span class="badge" style="background:#f59e0b;color:#000">₿ BTC</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn2">BTC & ETH — Crypto</div>
+                    <div class="meta" data-i18n="fn2d">₿ Bitcoin • Ethereum</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin3.jpg" alt="BB" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn3">RBI & Banking News</div>
+                    <div class="meta" data-i18n="fn3d">🏦 Policy & updates</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin4.jpg" alt="Forex" loading="lazy"><span class="badge live">Live</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn4">Forex & Commodities</div>
+                    <div class="meta" data-i18n="fn4d">💱 USD/INR • Gold • Oil</div>
+                </div>
+                <div class="content-card" onclick="handleDownload()">
+                    <div class="thumb"><img src="images/fin5.jpg" alt="Business" loading="lazy"><span class="badge hd">HD</span><span class="badge2">Free</span></div>
+                    <div class="title" data-i18n="fn5">Business & Economy</div>
+                    <div class="meta" data-i18n="fn5d">📰 Market news</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bd-divider"></div>
+
+    <!-- FEATURE HIGHLIGHTS -->
+    <section class="highlights">
+        <div class="container">
+            <div class="cat-header" style="padding:0;margin-bottom:14px">
+                <h2><span class="emoji">✨</span> <span data-i18n="why_h">Why VidioNode?</span></h2>
+            </div>
+            <div class="hl-grid">
+                <div class="hl-card">
+                    <div class="icon">📡</div>
+                    <h3 data-i18n="w1">1000+ Channels</h3>
+                    <p data-i18n="w1d">Live TV from 130+ countries</p>
+                </div>
+                <div class="hl-card">
+                    <div class="icon">🎬</div>
+                    <h3 data-i18n="w2">Free Movies</h3>
+                    <p data-i18n="w2d">Bollywood & hit cinema</p>
+                </div>
+                <div class="hl-card">
+                    <div class="icon">🏏</div>
+                    <h3 data-i18n="w3">Live Sports</h3>
+                    <p data-i18n="w3d">Cricket, football & more</p>
+                </div>
+                <div class="hl-card">
+                    <div class="icon">🚫</div>
+                    <h3 data-i18n="w4">No Ads</h3>
+                    <p data-i18n="w4d">No pop-ups, uninterrupted</p>
+                </div>
+                <div class="hl-card">
+                    <div class="icon">📱</div>
+                    <h3 data-i18n="w5">4K Quality</h3>
+                    <p data-i18n="w5d">Crystal-clear streaming</p>
+                </div>
+                <div class="hl-card">
+                    <div class="icon">🌍</div>
+                    <h3 data-i18n="w6">Many Languages</h3>
+                    <p data-i18n="w6d">Content in your language</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VidioNode vs Others -->
+    <section class="compare">
+        <h2 data-i18n="vs_h">VidioNode vs Paid Platforms</h2>
+        <table class="compare-table">
+            <tbody>
+                <tr>
+                    <th data-i18n="vs_feat">Feature</th>
+                    <th class="VidioNode-col">VidioNode</th>
+                    <th data-i18n="vs_others">Others</th>
+                </tr>
+                <tr>
+                    <td data-i18n="vs1">Monthly fee</td>
+                    <td class="check" data-i18n="vs1a">100% free</td>
+                    <td class="cross" data-i18n="vs1b">Paid plans</td>
+                </tr>
+                <tr>
+                    <td data-i18n="vs2">Live sports</td>
+                    <td class="check" data-i18n="vs2a">✓ All</td>
+                    <td class="cross" data-i18n="vs2b">Limited</td>
+                </tr>
+                <tr>
+                    <td data-i18n="vs3">TV channels</td>
+                    <td class="check" data-i18n="vs3a">1000+</td>
+                    <td class="cross" data-i18n="vs3b">50-200</td>
+                </tr>
+                <tr>
+                    <td data-i18n="vs4">Ads</td>
+                    <td class="check" data-i18n="vs4a">None</td>
+                    <td class="cross" data-i18n="vs_yes">Yes</td>
+                </tr>
+                <tr>
+                    <td data-i18n="vs5">Sign-up required</td>
+                    <td class="check" data-i18n="vs_no">No</td>
+                    <td class="cross" data-i18n="vs_yes">Yes</td>
+                </tr>
+                <tr>
+                    <td data-i18n="vs6">4K quality</td>
+                    <td class="check">✓</td>
+                    <td data-i18n="vs6b">Varies</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- CTA BANNER -->
+    <div class="cta-banner">
+        <h2 data-i18n="cta_h">Start Watching Now</h2>
+        <p data-i18n="cta_p">500K+ users streaming free entertainment</p>
+        <div class="stats">
+            <div class="stat">
+                <div class="v">1000+</div>
+                <div class="l" data-i18n="cta_s1">Channels</div>
+            </div>
+            <div class="stat">
+                <div class="v">130+</div>
+                <div class="l" data-i18n="cta_s2">Countries</div>
+            </div>
+            <div class="stat">
+                <div class="v">4K</div>
+                <div class="l" data-i18n="cta_s3">Quality</div>
+            </div>
+        </div>
+        <button class="btn-dl" onclick="handleDownload()">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path>
+            </svg>
+            <span data-i18n="cta_dl">Download Free APK</span>
+        </button>
+    </div>
+
+    <!-- INSTALL STEPS -->
+    <section class="install-section">
+        <h2><span class="emoji">📲</span> <span data-i18n="inst_h">Quick Install Guide</span></h2>
+        <div class="step-cards">
+            <a href="/install.html" class="step-card" style="text-decoration:none;color:inherit">
+                <div class="snum">1</div>
+                <div class="stxt">
+                    <h3 data-i18n="s1t">Download the APK</h3>
+                    <p data-i18n="s1d">Tap the download button above. The APK will be saved on your phone.</p>
+                </div>
+            </a>
+            <a href="/install.html" class="step-card" style="text-decoration:none;color:inherit">
+                <div class="snum">2</div>
+                <div class="stxt">
+                    <h3 data-i18n="s2t">Allow installation</h3>
+                    <p data-i18n="s2d">When prompted, go to Settings → Security and enable install from unknown sources.</p>
+                </div>
+            </a>
+            <a href="/install.html" class="step-card" style="text-decoration:none;color:inherit">
+                <div class="snum">3</div>
+                <div class="stxt">
+                    <h3 data-i18n="s3t">Install and open</h3>
+                    <p data-i18n="s3d">Open the APK from Downloads, tap Install. Launch VidioNode and start watching!</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- APP INFO TABLE -->
+    <div class="app-info">
+        <table>
+            <tbody>
+                <tr>
+                    <td data-i18n="ai1">App name</td>
+                    <td>VidioNode</td>
+                </tr>
+                <tr>
+                    <td data-i18n="ai2">Version</td>
+                    <td>V7.0.2 (2026)</td>
+                </tr>
+                <tr>
+                    <td data-i18n="ai3">Size</td>
+                    <td>18 MB</td>
+                </tr>
+                <tr>
+                    <td data-i18n="ai4">Category</td>
+                    <td data-i18n="ai4v">Entertainment</td>
+                </tr>
+                <tr>
+                    <td data-i18n="ai5">License</td>
+                    <td data-i18n="ai5v">Free</td>
+                </tr>
+                <tr>
+                    <td data-i18n="ai6">Platform</td>
+                    <td>Android 11+</td>
+                </tr>
+                <tr>
+                    <td data-i18n="ai7">Downloads</td>
+                    <td>500,000+</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SHARE & REFERRAL -->
+    <!--  <section class="share-section">
+        <div class="share-card">
+            <h2 data-i18n="ref_h">🎁 Share & Get VIP</h2>
+            <p data-i18n="ref_p">Invite 3 friends to install VidioNode and unlock VIP channels & 4K content!</p>
+            <div class="share-progress">
+                <div class="sp-label" data-i18n="ref_prog">📊 Your Referral Progress</div>
+                <div class="sp-bar">
+                    <div class="sp-bar-fill" id="refProgress"></div>
+                </div>
+                <div class="sp-text"><span id="refCount">0/3</span> <span data-i18n="ref_joined">friends joined</span>
+                </div>
+            </div>
+            <div class="share-btns">
+                <button class="share-btn wa" onclick="shareWA()">💬 WhatsApp</button>
+                <button class="share-btn fb" onclick="shareFB()">📘 Facebook</button>
+                <button class="share-btn tg" onclick="shareTG()">✈️ Telegram</button>
+                <button class="share-btn cp" onclick="copyRef()">📋 <span data-i18n="ref_copy">Copy Link</span></button>
+            </div>
+            <div class="share-link" data-i18n="ref_your">Your link:</div>
+        </div>
+    </section> -->
+
+    <div class="bd-divider"></div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <h2 data-i18n="faq_h">Frequently Asked Questions</h2>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-q" data-i18n="q1">Is VidioNode completely free?</div>
+            <div class="faq-a" data-i18n="a1">Yes! VidioNode is 100% free forever. No subscription, no hidden fees.
+                Download the APK and watch movies, sports, and live TV with no limits.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-q" data-i18n="q2">What content is available?</div>
+            <div class="faq-a" data-i18n="a2">1000+ live TV channels from 130+ countries. Live cricket, IPL, football,
+                Bollywood films, Hindi serials, news, comedy, 18+ channels, and much more.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-q" data-i18n="q3">Is installation safe?</div>
+            <div class="faq-a" data-i18n="a3">Over 500,000 users worldwide use the VidioNode APK. The app receives
+                regular security and content updates.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-q" data-i18n="q4">Do I need an account?</div>
+            <div class="faq-a" data-i18n="a4">No! No sign-up, login, or email. Just install and start
+                watching right away.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-q" data-i18n="q5">Which devices are supported?</div>
+            <div class="faq-a" data-i18n="a5">VidioNode runs on all Android phones and tablets (Android 11+). Optimized for mobile
+                with a smooth HD experience.</div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="bd-flags" style="margin-bottom:12px;border-radius:2px"></div>
+        🇮🇳 © 2026 VidioNode — Built for India<br><a href="/privacy.php" style="color:rgba(255,255,255,.25);margin:0 6px" data-i18n="footer_priv">Privacy Policy</a> | <a href="/terms.php" style="color:rgba(255,255,255,.25);margin:0 6px" data-i18n="footer_terms">Terms</a>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <div class="float-cta">
+        <button onclick="handleDownload()">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path>
+            </svg>
+            <span data-i18n="float_cta">Download VidioNode — 100% free</span>
+        </button>
+        <div class="sub" data-i18n="float_sub">Android • 18MB • No sign-up • No subscription</div>
+    </div>
+
+    <!-- WebView Guide Overlay -->
+    <div class="wv-overlay" id="wvOverlay">
+        <div class="wv-arrow" id="wvArrow">↗️</div>
+        <h2 data-i18n="wv_h">⚠️ Open in browser</h2>
+        <p data-i18n="wv_p">For the best experience, open in Chrome</p>
+        <div class="wv-methods">
+            <div class="wv-method" onclick="wvRetryIntent()">
+                <div class="wm-title" data-i18n="wv_m0">🔄 Try opening in Chrome</div>
+                <div class="wm-desc" data-i18n="wv_m0d">Attempts to launch Chrome automatically</div>
+            </div>
+            <div class="wv-method" id="wvCopyBtn" onclick="wvCopy()">
+                <div class="wm-title" data-i18n="wv_m2">📋 Copy link</div>
+                <div class="wm-desc" data-i18n="wv_m2d">Copy and paste into Chrome</div>
+                <div class="wv-copied" id="wvCopied" data-i18n="wv_copied">✅ Copied! Open Chrome and paste</div>
+            </div>
+            <div class="wv-method" onclick="wvWhatsApp()">
+                <div class="wm-title" data-i18n="wv_m3">📤 Send via WhatsApp</div>
+                <div class="wm-desc" data-i18n="wv_m3d">Send to yourself and open from WhatsApp</div>
+            </div>
+        </div>
+        <button class="wv-close" onclick="document.getElementById('wvOverlay').classList.remove('show')" data-i18n="wv_close">✕ Close and download here</button>
+    </div>
+
+    <!-- Install Guide Overlay -->
+    <div class="ig-overlay" id="igOverlay">
+        <button class="ig-close" onclick="document.getElementById('igOverlay').classList.remove('show')">✕</button>
+        <div class="ig-inner">
+            <h2>✅ <span data-i18n="ig_h">Download started!</span></h2>
+            <p style="font-size:13px;color:#94a3b8;margin-bottom:16px" data-i18n="ig_sub">Follow these steps to install the APK:</p>
+            <div class="ig-step">
+                <div class="ig-num">1</div>
+                <div>
+                    <p data-i18n="ig_s1"><strong>Wait until the download finishes</strong> — check progress in the notification bar</p>
+                </div>
+            </div>
+            <div class="ig-step">
+                <div class="ig-num">2</div>
+                <div>
+                    <p data-i18n="ig_s2"><strong>Tap the file in the notification</strong> or open Files → Downloads</p>
+                </div>
+            </div>
+            <div class="ig-step">
+                <div class="ig-num">3</div>
+                <div>
+                    <p data-i18n="ig_s3"><strong>Tap Install</strong> — if you see unknown sources, allow it in Settings and return</p>
+                </div>
+            </div>
+            <div class="ig-step">
+                <div class="ig-num">4</div>
+                <div>
+                    <p data-i18n="ig_s4"><strong>Google Play Protect warning?</strong> — Tap Install anyway.
+                        This is normal for all APKs.</p>
+                </div>
+            </div>
+            <div class="ig-link"><a href="/install.html" data-i18n="ig_more">📖 Full install guide</a></div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        function handleDownload() {
+            window.location.href = 'notify.php';
+        }
+        function wvRetryIntent() {
+            var url = encodeURIComponent(location.href);
+            window.location.href = 'googlechrome://navigate?url=' + url;
+        }
+        function wvCopy() {
+            var u = location.href;
+            var el = document.getElementById('wvCopied');
+            function showOk() { if (el) { el.style.display = 'block'; } }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(u).then(showOk).catch(function () { prompt('Copy:', u); });
+            } else {
+                prompt('Copy:', u);
+            }
+        }
+        function wvWhatsApp() {
+            window.open('https://wa.me/?text=' + encodeURIComponent(location.href), '_blank');
+        }
+
+        (function initAutoSliders() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            function attachAutoScroll(el, staggerMs) {
+                var track = el.querySelector('.scroll-track');
+                if (!track || !track.firstElementChild) return;
+
+                var intervalMs = 4200;
+                var resumeDelayMs = 4000;
+                var timer = null;
+                var paused = false;
+                var userPauseTimer = null;
+
+                function pauseFromUser() {
+                    paused = true;
+                    clearTimeout(userPauseTimer);
+                    userPauseTimer = setTimeout(function () { paused = false; }, resumeDelayMs);
+                }
+
+                el.addEventListener('touchstart', pauseFromUser, { passive: true });
+                el.addEventListener('wheel', pauseFromUser, { passive: true });
+                el.addEventListener('pointerdown', pauseFromUser);
+
+                function step() {
+                    if (paused) return;
+                    var maxScroll = el.scrollWidth - el.clientWidth;
+                    if (maxScroll <= 4) return;
+
+                    var first = track.firstElementChild;
+                    var gap = parseFloat(getComputedStyle(track).gap) || 12;
+                    var stride = first.offsetWidth + gap;
+
+                    var next = el.scrollLeft + stride;
+                    if (next >= maxScroll - 4) {
+                        el.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        el.scrollBy({ left: stride, behavior: 'smooth' });
+                    }
+                }
+
+                function startWhenVisible() {
+                    if ('IntersectionObserver' in window) {
+                        var obs = new IntersectionObserver(function (entries) {
+                            entries.forEach(function (e) {
+                                if (e.isIntersecting) {
+                                    if (!timer) timer = setInterval(step, intervalMs);
+                                } else {
+                                    if (timer) { clearInterval(timer); timer = null; }
+                                }
+                            });
+                        }, { rootMargin: '80px', threshold: 0.01 });
+                        obs.observe(el);
+                    } else {
+                        timer = setInterval(step, intervalMs);
+                    }
+                }
+
+                setTimeout(startWhenVisible, staggerMs);
+            }
+
+            document.querySelectorAll('.cat-scroll').forEach(function (el, i) {
+                attachAutoScroll(el, i * 450);
+            });
+        })();
+    </script>
+
+
+</body></html>
